@@ -50,6 +50,7 @@
     "list": "blacklist",
     "forward-to": "DNS",
     "marker": "ros-rules-auto",
+    "manual": "/srv/github-mirror/manual-blacklist.txt",
     "sources": [
       "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/global.conf",
       "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/ai.conf",

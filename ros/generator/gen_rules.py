@@ -214,21 +214,35 @@ def main():
         elif cfg["type"] == "rosdns":
             raw = set().union(*(parse_surge_domains(t) for t in texts))
             psl = load_psl()
-            doms = dedup_suffix(registrable(d, psl) for d in raw)
-            if len(doms) < MIN_ENTRIES:
-                raise SystemExit(f"[abort] {name}: 仅 {len(doms)} 条, 疑似拉取失败, 不生成")
+            auto = dedup_suffix(registrable(d, psl) for d in raw)
+            manual = []
+            if cfg.get("manual"):
+                mp = cfg["manual"]
+                if os.path.isfile(mp):
+                    manual = [l.strip().lower() for l in open(mp, encoding="utf-8")
+                              if l.strip() and not l.startswith("#")]
+                else:
+                    raise SystemExit(f"[abort] {name}: 手工域名文件不存在: {mp}")
+            manual = sorted({d for d in manual
+                             if "." in d and re.fullmatch(r"[A-Za-z0-9._-]+", d)})
+            auto = [d for d in auto if d not in set(manual)]
+            if len(auto) + len(manual) < MIN_ENTRIES:
+                raise SystemExit(f"[abort] {name}: 仅 {len(auto) + len(manual)} 条, 疑似拉取失败, 不生成")
             marker = cfg.get("marker", "ros-rules-auto")
             with open(os.path.join(OUT, f"{name}.rsc"), "w") as fh:
-                fh.write(f"#{name} — {len(doms)} 条(原始 {len(raw)},PSL 收纳), "
+                fh.write(f"#{name} — 手工 {len(manual)} 条 + 上游 {len(auto)} 条, "
                          f"{time.strftime('%F %T')} 由 gen_rules.py 生成\n")
                 fh.write(f"# 全部为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖\n")
-                fh.write(f"# 导入顺序：在手工维护的同类脚本之后导入（本脚本只清理 comment={marker} 的条目）\n")
-                fh.write(f"/ip dns static remove [find where comment=\"{marker}\"]\n")
+                fh.write(f"# 本脚本整表重建 {cfg['list']}，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）\n")
+                fh.write(f"/ip dns static remove [find address-list={cfg['list']}]\n")
                 fh.write("/ip dns static\n")
-                for d in doms:
+                for d in manual:
+                    fh.write(f"add address-list={cfg['list']} forward-to={cfg['forward-to']} "
+                             f"match-subdomain=yes type=FWD name={d} comment=\"ros-rules-manual\"\n")
+                for d in auto:
                     fh.write(f"add address-list={cfg['list']} forward-to={cfg['forward-to']} "
                              f"match-subdomain=yes type=FWD name={d} comment=\"{marker}\"\n")
-            print(f"[ok] {name}.rsc  {len(doms)} 条 (原始 {len(raw)}, PSL 收纳 -{len(raw) - len(doms)})")
+            print(f"[ok] {name}.rsc  手工 {len(manual)} + 上游 {len(auto)} (原始 {len(raw)}, PSL 收纳)")
         elif cfg["type"] == "domain":
             doms = sorted(set().union(*(parse_domains(t) for t in texts)))
             if len(doms) < MIN_ENTRIES:
