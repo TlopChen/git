@@ -40,7 +40,7 @@ add name=sync-rules interval=1d on-event="\
 
 ```
 python3 /srv/github-mirror/gen_rules.py        # 手动立即生成
-# 或等每日 cron（0 6 * * *），日志在 /var/log/ros-rules-gen.log
+# 或等每日 cron（0 6 * * *），日志在 /var/log/ros-rules-daily.log
 ```
 
 生成器与源配置在 `ros/generator/`（`gen_rules.py`、`sources.json`、`repos.json`）。
