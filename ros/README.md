@@ -14,7 +14,8 @@
 | `telegram.rsc` | `ROS_TELEGRAM` | Telegram 网段 |
 | `blacklist.rsc` | `ROS_BLACKLIST` | 被墙 IP 服务合集（Telegram + Twitter），按需扩充 |
 | `lan.rsc` | `ROS_LAN_LOCAL` | 内网/保留网段 |
-| `ad_domains.domains.txt` | —（DNS 层） | 广告域名表（约 28 万条），供 OxiDNS 等 DNS 服务使用 |
+
+注：不做 DNS 层广告域名表——ROS 的 DNS 性能有限，域名级拦截如以后有需要，用小规模精选表在 OxiDNS 上单独做。
 
 ## ROS 端用法
 
