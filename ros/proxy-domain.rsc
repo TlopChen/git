@@ -1,4 +1,4 @@
-#proxy-domain — 手工 4082 条 + 上游 1115 条, 2026-08-29 04:11:13 由 gen_rules.py 生成
+#proxy-domain — 手工 4082 条 + 上游 1115 条, 2026-08-29 06:00:03 由 gen_rules.py 生成
 # 全部为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
 /ip dns static remove [find address-list=blacklist]
