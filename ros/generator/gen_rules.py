@@ -149,16 +149,23 @@ def dedup_suffix(doms):
 
 
 def parse_surge_domains(text):
-    """从 Surge 规则行（DOMAIN-SUFFIX,x / DOMAIN,x）和裸域名行提取可静态化的域名。
+    """提取可静态化的域名，支持三种行格式：
 
-    正则(/…/)、通配符(*)、DOMAIN-KEYWORD 表达不了 static FWD 的语义，跳过；
-    DOMAIN-SUFFIX 与 DOMAIN 在 match-subdomain=yes 下语义相同，都按裸域名输出。
+    Surge 规则行（DOMAIN-SUFFIX,x / DOMAIN,x）、Clash payload YAML（- '+.x'）、
+    裸域名行（.x / +.x / x）。正则(/…/)、通配符(*)、DOMAIN-KEYWORD 表达不了
+    static FWD 的语义，跳过；DOMAIN-SUFFIX/DOMAIN/裸域/+./. 在
+    match-subdomain=yes 下语义相同，都按裸域名输出。
     """
     doms = set()
     for line in text.splitlines():
         line = re.sub(r"//.*$", "", line).split("#", 1)[0].strip()
+        if line.startswith("payload:") or line.startswith("- "):
+            line = line[2:].strip().strip("'\"")
+            line = re.sub(r"//.*$", "", line).split("#", 1)[0].strip()
         if not line:
             continue
+        if line.startswith("+."):
+            line = line[2:]
         if line.startswith("/") or "*" in line:
             continue
         if "," in line:

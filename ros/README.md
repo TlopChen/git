@@ -12,7 +12,7 @@
 | `cn-unicom.rsc` | `ROS_CN_UNICOM` | 中国联通网段 |
 | `cn-cernet.rsc` | `ROS_CN_CERNET` | 教育网（CERNET）网段 |
 | `blacklist.rsc` | `ROS_BLACKLIST` | 被墙 IP 服务合集（Telegram + Twitter + MikroTik），按需扩充 |
-| `proxy-domain.rsc` | `blacklist`（DNS 静态） | 代理侧域名 FWD 表（Sukka global+ai+stream+telegram，~1500 条，PSL 收敛到注册域，零正则，match-subdomain 覆盖子域） |
+| `proxy-domain.rsc` | `blacklist`（DNS 静态） | 代理侧域名 FWD 表（Sukka global/ai/stream/telegram + Loyalsoldier gfw，约 4400 条，PSL 收敛到注册域，零正则，match-subdomain 覆盖子域） |
 
 注：不做 DNS 层广告域名表——ROS 的 DNS 性能有限，域名级拦截如以后有需要，用小规模精选表在 OxiDNS 上单独做。
 

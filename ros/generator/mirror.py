@@ -30,9 +30,10 @@ CONTENT_TYPES = {
     ".yaml": "text/yaml; charset=utf-8",
     ".yml": "text/yaml; charset=utf-8",
     ".txt": "text/plain; charset=utf-8",
+    ".conf": "text/plain; charset=utf-8",
     ".module": "text/plain; charset=utf-8",
     ".snippet": "text/plain; charset=utf-8",
-    ".conf": "text/plain; charset=utf-8",
+    ".rsc": "text/plain; charset=utf-8",
     ".js": "text/javascript; charset=utf-8",
     ".json": "application/json",
     ".sh": "text/x-shellscript; charset=utf-8",
@@ -54,43 +55,43 @@ def git(*args, cwd=None):
                    capture_output=True, timeout=GIT_TIMEOUT)
 
 
-    def materialize(owner, repo, branch, rel):
-        """确保 worktree 里存在 rel 指向的文件且尽量新鲜，返回本地路径。
+def materialize(owner, repo, branch, rel):
+    """确保 worktree 里存在 rel 指向的文件且尽量新鲜，返回本地路径。
 
-        不走 worktree/index（空索引下 checkout pathspec 会匹配失败），
-        直接 rev-parse 拿 blob OID 再 cat-file 懒加载内容，严格只取该文件。
-        """
-        key = f"{owner}__{repo}"
-        wd = os.path.join(REPO_DIR, key)
-        with repo_lock(key):
-            target = os.path.join(wd, rel)
-            if (os.path.isfile(target) and os.path.getsize(target) > 0
-                    and time.time() - os.path.getmtime(target) < TTL):
-                return target
-            if not os.path.isdir(os.path.join(wd, ".git")):
-                git("clone", "--quiet", "--depth", "1", "--filter=blob:none",
-                    "--no-checkout", f"git@github.com:{owner}/{repo}.git", wd)
-            git("fetch", "--quiet", "--depth", "1", "origin", branch, cwd=wd)
-            oid = subprocess.run(
-                ["git", "rev-parse", f"FETCH_HEAD:{rel}"], cwd=wd, check=True,
-                capture_output=True, timeout=GIT_TIMEOUT, text=True).stdout.strip()
-            os.makedirs(os.path.dirname(target), exist_ok=True)
-            try:
-                with open(target, "wb") as fh:
-                    subprocess.run(["git", "cat-file", "blob", oid], cwd=wd,
-                                   check=True, stdout=fh, timeout=GIT_TIMEOUT)
-            except Exception:
-                # 失败时清掉被截断的空文件，防止 0 字节缓存被 TTL 投毒
-                try:
-                    os.remove(target)
-                except OSError:
-                    pass
-                raise
-            if os.path.getsize(target) == 0:
-                os.remove(target)
-                raise RuntimeError(f"upstream blob is empty: {owner}/{repo}@{branch}:{rel}")
-            os.utime(target, None)
+    不走 worktree/index（空索引下 checkout pathspec 会匹配失败），
+    直接 rev-parse 拿 blob OID 再 cat-file 懒加载内容，严格只取该文件。
+    """
+    key = f"{owner}__{repo}"
+    wd = os.path.join(REPO_DIR, key)
+    with repo_lock(key):
+        target = os.path.join(wd, rel)
+        if (os.path.isfile(target) and os.path.getsize(target) > 0
+                and time.time() - os.path.getmtime(target) < TTL):
             return target
+        if not os.path.isdir(os.path.join(wd, ".git")):
+            git("clone", "--quiet", "--depth", "1", "--filter=blob:none",
+                "--no-checkout", f"git@github.com:{owner}/{repo}.git", wd)
+        git("fetch", "--quiet", "--depth", "1", "origin", branch, cwd=wd)
+        oid = subprocess.run(
+            ["git", "rev-parse", f"FETCH_HEAD:{rel}"], cwd=wd, check=True,
+            capture_output=True, timeout=GIT_TIMEOUT, text=True).stdout.strip()
+        os.makedirs(os.path.dirname(target), exist_ok=True)
+        try:
+            with open(target, "wb") as fh:
+                subprocess.run(["git", "cat-file", "blob", oid], cwd=wd,
+                               check=True, stdout=fh, timeout=GIT_TIMEOUT)
+        except Exception:
+            # 失败时清掉被截断的空文件，防止 0 字节缓存被 TTL 投毒
+            try:
+                os.remove(target)
+            except OSError:
+                pass
+            raise
+        if os.path.getsize(target) == 0:
+            os.remove(target)
+            raise RuntimeError(f"upstream blob is empty: {owner}/{repo}@{branch}:{rel}")
+        os.utime(target, None)
+        return target
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -156,11 +157,14 @@ class Handler(BaseHTTPRequestHandler):
         try:
             materialize(owner, repo, branch, rel)
             cache = "FRESH"
-        except subprocess.CalledProcessError:
+        except subprocess.CalledProcessError as e:
+            err = (e.stderr or b"").decode(errors="replace").strip() if e.stderr else ""
+            print(f"[fetch-404] {owner}/{repo}@{branch}:{rel} rc={e.returncode} {err}", flush=True)
             if not os.path.isfile(target):
                 return self.send_body(404, b'{"error": "not found in repo (check branch/path)"}')
             cache = "STALE"
-        except Exception:
+        except Exception as e:
+            print(f"[fetch-502] {owner}/{repo}@{branch}:{rel} {type(e).__name__}: {e}", flush=True)
             if not os.path.isfile(target):
                 return self.send_body(502, b'{"error": "upstream fetch failed"}')
             cache = "STALE"
