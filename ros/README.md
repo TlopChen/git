@@ -12,6 +12,7 @@
 | `cn-unicom.rsc` | `ROS_CN_UNICOM` | 中国联通网段 |
 | `cn-cernet.rsc` | `ROS_CN_CERNET` | 教育网（CERNET）网段 |
 | `blacklist.rsc` | `ROS_BLACKLIST` | 被墙 IP 服务合集（Telegram + Twitter + MikroTik），按需扩充 |
+| `proxy-domain.rsc` | `blacklist`（DNS 静态） | 代理侧域名 FWD 表（Sukka global+ai+stream+telegram，约 1600 条，match-subdomain 自动补全子域） |
 
 注：不做 DNS 层广告域名表——ROS 的 DNS 性能有限，域名级拦截如以后有需要，用小规模精选表在 OxiDNS 上单独做。
 
@@ -49,6 +50,13 @@ python3 /srv/github-mirror/gen_rules.py        # 手动立即生成
 
 - [metowolf/iplist](https://github.com/metowolf/iplist) — 运营商/国家 CIDR
 - [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) — cncidr / telegramcidr / lancidr
-- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) — Twitter IP 段、广告域名表
+- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) — Twitter IP 段
+- [Sukka's Ruleset](https://ruleset.skk.moe)（sukkalab/ruleset.skk.moe）— 代理侧域名合集（AGPL-3.0）
 
 数据版权归上游项目所有，本仓库仅做格式转换与聚合，供个人网络使用。
+
+## 导入顺序注意事项
+
+`proxy-domain.rsc` 只清理带 `comment="ros-rules-auto"` 标记的条目，与手工维护的
+gfw.rsc（按 address-list 整表重建）互不覆盖。但 gfw.rsc 的第一行会清掉**所有**
+blacklist 静态条目——因此若两者都用，**先导入 gfw.rsc，再导入 proxy-domain.rsc**。

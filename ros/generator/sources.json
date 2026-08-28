@@ -44,5 +44,18 @@
     ],
     "asn": ["AS51894"],
     "comment": "AS51894 = Mikrotikls SIA（MikroTik 官网/下载/云服务），RIPEstat 实时取段"
+  },
+  "proxy-domain": {
+    "type": "rosdns",
+    "list": "blacklist",
+    "forward-to": "DNS",
+    "marker": "ros-rules-auto",
+    "sources": [
+      "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/global.conf",
+      "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/ai.conf",
+      "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/stream.conf",
+      "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/telegram.conf"
+    ],
+    "comment": "Sukka 规则集：代理侧域名 → FWD 到 DNS 上游并打标 blacklist"
   }
 }
