@@ -35,13 +35,6 @@
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/cernet.txt"
     ]
   },
-  "telegram": {
-    "type": "cidr",
-    "list": "ROS_TELEGRAM",
-    "sources": [
-      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
-    ]
-  },
   "blacklist": {
     "type": "cidr",
     "list": "ROS_BLACKLIST",
@@ -51,12 +44,5 @@
     ],
     "asn": ["AS51894"],
     "comment": "AS51894 = Mikrotikls SIA（MikroTik 官网/下载/云服务），RIPEstat 实时取段"
-  },
-  "lan": {
-    "type": "cidr",
-    "list": "ROS_LAN_LOCAL",
-    "sources": [
-      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
-    ]
   }
 }

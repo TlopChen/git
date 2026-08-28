@@ -11,9 +11,7 @@
 | `cn-mobile.rsc` | `ROS_CN_MOBILE` | 中国移动网段 |
 | `cn-unicom.rsc` | `ROS_CN_UNICOM` | 中国联通网段 |
 | `cn-cernet.rsc` | `ROS_CN_CERNET` | 教育网（CERNET）网段 |
-| `telegram.rsc` | `ROS_TELEGRAM` | Telegram 网段 |
-| `blacklist.rsc` | `ROS_BLACKLIST` | 被墙 IP 服务合集（Telegram + Twitter），按需扩充 |
-| `lan.rsc` | `ROS_LAN_LOCAL` | 内网/保留网段 |
+| `blacklist.rsc` | `ROS_BLACKLIST` | 被墙 IP 服务合集（Telegram + Twitter + MikroTik），按需扩充 |
 
 注：不做 DNS 层广告域名表——ROS 的 DNS 性能有限，域名级拦截如以后有需要，用小规模精选表在 OxiDNS 上单独做。
 
