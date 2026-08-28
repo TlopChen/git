@@ -1,0 +1,66 @@
+{
+  "cn": {
+    "type": "cidr",
+    "list": "ROS_CN",
+    "sources": [
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt",
+      "https://raw.githubusercontent.com/metowolf/iplist/master/data/country/CN.txt"
+    ]
+  },
+  "cn-telecom": {
+    "type": "cidr",
+    "list": "ROS_CN_TELECOM",
+    "sources": [
+      "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinatelecom.txt"
+    ]
+  },
+  "cn-mobile": {
+    "type": "cidr",
+    "list": "ROS_CN_MOBILE",
+    "sources": [
+      "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinamobile.txt"
+    ]
+  },
+  "cn-unicom": {
+    "type": "cidr",
+    "list": "ROS_CN_UNICOM",
+    "sources": [
+      "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinaunicom.txt"
+    ]
+  },
+  "cn-cernet": {
+    "type": "cidr",
+    "list": "ROS_CN_CERNET",
+    "sources": [
+      "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/cernet.txt"
+    ]
+  },
+  "telegram": {
+    "type": "cidr",
+    "list": "ROS_TELEGRAM",
+    "sources": [
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
+    ]
+  },
+  "blacklist": {
+    "type": "cidr",
+    "list": "ROS_BLACKLIST",
+    "sources": [
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"
+    ]
+  },
+  "lan": {
+    "type": "cidr",
+    "list": "ROS_LAN_LOCAL",
+    "sources": [
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
+    ]
+  },
+  "ad_domains": {
+    "type": "domain",
+    "sources": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_Domain.list"
+    ]
+  }
+}
