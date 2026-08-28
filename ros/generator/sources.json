@@ -48,7 +48,9 @@
     "sources": [
       "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt",
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"
-    ]
+    ],
+    "asn": ["AS51894"],
+    "comment": "AS51894 = Mikrotikls SIA（MikroTik 官网/下载/云服务），RIPEstat 实时取段"
   },
   "lan": {
     "type": "cidr",
