@@ -181,13 +181,20 @@ def parse_surge_domains(text):
     return sorted(doms)
 
 
-def rsc_header(name, list_name, count):
+def rsc_header(name, list_name, count, remove_lines=None):
+    """CIDR 类 .rsc 的头：注释 + 整表重建的 remove 行。
+
+    remove_lines 缺省按列表名整清；对与 DNS 动态条目共用的列表
+    （如 blacklist）必须传限定注释的 remove，避免误杀动态条目。
+    """
     ts = time.strftime("%F %T")
-    return (f"#{name} — {count} 条, {ts} 由 gen_rules.py 生成\n"
-            f"# ROS 拉取: /tool fetch url=\"http://192.168.40.1:18080/ros/{name}.rsc\" mode=http\n"
-            f"#         /import file-name={name}.rsc\n"
-            "/ip firewall address-list\n"
-            f"remove [find list={list_name}]\n")
+    lines = [f"#{name} — {count} 条, {ts} 由 gen_rules.py 生成\n",
+             f"# ROS 拉取: /tool fetch url=\"http://192.168.40.1:18080/ros/{name}.rsc\" mode=http\n",
+             f"#         /import file-name={name}.rsc\n",
+             "/ip firewall address-list\n"]
+    for rl in (remove_lines or [f"remove [find list={list_name}]"]):
+        lines.append(rl + "\n")
+    return "".join(lines)
 
 
 def main():
@@ -206,10 +213,17 @@ def main():
             merged = sorted(m4 + m6, key=lambda n: (n.version, int(n.network_address)))
             if len(merged) < MIN_ENTRIES:
                 raise SystemExit(f"[abort] {name}: 仅 {len(merged)} 条, 疑似拉取失败, 不生成")
+            marker = cfg.get("marker")
+            remove_lines = None
+            if marker:
+                # 带 marker 的列表与 DNS 动态条目共存：只清自己 + 迁移旧列表名
+                remove_lines = [f"remove [find where list=\"{cfg['list']}\" && comment=\"{marker}\"]"]
+                remove_lines += [f"remove [find list={old}]" for old in cfg.get("legacy_lists", [])]
             with open(os.path.join(OUT, f"{name}.rsc"), "w") as fh:
-                fh.write(rsc_header(name, cfg["list"], len(merged)))
+                fh.write(rsc_header(name, cfg["list"], len(merged), remove_lines))
                 for n in merged:
-                    fh.write(f"add list={cfg['list']} address={n.with_prefixlen}\n")
+                    cmt = f" comment=\"{marker}\"" if marker else ""
+                    fh.write(f"add list={cfg['list']} address={n.with_prefixlen}{cmt}\n")
             print(f"[ok] {name}.rsc  共 {len(merged)} 条 (v4 {len(m4)} + v6 {len(m6)})")
         elif cfg["type"] == "rosdns":
             raw = set().union(*(parse_surge_domains(t) for t in texts))

@@ -37,7 +37,9 @@
   },
   "blacklist": {
     "type": "cidr",
-    "list": "ROS_BLACKLIST",
+    "list": "blacklist",
+    "marker": "ros-rules-auto",
+    "legacy_lists": ["ROS_BLACKLIST"],
     "sources": [
       "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt",
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"

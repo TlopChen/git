@@ -11,7 +11,7 @@
 | `cn-mobile.rsc` | `ROS_CN_MOBILE` | 中国移动网段 |
 | `cn-unicom.rsc` | `ROS_CN_UNICOM` | 中国联通网段 |
 | `cn-cernet.rsc` | `ROS_CN_CERNET` | 教育网（CERNET）网段 |
-| `blacklist.rsc` | `ROS_BLACKLIST` | 被墙 IP 服务合集（Telegram + Twitter + MikroTik），按需扩充 |
+| `blacklist.rsc` | `blacklist`（与域名分流共用） | 被墙 IP 服务合集（Telegram + Twitter + MikroTik），带 `ros-rules-auto` 标记，只清理自身不动 DNS 动态条目；导入时自动迁移旧列表 ROS_BLACKLIST |
 | `proxy-domain.rsc` | `blacklist`（DNS 静态） | 代理侧域名 FWD 表（手工收录 + Sukka global/ai/stream/telegram + Loyalsoldier gfw，PSL 收敛到注册域，零正则，match-subdomain 覆盖子域） |
 
 注：不做 DNS 层广告域名表——ROS 的 DNS 性能有限，域名级拦截如以后有需要，用小规模精选表在 OxiDNS 上单独做。
@@ -40,7 +40,7 @@ add name=sync-rules interval=1d on-event="\
 
 ```
 python3 /srv/github-mirror/gen_rules.py        # 手动立即生成
-# 或等每日 cron（0 6 * * *），日志在 /var/log/ros-rules-daily.log
+# 或等每日 cron（0 6 * * *），日志在 /var/log/ros-rules-gen.log
 ```
 
 生成器与源配置在 `ros/generator/`（`gen_rules.py`、`sources.json`、`repos.json`）。
