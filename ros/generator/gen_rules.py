@@ -28,7 +28,10 @@ def fetch(url):
     for _ in range(3):
         try:
             with urllib.request.urlopen(MIRROR + url, timeout=120) as r:
-                return r.read().decode("utf-8", "replace")
+                data = r.read()
+            if not data:
+                raise ValueError("empty body")
+            return data.decode("utf-8", "replace")
         except Exception as e:
             err = e
             time.sleep(3)
@@ -82,6 +85,67 @@ def fetch_asn_prefixes(asn):
             err = e
             time.sleep(3)
     raise SystemExit(f"[fail] RIPEstat {asn}: {err}")
+
+
+PSL_URL = "https://raw.githubusercontent.com/publicsuffix/list/main/public_suffix_list.dat"
+PSL_CACHE = os.path.join(BASE, "psl.dat")
+PSL_TTL = 30 * 86400  # PSL 变化很慢，30 天刷新一次
+
+
+def load_psl():
+    """加载 Public Suffix List，返回 (exact, wild, exc) 三个规则集，全部小写 punycode。"""
+    if (not os.path.isfile(PSL_CACHE) or os.path.getsize(PSL_CACHE) == 0
+            or time.time() - os.path.getmtime(PSL_CACHE) > PSL_TTL):
+        with open(PSL_CACHE, "w", encoding="utf-8") as fh:
+            fh.write(fetch(PSL_URL))
+    exact, wild, exc = set(), set(), set()
+    for line in open(PSL_CACHE, encoding="utf-8"):
+        line = line.split("//", 1)[0].strip().lower()
+        if not line or line.startswith("="):
+            continue
+        key, rule = "exact", line
+        if rule.startswith("!"):
+            key, rule = "exc", rule[1:]
+        elif rule.startswith("*."):
+            key, rule = "wild", rule[2:]
+        try:
+            rule = rule.encode("idna").decode()
+        except Exception:
+            pass
+        {"exact": exact, "wild": wild, "exc": exc}[key].add(rule)
+    return exact, wild, exc
+
+
+def registrable(dom, psl):
+    """按 PSL 求注册域（如 a.b.example.com → example.com）。
+
+    求不出（域本身就是公共后缀，如 'ai'）或命中例外规则时原样返回，绝不放大。
+    """
+    exact, wild, exc = psl
+    labels = dom.split(".")
+    for i in range(len(labels)):
+        if ".".join(labels[i:]) in exc:
+            return dom
+    best = 0  # 命中的公共后缀长度（标签数）
+    for i in range(len(labels)):
+        cand = ".".join(labels[i:])
+        if cand in exact and len(labels) - i > best:
+            best = len(labels) - i
+        if cand in wild and i > 0 and len(labels) - i + 1 > best:
+            best = len(labels) - i + 1
+    if best == 0 or len(labels) <= best:
+        return dom
+    return ".".join(labels[-(best + 1):])
+
+
+def dedup_suffix(doms):
+    """后缀去重：父域已在集合中时丢弃子域（match-subdomain 已覆盖）。"""
+    final = set()
+    for d in sorted(doms, key=lambda x: x.count(".")):
+        labels = d.split(".")
+        if not any(".".join(labels[i:]) in final for i in range(1, len(labels))):
+            final.add(d)
+    return sorted(final)
 
 
 def parse_surge_domains(text):
@@ -141,19 +205,23 @@ def main():
                     fh.write(f"add list={cfg['list']} address={n.with_prefixlen}\n")
             print(f"[ok] {name}.rsc  共 {len(merged)} 条 (v4 {len(m4)} + v6 {len(m6)})")
         elif cfg["type"] == "rosdns":
-            doms = sorted(set().union(*(parse_surge_domains(t) for t in texts)))
+            raw = set().union(*(parse_surge_domains(t) for t in texts))
+            psl = load_psl()
+            doms = dedup_suffix(registrable(d, psl) for d in raw)
             if len(doms) < MIN_ENTRIES:
                 raise SystemExit(f"[abort] {name}: 仅 {len(doms)} 条, 疑似拉取失败, 不生成")
             marker = cfg.get("marker", "ros-rules-auto")
             with open(os.path.join(OUT, f"{name}.rsc"), "w") as fh:
-                fh.write(f"#{name} — {len(doms)} 条, {time.strftime('%F %T')} 由 gen_rules.py 生成\n")
+                fh.write(f"#{name} — {len(doms)} 条(原始 {len(raw)},PSL 收纳), "
+                         f"{time.strftime('%F %T')} 由 gen_rules.py 生成\n")
+                fh.write(f"# 全部为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖\n")
                 fh.write(f"# 导入顺序：在手工维护的同类脚本之后导入（本脚本只清理 comment={marker} 的条目）\n")
                 fh.write(f"/ip dns static remove [find where comment=\"{marker}\"]\n")
                 fh.write("/ip dns static\n")
                 for d in doms:
                     fh.write(f"add address-list={cfg['list']} forward-to={cfg['forward-to']} "
                              f"match-subdomain=yes type=FWD name={d} comment=\"{marker}\"\n")
-            print(f"[ok] {name}.rsc  {len(doms)} 条")
+            print(f"[ok] {name}.rsc  {len(doms)} 条 (原始 {len(raw)}, PSL 收纳 -{len(raw) - len(doms)})")
         elif cfg["type"] == "domain":
             doms = sorted(set().union(*(parse_domains(t) for t in texts)))
             if len(doms) < MIN_ENTRIES:
