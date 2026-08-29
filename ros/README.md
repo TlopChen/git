@@ -6,11 +6,11 @@
 
 | 文件 | 地址表 | 内容 |
 |---|---|---|
-| `cn.rsc` | `ROS_CN` | 中国大陆全部 CIDR（Loyalsoldier cncidr ∪ metowolf CN，已合并相邻网段） |
-| `cn-telecom.rsc` | `ROS_CN_TELECOM` | 中国电信网段 |
-| `cn-mobile.rsc` | `ROS_CN_MOBILE` | 中国移动网段 |
-| `cn-unicom.rsc` | `ROS_CN_UNICOM` | 中国联通网段 |
-| `cn-cernet.rsc` | `ROS_CN_CERNET` | 教育网（CERNET）网段 |
+| `cn.rsc` | `CN` | 中国大陆全部 CIDR（Loyalsoldier cncidr ∪ metowolf CN，已合并相邻网段） |
+| `cn-telecom.rsc` | `CT` | 中国电信网段 |
+| `cn-mobile.rsc` | `CM` | 中国移动网段 |
+| `cn-unicom.rsc` | `CU` | 中国联通网段 |
+| `cn-cernet.rsc` | `CC` | 教育网（CERNET）网段 |
 | `blacklist.rsc` | `blacklist`（与域名分流共用） | 被墙 IP 服务合集（Telegram + Twitter + MikroTik），带 `ros-rules-auto` 标记，只清理自身不动 DNS 动态条目；导入时自动迁移旧列表 ROS_BLACKLIST |
 | `proxy-domain.rsc` | `blacklist`（DNS 静态） | 代理侧域名 FWD 表（手工收录 + Sukka global/ai/stream/telegram + Loyalsoldier gfw，PSL 收敛到注册域，零正则，match-subdomain 覆盖子域） |
 

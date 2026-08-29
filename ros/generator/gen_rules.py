@@ -214,11 +214,16 @@ def main():
             if len(merged) < MIN_ENTRIES:
                 raise SystemExit(f"[abort] {name}: 仅 {len(merged)} 条, 疑似拉取失败, 不生成")
             marker = cfg.get("marker")
+            legacy = cfg.get("legacy_lists", [])
             remove_lines = None
             if marker:
                 # 带 marker 的列表与 DNS 动态条目共存：只清自己 + 迁移旧列表名
                 remove_lines = [f"remove [find where list=\"{cfg['list']}\" && comment=\"{marker}\"]"]
-                remove_lines += [f"remove [find list={old}]" for old in cfg.get("legacy_lists", [])]
+                remove_lines += [f"remove [find list={old}]" for old in legacy]
+            elif legacy:
+                # 无 marker 的整表重建：清新名 + 迁移旧名
+                remove_lines = [f"remove [find list={cfg['list']}]"]
+                remove_lines += [f"remove [find list={old}]" for old in legacy]
             with open(os.path.join(OUT, f"{name}.rsc"), "w") as fh:
                 fh.write(rsc_header(name, cfg["list"], len(merged), remove_lines))
                 for n in merged:

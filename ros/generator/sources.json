@@ -1,7 +1,8 @@
 {
   "cn": {
     "type": "cidr",
-    "list": "ROS_CN",
+    "list": "CN",
+    "legacy_lists": ["ROS_CN"],
     "sources": [
       "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt",
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/country/CN.txt"
@@ -9,28 +10,32 @@
   },
   "cn-telecom": {
     "type": "cidr",
-    "list": "ROS_CN_TELECOM",
+    "list": "CT",
+    "legacy_lists": ["ROS_CN_TELECOM"],
     "sources": [
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinatelecom.txt"
     ]
   },
   "cn-mobile": {
     "type": "cidr",
-    "list": "ROS_CN_MOBILE",
+    "list": "CM",
+    "legacy_lists": ["ROS_CN_MOBILE"],
     "sources": [
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinamobile.txt"
     ]
   },
   "cn-unicom": {
     "type": "cidr",
-    "list": "ROS_CN_UNICOM",
+    "list": "CU",
+    "legacy_lists": ["ROS_CN_UNICOM"],
     "sources": [
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinaunicom.txt"
     ]
   },
   "cn-cernet": {
     "type": "cidr",
-    "list": "ROS_CN_CERNET",
+    "list": "CC",
+    "legacy_lists": ["ROS_CN_CERNET"],
     "sources": [
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/cernet.txt"
     ]
