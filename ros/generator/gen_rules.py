@@ -204,6 +204,7 @@ def main():
         if cfg["type"] == "cidr":
             extra = [ipaddress.ip_network(p) for p in
                      (q for asn in cfg.get("asn", []) for q in fetch_asn_prefixes(asn))]
+            extra += [ipaddress.ip_network(c) for c in cfg.get("extra_cidrs", [])]
             v4 = [n for t in texts for n in parse_cidrs(t) if n.version == 4] \
                 + [n for n in extra if n.version == 4]
             v6 = [n for t in texts for n in parse_cidrs(t) if n.version == 6] \
@@ -216,9 +217,14 @@ def main():
             marker = cfg.get("marker")
             legacy = cfg.get("legacy_lists", [])
             remove_lines = None
-            if marker:
+            if cfg.get("remove_mode") == "static":
+                # 清全部静态、保留动态（与 DNS 动态注入共存的列表用此模式），
+                # 重建内容必须是全量超集，否则会丢掉旧表独有网段
+                remove_lines = [f'remove [find where list="{cfg["list"]}" && dynamic=no]']
+                remove_lines += [f"remove [find list={old}]" for old in legacy]
+            elif marker:
                 # 带 marker 的列表与 DNS 动态条目共存：只清自己 + 迁移旧列表名
-                remove_lines = [f"remove [find where list=\"{cfg['list']}\" && comment=\"{marker}\"]"]
+                remove_lines = [f'remove [find where list="{cfg["list"]}" && comment="{marker}"]']
                 remove_lines += [f"remove [find list={old}]" for old in legacy]
             elif legacy:
                 # 无 marker 的整表重建：清新名 + 迁移旧名
@@ -226,14 +232,29 @@ def main():
                 remove_lines += [f"remove [find list={old}]" for old in legacy]
             with open(os.path.join(OUT, f"{name}.rsc"), "w") as fh:
                 fh.write(rsc_header(name, cfg["list"], len(merged), remove_lines))
-                for n in merged:
-                    cmt = f" comment=\"{marker}\"" if marker else ""
+                cmt = f' comment="{marker}"' if marker else ""
+                for n in m4:
                     fh.write(f"add list={cfg['list']} address={n.with_prefixlen}{cmt}\n")
+                # /ip 表不收 IPv6；确有 v6 需求时在 sources.json 开 ipv6 开关
+                if m6 and cfg.get("ipv6"):
+                    fh.write("\n/ipv6 firewall address-list\n")
+                    for n in m6:
+                        fh.write(f"add list={cfg['list']} address={n.with_prefixlen}{cmt}\n")
+                if m6 and not cfg.get("ipv6"):
+                    fh.write(f"# （{len(m6)} 条 IPv6 网段未导入：内网未启用 IPv6，ipv6=true 可开启）\n")
             print(f"[ok] {name}.rsc  共 {len(merged)} 条 (v4 {len(m4)} + v6 {len(m6)})")
         elif cfg["type"] == "rosdns":
             raw = set().union(*(parse_surge_domains(t) for t in texts))
             psl = load_psl()
             auto = dedup_suffix(registrable(d, psl) for d in raw)
+            # 排除名单：命中项及其所有子域从自动层剔除（如 bing.com 未被墙，不该走代理）
+            excluded = set()
+            if cfg.get("exclude"):
+                ep = cfg["exclude"]
+                excluded = {l.strip().lower() for l in open(ep, encoding="utf-8")
+                            if l.strip() and not l.startswith("#")}
+                auto = [d for d in auto
+                        if not any(d == e or d.endswith("." + e) for e in excluded)]
             manual = []
             if cfg.get("manual"):
                 mp = cfg["manual"]

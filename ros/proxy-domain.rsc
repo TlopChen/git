@@ -1,4 +1,4 @@
-#proxy-domain — 手工 4082 条 + 上游 1115 条, 2026-08-29 13:26:35 由 gen_rules.py 生成
+#proxy-domain — 手工 4082 条 + 上游 1114 条, 2026-08-29 20:57:32 由 gen_rules.py 生成
 # 全部为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
 /ip dns static remove [find address-list=blacklist]
@@ -4207,7 +4207,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bili
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bilinovel.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=binance.cc comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=binance.me comment="ros-rules-auto"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bing.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bitbucket.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bitbucket.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bitly.com comment="ros-rules-auto"

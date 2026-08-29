@@ -44,7 +44,9 @@
     "type": "cidr",
     "list": "blacklist",
     "marker": "ros-rules-auto",
+    "remove_mode": "static",
     "legacy_lists": ["ROS_BLACKLIST"],
+    "extra_cidrs": ["5.28.192.0/18", "109.239.140.0/24"],
     "sources": [
       "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt",
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"
@@ -58,6 +60,7 @@
     "forward-to": "DNS",
     "marker": "ros-rules-auto",
     "manual": "/srv/github-mirror/manual-blacklist.txt",
+    "exclude": "/srv/github-mirror/exclude-blacklist.txt",
     "sources": [
       "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/global.conf",
       "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/ai.conf",
