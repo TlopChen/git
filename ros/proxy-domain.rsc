@@ -1,4 +1,4 @@
-#proxy-domain — 手工 4091 条 + 上游 1132 条, 2026-08-30 19:35:10 由 gen_rules.py 生成
+#proxy-domain — 手工 4090 条 + 上游 1132 条, 2026-08-30 19:36:16 由 gen_rules.py 生成
 # 全部为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
 /ip dns static remove [find address-list=blacklist]
@@ -2292,7 +2292,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mgoo
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mgstage.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mh4u.org comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mi.com comment="ros-rules-manual"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=microsoft.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=microvpn.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=midjourney.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mihua.org comment="ros-rules-manual"
