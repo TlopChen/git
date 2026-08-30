@@ -284,7 +284,6 @@ avoision.com
 axios.com
 axureformac.com
 azirevpn.com
-azurewebsites.net
 b-ok.cc
 babylonbee.com
 backchina.com
@@ -2159,7 +2158,6 @@ litenews.hk
 lithium.com
 liuxiaobo.net
 liuxiaotong.com
-live.com
 livecoin.net
 liveleak.com
 livemint.com
@@ -2373,7 +2371,6 @@ mpinews.com
 mrtweet.com
 msa-it.org
 msha.gov
-msn.com
 mstdn.social
 mswe1.org
 mthruf.com

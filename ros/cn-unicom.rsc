@@ -1,4 +1,4 @@
-#cn-unicom — 1907 条, 2026-08-30 20:49:17 由 gen_rules.py 生成
+#cn-unicom — 1907 条, 2026-08-30 21:04:16 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn-unicom.rsc" mode=http
 #         /import file-name=cn-unicom.rsc
 /ip firewall address-list

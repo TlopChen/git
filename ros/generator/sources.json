@@ -2,7 +2,9 @@
   "cn": {
     "type": "cidr",
     "list": "CN",
-    "legacy_lists": ["ROS_CN"],
+    "legacy_lists": [
+      "ROS_CN"
+    ],
     "sources": [
       "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt",
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/country/CN.txt"
@@ -11,7 +13,9 @@
   "cn-telecom": {
     "type": "cidr",
     "list": "CT",
-    "legacy_lists": ["ROS_CN_TELECOM"],
+    "legacy_lists": [
+      "ROS_CN_TELECOM"
+    ],
     "sources": [
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinatelecom.txt"
     ]
@@ -19,7 +23,9 @@
   "cn-mobile": {
     "type": "cidr",
     "list": "CM",
-    "legacy_lists": ["ROS_CN_MOBILE"],
+    "legacy_lists": [
+      "ROS_CN_MOBILE"
+    ],
     "sources": [
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinamobile.txt"
     ]
@@ -27,7 +33,9 @@
   "cn-unicom": {
     "type": "cidr",
     "list": "CU",
-    "legacy_lists": ["ROS_CN_UNICOM"],
+    "legacy_lists": [
+      "ROS_CN_UNICOM"
+    ],
     "sources": [
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinaunicom.txt"
     ]
@@ -35,7 +43,9 @@
   "cn-cernet": {
     "type": "cidr",
     "list": "CC",
-    "legacy_lists": ["ROS_CN_CERNET"],
+    "legacy_lists": [
+      "ROS_CN_CERNET"
+    ],
     "sources": [
       "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/cernet.txt"
     ]
@@ -45,13 +55,20 @@
     "list": "blacklist",
     "marker": "ros-rules-auto",
     "remove_mode": "static",
-    "legacy_lists": ["ROS_BLACKLIST"],
-    "extra_cidrs": ["5.28.192.0/18", "109.239.140.0/24"],
+    "legacy_lists": [
+      "ROS_BLACKLIST"
+    ],
+    "extra_cidrs": [
+      "5.28.192.0/18",
+      "109.239.140.0/24"
+    ],
     "sources": [
       "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt",
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"
     ],
-    "asn": ["AS51894"],
+    "asn": [
+      "AS51894"
+    ],
     "comment": "AS51894 = Mikrotikls SIA（MikroTik 官网/下载/云服务），RIPEstat 实时取段"
   },
   "proxy-domain": {
@@ -63,11 +80,12 @@
     "exclude": "/srv/github-mirror/exclude-blacklist.txt",
     "sources": [
       "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Proxy/Proxy_Domain.txt",
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list",
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Claude/Claude.list",
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Anthropic/Anthropic.list",
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list"
     ],
-    "comment": "代理侧域名(gfw.txt + blackmatrix7 AI 源)→ FWD 到 DNS 上游并打标 blacklist"
+    "comment": "代理侧域名(gfw.txt + blackmatrix7 Proxy/AI 源)→ FWD 到 DNS 上游并打标 blacklist"
   }
 }
