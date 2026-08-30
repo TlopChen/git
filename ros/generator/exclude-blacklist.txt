@@ -1,3 +1,4 @@
 # 从 blacklist 域名自动层排除的域名（含其全部子域）
 # 语义：这些域名不走代理 DNS，按普通流程解析
 bing.com
+microsoft.com
