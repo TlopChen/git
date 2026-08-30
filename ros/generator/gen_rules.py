@@ -149,14 +149,22 @@ def dedup_suffix(doms):
 
 
 def parse_surge_domains(text):
-    """提取可静态化的域名，支持三种行格式：
+    """提取可静态化的域名，支持三种行格式。
 
     Surge 规则行（DOMAIN-SUFFIX,x / DOMAIN,x）、Clash payload YAML（- '+.x'）、
     裸域名行（.x / +.x / x）。正则(/…/)、通配符(*)、DOMAIN-KEYWORD 表达不了
-    static FWD 的语义，跳过；DOMAIN-SUFFIX/DOMAIN/裸域/+./. 在
-    match-subdomain=yes 下语义相同，都按裸域名输出。
+    static FWD 的语义，跳过。
+
+    返回 (suffix, exact)：
+    - suffix：DOMAIN-SUFFIX 及其等价写法（+.x / .x / 裸域），语义是「整域及其
+      所有子域」，收敛成注册域后 match-subdomain=yes 输出。
+    - exact：DOMAIN,x 精确主机条目，语义是「只此一个主机名」。绝不收敛成注册域、
+      绝不加 match-subdomain，否则会把精确子域放大成整域（如
+      DOMAIN,apm-misaka.biliapi.net 被放大成 biliapi.net 整域走代理，直接卡
+      B 站国内 API，2026-08-30 事故）。
     """
-    doms = set()
+    suffix = set()
+    exact = set()
     for line in text.splitlines():
         line = re.sub(r"//.*$", "", line).split("#", 1)[0].strip()
         if line.startswith("payload:") or line.startswith("- "):
@@ -165,20 +173,26 @@ def parse_surge_domains(text):
         if not line:
             continue
         if line.startswith("+."):
-            line = line[2:]
+            val = line[2:]
+            if re.fullmatch(r"[A-Za-z0-9._-]+", val):
+                suffix.add(val.lower().lstrip(".").rstrip("."))
+            continue
         if line.startswith("/") or "*" in line:
             continue
         if "," in line:
             typ, _, val = line.partition(",")
             val = val.strip().split("/")[0].strip()
-            if typ.strip().upper() in ("DOMAIN-SUFFIX", "DOMAIN") and val:
-                doms.add(val.lower().rstrip("."))
+            t = typ.strip().upper()
+            if t == "DOMAIN-SUFFIX" and val and re.fullmatch(r"[A-Za-z0-9._-]+", val):
+                suffix.add(val.lower().rstrip("."))
+            elif t == "DOMAIN" and val and re.fullmatch(r"[A-Za-z0-9._-]+", val):
+                exact.add(val.lower().rstrip("."))
             continue
         if IP_RE.search(line):
             continue
         if "." in line and re.fullmatch(r"[A-Za-z0-9._-]+", line):
-            doms.add(line.lower().lstrip(".").rstrip("."))
-    return sorted(doms)
+            suffix.add(line.lower().lstrip(".").rstrip("."))
+    return sorted(suffix), sorted(exact)
 
 
 def rsc_header(name, list_name, count, remove_lines=None):
@@ -244,17 +258,27 @@ def main():
                     fh.write(f"# （{len(m6)} 条 IPv6 网段未导入：内网未启用 IPv6，ipv6=true 可开启）\n")
             print(f"[ok] {name}.rsc  共 {len(merged)} 条 (v4 {len(m4)} + v6 {len(m6)})")
         elif cfg["type"] == "rosdns":
-            raw = set().union(*(parse_surge_domains(t) for t in texts))
+            suffix_raw, exact_raw = set(), set()
+            for t in texts:
+                s, e = parse_surge_domains(t)
+                suffix_raw |= set(s)
+                exact_raw |= set(e)
             psl = load_psl()
-            auto = dedup_suffix(registrable(d, psl) for d in raw)
+            # 后缀域：收敛成注册域 + 后缀去重（match-subdomain 覆盖子域）
+            auto_suffix = dedup_suffix(registrable(d, psl) for d in suffix_raw)
+            # 精确域：完全限定 FQDN，不收敛、不去重（单个主机名语义），
+            # 输出时 match-subdomain=no，避免把精确子域放大成整域
+            auto_exact = sorted(exact_raw)
             # 排除名单：命中项及其所有子域从自动层剔除（如 bing.com 未被墙，不该走代理）
             excluded = set()
             if cfg.get("exclude"):
                 ep = cfg["exclude"]
                 excluded = {l.strip().lower() for l in open(ep, encoding="utf-8")
                             if l.strip() and not l.startswith("#")}
-                auto = [d for d in auto
-                        if not any(d == e or d.endswith("." + e) for e in excluded)]
+                auto_suffix = [d for d in auto_suffix
+                               if not any(d == e or d.endswith("." + e) for e in excluded)]
+                auto_exact = [d for d in auto_exact
+                              if not any(d == e or d.endswith("." + e) for e in excluded)]
             manual = []
             if cfg.get("manual"):
                 mp = cfg["manual"]
@@ -265,24 +289,28 @@ def main():
                     raise SystemExit(f"[abort] {name}: 手工域名文件不存在: {mp}")
             manual = sorted({d for d in manual
                              if "." in d and re.fullmatch(r"[A-Za-z0-9._-]+", d)})
-            auto = [d for d in auto if d not in set(manual)]
-            if len(auto) + len(manual) < MIN_ENTRIES:
-                raise SystemExit(f"[abort] {name}: 仅 {len(auto) + len(manual)} 条, 疑似拉取失败, 不生成")
+            auto = [d for d in auto_suffix if d not in set(manual)]
+            if len(auto) + len(auto_exact) + len(manual) < MIN_ENTRIES:
+                raise SystemExit(f"[abort] {name}: 仅 {len(auto) + len(auto_exact) + len(manual)} 条, 疑似拉取失败, 不生成")
             marker = cfg.get("marker", "ros-rules-auto")
             with open(os.path.join(OUT, f"{name}.rsc"), "w") as fh:
-                fh.write(f"#{name} — 手工 {len(manual)} 条 + 上游 {len(auto)} 条, "
+                fh.write(f"#{name} — 手工 {len(manual)} 条 + 上游 {len(auto) + len(auto_exact)} 条, "
                          f"{time.strftime('%F %T')} 由 gen_rules.py 生成\n")
-                fh.write(f"# 全部为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖\n")
+                fh.write(f"# 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖\n")
+                fh.write(f"# 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名\n")
                 fh.write(f"# 本脚本整表重建 {cfg['list']}，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）\n")
                 fh.write(f"/ip dns static remove [find address-list={cfg['list']}]\n")
-                fh.write("/ip dns static\n")
+                fh.write(f"/ip dns static\n")
                 for d in manual:
                     fh.write(f"add address-list={cfg['list']} forward-to={cfg['forward-to']} "
                              f"match-subdomain=yes type=FWD name={d} comment=\"ros-rules-manual\"\n")
                 for d in auto:
                     fh.write(f"add address-list={cfg['list']} forward-to={cfg['forward-to']} "
                              f"match-subdomain=yes type=FWD name={d} comment=\"{marker}\"\n")
-            print(f"[ok] {name}.rsc  手工 {len(manual)} + 上游 {len(auto)} (原始 {len(raw)}, PSL 收纳)")
+                for d in auto_exact:
+                    fh.write(f"add address-list={cfg['list']} forward-to={cfg['forward-to']} "
+                             f"match-subdomain=no type=FWD name={d} comment=\"{marker}\"\n")
+            print(f"[ok] {name}.rsc  手工 {len(manual)} + 上游 {len(auto) + len(auto_exact)} (后缀 {len(suffix_raw)} + 精确 {len(exact_raw)}, PSL 收纳)")
         elif cfg["type"] == "domain":
             doms = sorted(set().union(*(parse_domains(t) for t in texts)))
             if len(doms) < MIN_ENTRIES:
