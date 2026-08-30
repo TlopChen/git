@@ -4080,3 +4080,14 @@ zvereff.com
 zynamics.com
 zyxel.com
 zzcloud.me
+
+###国外AI补充（blackmatrix7 无目录的服务，2026-08-29）
+midjourney.com
+elevenlabs.io
+together.ai
+fireworks.ai
+ollama.com
+meta.ai
+llama.com
+gemini.com
+copilot.microsoft.com

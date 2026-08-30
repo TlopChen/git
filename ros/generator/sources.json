@@ -66,7 +66,11 @@
       "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/ai.conf",
       "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/stream.conf",
       "https://raw.githubusercontent.com/sukkalab/ruleset.skk.moe/master/List/non_ip/telegram.conf",
-      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Claude/Claude.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Anthropic/Anthropic.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list"
     ],
     "comment": "Sukka 规则集：代理侧域名 → FWD 到 DNS 上游并打标 blacklist"
   }
