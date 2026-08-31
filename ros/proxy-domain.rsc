@@ -1,4 +1,4 @@
-#proxy-domain — 手工 4087 条 + 上游 3383 条, 2026-08-31 06:01:03 由 gen_rules.py 生成
+#proxy-domain — 手工 4087 条 + 上游 3385 条, 2026-09-01 06:01:06 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
@@ -5174,6 +5174,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=getc
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=getcloudapp.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=getfreedur.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=getjetso.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=getmonero.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=getpricetag.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=getsocialscope.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gettrials.com comment="ros-rules-auto"
@@ -6132,6 +6133,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ngen
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=nhk-ondemand.jp comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=nhncorp.jp comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=nianticlabs.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=nicoseiga.jp comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=nighost.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=nih.gov comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=nikonpc.com comment="ros-rules-auto"
