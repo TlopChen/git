@@ -1,4 +1,4 @@
-#cn-mobile — 1493 条, 2026-09-01 06:00:18 由 gen_rules.py 生成
+#cn-mobile — 1493 条, 2026-09-02 06:00:19 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn-mobile.rsc" mode=http
 #         /import file-name=cn-mobile.rsc
 /ip firewall address-list
