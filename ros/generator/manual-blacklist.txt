@@ -4087,3 +4087,15 @@ meta.ai
 llama.com
 gemini.com
 copilot.microsoft.com
+
+###WSL/微软下载分流（WSL2 安装 Ubuntu 提速，2026-09-02）
+publicwsldistros.blob.core.windows.net
+wsldistrostorage.blob.core.windows.net
+wslstorestorage.blob.core.windows.net
+fe3.delivery.mp.microsoft.com
+tlu.dl.delivery.mp.microsoft.com
+dl.delivery.mp.microsoft.com
+displaycatalog.mp.microsoft.com
+apps.microsoft.com
+objects.githubusercontent.com
+raw.githubusercontent.com
