@@ -1,4 +1,4 @@
-#proxy-domain — 手工 4097 条 + 上游 3385 条, 2026-09-02 20:40:45 由 gen_rules.py 生成
+#proxy-domain — 手工 4092 条 + 上游 3385 条, 2026-09-02 22:40:54 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
@@ -226,7 +226,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=apkp
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=appadvice.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=appbrain.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=appledaily.com comment="ros-rules-manual"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=apps.microsoft.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=appshopper.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=appsocks.net comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=appspot.com comment="ros-rules-manual"
@@ -1007,13 +1006,11 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=disc
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dish.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=disneyplus.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=disp.cc comment="ros-rules-manual"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=displaycatalog.mp.microsoft.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=disqus.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dit-inc.us comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=diyin.org comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dizhuzhishang.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dl-laby.jp comment="ros-rules-manual"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dl.delivery.mp.microsoft.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dlaf.jp comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dlgal.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dlive.tv comment="ros-rules-manual"
@@ -1250,7 +1247,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fbsb
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fbworkmail.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fc2cn.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fc2web.com comment="ros-rules-manual"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fe3.delivery.mp.microsoft.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=feedburner.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=feeder.co comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=feedly.com comment="ros-rules-manual"
@@ -3444,7 +3440,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiny
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tipas.net comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tkcs-collins.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tl.gd comment="ros-rules-manual"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tlu.dl.delivery.mp.microsoft.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tmagazine.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tmi.me comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tmpp.org comment="ros-rules-manual"
