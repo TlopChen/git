@@ -54,14 +54,19 @@ python3 /srv/github-mirror/gen_rules.py        # 手动立即生成
 
 数据版权归上游项目所有，本仓库仅做格式转换与聚合，供个人网络使用。
 
-## 关于 blacklist 域名表（单文件，无导入顺序问题）
+## 关于 blacklist 域名表（无导入顺序问题）
 
-`proxy-domain.rsc` 是 blacklist 域名表的**唯一来源**，每次导入整表重建。
-手工域名全部在 `ros/generator/manual-blacklist.txt` 单文件内维护，按段区分两种语义：
+`proxy-domain.rsc` 是 blacklist 域名表的**唯一来源**，每次导入整表重建，由两个手工文件 + 上游自动生成：
 
-- **普通行 = 走代理黑名单**：每行一个域名，`#` 注释，由生成器打 `comment="ros-rules-manual"` 标记合入
-- **`## exclude:` 标记之后的段 = 反向剔除名单**：这些域名（及其所有子域）从上游自动层剔除、按大陆直连，例如 bing.com、微软/苹果国内站、cloudfront.net（公共 CDN）、国内券商 `.cn` 站（富途/老虎/嘉信/长桥）。生成器给上游自动域名打 `comment="ros-rules-auto"` 标记，被 exclude 命中的不会出现在产物里。
+- **`ros/generator/manual-blacklist.txt`** —— 走代理黑名单（正向）。每行一个域名，`#` 注释。
+  只保留上游没有、手工补充的域名（当前 247 条，已剔除与上游重复的冗余）。
+  生成器打 `comment="ros-rules-manual"` 标记合入。
+- **`ros/generator/exclude-blacklist.txt`** —— 反向剔除名单（负向）。这些域名（及其所有子域）
+  从上游自动层剔除、按大陆直连，例如 bing.com、微软/苹果国内站、cloudfront.net（公共 CDN）、
+  国内券商 `.cn` 站（富途/老虎/嘉信/长桥）。生成器给上游自动域名打 `comment="ros-rules-auto"`
+  标记，被 exclude 命中的不会出现在产物里。
 
-要增删域名：编辑 VPS 的 `/srv/github-mirror/manual-blacklist.txt`，下次日更（06:00）
-自动生效；或手动跑 `python3 /srv/github-mirror/gen_rules.py` 立即重生成。
+要增删域名：编辑 VPS 上对应的 `/srv/github-mirror/manual-blacklist.txt`（加代理）
+或 `/srv/github-mirror/exclude-blacklist.txt`（减代理），下次日更（06:00）自动生效；
+或手动跑 `python3 /srv/github-mirror/gen_rules.py` 立即重生成。
 **不要再导入旧的手工 gfw.rsc**——它会清掉整表，与生成文件互相覆盖。
