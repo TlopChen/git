@@ -18,3 +18,12 @@ blobstore.apple.com
 apple-dns.net
 # 国内大厂误伤(纯国内站点)
 jdwsy.com
+# AWS CloudFront(公共CDN,整域误伤国内可直连站点如closeai-asia.com)
+cloudfront.net
+# 国内券商/金融站(.cn 变体,主站国内可直连;海外 .com 变体保留走代理)
+futu.cn
+futubull.cn
+tigerbbs.cn
+schwab.com.cn
+longbridge.cn
+longportapp.cn
