@@ -1,4 +1,4 @@
-#cn-cernet — 396 条, 2026-09-04 00:46:58 由 gen_rules.py 生成
+#cn-cernet — 396 条, 2026-09-04 06:00:28 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn-cernet.rsc" mode=http
 #         /import file-name=cn-cernet.rsc
 /ip firewall address-list

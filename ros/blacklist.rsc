@@ -1,4 +1,4 @@
-#blacklist — 19 条, 2026-09-04 00:46:59 由 gen_rules.py 生成
+#blacklist — 19 条, 2026-09-04 06:00:33 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/blacklist.rsc" mode=http
 #         /import file-name=blacklist.rsc
 /ip firewall address-list
