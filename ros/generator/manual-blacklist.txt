@@ -4094,27 +4094,3 @@ wsldistrostorage.blob.core.windows.net
 wslstorestorage.blob.core.windows.net
 objects.githubusercontent.com
 raw.githubusercontent.com
-
-## exclude: 反向剔除(以下域名不走代理,国内可直连)
-bing.com
-microsoft.com
-azure.com
-azureedge.net
-azurewebsites.net
-live.com
-live.net
-msn.com
-office.net
-cvws.icloud-content.com
-developer.apple.com
-testflight.apple.com
-blobstore.apple.com
-apple-dns.net
-jdwsy.com
-cloudfront.net
-futu.cn
-futubull.cn
-tigerbbs.cn
-schwab.com.cn
-longbridge.cn
-longportapp.cn
