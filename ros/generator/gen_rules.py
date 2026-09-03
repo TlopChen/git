@@ -269,26 +269,38 @@ def main():
             # 精确域：完全限定 FQDN，不收敛、不去重（单个主机名语义），
             # 输出时 match-subdomain=no，避免把精确子域放大成整域
             auto_exact = sorted(exact_raw)
-            # 排除名单：命中项及其所有子域从自动层剔除（如 bing.com 未被墙，不该走代理）
+            # 手工文件合并了正/反向两类域名(单文件 manual-blacklist.txt)：
+            #   - 普通行 = 走代理黑名单(manual, comment=ros-rules-manual)
+            #   - "## exclude:" 标记之后的段 = 反向剔除名单(excluded)：命中项及其
+            #     所有子域从自动层剔除(如 bing.com 未被墙、国内券商 .cn 站不该走代理)
             excluded = set()
-            if cfg.get("exclude"):
-                ep = cfg["exclude"]
-                excluded = {l.strip().lower() for l in open(ep, encoding="utf-8")
-                            if l.strip() and not l.startswith("#")}
+            manual = []
+            _excluded_list = []
+            if cfg.get("manual"):
+                mp = cfg["manual"]
+                if not os.path.isfile(mp):
+                    raise SystemExit(f"[abort] {name}: 手工域名文件不存在: {mp}")
+                in_exclude = False
+                for raw in open(mp, encoding="utf-8"):
+                    line = raw.strip()
+                    if not line:
+                        continue
+                    if line.startswith("## exclude"):
+                        in_exclude = True
+                        continue
+                    if line.startswith("#"):
+                        continue
+                    d = line.lower()
+                    if not ("." in d and re.fullmatch(r"[A-Za-z0-9._-]+", d)):
+                        continue
+                    (_excluded_list if in_exclude else manual).append(d)
+            excluded = set(_excluded_list)
+            manual = sorted(set(manual))
+            if excluded:
                 auto_suffix = [d for d in auto_suffix
                                if not any(d == e or d.endswith("." + e) for e in excluded)]
                 auto_exact = [d for d in auto_exact
                               if not any(d == e or d.endswith("." + e) for e in excluded)]
-            manual = []
-            if cfg.get("manual"):
-                mp = cfg["manual"]
-                if os.path.isfile(mp):
-                    manual = [l.strip().lower() for l in open(mp, encoding="utf-8")
-                              if l.strip() and not l.startswith("#")]
-                else:
-                    raise SystemExit(f"[abort] {name}: 手工域名文件不存在: {mp}")
-            manual = sorted({d for d in manual
-                             if "." in d and re.fullmatch(r"[A-Za-z0-9._-]+", d)})
             auto = [d for d in auto_suffix if d not in set(manual)]
             if len(auto) + len(auto_exact) + len(manual) < MIN_ENTRIES:
                 raise SystemExit(f"[abort] {name}: 仅 {len(auto) + len(auto_exact) + len(manual)} 条, 疑似拉取失败, 不生成")

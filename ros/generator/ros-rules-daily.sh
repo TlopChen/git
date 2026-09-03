@@ -11,6 +11,11 @@ fi
 # 同步生成结果到 Git 仓库（否则 git add -A 看不到 static 下的变化）
 cp /srv/github-mirror/static/ros/*.rsc /root/git/ros/
 cp /srv/github-mirror/manual-blacklist.txt /root/git/ros/generator/manual-blacklist.txt
+cp /srv/github-mirror/gen_rules.py /root/git/ros/generator/gen_rules.py
+cp /srv/github-mirror/sources.json /root/git/ros/generator/sources.json
+cp /srv/github-mirror/repos.json /root/git/ros/generator/repos.json
+cp /srv/github-mirror/mirror.py /root/git/ros/generator/mirror.py
+cp /srv/github-mirror/ros-rules-daily.sh /root/git/ros/generator/ros-rules-daily.sh
 
 cd /root/git || exit 1
 git add -A

@@ -12,7 +12,7 @@
 | `cn-unicom.rsc` | `CU` | 中国联通网段 |
 | `cn-cernet.rsc` | `CC` | 教育网（CERNET）网段 |
 | `blacklist.rsc` | `blacklist`（与域名分流共用） | 被墙 IP 服务合集（Telegram + Twitter + MikroTik），带 `ros-rules-auto` 标记，只清理自身不动 DNS 动态条目；导入时自动迁移旧列表 ROS_BLACKLIST |
-| `proxy-domain.rsc` | `blacklist`（DNS 静态） | 代理侧域名 FWD 表（手工收录 + Sukka global/ai/stream/telegram + Loyalsoldier gfw，PSL 收敛到注册域，零正则，match-subdomain 覆盖子域） |
+| `proxy-domain.rsc` | `blacklist`（DNS 静态） | 代理侧域名 FWD 表（手工 blacklist + Loyalsoldier gfw.txt + blackmatrix7 Proxy/OpenAI/Claude/Anthropic/Gemini，PSL 收敛到注册域，零正则，match-subdomain 覆盖子域） |
 
 注：不做 DNS 层广告域名表——ROS 的 DNS 性能有限，域名级拦截如以后有需要，用小规模精选表在 OxiDNS 上单独做。
 
@@ -50,18 +50,18 @@ python3 /srv/github-mirror/gen_rules.py        # 手动立即生成
 
 - [metowolf/iplist](https://github.com/metowolf/iplist) — 运营商/国家 CIDR
 - [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) — cncidr / telegramcidr / gfw
-- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) — Twitter IP 段
-- [Sukka's Ruleset](https://ruleset.skk.moe)（sukkalab/ruleset.skk.moe）— 代理侧域名合集（AGPL-3.0）
+- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) — Twitter IP 段、Proxy 域名、AI 域名（OpenAI/Claude/Anthropic/Gemini）
 
 数据版权归上游项目所有，本仓库仅做格式转换与聚合，供个人网络使用。
 
 ## 关于 blacklist 域名表（单文件，无导入顺序问题）
 
-`proxy-domain.rsc` 是 blacklist 域名表的**唯一来源**，每次导入整表重建：
-- 手工域名在 `ros/generator/manual-blacklist.txt`（每行一个域名，`#` 注释），
-  由 VPS 上的生成器打 `comment="ros-rules-manual"` 标记合入
-- 上游自动域名打 `comment="ros-rules-auto"` 标记
+`proxy-domain.rsc` 是 blacklist 域名表的**唯一来源**，每次导入整表重建。
+手工域名全部在 `ros/generator/manual-blacklist.txt` 单文件内维护，按段区分两种语义：
 
-想增删域名：编辑 VPS 的 `/srv/github-mirror/manual-blacklist.txt`，下次日更（06:00）
+- **普通行 = 走代理黑名单**：每行一个域名，`#` 注释，由生成器打 `comment="ros-rules-manual"` 标记合入
+- **`## exclude:` 标记之后的段 = 反向剔除名单**：这些域名（及其所有子域）从上游自动层剔除、按大陆直连，例如 bing.com、微软/苹果国内站、cloudfront.net（公共 CDN）、国内券商 `.cn` 站（富途/老虎/嘉信/长桥）。生成器给上游自动域名打 `comment="ros-rules-auto"` 标记，被 exclude 命中的不会出现在产物里。
+
+要增删域名：编辑 VPS 的 `/srv/github-mirror/manual-blacklist.txt`，下次日更（06:00）
 自动生效；或手动跑 `python3 /srv/github-mirror/gen_rules.py` 立即重生成。
 **不要再导入旧的手工 gfw.rsc**——它会清掉整表，与生成文件互相覆盖。

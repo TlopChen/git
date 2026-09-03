@@ -1,4 +1,4 @@
-#proxy-domain — 手工 4092 条 + 上游 3385 条, 2026-09-03 06:01:03 由 gen_rules.py 生成
+#proxy-domain — 手工 4092 条 + 上游 3378 条, 2026-09-04 00:29:33 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
@@ -4641,7 +4641,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clie
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clipfish.de comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clips4sale.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloakpoint.com comment="ros-rules-auto"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloudfront.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloudgarage.jp comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloudmagic.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cmail19.com comment="ros-rules-auto"
@@ -5096,7 +5095,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=funp
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fuq.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=furhhdl.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=furl.net comment="ros-rules-auto"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futu.cn comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futu.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futu.link comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futu0.com comment="ros-rules-auto"
@@ -5110,7 +5108,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futu
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futu8.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futu9.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futuau.com comment="ros-rules-auto"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futubull.cn comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futuchain.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futuesop.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=futufin.com comment="ros-rules-auto"
@@ -5843,7 +5840,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=logi
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=logos.com.hk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=londonchinese.ca comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longbridge.cloud comment="ros-rules-auto"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longbridge.cn comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longbridge.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longbridge.global comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longbridge.hk comment="ros-rules-auto"
@@ -5852,7 +5848,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=long
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longbridgehk.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longhair.hk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longmusic.com comment="ros-rules-auto"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longportapp.cn comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=longportapp.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=lorenzetti.com.br comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=lotsawahouse.org comment="ros-rules-auto"
@@ -6547,7 +6542,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scas
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scdn.co comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schwab.co.uk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schwab.com comment="ros-rules-auto"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schwab.com.cn comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schwab.com.hk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sciencedaily.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sciencemag.org comment="ros-rules-auto"
@@ -6939,7 +6933,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tibe
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tibetrelieffund.co.uk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tibetsites.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ticket.com.tw comment="ros-rules-auto"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tigerbbs.cn comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tigerbbs.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tigerbrokers.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tigerbrokers.net comment="ros-rules-auto"
