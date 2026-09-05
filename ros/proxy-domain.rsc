@@ -1,4 +1,4 @@
-#proxy-domain — 手工 244 条 + 上游 7219 条, 2026-09-05 06:01:07 由 gen_rules.py 生成
+#proxy-domain — 手工 244 条 + 上游 7221 条, 2026-09-06 06:01:13 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
@@ -1602,6 +1602,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=csuc
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=csw.org.uk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ct.org.tw comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ctao.org comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ctee.com.tw comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ctfriend.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ctinets.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ctinews.com comment="ros-rules-auto"
@@ -3931,6 +3932,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=lino
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=linpie.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=linux.do comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=linux.org.hk comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=linux.sb comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=linuxtoy.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=lionsroar.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=lipuman.com comment="ros-rules-auto"
