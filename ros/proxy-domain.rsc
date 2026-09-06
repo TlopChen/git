@@ -1,4 +1,4 @@
-#proxy-domain — 手工 244 条 + 上游 7221 条, 2026-09-06 06:01:13 由 gen_rules.py 生成
+#proxy-domain — 手工 244 条 + 上游 7230 条, 2026-09-07 06:01:06 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
@@ -259,6 +259,8 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=10be
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=10conditionsoflove.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=10musume.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=111666.best comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=123av.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=123av.me comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=123rf.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=12bet.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=12vpn.com comment="ros-rules-auto"
@@ -3103,6 +3105,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=help
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=helpzhuling.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=hembed.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=hentai.to comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=hentai.tv comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=hentaitube.tv comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=hentaivideoworld.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=heqinglian.net comment="ros-rules-auto"
@@ -5371,6 +5374,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=road
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=roblox.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=roboforex.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=robustnessiskey.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=roc-taiwan.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rocket-inc.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rocket.chat comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rocketbbs.com comment="ros-rules-auto"
@@ -5386,6 +5390,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rose
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rotten.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rou.video comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=roucdn.link comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=roushuwo.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rpglogs.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rsdlmonitor.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rsf-chinese.org comment="ros-rules-auto"
@@ -5920,6 +5925,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=supe
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=superpages.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=supervpn.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=superzooi.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=supjav.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=suppig.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=supremecourt.gov comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=suprememastertv.com comment="ros-rules-auto"
@@ -5970,6 +5976,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tafm
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tagwa.org.au comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tagwalk.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tahr.org.tw comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taiav.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tails.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taipeisociety.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taipeitimes.com comment="ros-rules-auto"
@@ -5979,6 +5986,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taiw
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taiwancon.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taiwandaily.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taiwandc.org comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taiwanembassy.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taiwanhot.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taiwanjustice.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=taiwanjustice.net comment="ros-rules-auto"
@@ -7115,6 +7123,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wsj.
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wsj.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wsjhk.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wtbn.org comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wtfpass.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wtfpeople.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wuerkaixi.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wufafangwen.com comment="ros-rules-auto"
