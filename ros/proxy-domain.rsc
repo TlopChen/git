@@ -1,4 +1,4 @@
-#proxy-domain — 手工 244 条 + 上游 7230 条, 2026-09-07 06:01:06 由 gen_rules.py 生成
+#proxy-domain — 手工 245 条 + 上游 7230 条, 2026-09-09 23:55:29 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
@@ -222,6 +222,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=org.
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=p16-tiktokcdn-com.akamaized.net comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=pacloudflare.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=plex.tv comment="ros-rules-manual"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=production.cloudflare.docker.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=radiojar.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sgpstatp.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=snssdk.com comment="ros-rules-manual"

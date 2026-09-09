@@ -1,4 +1,4 @@
-#cn-telecom — 3081 条, 2026-09-07 06:00:14 由 gen_rules.py 生成
+#cn-telecom — 3080 条, 2026-09-09 23:55:28 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn-telecom.rsc" mode=http
 #         /import file-name=cn-telecom.rsc
 /ip firewall address-list
@@ -768,7 +768,6 @@ add list=CT address=114.104.0.0/14
 add list=CT address=114.110.64.0/19
 add list=CT address=114.110.100.0/22
 add list=CT address=114.110.104.0/21
-add list=CT address=114.110.112.0/20
 add list=CT address=114.113.160.0/19
 add list=CT address=114.113.192.0/22
 add list=CT address=114.135.0.0/16

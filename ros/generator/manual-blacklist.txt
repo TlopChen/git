@@ -1,5 +1,3 @@
-production.cloudflare.docker.com
-fanza.jp
 acg-img.xyz
 airhorn.solutions
 airhornbot.com
@@ -246,3 +244,4 @@ meta.ai
 llama.com
 gemini.com
 copilot.microsoft.com
+production.cloudflare.docker.com
