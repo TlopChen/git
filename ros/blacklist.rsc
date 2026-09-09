@@ -4,6 +4,10 @@
 /ip firewall address-list
 remove [find where list="blacklist" && dynamic=no]
 remove [find list=ROS_BLACKLIST]
+add list=blacklist address=8.8.8.8/32 comment="ros-rules-auto"
+add list=blacklist address=8.8.4.4/32 comment="ros-rules-auto"
+add list=blacklist address=1.1.1.1/32 comment="ros-rules-auto"
+add list=blacklist address=1.0.0.1/32 comment="ros-rules-auto"
 add list=blacklist address=5.28.192.0/18 comment="ros-rules-auto"
 add list=blacklist address=69.195.160.0/19 comment="ros-rules-auto"
 add list=blacklist address=91.105.192.0/23 comment="ros-rules-auto"
