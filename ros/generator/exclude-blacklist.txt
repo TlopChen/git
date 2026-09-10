@@ -1,26 +1,69 @@
 # 从 blacklist 域名自动层排除的域名(含其全部子域)
-# 语义:这些域名不走代理 DNS,按普通流程解析
-# 微软系(国内有业务/可直连)
-bing.com
+# 语义:这些域名不走代理 DNS,按普通流程解析;命中项及其所有子域都会被剔除
+# 选取原则:仅列"确信未被墙 + 流量大或高频"的域名——排除即走国内 DNS,
+#           若它其实被墙就会拿到污染结果,故边界不清的一律不列(宁可走隧道)。
+# 2026-09-10 扩容:配合新增 proxy.txt(geolocation-!cn 全量)使用,避免把
+#               未墙的国外大站流量被 DNS 联动拖进日本隧道。
+
+# ==== 微软系(未墙 国内可直连;含系统更新/Office 大流量) ====
 microsoft.com
-azure.com
-azureedge.net
-azurewebsites.net
+windowsupdate.com
+microsoftonline.com
+office.com
+office.net
 live.com
 live.net
 msn.com
-office.net
-# 苹果系(国内可直连的精确域名)
-cvws.icloud-content.com
-developer.apple.com
-testflight.apple.com
-blobstore.apple.com
+bing.com
+azure.com
+azureedge.net
+azurewebsites.net
+sharepoint.com
+outlook.com
+msdn.com
+visualstudio.com
+nuget.org
+xboxlive.com
+
+# ==== 苹果系(未墙 国内可直连;App Store / 系统更新大流量) ====
+apple.com
+icloud.com
+mzstatic.com
+cdn-apple.com
+itunes.com
 apple-dns.net
-# 国内大厂误伤(纯国内站点)
-jdwsy.com
-# AWS CloudFront(公共CDN,整域误伤国内可直连站点如closeai-asia.com)
+
+# ==== 硬件/驱动下载(未墙 国内可直连;镜像体积大) ====
+nvidia.com
+amd.com
+intel.com
+dell.com
+hp.com
+lenovo.com
+samsung.com
+asus.com
+
+# ==== 开发工具(未墙;clone/依赖下载流量大) ====
+github.com
+gitlab.com
+npmjs.com
+pypi.org
+python.org
+nodejs.org
+
+# ==== 游戏下载 CDN(未墙)。
+#      注意:steamcommunity.com / steampowered.com 被墙,故意不列。 ====
+steamstatic.com
+steamcontent.com
+epicgames.com
+
+# ==== 公共 CDN(整域误伤国内可直连站点,如 closeai-asia.com) ====
 cloudfront.net
-# 国内券商/金融站(.cn 变体,主站国内可直连;海外 .com 变体保留走代理)
+
+# ==== 国内大厂误伤(纯国内站点) ====
+jdwsy.com
+
+# ==== 国内券商/金融站(.cn 变体,主站国内可直连;海外 .com 变体保留走代理) ====
 futu.cn
 futubull.cn
 tigerbbs.cn
