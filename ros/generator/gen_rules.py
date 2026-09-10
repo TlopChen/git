@@ -248,7 +248,11 @@ def main():
                 fh.write(rsc_header(name, cfg["list"], len(merged), remove_lines))
                 cmt = f' comment="{marker}"' if marker else ""
                 for n in m4:
-                    fh.write(f"add list={cfg['list']} address={n.with_prefixlen}{cmt}\n")
+                    _a = n.with_prefixlen
+                    if cfg.get('remove_mode') == 'static':
+                        _q = str(n.network_address) if n.prefixlen == n.max_prefixlen else _a
+                        fh.write(f'remove [find where list="{cfg["list"]}" and address="{_q}"]' + chr(10))
+                    fh.write(f"add list={cfg['list']} address={_a}{cmt}" + chr(10))
                 # /ip 表不收 IPv6；确有 v6 需求时在 sources.json 开 ipv6 开关
                 if m6 and cfg.get("ipv6"):
                     fh.write("\n/ipv6 firewall address-list\n")
