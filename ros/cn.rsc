@@ -1,4 +1,4 @@
-#cn — 6231 条, 2026-09-10 20:13:06 由 gen_rules.py 生成
+#cn — 6231 条, 2026-09-10 20:20:06 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn.rsc" mode=http
 #         /import file-name=cn.rsc
 /ip firewall address-list
