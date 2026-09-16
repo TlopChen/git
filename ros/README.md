@@ -86,6 +86,24 @@ https://raw.githubusercontent.com/TlopChen/git/main/ros/proxy-domain.oxi.txt
 
 ---
 
+## 关于 IP 段类规则（为什么不能只靠域名）
+
+有些服务**不走 DNS**，最典型的是 **Telegram**：官方客户端把数据中心（DC）的 IP 硬编码在程序里，
+当 DNS 解析失败或缓慢时直接回退到硬编码 IP，**完全绕过基于 DNS 的重定向**。
+所以对这类服务，域名规则无效，必须用 IP 段兜底。
+
+`blacklist.rsc` 专门承担这个职责，内容来自三类：
+
+| 源 | 内容 |
+|---|---|
+| `Loyalsoldier/clash-rules` → `telegramcidr.txt` | Telegram 段（与官方 `core.telegram.org/resources/cidr.txt` 对齐；本仓库用 /21 合并官方拆分的 /22，另含 `95.161.64.0/20`） |
+| `blackmatrix7` → `Twitter.list` | Twitter / X 段 |
+| `sources.json` → `blacklist.extra_cidrs` | 手工补充（被干扰的公共 DNS `8.8.8.8` / `1.1.1.1` 等） |
+
+**增删这类段**：编辑 `generator/sources.json` 里 `blacklist` 条目的 `sources` 或 `extra_cidrs`，
+下次日更自动生效（源文件会同步留档到 `src/`，产物为 `blacklist.rsc`）。
+判定某服务是否属于此类：看它客户端是否**直连硬编码 IP**——是则需要 IP 段，否则域名规则即可覆盖。
+
 ## 更新
 
 - 每日 **06:00（VPS 时间）** 自动：拉上游 → 生成全部产物 → 提交本仓库
