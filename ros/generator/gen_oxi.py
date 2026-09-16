@@ -1,30 +1,36 @@
 #!/usr/bin/env python3
-"""Extract domains from proxy-domain.rsc and emit an OxiDNS domain_set table.
+"""Build the OxiDNS domain_set table from the pipeline's plain-domain intermediates.
 
-proxy-domain.rsc      : RouterOS /ip dns static type=FWD 语句
-proxy-domain.oxi.txt  : OxiDNS domain_set 文本（domain: 后缀域 / full: 精确域）
+Inputs (produced by gen_rules.py in the same directory):
+  proxy-domain.domains.txt   suffix domains, one bare domain per line
+  proxy-domain.exact.txt     exact FQDNs, one per line
+Output:
+  proxy-domain.oxi.txt       OxiDNS domain_set text (domain: / full:)
 """
-import re, time, os
+import os, time
 
 OUT_DIR = "/srv/github-mirror/static/ros"
-SRC = os.path.join(OUT_DIR, "proxy-domain.rsc")
+SUFFIX_SRC = os.path.join(OUT_DIR, "proxy-domain.domains.txt")
+EXACT_SRC = os.path.join(OUT_DIR, "proxy-domain.exact.txt")
 DST = os.path.join(OUT_DIR, "proxy-domain.oxi.txt")
 
-rules = set()
-for line in open(SRC, encoding="utf-8"):
-    if not line.startswith("add ") or "type=FWD" not in line:
-        continue
-    m = re.search(r"name=(\S+)", line)
-    s = re.search(r"match-subdomain=(\w+)", line)
-    if not m:
-        continue
-    d = m.group(1).strip().strip('"')
-    rules.add(("full:" if (s and s.group(1) == "no") else "domain:") + d)
 
-out = sorted(rules)
+def load(path):
+    if not os.path.isfile(path):
+        return []
+    out = []
+    for line in open(path, encoding="utf-8"):
+        d = line.strip()
+        if d and not d.startswith("#"):
+            out.append(d)
+    return out
+
+
+rules = ["full:" + d for d in load(EXACT_SRC)] + ["domain:" + d for d in load(SUFFIX_SRC)]
+rules = sorted(set(rules))
 with open(DST, "w", encoding="utf-8", newline="\n") as fh:
     fh.write("# proxy-domain OxiDNS domain_set, %d rules, generated %s\n"
-             % (len(out), time.strftime("%F %T")))
-    for r in out:
+             % (len(rules), time.strftime("%F %T")))
+    for r in rules:
         fh.write(r + "\n")
-print("[ok] %s  %d rules" % (DST, len(out)))
+print("[ok] %s  %d rules" % (DST, len(rules)))
