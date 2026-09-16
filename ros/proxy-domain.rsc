@@ -1,4 +1,4 @@
-#proxy-domain — 手工 246 条 + 上游 28770 条, 2026-09-13 06:01:19 由 gen_rules.py 生成
+#proxy-domain — 手工 246 条 + 上游 28773 条, 2026-09-16 15:52:46 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
@@ -23625,6 +23625,9 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stri
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stripchat.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stripe-terminal-local-reader.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stripe.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stripe.dev comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stripe.events comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stripe.global comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stripe.network comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stripecdn.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stripparadise.com comment="ros-rules-auto"

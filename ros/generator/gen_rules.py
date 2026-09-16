@@ -16,7 +16,7 @@ import time
 import urllib.request
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-MIRROR = "http://127.0.0.1:18080/"
+MIRROR = "http://192.168.40.1:18080/"
 OUT = os.path.join(BASE, "static", "ros")
 CFG = json.load(open(os.path.join(BASE, "sources.json")))
 IP_RE = re.compile(r"\b\d{1,3}(?:\.\d{1,3}){3}(?:/\d{1,2})?\b")
@@ -297,6 +297,18 @@ def main():
             auto = [d for d in auto_suffix if d not in set(manual)]
             if len(auto) + len(auto_exact) + len(manual) < MIN_ENTRIES:
                 raise SystemExit(f"[abort] {name}: 仅 {len(auto) + len(auto_exact) + len(manual)} 条, 疑似拉取失败, 不生成")
+
+            # 中间产物：纯域名一行，供各消费端（RouterOS / OxiDNS / 其它 DNS）分化处理
+            with open(os.path.join(OUT, name + ".domains.txt"), "w") as fh:
+                fh.write("# " + name + " suffix-domains (bare domain, covers subdomains) " +
+                         str(len(manual) + len(auto)) + ", " + time.strftime("%F %T") + "\n")
+                for d in sorted(set(manual) | set(auto)):
+                    fh.write(d + "\n")
+            with open(os.path.join(OUT, name + ".exact.txt"), "w") as fh:
+                fh.write("# " + name + " exact-domains (fully qualified host) " +
+                         str(len(auto_exact)) + ", " + time.strftime("%F %T") + "\n")
+                for d in auto_exact:
+                    fh.write(d + "\n")
             marker = cfg.get("marker", "ros-rules-auto")
             with open(os.path.join(OUT, f"{name}.rsc"), "w") as fh:
                 fh.write(f"#{name} — 手工 {len(manual)} 条 + 上游 {len(auto) + len(auto_exact)} 条, "
