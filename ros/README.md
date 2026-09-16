@@ -42,6 +42,7 @@ https://raw.githubusercontent.com/TlopChen/git/main/ros/proxy-domain.oxi.txt
 | 文件 | 消费端 | 内容 |
 |---|---|---|
 | `proxy-domain.oxi.txt` | OxiDNS `domain_set` | 代理域名（`domain:` / `full:` 前缀） |
+| `cn-domains.oxi.txt` | OxiDNS `domain_set` | 国内域名表（用于「非国内即走远端」的反转判据） |
 | `proxy-domain.domains.txt` | 通用（中间产物） | 代理域名，后缀域，一行一个 |
 | `proxy-domain.exact.txt` | 通用（中间产物） | 代理域名，精确 FQDN |
 | `proxy-domain.rsc` | RouterOS | `/ip dns static type=FWD` 脚本（带 `match-subdomain` 语义与 blacklist 打标） |
