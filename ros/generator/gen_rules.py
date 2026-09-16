@@ -17,6 +17,7 @@ import urllib.request
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 MIRROR = "http://192.168.40.1:18080/"
+SRC_DIR = os.path.join(BASE, "static", "src")
 OUT = os.path.join(BASE, "static", "ros")
 CFG = json.load(open(os.path.join(BASE, "sources.json")))
 IP_RE = re.compile(r"\b\d{1,3}(?:\.\d{1,3}){3}(?:/\d{1,2})?\b")
@@ -24,6 +25,10 @@ MIN_ENTRIES = 1  # 0 条视为拉取失败，拒绝生成空文件（telegram �
 
 
 def fetch(url):
+    """Download via mirror; archive the raw source under static/src/;
+    fall back to the archived copy when the upstream is unreachable."""
+    os.makedirs(SRC_DIR, exist_ok=True)
+    cache = os.path.join(SRC_DIR, url.rsplit("/", 1)[-1])
     err = None
     for _ in range(3):
         try:
@@ -31,11 +36,20 @@ def fetch(url):
                 data = r.read()
             if not data:
                 raise ValueError("empty body")
-            return data.decode("utf-8", "replace")
+            text = data.decode("utf-8", "replace")
+            tmp = cache + ".tmp"
+            with open(tmp, "w", encoding="utf-8", newline="") as fh:
+                fh.write(text)
+            os.replace(tmp, cache)
+            return text
         except Exception as e:
             err = e
             time.sleep(3)
-    raise SystemExit(f"[fail] {url}: {err}")
+    if os.path.isfile(cache):
+        print("[warn] fetch failed, fallback to archived source: " + os.path.basename(cache) + " (" + str(err) + ")")
+        with open(cache, encoding="utf-8") as fh:
+            return fh.read()
+    raise SystemExit("[fail] " + url + ": " + str(err))
 
 
 def parse_cidrs(text):
