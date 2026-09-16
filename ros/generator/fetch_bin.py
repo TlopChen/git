@@ -9,7 +9,6 @@ import os, time, urllib.request
 OUT_DIR = "/srv/github-mirror/static/ros"
 ASSETS = [
     ("geosite.dat", "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"),
-    ("geoip.dat", "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"),
 ]
 
 for name, url in ASSETS:
