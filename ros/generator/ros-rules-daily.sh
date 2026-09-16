@@ -27,6 +27,7 @@ if ! /usr/bin/python3 /srv/github-mirror/gen_rules.py; then
 fi
 
 # 4) 同步生成结果到 Git 仓库（否则 git add -A 看不到 static 下的变化）
+/usr/bin/python3 /srv/github-mirror/gen_oxi.py || echo "[warn] gen_oxi failed"
 cp /srv/github-mirror/static/ros/*.rsc /root/git/ros/
 cp /srv/github-mirror/static/ros/*.oxi.txt /root/git/ros/ 2>/dev/null || true
 
