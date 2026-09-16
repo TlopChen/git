@@ -1,72 +1,120 @@
-# ROS 规则（ROS address-list 脚本）
+# 分流规则集（代理域名表 + 国内 IP 段）
 
-本目录存放由 VPS 上的镜像管线（`ros/generator/`）从上游规则源生成的 RouterOS 可导入脚本。数据每日 06:00（VPS 时间）自动刷新，本仓库为其版本留档。
+个人网络分流用的规则集，每日自动从上游开源规则源生成并留档。
+**下游按 URL 直接拉取即可，无需本地生成。**
 
-## 文件
+---
 
-| 文件 | 地址表 | 内容 |
+## 快速拉取
+
+### OxiDNS（`domain_set` 文本）
+
+```
+https://raw.githubusercontent.com/TlopChen/git/main/ros/proxy-domain.oxi.txt
+```
+
+每行一条：
+
+- `domain:example.com` —— 后缀域，匹配该域及其所有子域
+- `full:host.example.com` —— 精确主机名，只匹配这一个
+
+### RouterOS（可直接 `/import` 的脚本）
+
+```
+/tool fetch url="http://192.168.40.1:18080/ros/proxy-domain.rsc" mode=http
+/import file-name=proxy-domain.rsc
+```
+
+该地址走 WireGuard 隧道的私有镜像；公网环境请从本仓库 raw 链接下载后导入。
+脚本为 remove-then-add 幂等：重复导入不会产生重复条目，只会整表刷新。
+
+### 通用纯域名列表
+
+- `proxy-domain.domains.txt` —— 后缀域，一行一个裸域名
+- `proxy-domain.exact.txt` —— 精确 FQDN，一行一个
+
+适合 dnsmasq / unbound / AdGuard Home / sing-box / Clash 等自行转换。
+
+---
+
+## 文件清单
+
+| 文件 | 消费端 | 内容 |
 |---|---|---|
-| `cn.rsc` | `CN` | 中国大陆全部 CIDR（Loyalsoldier cncidr ∪ metowolf CN，已合并相邻网段） |
-| `cn-telecom.rsc` | `CT` | 中国电信网段 |
-| `cn-mobile.rsc` | `CM` | 中国移动网段 |
-| `cn-unicom.rsc` | `CU` | 中国联通网段 |
-| `cn-cernet.rsc` | `CC` | 教育网（CERNET）网段 |
-| `blacklist.rsc` | `blacklist`（与域名分流共用） | 被墙 IP 服务合集（Telegram + Twitter + MikroTik），带 `ros-rules-auto` 标记，只清理自身不动 DNS 动态条目；导入时自动迁移旧列表 ROS_BLACKLIST |
-| `proxy-domain.rsc` | `blacklist`（DNS 静态） | 代理侧域名 FWD 表（手工 blacklist + Loyalsoldier gfw.txt + blackmatrix7 Proxy/OpenAI/Claude/Anthropic/Gemini，PSL 收敛到注册域，零正则，match-subdomain 覆盖子域） |
+| `proxy-domain.oxi.txt` | OxiDNS `domain_set` | 代理域名（`domain:` / `full:` 前缀） |
+| `proxy-domain.domains.txt` | 通用（中间产物） | 代理域名，后缀域，一行一个 |
+| `proxy-domain.exact.txt` | 通用（中间产物） | 代理域名，精确 FQDN |
+| `proxy-domain.rsc` | RouterOS | `/ip dns static type=FWD` 脚本（带 `match-subdomain` 语义与 blacklist 打标） |
+| `cn.rsc` | RouterOS | 中国大陆全部 CIDR（已合并相邻网段） |
+| `cn-telecom.rsc` / `cn-mobile.rsc` / `cn-unicom.rsc` / `cn-cernet.rsc` | RouterOS | 电信 / 移动 / 联通 / 教育网 网段 |
+| `blacklist.rsc` | RouterOS | 被墙服务的基础 IP 段（Telegram / Twitter 等） |
 
-注：不做 DNS 层广告域名表——ROS 的 DNS 性能有限，域名级拦截如以后有需要，用小规模精选表在 OxiDNS 上单独做。
+设计上**不做广告域名表**——域名级拦截建议在消费端自行维护小精选表。
 
-## ROS 端用法
+---
 
-走 WireGuard 隧道拉取（无需公网开放端口）：
+## 数据来源
 
-```
-/tool fetch url="http://192.168.40.1:18080/ros/cn.rsc" mode=http
-/import file-name=cn.rsc
-```
+| 上游源 | 用途 |
+|---|---|
+| `Loyalsoldier/clash-rules` → `gfw.txt` | 被墙域名 |
+| `Loyalsoldier/clash-rules` → `proxy.txt` | `geolocation-!cn` 全量兜底 |
+| `blackmatrix7/ios_rule_script` → `Proxy_Domain.txt` | 代理域名 |
+| `blackmatrix7` → `OpenAI` / `Claude` / `Anthropic` / `Gemini` `.list` | AI 服务专项 |
+| `Loyalsoldier/clash-rules` → `cncidr.txt` | 国内 IP |
+| `metowolf/iplist` → `CN` / `isp/*.txt` | 国内 IP（含各运营商） |
 
-定时自动化示例：
+本地修正层（在 `generator/` 下，**改动以本仓库这份为准**）：
 
-```
-/system scheduler
-add name=sync-rules interval=1d on-event="\
-    /tool fetch url=\"http://192.168.40.1:18080/ros/cn.rsc\" mode=http;\
-    /import file-name=cn.rsc"
-```
+- `manual-blacklist.txt` —— 手工强制入代理层的域名
+- `exclude-blacklist.txt` —— 反向剔除名单（命中项及其所有子域一并排除）
 
-脚本为 remove-then-add 幂等更新：重复导入不会产生重复条目，只会整表刷新。
+ 选取原则：只列**确信未被墙、且流量大或高频**的域名（微软系、苹果系、硬件驱动、常用开发工具、游戏 CDN、公共 CDN 等）。
+ 边界不清的一律不列——排除即走直连，若它其实被墙就会拿到污染结果。
 
-## 重新生成（VPS 上）
+---
 
-```
-python3 /srv/github-mirror/gen_rules.py        # 手动立即生成
-# 或等每日 cron（0 6 * * *），日志在 /var/log/ros-rules-daily.log
-```
+## 生成规则（语义，勿破坏）
 
-生成器与源配置在 `ros/generator/`（`gen_rules.py`、`sources.json`、`repos.json`）。
-新增规则源：编辑 `sources.json` 加入上游 raw 地址，重跑生成器即可。
+- **后缀域**：`DOMAIN-SUFFIX,x` / 裸域名 → 用 PSL 收敛到注册域 + 后缀去重 → OxiDNS `domain:` / RouterOS `match-subdomain=yes`
+- **精确域**：`DOMAIN,x` → 不收敛 → OxiDNS `full:` / RouterOS `match-subdomain=no`
 
-## 上游致谢
+  ⚠️ **精确条目绝不会被放大成整域**：这是刻意保证的。历史上曾把某个精确 FQDN 概括成整域，
+  导致该域下的国内子域被错误地走代理 DNS，出现解析异常。
+- 剔除名单命中项**及其子域**全部排除；`manual` 与剔除后的自动层合并去重。
+- 生成器有条数下限保护：上游拉取失败（条数异常少）时**拒绝生成**，避免产出空表覆盖。
 
-- [metowolf/iplist](https://github.com/metowolf/iplist) — 运营商/国家 CIDR
-- [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) — cncidr / telegramcidr / gfw
-- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) — Twitter IP 段、Proxy 域名、AI 域名（OpenAI/Claude/Anthropic/Gemini）
+---
 
-数据版权归上游项目所有，本仓库仅做格式转换与聚合，供个人网络使用。
+## 更新
 
-## 关于 blacklist 域名表（无导入顺序问题）
+- 每日 **06:00（VPS 时间）** 自动：拉上游 → 生成全部产物 → 提交本仓库
+- 手动立即生成：`python3 generator/gen_rules.py`
 
-`proxy-domain.rsc` 是 blacklist 域名表的**唯一来源**，每次导入整表重建，由两个手工文件 + 上游自动生成：
+产物路径对应关系：生成器输出到工作目录的 `static/ros/`，随后同步进本仓库的 `ros/`。
 
-- **`ros/generator/manual-blacklist.txt`** —— 走代理黑名单（正向）。每行一个域名，`#` 注释。
-  只保留上游没有、手工补充的域名（当前 247 条，已剔除与上游重复的冗余）。
-  生成器打 `comment="ros-rules-manual"` 标记合入。
-- **`ros/generator/exclude-blacklist.txt`** —— 反向剔除名单（负向）。这些域名（及其所有子域）
-  从上游自动层剔除、按大陆直连，例如 bing.com、微软/苹果国内站、cloudfront.net（公共 CDN）、
-  国内券商 `.cn` 站（富途/老虎/嘉信/长桥）。生成器给上游自动域名打 `comment="ros-rules-auto"`
-  标记，被 exclude 命中的不会出现在产物里。
+---
 
-要增删域名：编辑 VPS 上对应的 `/srv/github-mirror/manual-blacklist.txt`（加代理）
-或 `/srv/github-mirror/exclude-blacklist.txt`（减代理），下次日更（06:00）自动生效；
-或手动跑 `python3 /srv/github-mirror/gen_rules.py` 立即重生成。
-**不要再导入旧的手工 gfw.rsc**——它会清掉整表，与生成文件互相覆盖。
+## 增删规则
+
+改 `generator/` 下的清单文件（**以本仓库这份为准，不要改部署端的旧副本**）：
+
+| 需求 | 改哪个 |
+|---|---|
+| 某域名要强制走代理 | `manual-blacklist.txt` 加一行 |
+| 某域名要从代理层剔除（走直连） | `exclude-blacklist.txt` 加一行 |
+| 增加/更换上游源 | `sources.json` 的 `sources` 数组 |
+| 新增消费端格式 | 在 `gen_oxi.py` 旁加一个适配器，只读 `proxy-domain.domains.txt` / `.exact.txt` |
+
+改完等日更自动生效，或手动重跑生成器。
+
+---
+
+## 致谢
+
+- [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules)
+- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)
+- [metowolf/iplist](https://github.com/metowolf/iplist)
+- [publicsuffix/list](https://github.com/publicsuffix/list)
+
+数据版权归上游项目所有；本仓库仅做格式转换与聚合，供个人网络使用。
