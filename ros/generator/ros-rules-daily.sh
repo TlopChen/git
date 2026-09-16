@@ -28,6 +28,7 @@ fi
 
 # 4) 同步生成结果到 Git 仓库（否则 git add -A 看不到 static 下的变化）
 /usr/bin/python3 /srv/github-mirror/gen_oxi.py || echo "[warn] gen_oxi failed"
+/usr/bin/python3 /srv/github-mirror/gen_cn.py || echo "[warn] gen_cn failed"
 cp /srv/github-mirror/static/ros/*.rsc /root/git/ros/
 cp /srv/github-mirror/static/ros/*.oxi.txt /root/git/ros/ 2>/dev/null || true
 cp /srv/github-mirror/static/ros/*.domains.txt /srv/github-mirror/static/ros/*.exact.txt /root/git/ros/ 2>/dev/null || true
