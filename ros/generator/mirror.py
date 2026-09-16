@@ -20,6 +20,7 @@ REPO_DIR = os.path.join(BASE, "repos")
 TTL = 6 * 3600        # 缓存有效时长（秒）
 GIT_TIMEOUT = 90      # 单次 git 操作超时（秒）
 PORT = 18080
+BIND_ADDR = os.environ.get("MIRROR_BIND", "0.0.0.0")
 
 ALLOWED = json.load(open(os.path.join(BASE, "repos.json")))
 _locks = {}
@@ -183,5 +184,5 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     os.makedirs(REPO_DIR, exist_ok=True)
-    print(f"serving on :{PORT}, allowed repos: {ALLOWED}", flush=True)
-    ThreadingHTTPServer(("0.0.0.0", PORT), Handler).serve_forever()
+    print(f"serving on {BIND_ADDR}:{PORT}, allowed repos: {ALLOWED}", flush=True)
+    ThreadingHTTPServer((BIND_ADDR, PORT), Handler).serve_forever()

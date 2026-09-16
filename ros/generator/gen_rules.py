@@ -315,7 +315,7 @@ def main():
                 for d in auto_exact:
                     fh.write(f"add address-list={cfg['list']} forward-to={cfg['forward-to']} "
                              f"match-subdomain=no type=FWD name={d} comment=\"{marker}\"\n")
-            print(f"[ok] {name}.rsc  手工 {len(manual)} + 上游 {len(auto) + len(auto_exact)} (后缀 {len(suffix_raw)} + 精确 {len(exact_raw)}, PSL 收纳)")
+                        print(f"[ok] {name}.rsc  手工 {len(manual)} + 上游 {len(auto) + len(auto_exact)} (后缀 {len(suffix_raw)} + 精确 {len(exact_raw)}, PSL 收纳)")
         elif cfg["type"] == "domain":
             doms = sorted(set().union(*(parse_domains(t) for t in texts)))
             if len(doms) < MIN_ENTRIES:
