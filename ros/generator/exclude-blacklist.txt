@@ -24,6 +24,7 @@ msdn.com
 visualstudio.com
 nuget.org
 xboxlive.com
+cn.bing.com
 
 # ==== 苹果系(未墙 国内可直连;App Store / 系统更新大流量) ====
 apple.com
