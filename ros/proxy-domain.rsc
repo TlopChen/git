@@ -1,4 +1,4 @@
-#proxy-domain — 手工 246 条 + 上游 28773 条, 2026-09-21 06:01:34 由 gen_rules.py 生成
+#proxy-domain — 手工 246 条 + 上游 28778 条, 2026-09-22 06:01:16 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
@@ -6339,6 +6339,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=code
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=code1984.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=codeberg.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=codeberg.page comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=codebuff.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=codecademy.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=codeforaliving.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=codeforces.com comment="ros-rules-auto"
@@ -9715,10 +9716,12 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fiot
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fire-emblem-heroes.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firearmsworld.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firebase.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firebase.dev comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firebase.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firebaseapp.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firebaseio.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fireemblemawakening.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firefox-portal-detection.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firefox.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firefox.hu comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=firefoxtweetmachine.com comment="ros-rules-auto"
@@ -10170,6 +10173,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=free
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=freebrowser.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=freebs.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=freebsd.org comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=freebuff.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=freecamsfan.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=freecartoons.biz comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=freechal.com comment="ros-rules-auto"
@@ -24221,6 +24225,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=text
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=textnow.me comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=texttobuy.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=texture.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tfbnw.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tfc-taiwan.org.tw comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tferwq.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tfhub.dev comment="ros-rules-auto"
