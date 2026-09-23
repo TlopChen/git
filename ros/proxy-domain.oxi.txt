@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29019 rules, generated 2026-09-16 15:52:46
+# proxy-domain OxiDNS domain_set, 29026 rules, generated 2026-09-24 06:01:16
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -5749,6 +5749,7 @@ domain:chinesegay.org
 domain:chinesen.de
 domain:chinesenews.net.au
 domain:chinesepen.org
+domain:chineseposters.net
 domain:chineseradioseattle.com
 domain:chinesespanking.com
 domain:chinesetalks.net
@@ -6156,6 +6157,7 @@ domain:code.org
 domain:code1984.com
 domain:codeberg.org
 domain:codeberg.page
+domain:codebuff.com
 domain:codecademy.com
 domain:codeforaliving.io
 domain:codeforces.com
@@ -9626,10 +9628,12 @@ domain:fiotolia.com
 domain:fire-emblem-heroes.com
 domain:firearmsworld.net
 domain:firebase.com
+domain:firebase.dev
 domain:firebase.io
 domain:firebaseapp.com
 domain:firebaseio.com
 domain:fireemblemawakening.com
+domain:firefox-portal-detection.com
 domain:firefox.com
 domain:firefox.hu
 domain:firefoxtweetmachine.com
@@ -10082,6 +10086,7 @@ domain:freebigmovies.com
 domain:freebrowser.org
 domain:freebs.com
 domain:freebsd.org
+domain:freebuff.com
 domain:freecamsfan.com
 domain:freecartoons.biz
 domain:freechal.com
@@ -18508,6 +18513,7 @@ domain:noroutetohost.net
 domain:norsk.mobi
 domain:norton.com
 domain:nos.nl
+domain:note.com
 domain:notegpt.io
 domain:notepad-plus-plus.org
 domain:noticias-rt.com
@@ -24198,6 +24204,7 @@ domain:textnow.com
 domain:textnow.me
 domain:texttobuy.org
 domain:texture.com
+domain:tfbnw.net
 domain:tfc-taiwan.org.tw
 domain:tferwq.com
 domain:tfhub.dev
