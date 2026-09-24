@@ -1,4 +1,4 @@
-#cn — 6246 条, 2026-09-24 06:00:15 由 gen_rules.py 生成
+#cn — 6246 条, 2026-09-25 06:00:18 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn.rsc" mode=http
 #         /import file-name=cn.rsc
 /ip firewall address-list
@@ -1113,7 +1113,6 @@ add list=CN address=71.136.64.0/18
 add list=CN address=71.137.0.0/18
 add list=CN address=72.163.240.0/23
 add list=CN address=72.163.248.0/22
-add list=CN address=74.122.26.0/23
 add list=CN address=75.75.236.0/29
 add list=CN address=81.68.0.0/14
 add list=CN address=81.173.18.0/23
@@ -2094,6 +2093,7 @@ add list=CN address=103.98.240.0/20
 add list=CN address=103.99.53.0/24
 add list=CN address=103.99.54.0/23
 add list=CN address=103.99.56.0/22
+add list=CN address=103.99.62.0/24
 add list=CN address=103.99.104.0/22
 add list=CN address=103.99.116.0/22
 add list=CN address=103.99.120.0/22
@@ -2145,6 +2145,7 @@ add list=CN address=103.104.64.0/22
 add list=CN address=103.104.104.0/22
 add list=CN address=103.104.152.0/22
 add list=CN address=103.104.188.0/22
+add list=CN address=103.104.198.0/23
 add list=CN address=103.104.252.0/22
 add list=CN address=103.105.0.0/21
 add list=CN address=103.105.12.0/22
@@ -4010,7 +4011,6 @@ add list=CN address=142.86.192.0/19
 add list=CN address=142.86.224.0/20
 add list=CN address=142.86.240.0/21
 add list=CN address=142.86.248.0/22
-add list=CN address=142.86.253.0/24
 add list=CN address=142.86.254.0/23
 add list=CN address=143.64.0.0/16
 add list=CN address=144.0.0.0/16
@@ -4062,7 +4062,8 @@ add list=CN address=147.243.231.0/24
 add list=CN address=147.243.232.0/21
 add list=CN address=147.243.240.0/20
 add list=CN address=148.70.0.0/16
-add list=CN address=149.41.0.0/16
+add list=CN address=149.41.64.0/18
+add list=CN address=149.41.192.0/19
 add list=CN address=150.0.0.0/16
 add list=CN address=150.115.0.0/16
 add list=CN address=150.121.0.0/16
@@ -4480,7 +4481,6 @@ add list=CN address=183.182.24.0/21
 add list=CN address=183.184.0.0/13
 add list=CN address=183.192.0.0/10
 add list=CN address=185.2.48.0/24
-add list=CN address=185.2.51.0/24
 add list=CN address=185.75.173.0/24
 add list=CN address=185.75.174.0/24
 add list=CN address=185.109.236.0/24
