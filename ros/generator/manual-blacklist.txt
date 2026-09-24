@@ -248,3 +248,4 @@ production.cloudflare.docker.com
 
 #手工
 fanza.jp
+cas7.moe
