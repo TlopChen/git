@@ -139,16 +139,17 @@ https://raw.githubusercontent.com/TlopChen/git/main/ros/proxy-domain.oxi.txt
 数据版权归上游项目所有；本仓库仅做格式转换与聚合，供个人网络使用。
 
 
-## 2026-09-27：ROS每日同步统一为四张表
+## 2026-09-27：ROS每日同步统一为六张表
 
 唯一启用调度为 `ros-rules-sync`，每天北京时间06:30运行 `/system script run ros-rules-sync`。
 系统脚本先拉取最新 `http://192.168.40.1:18080/ros/sync.rsc`，然后只同步：
-CT=`cn-telecom.rsc`、CM=`cn-mobile.rsc`、blacklist=`blacklist.rsc`、DIRECT_IP=`direct-ipv4.rsc`。
-先下载四份到 `sync-stage-*` 并检查大小，全部成功才开始导入；任一下载失败不导入旧缓存。
-导入或数量检查失败时记录具体步骤并停止，不输出成功日志。四表导入不是整体事务，某表导入失败不会回滚先前已完成的表。
+CT=`cn-telecom.rsc`、CM=`cn-mobile.rsc`、blacklist=`blacklist.rsc`、DIRECT_IP=`direct-ipv4.rsc`、DIRECT_IP_NOCM=`direct-ipv4-nocm.rsc`、DIRECT_IP_NOCT=`direct-ipv4-noct.rsc`。
+先下载六份到 `sync-stage-*` 并检查大小，全部成功才开始导入；任一下载失败不导入旧缓存。
+导入或数量检查失败时记录具体步骤并停止，不输出成功日志。六表导入不是整体事务，某表导入失败不会回滚先前已完成的表。
 DIRECT_IP采用先补新条目再清旧条目；CT/CM/blacklist沿用现有生成器格式。
+DIRECT_IP_NOCM/DIRECT_IP_NOCT为按运营商拆分的派生表（NOCM=DIRECT_IP减CM移动段、NOCT=DIRECT_IP减CT电信段），用于让电信/移动线路各自只承载不属于对端的国内段，避免单表双线同时承载造成绕行与抖动。
 blacklist仅刷新静态部分，不清空DNS动态注入记录。没有同步CN/CU/CC或proxy-domain。
 旧 `blacklist-sync` 调度禁用；`blacklist-sync.rsc` 作为兼容入口转调唯一系统脚本。
 `sync.rsc`部署权威为 `/srv/github-mirror/static/ros/sync.rsc`，Git根目录ros及generator副本同步保存。
-DIRECT_IP本管线只生成与导入地址列表；ROS 侧的 BGP 宣告属于设备手工配置（2026-09-27 21:04 已将 lo-CT/lo-CM 的 output.network 改为 DIRECT_IP），本管线不登录设备。
+DIRECT_IP本管线只生成与导入地址列表；ROS 侧的 BGP 宣告属于设备手工配置（2026-09-27 晚已将 lo-CT 改为 DIRECT_IP_NOCM、lo-CM 改为 DIRECT_IP_NOCT），本管线不登录设备。
 广州的DNS例外随每日 full 刷新一次（2026-09-27 用户决定不再做每 10 分钟检测），ROS 每日同步，两端都是每天一次。
