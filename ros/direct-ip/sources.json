@@ -1,0 +1,13 @@
+{
+  "ros_list": "DIRECT_IP",
+  "resolvers": ["223.5.5.5", "119.29.29.29"],
+  "proxy_exclude_file": "/srv/github-mirror/static/ros/blacklist.rsc",
+  "ct_file": "/srv/github-mirror/static/ros/cn-telecom.rsc",
+  "cm_file": "/srv/github-mirror/static/ros/cn-mobile.rsc",
+  "sources": [
+    {"id": "gaoyifan-cn", "kind": "cidr", "repo": "gaoyifan/china-operator-ip", "ref": "ip-lists", "path": "china.txt", "min_prefixes": 1000, "max_prefixes": 30000},
+    {"id": "misaka-cn", "kind": "cidr", "repo": "misakaio/chnroutes2", "ref": "master", "path": "chnroutes.txt", "min_prefixes": 1000, "max_prefixes": 30000},
+    {"id": "metowolf-cn", "kind": "cidr", "repo": "metowolf/iplist", "ref": "master", "path": "data/special/china.txt", "min_prefixes": 1000, "max_prefixes": 30000},
+    {"id": "steam-cn", "kind": "steam", "repo": "v2ray/domain-list-community", "ref": "master", "path": "data/steam"}
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "service": "速方云",
+    "entry_domain": "srv52.suu-fun.com",
+    "status": "awaiting-user-download",
+    "note": "用户要求下载时采集真实连接目标，再查询 ASN 和公告 CIDR。入口 DNS 地址不代表下载节点，不加入有效直连集合。"
+  }
+]
