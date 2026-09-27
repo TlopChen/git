@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29026 rules, generated 2026-09-27 06:01:15
+# proxy-domain OxiDNS domain_set, 29028 rules, generated 2026-09-28 06:01:31
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -11021,6 +11021,7 @@ domain:go-gaytube.com
 domain:go-lang.com
 domain:go-lang.net
 domain:go-lang.org
+domain:go-mpulse.net
 domain:go-pki.com
 domain:go-to-zlibrary.se
 domain:go.com
@@ -25768,6 +25769,7 @@ domain:vaultify.com
 domain:vaultify.info
 domain:vaultify.net
 domain:vaultproject.io
+domain:vava8.com
 domain:vbcdn.com
 domain:vbcdn.net
 domain:vbejeyv.shop

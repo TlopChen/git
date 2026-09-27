@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29015, 2026-09-27 06:01:15
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29017, 2026-09-28 06:01:31
 000webhost.com
 01.org
 02weqj32.com
@@ -11021,6 +11021,7 @@ go-gaytube.com
 go-lang.com
 go-lang.net
 go-lang.org
+go-mpulse.net
 go-pki.com
 go-to-zlibrary.se
 go.com
@@ -25768,6 +25769,7 @@ vaultify.com
 vaultify.info
 vaultify.net
 vaultproject.io
+vava8.com
 vbcdn.com
 vbcdn.net
 vbejeyv.shop
