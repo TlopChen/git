@@ -40,7 +40,15 @@
       "kind": "steam",
       "repo": "v2ray/domain-list-community",
       "ref": "master",
-      "path": "data/steam"
+      "path": "data/steam",
+      "exclude_hosts": [
+        "csgo.wmsj.cn",
+        "dota2.wmsj.cn",
+        "st.dl.pinyuncloud.com",
+        "steampowered.com.8686c.com",
+        "steamstatic.com.8686c.com",
+        "wmsjsteam.com"
+      ]
     }
   ],
   "direct_asns": [

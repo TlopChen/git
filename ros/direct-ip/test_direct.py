@@ -33,6 +33,15 @@ class DirectTests(unittest.TestCase):
         self.assertEqual(rules[-1]['match'], 'domain-suffix')
         self.assertNotIn('steamcontent.com', [r['domain'] for r in rules])
 
+    def test_steam_cn_exclude_hosts(self):
+        data = '\n'.join(f'full:h{i}.example.com @cn' for i in range(5)) + '\ndead.example.com @cn\n'
+        rules = g.steam_cn(data, ['dead.example.com'])
+        self.assertEqual(len(rules), 5)
+        self.assertNotIn('dead.example.com', [r['domain'] for r in rules])
+        spec = {'id': 'steam-cn', 'kind': 'steam', 'repo': 'test/repo', 'ref': 'master',
+                'path': 'data/steam', 'exclude_hosts': ['dead.example.com']}
+        self.assertEqual(len(g.source_validate(spec, data.encode())), 5)
+
     def test_dns_stale_limit_and_required_domain(self):
         rule = {'domain': 'test.example.com', 'required': True}
         with patch.object(g.subprocess, 'run', side_effect=subprocess.TimeoutExpired('dig', 4)):

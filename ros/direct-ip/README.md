@@ -25,7 +25,7 @@
 - `exclude-ipv4.txt`：从最终集合做地址差集，支持从大网段排除单个 `/32`。
 - `direct-domains.json`：精确主机名及原因，双国内 DNS（223.5.5.5、119.29.29.29）查询 A 记录取并集，只生成 `/32`。当前手工主机表为空。速方云在下载期间已实测目标 `192.154.108.234:50000`，据 RIPE 最长匹配加入 `192.154.104.0/21`（AS53850/GorillaServers），见 `service-evidence/sufun.json`。用户后续要求整个 AS53850，现改为自动收录其全部 IPv4 公告；已移除静态 /21 钉选。该 ASN 其他业务并非逐个实测。`pending-services.json` 保留跟踪状态，新增节点继续采集。
 - 现有 `blacklist.rsc` 的静态 IPv4 强制代理地址自动加入排除集合；排除高于 CN、DNS 例外和手工添加。冲突会列在解析报告的 `excluded_addresses`。
-- Steam 源仅取 `@cn`；`full` 和后缀语义保存在域名报告中。对后缀条目只解析列出的主机本身，**并不枚举其所有子域名**。不对全球 `steamcontent.com`、Steam 社区做全域放行。
+- Steam 源仅取 `@cn`；`full` 和后缀语义保存在域名报告中。对后缀条目只解析列出的主机本身，**并不枚举其所有子域名**。不对全球 `steamcontent.com`、Steam 社区做全域放行。上游 `@cn` 里已废弃的主机用 `sources.json` 的 `exclude_hosts` 剔除（当前 6 个网宿/品云旧域：csgo.wmsj.cn、dota2.wmsj.cn、st.dl.pinyuncloud.com、steampowered.com.8686c.com、steamstatic.com.8686c.com、wmsjsteam.com），避免每日解析告警。
 
 DNS 例外随每日 full 刷新一次（2026-09-27 起不再做每 10 分钟检测），使用广州所见的两家国内 DNS 结果，可能与家庭客户端命中的 CDN 节点不同；这不是全量 CDN IP 清单，也不是与客户端 DNS 同步的首包保证。未来接入 AR 时，国内底表提供静态覆盖；域名新增地址仍需考虑更新窗口。当前仅生成 IPv4，与现有未启用 IPv6 的导入策略一致。
 

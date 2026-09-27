@@ -105,7 +105,8 @@ def git(repo, *args):
     return r.stdout
 
 
-def steam_cn(text):
+def steam_cn(text, exclude_hosts=()):
+    excluded = {h.lower() for h in exclude_hosts}
     rules = []
     for line in text.splitlines():
         parts = line.partition('#')[0].split()
@@ -116,6 +117,8 @@ def steam_cn(text):
         host = token.removeprefix('full:').lower()
         if not re.fullmatch(r'[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?', host) or '.' not in host:
             raise ValueError(f'unsupported Steam CN rule: {token}')
+        if host in excluded:
+            continue
         rules.append({'domain': host, 'match': 'full' if exact else 'domain-suffix',
                       'source': 'steam-cn', 'required': False})
     if not 5 <= len(rules) <= 200:
@@ -134,7 +137,7 @@ def source_validate(spec, data):
         if not 100_000_000 <= coverage <= 650_000_000:
             raise ValueError(f'{spec["id"]}: unexpected address coverage {coverage}')
         return nets
-    return steam_cn(text)
+    return steam_cn(text, spec.get('exclude_hosts', ()))
 
 
 def fetch_source(spec, base, cache, refresh):
