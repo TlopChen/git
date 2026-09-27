@@ -255,6 +255,16 @@ def render_ros(nets, name='DIRECT_IP'):
     return '\n'.join(rows)
 
 
+def operator_variants(all_direct, ct, cm, name='DIRECT_IP'):
+    """Per-operator exclusion tables: NOCM drops CM (mobile) nets, NOCT drops CT (telecom) nets.
+
+    Both are derived from the same daily DIRECT_IP set so a carrier line only
+    carries prefixes that do not belong to the other carrier.
+    """
+    return {f'{name}_NOCM': minus(all_direct, cm),
+            f'{name}_NOCT': minus(all_direct, ct)}
+
+
 def publish(outputs, root, static):
     """Each complete release is selected by one atomic current-symlink switch."""
     release_id = digest(b''.join(k.encode() + v.encode() for k, v in sorted(outputs.items())))[:20]
@@ -348,7 +358,11 @@ def main():
         old_size = sum(n.num_addresses for n in old)
         if abs(size / old_size - 1) > .15 or abs(len(all_direct) / len(old) - 1) > .5:
             raise ValueError('combined output changed too much; old release retained')
-    operator = parse_ros(cfg['ct_file']) + parse_ros(cfg['cm_file'])
+    ct_nets, cm_nets = parse_ros(cfg['ct_file']), parse_ros(cfg['cm_file'])
+    operator = ct_nets + cm_nets
+    nocm_name = cfg['ros_list'] + '_NOCM'
+    noct_name = cfg['ros_list'] + '_NOCT'
+    variants = operator_variants(all_direct, ct_nets, cm_nets, cfg['ros_list'])
     for record in resolved:
         record['excluded_addresses'] = [v for v in record['addresses']
                                         if not minus([canonical(v)], excluded)]
@@ -356,6 +370,8 @@ def main():
               'cn_union_prefixes': len(cn), 'cn_effective_prefixes': len(effective_cn),
               'direct_prefixes': len(all_direct), 'direct_addresses': size,
               'extra_outside_cn_prefixes': len(extra), 'excluded_prefixes': len(excluded),
+              'direct_nocm_prefixes': len(variants[nocm_name]),
+              'direct_noct_prefixes': len(variants[noct_name]),
               'existing_ct_cm_unique_prefixes': len(list(ip.collapse_addresses(operator))),
               'direct_addresses_outside_ct_cm': sum(n.num_addresses for n in minus(all_direct, operator)),
               'warnings': warnings, 'sources': {}, 'direct_asns': asn_report,
@@ -371,6 +387,8 @@ def main():
                'direct-extra-ipv4.txt': cidr_text(extra),
                'direct-excluded-ipv4.txt': cidr_text(excluded),
                'direct-ipv4.rsc': render_ros(all_direct, cfg['ros_list']),
+               'direct-ipv4-nocm.rsc': render_ros(variants[nocm_name], nocm_name),
+               'direct-ipv4-noct.rsc': render_ros(variants[noct_name], noct_name),
                'direct-domains-resolved.json': json_text(resolved),
                'direct-ipv4-report.json': json_text(report)}
     outputs.update(asn_outputs)

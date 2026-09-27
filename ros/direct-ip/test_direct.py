@@ -42,6 +42,18 @@ class DirectTests(unittest.TestCase):
                 'path': 'data/steam', 'exclude_hosts': ['dead.example.com']}
         self.assertEqual(len(g.source_validate(spec, data.encode())), 5)
 
+    def test_operator_variants_exclude_ct_or_cm(self):
+        direct = g.parse_cidrs('8.8.8.0/24\n9.9.9.0/24\n80.80.80.0/24')
+        ct = g.parse_cidrs('80.80.80.0/24')
+        cm = g.parse_cidrs('9.9.9.0/24')
+        variants = g.operator_variants(direct, ct, cm, 'DIRECT_IP')
+        nocm, noct = variants['DIRECT_IP_NOCM'], variants['DIRECT_IP_NOCT']
+        self.assertEqual(sorted(str(n) for n in nocm), ['8.8.8.0/24', '80.80.80.0/24'])
+        self.assertEqual(sorted(str(n) for n in noct), ['8.8.8.0/24', '9.9.9.0/24'])
+        rsc = g.render_ros(nocm, 'DIRECT_IP_NOCM')
+        self.assertIn('list="DIRECT_IP_NOCM"', rsc)
+        self.assertNotIn('list="DIRECT_IP"', rsc)
+
     def test_dns_stale_limit_and_required_domain(self):
         rule = {'domain': 'test.example.com', 'required': True}
         with patch.object(g.subprocess, 'run', side_effect=subprocess.TimeoutExpired('dig', 4)):

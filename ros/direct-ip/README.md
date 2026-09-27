@@ -38,10 +38,12 @@ DNS 例外随每日 full 刷新一次（2026-09-27 起不再做每 10 分钟检�
 | `output/direct-extra-ipv4.txt` | DNS/手工直连中超出国内集合的部分 |
 | `output/direct-excluded-ipv4.txt` | 本次排除集合 |
 | `output/direct-ipv4.rsc` | `/ip firewall address-list`，表名 **DIRECT_IP** |
+| `output/direct-ipv4-nocm.rsc` | 同上，表名 **DIRECT_IP_NOCM**：`DIRECT_IP` 减 `cn-mobile.rsc`（CM）地址，电信线路专用 |
+| `output/direct-ipv4-noct.rsc` | 同上，表名 **DIRECT_IP_NOCT**：`DIRECT_IP` 减 `cn-telecom.rsc`（CT）地址，移动线路专用 |
 | `output/direct-domains-resolved.json` | 精确主机、原始匹配语义、各 DNS 返回、失败/缓存状态、排除冲突 |
 | `output/direct-ipv4-report.json` | 规模、源贡献、与现有 CT/CM 的地址覆盖差异、警告 |
 
-例如内网下载地址：`http://192.168.40.1:18080/ros/direct-ipv4.txt`、`http://192.168.40.1:18080/ros/direct-ipv4.rsc`。本次不执行 ROS 导入。文件是地址表而不是 `/ip route` 静态路由，未来还需要单独配置 BGP 宣告及 AR/ROS 选路。
+例如内网下载地址：`http://192.168.40.1:18080/ros/direct-ipv4.txt`、`http://192.168.40.1:18080/ros/direct-ipv4.rsc`、`http://192.168.40.1:18080/ros/direct-ipv4-nocm.rsc`、`http://192.168.40.1:18080/ros/direct-ipv4-noct.rsc`。本次不执行 ROS 导入。按运营商拆分的派生表（NOCM/NOCT）每日随 `direct-ipv4.rsc` 重算，差集依据是分发目录里当日最新的 `cn-telecom.rsc`/`cn-mobile.rsc`，用于让电信/移动线路各自只承载不属于对端的国内段，避免单表双线同时承载造成的绕行与抖动。文件是地址表而不是 `/ip route` 静态路由，未来还需要单独配置 BGP 宣告及 AR/ROS 选路。
 
 ROS 脚本先添加缺失地址、更新本管线拥有的记录标记，全部成功后再清理旧的 `direct-ip-auto:` 记录；不清空整表，不删除手工条目，重复导入可复用现有地址。`/32` 在 ROS 地址表中按主机表示匹配。需串行导入；本次仅做结构检查，未在生产 ROS 上执行验证。
 
