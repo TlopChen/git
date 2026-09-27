@@ -27,7 +27,7 @@
 - 现有 `blacklist.rsc` 的静态 IPv4 强制代理地址自动加入排除集合；排除高于 CN、DNS 例外和手工添加。冲突会列在解析报告的 `excluded_addresses`。
 - Steam 源仅取 `@cn`；`full` 和后缀语义保存在域名报告中。对后缀条目只解析列出的主机本身，**并不枚举其所有子域名**。不对全球 `steamcontent.com`、Steam 社区做全域放行。
 
-DNS 例外每 10 分钟刷新，使用广州所见的两家国内 DNS 结果，可能与家庭客户端命中的 CDN 节点不同；这不是全量 CDN IP 清单，也不是与客户端 DNS 同步的首包保证。未来接入 AR 时，国内底表提供静态覆盖；域名新增地址仍需考虑更新窗口。当前仅生成 IPv4，与现有未启用 IPv6 的导入策略一致。
+DNS 例外随每日 full 刷新一次（2026-09-27 起不再做每 10 分钟检测），使用广州所见的两家国内 DNS 结果，可能与家庭客户端命中的 CDN 节点不同；这不是全量 CDN IP 清单，也不是与客户端 DNS 同步的首包保证。未来接入 AR 时，国内底表提供静态覆盖；域名新增地址仍需考虑更新窗口。当前仅生成 IPv4，与现有未启用 IPv6 的导入策略一致。
 
 ## 输出与分发
 
@@ -54,13 +54,13 @@ HTTP 文件通过 `/var/lib/direct-ip/current` 指向完整 release，校验后�
 ```sh
 # 全量源与 DNS（每日北京时间 06:15）
 /usr/local/bin/direct-ip-update full
-# 复用已验证的本地 IP 源，仅刷新 DNS（每 10 分钟）
+# 复用已验证的本地 IP 源，仅刷新 DNS（定时任务已停用，需要时手工执行）
 /usr/local/bin/direct-ip-update dns
 # 单元测试
 cd /root/git/ros/direct-ip && python3 -m unittest -v test_direct
 ```
 
-计划任务在 `/etc/cron.d/direct-ip`，日志 `/var/log/direct-ip.log`；DNS 刷新在每小时 05/15/25/35/45/55 分，跳过 05:55 和 06:05，给现有 06:00 规则任务留窗口。与旧任务共用 `/tmp/ros-rules.lock`，避免并发提交。`update.sh` 只提交本目录 raw/output，已有未提交修改时停止，Git 冲突时停止，不强推；上次 push 失败且已有本地提交时下次重试。旧日更的通配符备份还可能将分发目录的 `direct-ipv4.rsc` 复制到 `ros/` 顶层；本目录 output 才是本管线的权威产物。
+计划任务在 `/etc/cron.d/direct-ip`（只剩 06:15 的 full 一条；DNS 刷新随它一起做，手工可跑 `direct-ip-update dns`），日志 `/var/log/direct-ip.log`。与旧任务共用 `/tmp/ros-rules.lock`，避免并发提交。`update.sh` 只提交本目录 raw/output，已有未提交修改时停止，Git 冲突时停止，不强推；上次 push 失败且已有本地提交时下次重试。旧日更的通配符备份还可能将分发目录的 `direct-ipv4.rsc` 复制到 `ros/` 顶层；本目录 output 才是本管线的权威产物。
 
 CIDR 源单源至少 1000 条、整体至少 1000 条，校验公网地址、默认路由/私网、覆盖量和异常增减。源抓取失败可使用 72 小时以内的已验证原始快照，超过则停止发布；IPv4 上游分支超过 14 天未更新时视为抓取失败。必需域名解析失败可保留 24 小时内最近成功结果，过期停止；非必需 Steam 主机过期会剔除并报告。警告写入报告和日志，不静默冒充更新成功。
 
