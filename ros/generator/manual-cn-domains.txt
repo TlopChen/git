@@ -3,10 +3,16 @@
 # 为什么需要这张表：exclude-blacklist.txt 只是"不进代理表"，并不等于直连；
 # 真直连还要求命中 cn_domains（本文件 + geosite 的 cn/geolocation-cn 分类）。
 #
-# 收录依据（2026-09-27 双路径实测，广州直连 vs 家庭经隧道 TTFB）：
-#   apple.com / icloud.com / itunes.com 直连 45-53ms vs 隧道 206-365ms（就近节点，收益 4-8 倍）
-#   longbridge.cn / longportapp.cn      直连 126-259ms vs 隧道 727-806ms（阿里云国内节点，收益 3-6 倍）
-# 注意：github.com 直连被干扰（TLS 后无响应）、python/nodejs/steamstatic 系隧道更快，均不入表。
+# 收录依据（2026-09-27/28 双路径实测，广州直连 vs 家庭经隧道 TTFB）：
+#   第一批 5 个（2026-09-28 05:1x 验收通过，TTFB 降 51-60%）：
+#     apple.com / icloud.com / itunes.com（直连 99-131ms vs 隧道 251-269ms）
+#     longbridge.cn / longportapp.cn（直连 182-229ms vs 隧道 172-270ms）
+#   第二批 17 个（2026-09-28 凌晨，广州直连均快于隧道）：
+#     微软系 microsoft.com/live.com/live.net/msn.com/bing.com/azure.com/msdn.com/nuget.org
+#     硬件厂商 nvidia.com/intel.com/dell.com/samsung.com/asus.com
+#     开发者站 gitlab.com/npmjs.com/pypi.org；券商 schwab.com.cn
+# 不入表：github.com（直连 TLS 被干扰）、python.org/nodejs.org（隧道更快）、steamstatic 系（隧道更快）、
+#         azureedge/azurewebsites/cdn-apple/apple-dns/cloudfront/futubull（泛域无 A 记录）、jdwsy/futu/tigerbbs（两边都不通）
 #
 # 格式：domain:example.com 后缀匹配（含子域）；full:host.example.com 精确匹配
 domain:apple.com
@@ -14,3 +20,21 @@ domain:icloud.com
 domain:itunes.com
 domain:longbridge.cn
 domain:longportapp.cn
+# 第二批（2026-09-28）
+domain:microsoft.com
+domain:live.com
+domain:live.net
+domain:msn.com
+domain:bing.com
+domain:azure.com
+domain:msdn.com
+domain:nuget.org
+domain:nvidia.com
+domain:intel.com
+domain:dell.com
+domain:samsung.com
+domain:asus.com
+domain:gitlab.com
+domain:npmjs.com
+domain:pypi.org
+domain:schwab.com.cn

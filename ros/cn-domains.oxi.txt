@@ -1,4 +1,4 @@
-# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 113467 rules, 2026-09-28 04:54:02
+# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 113484 rules, 2026-09-28 05:18:58
 domain:0.zone
 domain:00.net
 domain:000.link
@@ -13204,6 +13204,7 @@ domain:astropulsion.com
 domain:astrostanleystudio.com
 domain:asty664.com
 domain:asujp.com
+domain:asus.com
 domain:asussmart.com
 domain:asusw.net
 domain:asvm.net
@@ -13819,6 +13820,7 @@ domain:azt365.com
 domain:azuiblc.com
 domain:azure-wave.com
 domain:azure.cc
+domain:azure.com
 domain:azureflame.cloud
 domain:azureflying.com
 domain:azuremigrate.download.prss.microsoft.com
@@ -16082,6 +16084,7 @@ domain:binfenquzu.com
 domain:binfenshikong.com
 domain:binfenyeke.com
 domain:binfenyingyu.com
+domain:bing.com
 domain:bing400.com
 domain:bingchenvacuum.com
 domain:bingd.com
@@ -28601,6 +28604,7 @@ domain:delixidrive.com
 domain:deliyun.com
 domain:dell-alw.com
 domain:dell-brand.com
+domain:dell.com
 domain:dell027.com
 domain:dellecs.com
 domain:dellemc-solution.com
@@ -38827,6 +38831,7 @@ domain:githubim.com
 domain:githubshare.com
 domain:gitinn.com
 domain:gitiu.com
+domain:gitlab.com
 domain:gitlib.com
 domain:gitmirror.com
 domain:gitnoteapp.com
@@ -52030,6 +52035,7 @@ domain:intedc.com
 domain:integrity-funds.com
 domain:intekey.com
 domain:intel-space.com
+domain:intel.com
 domain:intelcupid.com
 domain:intelligen.ltd
 domain:intelligence-electricity.net
@@ -62537,6 +62543,8 @@ domain:liuzy88.com
 domain:livanauto.com
 domain:live-helps.com
 domain:live-voip.com
+domain:live.com
+domain:live.net
 domain:live123.cc
 domain:live800.com
 domain:liveapp.ink
@@ -66306,6 +66314,7 @@ domain:microfountain.com
 domain:micronetpay.com
 domain:microrui.net
 domain:microsate.com
+domain:microsoft.com
 domain:microsoftonline.com
 domain:microsoftuwp.com
 domain:microstarsoft.com
@@ -67684,6 +67693,7 @@ domain:mscodecloud.com
 domain:msd-facing.com
 domain:msddp.com
 domain:msdkpass.com
+domain:msdn.com
 domain:msdn.download.prss.microsoft.com
 domain:msdnwogaosuni.com
 domain:msdnxitong.com
@@ -67719,6 +67729,7 @@ domain:mslzk.com
 domain:msm.moe
 domain:msmartlife.com
 domain:msmbjp.com
+domain:msn.com
 domain:msndvr.com
 domain:msny.cc
 domain:msocdn.com
@@ -70877,6 +70888,7 @@ domain:npi-sh.com
 domain:npilasers.com
 domain:nplusgroup.com
 domain:nplusgroup.net
+domain:npmjs.com
 domain:npmmirror.com
 domain:npmtrend.com
 domain:npoall.com
@@ -71081,6 +71093,7 @@ domain:nuctech.com
 domain:nuedcchina.com
 domain:nufans.net
 domain:nug08011lu.com
+domain:nuget.org
 domain:nuhcpf.com
 domain:nuhighbio.com
 domain:nuist.pro
@@ -71148,6 +71161,7 @@ domain:nvcam.net
 domain:nvcong.com
 domain:nvgate16.nvidia.com
 domain:nvidia-china.com
+domain:nvidia.com
 domain:nvidia.net
 domain:nvkan.com
 domain:nvpuse.com
@@ -74753,6 +74767,7 @@ domain:pymeng.com
 domain:pymh.com
 domain:pyneo.com
 domain:pyou.com
+domain:pypi.org
 domain:pyral07m8m.com
 domain:pyrc.net
 domain:pyshszh.com
@@ -79476,6 +79491,7 @@ domain:sampux.com
 domain:samsph.com
 domain:samsrchina.com
 domain:samsuncn.net
+domain:samsung.com
 domain:samsunganycar.com
 domain:samsungcloudcn.com
 domain:samsungconnectivity.com
@@ -80029,6 +80045,7 @@ domain:schoolpi.net
 domain:schoopia.com
 domain:schstv.com
 domain:scht.cc
+domain:schwab.com.cn
 domain:schwarzeni.com
 domain:schwr.com
 domain:schxzx.com
