@@ -1,7 +1,7 @@
 # IPv4 direct IP set; see ros/direct-ip/README.md for source attribution.
 # Does not configure routes/BGP. Import must be serialized.
 {
-:local generation "direct-ip-auto:35d32794a5b745fd";
+:local generation "direct-ip-auto:9cacbd5dbb1da301";
 :local prefixes {
 "1.0.1.0/24";
 "1.0.2.0/23";
@@ -433,11 +433,6 @@
 "43.0.0.0/10";
 "43.64.0.0/14";
 "43.68.0.0/15";
-"43.109.70.194";
-"43.109.161.40";
-"43.109.171.98/31";
-"43.109.171.100/30";
-"43.109.171.104/31";
 "43.136.0.0/13";
 "43.144.0.0/15";
 "43.148.0.0/14";
@@ -4184,11 +4179,10 @@
 "154.72.44.0/24";
 "154.72.47.0/24";
 "154.89.32.0/20";
-"155.102.4.9";
-"155.102.4.141";
-"155.102.175.140";
-"155.102.180.250";
-"155.102.181.141";
+"155.102.180.242/31";
+"155.102.180.244";
+"155.102.180.248/30";
+"155.102.180.252";
 "155.117.161.0/24";
 "155.126.176.0/23";
 "156.107.160.0/23";
@@ -4349,9 +4343,10 @@
 "163.142.0.0/16";
 "163.177.0.0/16";
 "163.179.0.0/16";
-"163.181.35.180";
 "163.181.77.215";
-"163.181.228.144";
+"163.181.77.216/30";
+"163.181.77.220/31";
+"163.181.77.222";
 "163.204.0.0/16";
 "163.223.28.0/23";
 "163.223.32.0/23";
@@ -6329,5 +6324,5 @@
 };
 # This line is reached only after every desired entry was processed.
 /ip firewall address-list remove [find where list="DIRECT_IP" and dynamic=no and comment~"^direct-ip-auto:" and comment!=$generation];
-:log info "DIRECT_IP synced: 6311 IPv4 prefixes";
+:log info "DIRECT_IP synced: 6306 IPv4 prefixes";
 }
