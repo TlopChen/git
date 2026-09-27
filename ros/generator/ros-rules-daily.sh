@@ -31,7 +31,7 @@ fi
 /usr/bin/python3 /srv/github-mirror/gen_cn.py || echo "[warn] gen_cn failed"
 /usr/bin/python3 /srv/github-mirror/fetch_bin.py || echo "[warn] fetch_bin failed"
 mkdir -p /root/git/ros/src && cp /srv/github-mirror/static/src/* /root/git/ros/src/ 2>/dev/null || true
-cp /srv/github-mirror/static/ros/*.rsc /root/git/ros/
+find /srv/github-mirror/static/ros -maxdepth 1 -name "*.rsc" ! -name "direct-*" -exec cp {} /root/git/ros/ \;
 cp /srv/github-mirror/static/ros/*.oxi.txt /root/git/ros/ 2>/dev/null || true
 cp /srv/github-mirror/static/ros/*.domains.txt /srv/github-mirror/static/ros/*.exact.txt /root/git/ros/ 2>/dev/null || true
 
