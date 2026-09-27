@@ -137,3 +137,18 @@ https://raw.githubusercontent.com/TlopChen/git/main/ros/proxy-domain.oxi.txt
 - [publicsuffix/list](https://github.com/publicsuffix/list)
 
 数据版权归上游项目所有；本仓库仅做格式转换与聚合，供个人网络使用。
+
+
+## 2026-09-27：ROS每日同步统一为四张表
+
+唯一启用调度为 `ros-rules-sync`，每天北京时间06:30运行 `/system script run ros-rules-sync`。
+系统脚本先拉取最新 `http://192.168.40.1:18080/ros/sync.rsc`，然后只同步：
+CT=`cn-telecom.rsc`、CM=`cn-mobile.rsc`、blacklist=`blacklist.rsc`、DIRECT_IP=`direct-ipv4.rsc`。
+先下载四份到 `sync-stage-*` 并检查大小，全部成功才开始导入；任一下载失败不导入旧缓存。
+导入或数量检查失败时记录具体步骤并停止，不输出成功日志。四表导入不是整体事务，某表导入失败不会回滚先前已完成的表。
+DIRECT_IP采用先补新条目再清旧条目；CT/CM/blacklist沿用现有生成器格式。
+blacklist仅刷新静态部分，不清空DNS动态注入记录。没有同步CN/CU/CC或proxy-domain。
+旧 `blacklist-sync` 调度禁用；`blacklist-sync.rsc` 作为兼容入口转调唯一系统脚本。
+`sync.rsc`部署权威为 `/srv/github-mirror/static/ros/sync.rsc`，Git根目录ros及generator副本同步保存。
+DIRECT_IP只导入地址列表，本次没有新增它的BGP宣告或修改AR/ROS选路。
+广州的DNS例外每10分钟生成，但ROS此处按用户要求每日同步，因此设备更新频率为每天一次。
