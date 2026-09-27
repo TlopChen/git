@@ -1,8 +1,8 @@
 {
   "cn_effective_prefixes": 6273,
   "cn_union_prefixes": 6273,
-  "direct_addresses": 352594560,
-  "direct_addresses_outside_ct_cm": 200467800,
+  "direct_addresses": 352594561,
+  "direct_addresses_outside_ct_cm": 200467801,
   "direct_prefixes": 6283,
   "domain_hosts": 17,
   "domain_hosts_with_addresses": 11,
