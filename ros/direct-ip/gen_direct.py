@@ -232,14 +232,20 @@ def render_ros(nets, name='DIRECT_IP'):
             f':local generation "{generation}";', ':local prefixes {']
     # RouterOS stores /32 address-list entries in host representation.
     rows += [f'"{n.network_address if n.prefixlen == 32 else n}";' for n in nets]
-    rows += ['};', ':foreach prefix in=$prefixes do={',
-             f'  :local ids [/ip firewall address-list find where list="{name}" and address=$prefix];',
-             '  :if ([:len $ids] = 0) do={',
+    rows += ['};', ':local wanted [:toarray ""];', ':local existing [:toarray ""];',
+             ':local keep [:toarray ""];',
+             ':foreach prefix in=$prefixes do={ :set ($wanted->$prefix) true; };',
+             f':foreach entry in=[/ip firewall address-list print as-value where list="{name}"] do={{',
+             '  :local key [:tostr ($entry->"address")];',
+             '  :set ($existing->$key) true;',
+             '  :if (($wanted->$key) = true && ($entry->"comment") ~ "^direct-ip-auto:" && ($entry->"dynamic") = false) do={',
+             '    :set keep ($keep, ($entry->".id"));',
+             '  };', '};',
+             ':if ([:len $keep] > 0) do={ /ip firewall address-list set $keep comment=$generation; };',
+             ':foreach prefix in=$prefixes do={',
+             '  :if (($existing->$prefix) != true) do={',
              f'    /ip firewall address-list add list="{name}" address=$prefix comment=$generation;',
-             '  } else={', '    :foreach id in=$ids do={',
-             '      :if ([/ip firewall address-list get $id comment] ~ "^direct-ip-auto:") do={',
-             '        /ip firewall address-list set $id comment=$generation;',
-             '      };', '    };', '  };', '};',
+             '  };', '};',
              '# This line is reached only after every desired entry was processed.',
              f'/ip firewall address-list remove [find where list="{name}" and dynamic=no and comment~"^direct-ip-auto:" and comment!=$generation];',
              f':log info "DIRECT_IP synced: {len(nets)} IPv4 prefixes";', '}', '']
