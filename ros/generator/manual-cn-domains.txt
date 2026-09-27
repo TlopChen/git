@@ -1,0 +1,16 @@
+# 手工补充的"判为国内"域名（供 OxiDNS cn 反转判据用；命中即走国内 DNS 上游 + 直连）
+#
+# 为什么需要这张表：exclude-blacklist.txt 只是"不进代理表"，并不等于直连；
+# 真直连还要求命中 cn_domains（本文件 + geosite 的 cn/geolocation-cn 分类）。
+#
+# 收录依据（2026-09-27 双路径实测，广州直连 vs 家庭经隧道 TTFB）：
+#   apple.com / icloud.com / itunes.com 直连 45-53ms vs 隧道 206-365ms（就近节点，收益 4-8 倍）
+#   longbridge.cn / longportapp.cn      直连 126-259ms vs 隧道 727-806ms（阿里云国内节点，收益 3-6 倍）
+# 注意：github.com 直连被干扰（TLS 后无响应）、python/nodejs/steamstatic 系隧道更快，均不入表。
+#
+# 格式：domain:example.com 后缀匹配（含子域）；full:host.example.com 精确匹配
+domain:apple.com
+domain:icloud.com
+domain:itunes.com
+domain:longbridge.cn
+domain:longportapp.cn
