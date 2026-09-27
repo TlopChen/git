@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-09-27T20:31:56.396652+08:00",
+  "service": "速方云",
+  "entry_domain": "srv52.suu-fun.com",
+  "observation": {
+    "process": "IDMan",
+    "established_download_connections": 8,
+    "remote_ip": "192.154.108.234",
+    "remote_port": 50000
+  },
+  "network_info": {
+    "origin_asns": [
+      53850
+    ],
+    "prefix": "192.154.104.0/21",
+    "source": "https://stat.ripe.net/data/network-info/data.json?resource=192.154.108.234"
+  },
+  "holder": {
+    "name": "GORILLASERVERS - GorillaServers, Inc.",
+    "source": "https://stat.ripe.net/data/as-overview/data.json?resource=AS53850"
+  },
+  "arin_allocation": {
+    "name": "GSI-192-154-96-0",
+    "start": "192.154.96.0",
+    "end": "192.154.111.255",
+    "source": "https://rdap.arin.net/registry/ip/192.154.108.234"
+  },
+  "asn_prefix_inventory": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850",
+  "decision": {
+    "include": "192.154.104.0/21",
+    "all_asn_prefixes_included": false,
+    "rationale": "用户要求依据真实下载IP查ASN及CIDR；选该IP最长匹配公告前缀，而非较大的ARIN分配段或整个托管商ASN。",
+    "limitation": "仅该下载IP实测；前缀其他地址不保证属于速方云或全部直连可用。"
+  },
+  "privacy": "不留存下载URL路径、签名参数、文件名、本机地址或进程号。"
+}

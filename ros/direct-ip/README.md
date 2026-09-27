@@ -23,7 +23,7 @@
 
 - `include-ipv4.txt`：纯 IPv4/CIDR，一行一条，可以有 `#` 注释。
 - `exclude-ipv4.txt`：从最终集合做地址差集，支持从大网段排除单个 `/32`。
-- `direct-domains.json`：精确主机名及原因，双国内 DNS（223.5.5.5、119.29.29.29）查询 A 记录取并集，只生成 `/32`。当前手工主机表为空。速方云 `srv52.suu-fun.com` 放在 `pending-services.json`：按用户要求等实际下载时采集真实目标 IP，再查 ASN/公告前缀；入口 DNS 地址不自动加入。
+- `direct-domains.json`：精确主机名及原因，双国内 DNS（223.5.5.5、119.29.29.29）查询 A 记录取并集，只生成 `/32`。当前手工主机表为空。速方云在下载期间已实测目标 `192.154.108.234:50000`，据 RIPE 最长匹配加入 `192.154.104.0/21`（AS53850/GorillaServers），见 `service-evidence/sufun.json`。只收录该公告段，不放行整个托管商 ASN；前缀内其他 IP 尚未实测。`pending-services.json` 保留跟踪状态，新增节点继续采集。
 - 现有 `blacklist.rsc` 的静态 IPv4 强制代理地址自动加入排除集合；排除高于 CN、DNS 例外和手工添加。冲突会列在解析报告的 `excluded_addresses`。
 - Steam 源仅取 `@cn`；`full` 和后缀语义保存在域名报告中。对后缀条目只解析列出的主机本身，**并不枚举其所有子域名**。不对全球 `steamcontent.com`、Steam 社区做全域放行。
 

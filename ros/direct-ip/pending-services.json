@@ -2,7 +2,11 @@
   {
     "service": "速方云",
     "entry_domain": "srv52.suu-fun.com",
-    "status": "awaiting-user-download",
-    "note": "用户要求下载时采集真实连接目标，再查询 ASN 和公告 CIDR。入口 DNS 地址不代表下载节点，不加入有效直连集合。"
+    "status": "download-endpoint-observed",
+    "note": "IDM下载期间实测目标IP；收录该IP所在公告前缀。非整ASN放行，前缀内其他IP尚未实测速方云业务；新增节点继续采集。",
+    "observed_ip": "192.154.108.234",
+    "port": 50000,
+    "origin_asn": 53850,
+    "included_prefix": "192.154.104.0/21"
   }
 ]
