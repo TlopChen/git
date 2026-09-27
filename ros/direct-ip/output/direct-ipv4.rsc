@@ -1,7 +1,7 @@
 # IPv4 direct IP set; see ros/direct-ip/README.md for source attribution.
 # Does not configure routes/BGP. Import must be serialized.
 {
-:local generation "direct-ip-auto:9cacbd5dbb1da301";
+:local generation "direct-ip-auto:820e778c6b29bae0";
 :local prefixes {
 "1.0.1.0/24";
 "1.0.2.0/23";
@@ -433,6 +433,9 @@
 "43.0.0.0/10";
 "43.64.0.0/14";
 "43.68.0.0/15";
+"43.109.171.98/31";
+"43.109.171.100/30";
+"43.109.171.104/31";
 "43.136.0.0/13";
 "43.144.0.0/15";
 "43.148.0.0/14";
@@ -4343,10 +4346,6 @@
 "163.142.0.0/16";
 "163.177.0.0/16";
 "163.179.0.0/16";
-"163.181.77.215";
-"163.181.77.216/30";
-"163.181.77.220/31";
-"163.181.77.222";
 "163.204.0.0/16";
 "163.223.28.0/23";
 "163.223.32.0/23";
@@ -6310,19 +6309,24 @@
 "223.255.236.0/22";
 "223.255.252.0/23";
 };
+:local wanted [:toarray ""];
+:local existing [:toarray ""];
+:local keep [:toarray ""];
+:foreach prefix in=$prefixes do={ :set ($wanted->$prefix) true; };
+:foreach entry in=[/ip firewall address-list print as-value where list="DIRECT_IP"] do={
+  :local key [:tostr ($entry->"address")];
+  :set ($existing->$key) true;
+  :if (($wanted->$key) = true && ($entry->"comment") ~ "^direct-ip-auto:" && ($entry->"dynamic") = false) do={
+    :set keep ($keep, ($entry->".id"));
+  };
+};
+:if ([:len $keep] > 0) do={ /ip firewall address-list set $keep comment=$generation; };
 :foreach prefix in=$prefixes do={
-  :local ids [/ip firewall address-list find where list="DIRECT_IP" and address=$prefix];
-  :if ([:len $ids] = 0) do={
+  :if (($existing->$prefix) != true) do={
     /ip firewall address-list add list="DIRECT_IP" address=$prefix comment=$generation;
-  } else={
-    :foreach id in=$ids do={
-      :if ([/ip firewall address-list get $id comment] ~ "^direct-ip-auto:") do={
-        /ip firewall address-list set $id comment=$generation;
-      };
-    };
   };
 };
 # This line is reached only after every desired entry was processed.
 /ip firewall address-list remove [find where list="DIRECT_IP" and dynamic=no and comment~"^direct-ip-auto:" and comment!=$generation];
-:log info "DIRECT_IP synced: 6306 IPv4 prefixes";
+:log info "DIRECT_IP synced: 6305 IPv4 prefixes";
 }
