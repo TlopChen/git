@@ -312,6 +312,15 @@ def main():
                 warnings.append(f'DNS {host}: {record["status"]}')
     cn = list(ip.collapse_addresses(all_cn))
     manual = parse_cidrs((base / 'include-ipv4.txt').read_text())
+    from asn_sources import load_asn
+    asn_report, asn_outputs = {}, {}
+    for asn in cfg.get('direct_asns', []):
+        v4, v6, meta, warning = load_asn(asn, base, not args.dns_only)
+        manual.extend(v4)
+        asn_report[str(asn)] = dict(meta, aggregated_ipv4_prefixes=len(list(ip.collapse_addresses(v4))))
+        asn_outputs[f'direct-as{asn}-ipv4.txt'] = cidr_text(v4)
+        if warning:
+            warnings.append(warning)
     excluded = parse_cidrs((base / 'exclude-ipv4.txt').read_text())
     protected = parse_ros(cfg['proxy_exclude_file'])
     if len(protected) < 10:
@@ -340,7 +349,7 @@ def main():
               'extra_outside_cn_prefixes': len(extra), 'excluded_prefixes': len(excluded),
               'existing_ct_cm_unique_prefixes': len(list(ip.collapse_addresses(operator))),
               'direct_addresses_outside_ct_cm': sum(n.num_addresses for n in minus(all_direct, operator)),
-              'warnings': warnings, 'sources': {},
+              'warnings': warnings, 'sources': {}, 'direct_asns': asn_report,
               'domain_hosts': len(resolved),
               'domain_hosts_with_addresses': sum(bool(r['addresses']) for r in resolved)}
     for sid, nets in sources.items():
@@ -355,6 +364,7 @@ def main():
                'direct-ipv4.rsc': render_ros(all_direct, cfg['ros_list']),
                'direct-domains-resolved.json': json_text(resolved),
                'direct-ipv4-report.json': json_text(report)}
+    outputs.update(asn_outputs)
     # All validation is complete before changing the last-good artifacts.
     for sid, data in raw.items():
         atomic(base / 'raw' / f'{sid}.txt', data)

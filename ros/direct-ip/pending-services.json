@@ -2,11 +2,12 @@
   {
     "service": "速方云",
     "entry_domain": "srv52.suu-fun.com",
-    "status": "download-endpoint-observed",
-    "note": "IDM下载期间实测目标IP；收录该IP所在公告前缀。非整ASN放行，前缀内其他IP尚未实测速方云业务；新增节点继续采集。",
+    "status": "whole-asn-enabled",
+    "note": "用户明确要求整个AS53850；每日更新其IPv4公告集合。该ASN包含其他托管业务，非仅速方云。",
     "observed_ip": "192.154.108.234",
     "port": 50000,
     "origin_asn": 53850,
-    "included_prefix": "192.154.104.0/21"
+    "observed_prefix": "192.154.104.0/21",
+    "include_scope": "all-observed-ipv4-origin-prefixes"
   }
 ]

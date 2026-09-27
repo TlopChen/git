@@ -1,0 +1,9 @@
+{
+  "asn": 53850,
+  "fetched_at": 1790512761,
+  "observed_ipv4_prefixes": 93,
+  "observed_ipv6_prefixes": 5,
+  "sha256": "d39aecbcded46b4c3a1289c66af689fbba44d890f9bf614ae4edfe31f29906f2",
+  "snapshot_time": "2026-09-27T08:00:00",
+  "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1790426355&min_peers_seeing=1"
+}

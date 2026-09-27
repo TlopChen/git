@@ -27,10 +27,12 @@
   },
   "asn_prefix_inventory": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850",
   "decision": {
-    "include": "192.154.104.0/21",
-    "all_asn_prefixes_included": false,
-    "rationale": "用户要求依据真实下载IP查ASN及CIDR；选该IP最长匹配公告前缀，而非较大的ARIN分配段或整个托管商ASN。",
-    "limitation": "仅该下载IP实测；前缀其他地址不保证属于速方云或全部直连可用。"
+    "include_asn": 53850,
+    "all_asn_ipv4_prefixes_included": true,
+    "reason": "用户后续明确要求整个ASN均收录；由sources.json direct_asns每日维护，取RIS快照端点仍可见的公告。",
+    "previous_scope": "192.154.104.0/21",
+    "ipv6": "原始快照留存，现有IPv4管线不导入IPv6",
+    "exclusions": "仍应用现有blacklist和手工排除优先级"
   },
   "privacy": "不留存下载URL路径、签名参数、文件名、本机地址或进程号。"
 }

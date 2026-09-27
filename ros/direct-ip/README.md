@@ -23,7 +23,7 @@
 
 - `include-ipv4.txt`：纯 IPv4/CIDR，一行一条，可以有 `#` 注释。
 - `exclude-ipv4.txt`：从最终集合做地址差集，支持从大网段排除单个 `/32`。
-- `direct-domains.json`：精确主机名及原因，双国内 DNS（223.5.5.5、119.29.29.29）查询 A 记录取并集，只生成 `/32`。当前手工主机表为空。速方云在下载期间已实测目标 `192.154.108.234:50000`，据 RIPE 最长匹配加入 `192.154.104.0/21`（AS53850/GorillaServers），见 `service-evidence/sufun.json`。只收录该公告段，不放行整个托管商 ASN；前缀内其他 IP 尚未实测。`pending-services.json` 保留跟踪状态，新增节点继续采集。
+- `direct-domains.json`：精确主机名及原因，双国内 DNS（223.5.5.5、119.29.29.29）查询 A 记录取并集，只生成 `/32`。当前手工主机表为空。速方云在下载期间已实测目标 `192.154.108.234:50000`，据 RIPE 最长匹配加入 `192.154.104.0/21`（AS53850/GorillaServers），见 `service-evidence/sufun.json`。用户后续要求整个 AS53850，现改为自动收录其全部 IPv4 公告；已移除静态 /21 钉选。该 ASN 其他业务并非逐个实测。`pending-services.json` 保留跟踪状态，新增节点继续采集。
 - 现有 `blacklist.rsc` 的静态 IPv4 强制代理地址自动加入排除集合；排除高于 CN、DNS 例外和手工添加。冲突会列在解析报告的 `excluded_addresses`。
 - Steam 源仅取 `@cn`；`full` 和后缀语义保存在域名报告中。对后缀条目只解析列出的主机本身，**并不枚举其所有子域名**。不对全球 `steamcontent.com`、Steam 社区做全域放行。
 
@@ -69,3 +69,12 @@ CIDR 源单源至少 1000 条、整体至少 1000 条，校验公网地址、默
 ## 数据归属
 
 上游保留各自版权与许可，来源链接及快照 commit 可追溯；许可文本见 `licenses/`。misaka LICENSE 为 CC BY-SA 4.0（其旧 README 链接仍指 2.0），含其数据的聚合衍生产物采用 CC BY-SA 4.0：https://creativecommons.org/licenses/by-sa/4.0/ 。对上游数据的改动为筛选、规范化、合并、地址差集及 ROS 格式转换。gaoyifan 与 V2Ray 的 MIT 许可随附；metowolf 源未找到根目录 LICENSE，保留来源署名与原始数据，不声称重新许可该源。
+
+
+## AS53850 整 ASN 直连（2026-09-27 用户明确授权）
+
+`sources.json` 的 `direct_asns: [53850]` 按天跟随 RIPE RIS 公告数据，包含该 ASN 的全部可观测 IPv4 起源前缀，不局限于速方云业务。与一般云/CDN不整ASN放行的默认规则不同，这是用户指定的例外。
+
+数据源：https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&min_peers_seeing=1 。查询近24小时，按响应 `query_endtime` 过滤时间线，只取快照端点仍可见的前缀，避免直接混入两周历史中已撤销条目。RIS有采集延迟，不代表实时全球完整路由；快照时间写入报告，超过48小时拒绝使用。抓取失败可回用完整性通过且快照仍未过期的缓存，失败不覆盖旧发布。
+
+`raw/as53850-response.json` 保留全部API响应（含IPv6），`raw/as53850-meta.json` 保留来源、时间和SHA256；`output/direct-as53850-ipv4.txt` 为无损聚合后的ASN专表，最终并入 `direct-ipv4.txt` 和 ROS `DIRECT_IP`。现有blacklist/手工排除仍优先，IPv6尚未导入。原来的手工 `/21` 已删除，未来撤销该网段可正常随ASN源收敛。

@@ -1,14 +1,26 @@
 {
   "cn_effective_prefixes": 6273,
   "cn_union_prefixes": 6273,
-  "direct_addresses": 352594561,
-  "direct_addresses_outside_ct_cm": 200467801,
-  "direct_prefixes": 6283,
+  "direct_addresses": 352657028,
+  "direct_addresses_outside_ct_cm": 200530268,
+  "direct_asns": {
+    "53850": {
+      "aggregated_ipv4_prefixes": 25,
+      "asn": 53850,
+      "fetched_at": 1790512761,
+      "observed_ipv4_prefixes": 93,
+      "observed_ipv6_prefixes": 5,
+      "sha256": "d39aecbcded46b4c3a1289c66af689fbba44d890f9bf614ae4edfe31f29906f2",
+      "snapshot_time": "2026-09-27T08:00:00",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1790426355&min_peers_seeing=1"
+    }
+  },
+  "direct_prefixes": 6312,
   "domain_hosts": 17,
   "domain_hosts_with_addresses": 11,
   "excluded_prefixes": 22,
   "existing_ct_cm_unique_prefixes": 4573,
-  "extra_outside_cn_prefixes": 10,
+  "extra_outside_cn_prefixes": 39,
   "ipv4_only": true,
   "list": "DIRECT_IP",
   "sources": {
