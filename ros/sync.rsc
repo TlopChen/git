@@ -14,7 +14,8 @@
         :foreach name in=$files do={
             :set step ("fetch " . $name);
             /tool fetch url=($base . $name) dst-path=($stage . $name) output=file idle-timeout=30s;
-            :local size [/file get [find where name=($stage . $name)] size];
+            :local target ($stage . $name);
+            :local size [/file get $target size];
             :local minimum 500;
             :if ($name="cn-telecom.rsc" || $name="cn-mobile.rsc" || $name="direct-ipv4.rsc") do={ :set minimum 10000; };
             :if ($size < $minimum) do={ :error ("download too small: " . $name); };
