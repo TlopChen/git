@@ -1,14 +1,14 @@
 {
   "cn_effective_prefixes": 6273,
   "cn_union_prefixes": 6273,
-  "direct_addresses": 352592514,
-  "direct_addresses_outside_ct_cm": 200465754,
-  "direct_prefixes": 6287,
+  "direct_addresses": 352592516,
+  "direct_addresses_outside_ct_cm": 200465756,
+  "direct_prefixes": 6290,
   "domain_hosts": 17,
   "domain_hosts_with_addresses": 11,
   "excluded_prefixes": 22,
   "existing_ct_cm_unique_prefixes": 4573,
-  "extra_outside_cn_prefixes": 14,
+  "extra_outside_cn_prefixes": 17,
   "ipv4_only": true,
   "list": "DIRECT_IP",
   "sources": {
