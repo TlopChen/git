@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29028 rules, generated 2026-09-28 06:01:31
+# proxy-domain OxiDNS domain_set, 29028 rules, generated 2026-09-29 06:01:17
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
