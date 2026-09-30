@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29017, 2026-09-30 06:01:12
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29021, 2026-10-01 06:01:15
 000webhost.com
 01.org
 02weqj32.com
@@ -12747,6 +12747,7 @@ huaren.us
 huaren4us.com
 huarenav.com
 huarenporn.com
+huarun.win
 huashangnews.com
 huashundg.com
 huasing.org
@@ -16407,6 +16408,7 @@ messytube.com
 met-nude.com
 meta.ai
 meta.com
+metaaivm.com
 metabora.io
 metabrainz.org
 metacafe.com
@@ -17473,6 +17475,7 @@ musashinobank.co.jp
 muscache.com
 muscdn.com
 musclegirlflix.com
+muse.ai
 mushroomtrack.com
 mushymush.tv
 musicade.net
@@ -19097,6 +19100,7 @@ openbase.com
 openbook.org.tw
 opencas.io
 openclaw.ai
+opencode.ai
 opencollective.com
 opencreate.org
 opencritic.com

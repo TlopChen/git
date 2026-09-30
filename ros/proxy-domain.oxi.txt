@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29028 rules, generated 2026-09-30 06:01:12
+# proxy-domain OxiDNS domain_set, 29032 rules, generated 2026-10-01 06:01:15
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -12747,6 +12747,7 @@ domain:huaren.us
 domain:huaren4us.com
 domain:huarenav.com
 domain:huarenporn.com
+domain:huarun.win
 domain:huashangnews.com
 domain:huashundg.com
 domain:huasing.org
@@ -16407,6 +16408,7 @@ domain:messytube.com
 domain:met-nude.com
 domain:meta.ai
 domain:meta.com
+domain:metaaivm.com
 domain:metabora.io
 domain:metabrainz.org
 domain:metacafe.com
@@ -17473,6 +17475,7 @@ domain:musashinobank.co.jp
 domain:muscache.com
 domain:muscdn.com
 domain:musclegirlflix.com
+domain:muse.ai
 domain:mushroomtrack.com
 domain:mushymush.tv
 domain:musicade.net
@@ -19097,6 +19100,7 @@ domain:openbase.com
 domain:openbook.org.tw
 domain:opencas.io
 domain:openclaw.ai
+domain:opencode.ai
 domain:opencollective.com
 domain:opencreate.org
 domain:opencritic.com

@@ -1,4 +1,4 @@
-#proxy-domain — 手工 246 条 + 上游 28782 条, 2026-09-30 06:01:12 由 gen_rules.py 生成
+#proxy-domain — 手工 246 条 + 上游 28786 条, 2026-10-01 06:01:15 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
@@ -12824,6 +12824,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=huar
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=huaren4us.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=huarenav.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=huarenporn.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=huarun.win comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=huashangnews.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=huashundg.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=huasing.org comment="ros-rules-auto"
@@ -16466,6 +16467,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mess
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=messytube.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=met-nude.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=meta.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=metaaivm.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=metabora.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=metabrainz.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=metacafe.com comment="ros-rules-auto"
@@ -17524,6 +17526,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=musa
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=muscache.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=muscdn.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=musclegirlflix.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=muse.ai comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mushroomtrack.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mushymush.tv comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=musicade.net comment="ros-rules-auto"
@@ -19141,6 +19144,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=open
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=openbook.org.tw comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=opencas.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=openclaw.ai comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=opencode.ai comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=opencollective.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=opencreate.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=opencritic.com comment="ros-rules-auto"
