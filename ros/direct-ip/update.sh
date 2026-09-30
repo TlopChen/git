@@ -26,6 +26,13 @@ case "${1:-full}" in
 esac
 /usr/bin/python3 /root/git/ros/direct-ip/gen_direct.py "${args[@]}" \
   --publish-root /var/lib/direct-ip --static-dir /srv/github-mirror/static/ros
+
+# Publish six-table version marker for ROS watcher; failure only warns.
+if [ -x /srv/github-mirror/update-sync-version.sh ]; then
+    /srv/github-mirror/update-sync-version.sh || echo '[direct-ip] [warn] sync-version update failed'
+else
+    echo '[direct-ip] [warn] update-sync-version.sh missing'
+fi
 git add -- ros/direct-ip/raw ros/direct-ip/output
 if ! git diff --cached --quiet; then
     git commit -m "更新直连 IPv4 地址表 $(date '+%F %H:%M')" --quiet

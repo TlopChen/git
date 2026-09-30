@@ -14,7 +14,8 @@ else
 fi
 
 # 2) /srv 是脚本与配置的权威，回灌到 Git 仓库留档（数据文件不在此列）
-for f in gen_rules.py sources.json repos.json mirror.py ros-rules-daily.sh ros-manual-sync.sh; do
+# CODE files: /srv is authoritative; data files manual-blacklist.txt/exclude-blacklist.txt/manual-cn-domains.txt and ros/direct-ip/*.txt/json are Git-authoritative and must not be copied here.
+for f in gen_rules.py gen_cn.py gen_oxi.py fetch_bin.py sources.json repos.json mirror.py ros-rules-daily.sh ros-manual-sync.sh update-sync-version.sh; do
     if [ -f "/srv/github-mirror/$f" ]; then
         cp "/srv/github-mirror/$f" "/root/git/ros/generator/$f"
     fi
