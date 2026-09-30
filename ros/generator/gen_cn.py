@@ -23,6 +23,7 @@ MIRROR = "http://192.168.40.1:18080/"
 SRC_DIR = "/srv/github-mirror/static/src"
 OUT_DIR = "/srv/github-mirror/static/ros"
 DST = os.environ.get("CN_DST", os.path.join(OUT_DIR, "cn-domains.oxi.txt"))
+OFFLINE = os.environ.get("GEN_CN_OFFLINE") == "1"
 
 DMSQ = "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf"
 CLASH_SOURCES = [
@@ -41,6 +42,11 @@ def fetch(url):
     fall back to the archived copy when the upstream is unreachable."""
     os.makedirs(SRC_DIR, exist_ok=True)
     cache = os.path.join(SRC_DIR, url.rsplit("/", 1)[-1])
+    if OFFLINE:
+        if os.path.isfile(cache):
+            with open(cache, encoding="utf-8") as fh:
+                return fh.read()
+        raise SystemExit("[fail] offline source not cached: " + url)
     err = None
     for _ in range(3):
         try:

@@ -6,6 +6,7 @@
 输出: static/ros/<名>.rsc          CIDR 源 → /ip firewall address-list 脚本
       static/ros/<名>.domains.txt  域名源 → 纯域名表（给 OxiDNS 等 DNS 层用）
 """
+import argparse
 import ipaddress
 import json
 import os
@@ -22,6 +23,8 @@ OUT = os.path.join(BASE, "static", "ros")
 CFG = json.load(open(os.path.join(BASE, "sources.json")))
 IP_RE = re.compile(r"\b\d{1,3}(?:\.\d{1,3}){3}(?:/\d{1,2})?\b")
 MIN_ENTRIES = 1  # 0 条视为拉取失败，拒绝生成空文件（telegram 这类源本身只有十几条，属正常）
+OFFLINE = False
+ONLY = []
 
 
 def fetch(url):
@@ -29,6 +32,11 @@ def fetch(url):
     fall back to the archived copy when the upstream is unreachable."""
     os.makedirs(SRC_DIR, exist_ok=True)
     cache = os.path.join(SRC_DIR, url.rsplit("/", 1)[-1])
+    if OFFLINE:
+        if os.path.isfile(cache):
+            with open(cache, encoding="utf-8") as fh:
+                return fh.read()
+        raise SystemExit("[fail] offline source not cached: " + url)
     err = None
     for _ in range(3):
         try:
@@ -88,6 +96,8 @@ def parse_domains(text):
 
 def fetch_asn_prefixes(asn):
     """RIPEstat 实时查询某 ASN 当前公告的全部网段（v4+v6）。"""
+    if OFFLINE:
+        raise SystemExit("[fail] offline mode cannot fetch ASN prefixes: " + str(asn))
     url = f"https://stat.ripe.net/data/announced-prefixes/data.json?resource={asn}"
     err = None
     for _ in range(3):
@@ -108,10 +118,13 @@ PSL_TTL = 30 * 86400  # PSL 变化很慢，30 天刷新一次
 
 def load_psl():
     """加载 Public Suffix List，返回 (exact, wild, exc) 三个规则集，全部小写 punycode。"""
-    if (not os.path.isfile(PSL_CACHE) or os.path.getsize(PSL_CACHE) == 0
-            or time.time() - os.path.getmtime(PSL_CACHE) > PSL_TTL):
+    need_refresh = (not os.path.isfile(PSL_CACHE) or os.path.getsize(PSL_CACHE) == 0
+                    or time.time() - os.path.getmtime(PSL_CACHE) > PSL_TTL)
+    if need_refresh and not OFFLINE:
         with open(PSL_CACHE, "w", encoding="utf-8") as fh:
             fh.write(fetch(PSL_URL))
+    if not os.path.isfile(PSL_CACHE) or os.path.getsize(PSL_CACHE) == 0:
+        raise SystemExit("[fail] PSL cache missing")
     exact, wild, exc = set(), set(), set()
     for line in open(PSL_CACHE, encoding="utf-8"):
         line = line.split("//", 1)[0].strip().lower()
@@ -228,6 +241,8 @@ def rsc_header(name, list_name, count, remove_lines=None):
 def main():
     os.makedirs(OUT, exist_ok=True)
     for name, cfg in CFG.items():
+        if ONLY and name not in ONLY:
+            continue
         texts = [fetch(u) for u in cfg["sources"]]
         if cfg["type"] == "cidr":
             extra = [ipaddress.ip_network(p) for p in
@@ -356,4 +371,13 @@ def main():
 
 
 if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--offline", action="store_true")
+    ap.add_argument("--only", action="append", default=[])
+    ap.add_argument("--out", default="")
+    args = ap.parse_args()
+    OFFLINE = args.offline
+    ONLY = args.only
+    if args.out:
+        OUT = args.out
     main()
