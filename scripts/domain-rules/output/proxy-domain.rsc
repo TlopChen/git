@@ -1,7 +1,7 @@
-#proxy-domain — 手工 246 条 + 上游 28786 条, 2026-10-01 06:01:15 由 gen_rules.py 生成
+#proxy-domain — 手工 246 条 + 上游 28786 条, 2026-10-01 10:34:35 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
-# 本脚本整表重建 blacklist，手工域名见 manual-blacklist.txt（comment=ros-rules-manual）
+# 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
 /ip dns static remove [find address-list=blacklist]
 /ip dns static
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=acg-img.xyz comment="ros-rules-manual"
