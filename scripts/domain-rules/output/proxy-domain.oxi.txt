@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29032 rules, generated 2026-10-01 11:31:47
+# proxy-domain OxiDNS domain_set, 29033 rules, generated 2026-10-02 06:01:22
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -10397,6 +10397,7 @@ domain:fututrustee.com
 domain:fux.com
 domain:fuxporn.com
 domain:fuyin.net
+domain:fuyin116.com
 domain:fuyindiantai.org
 domain:fuyu.org.tw
 domain:fuzokudx.com
