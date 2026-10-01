@@ -15,7 +15,7 @@ cd "$REPO"
 exec 9>/tmp/ros-rules.lock
 flock -w 60 9 || { echo '[manual-refresh] another rules job holds the lock'; exit 1; }
 
-git pull --rebase --quiet origin main
+git pull --rebase --autostash --quiet origin main
 
 /usr/bin/python3 "$R/gen_rules.py" --offline --only proxy-domain
 /usr/bin/python3 "$R/gen_oxi.py"
