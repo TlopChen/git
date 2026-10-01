@@ -1,0 +1,73 @@
+{
+  "upstreams": {
+    "Loyalsoldier/clash-rules":       {"branch": "release"},
+    "blackmatrix7/ios_rule_script":   {"branch": "master"},
+    "ACL4SSR/ACL4SSR":                {"branch": "master"},
+    "metowolf/iplist":                {"branch": "master"},
+    "felixonmars/dnsmasq-china-list": {"branch": "master"},
+    "publicsuffix/list":              {"branch": "main"}
+  },
+  "tables": {
+    "cn": {
+      "type": "cidr", "list": "CN", "legacy_lists": ["ROS_CN"],
+      "sources": ["Loyalsoldier/clash-rules:cncidr.txt",
+                  "metowolf/iplist:data/country/CN.txt"]
+    },
+    "cn-telecom": {
+      "type": "cidr", "list": "CT", "legacy_lists": ["ROS_CN_TELECOM"],
+      "sources": ["metowolf/iplist:data/isp/chinatelecom.txt"]
+    },
+    "cn-mobile": {
+      "type": "cidr", "list": "CM", "legacy_lists": ["ROS_CN_MOBILE"],
+      "sources": ["metowolf/iplist:data/isp/chinamobile.txt"]
+    },
+    "cn-unicom": {
+      "type": "cidr", "list": "CU", "legacy_lists": ["ROS_CN_UNICOM"],
+      "sources": ["metowolf/iplist:data/isp/chinaunicom.txt"]
+    },
+    "cn-cernet": {
+      "type": "cidr", "list": "CC", "legacy_lists": ["ROS_CN_CERNET"],
+      "sources": ["metowolf/iplist:data/isp/cernet.txt"]
+    },
+    "blacklist": {
+      "type": "cidr", "list": "blacklist", "marker": "ros-rules-auto",
+      "remove_mode": "static", "legacy_lists": ["ROS_BLACKLIST"],
+      "extra_cidrs": ["5.28.192.0/18", "109.239.140.0/24", "8.8.8.8",
+                      "8.8.4.4", "1.1.1.1", "1.0.0.1"],
+      "sources": ["Loyalsoldier/clash-rules:telegramcidr.txt",
+                  "blackmatrix7/ios_rule_script:rule/Surge/Twitter/Twitter.list"],
+      "asn": ["AS51894"],
+      "comment": "AS51894=Mikrotikls; extra_cidrs 含 4 个公共DNS(8.8.8.8/8.8.4.4/1.1.1.1/1.0.0.1) 钉隧道 20260909"
+    },
+    "proxy-domain": {
+      "type": "rosdns", "list": "blacklist", "forward-to": "DNS",
+      "marker": "ros-rules-auto",
+      "manual": "input/manual/manual-blacklist.txt",
+      "exclude": "input/manual/exclude-blacklist.txt",
+      "sources": ["Loyalsoldier/clash-rules:gfw.txt",
+                  "blackmatrix7/ios_rule_script:rule/Clash/Proxy/Proxy_Domain.txt",
+                  "blackmatrix7/ios_rule_script:rule/Surge/OpenAI/OpenAI.list",
+                  "blackmatrix7/ios_rule_script:rule/Surge/Claude/Claude.list",
+                  "blackmatrix7/ios_rule_script:rule/Surge/Anthropic/Anthropic.list",
+                  "blackmatrix7/ios_rule_script:rule/Surge/Gemini/Gemini.list",
+                  "Loyalsoldier/clash-rules:proxy.txt"],
+      "comment": "代理侧域名(gfw.txt + blackmatrix7 Proxy/AI 源) → FWD 到 DNS 上游并打标 blacklist"
+    }
+  },
+  "cn-domains": {
+    "dnsmasq_source": "felixonmars/dnsmasq-china-list:accelerated-domains.china.conf",
+    "sources": ["blackmatrix7/ios_rule_script:rule/Clash/ChinaMax/ChinaMax_Classical.yaml",
+                "blackmatrix7/ios_rule_script:rule/Clash/China/China_Classical.yaml",
+                "ACL4SSR/ACL4SSR:Clash/ChinaDomain.list"],
+    "manual": "input/manual/manual-cn-domains.txt",
+    "min_rules": 5000
+  },
+  "binaries": [
+    {
+      "name": "geosite.dat",
+      "url": "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat",
+      "min_bytes": 100000,
+      "note": "二进制体积大，不进 Git，只发布到内网 HTTP 目录"
+    }
+  ]
+}

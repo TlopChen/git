@@ -1,0 +1,9 @@
+{
+ "rule/Surge/Anthropic/Anthropic.list": {
+  "branch": "master",
+  "bytes": 263,
+  "fetched_at": "2026-10-01 10:27:46+0800",
+  "sha256": "ee68bf42bf5666943067127776e40643f6f52bdd911152b1be62b3ecb187dc8e",
+  "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Anthropic/Anthropic.list"
+ }
+}
