@@ -1,9 +1,9 @@
 {
   "asn": 53850,
-  "fetched_at": 1790806533,
+  "fetched_at": 1790892932,
   "observed_ipv4_prefixes": 91,
   "observed_ipv6_prefixes": 5,
-  "sha256": "af75e6a453b18729a135270029067a0c4a3b3d4a816a86b5a087f6c41bcc74c2",
-  "snapshot_time": "2026-09-30T16:00:00",
-  "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1790720132&min_peers_seeing=1"
+  "sha256": "0df9a4b774ac702a46a856a974676b8e8b653c45097d8a4a16954acda8d6ed8d",
+  "snapshot_time": "2026-10-01T16:00:00",
+  "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1790806531&min_peers_seeing=1"
 }
