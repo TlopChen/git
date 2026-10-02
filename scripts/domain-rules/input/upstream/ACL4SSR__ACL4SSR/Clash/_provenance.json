@@ -2,7 +2,7 @@
  "Clash/ChinaDomain.list": {
   "branch": "master",
   "bytes": 17251,
-  "fetched_at": "2026-10-02 06:01:39+0800",
+  "fetched_at": "2026-10-03 06:01:42+0800",
   "sha256": "362edd1f605742b360eaf138f151d7eea96cc17f20ef12da73acbfb80c350e08",
   "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
  }

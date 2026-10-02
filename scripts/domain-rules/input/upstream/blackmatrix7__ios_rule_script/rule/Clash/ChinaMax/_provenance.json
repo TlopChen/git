@@ -1,9 +1,9 @@
 {
  "rule/Clash/ChinaMax/ChinaMax_Classical.yaml": {
   "branch": "master",
-  "bytes": 3783503,
-  "fetched_at": "2026-10-02 06:01:30+0800",
-  "sha256": "8142920ff4d99b36bb59d72d2e99f10c08c64ab4a99a383192cedaaaadb172e3",
+  "bytes": 3784418,
+  "fetched_at": "2026-10-03 06:01:34+0800",
+  "sha256": "51abd9365999a65268ff19286a4c15ac9c53c132bc202b88de9c4f676bd0e5bb",
   "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml"
  }
 }

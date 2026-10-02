@@ -2,7 +2,7 @@
  "rule/Surge/Twitter/Twitter.list": {
   "branch": "master",
   "bytes": 1116,
-  "fetched_at": "2026-10-02 06:00:43+0800",
+  "fetched_at": "2026-10-03 06:00:43+0800",
   "sha256": "64c836f2431ca0d4728cc545bb74280ee50c886e346040012e6cdd2f3eee3f97",
   "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"
  }

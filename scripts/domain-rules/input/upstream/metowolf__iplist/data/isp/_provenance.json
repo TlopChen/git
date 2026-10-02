@@ -2,28 +2,28 @@
  "data/isp/cernet.txt": {
   "branch": "master",
   "bytes": 6186,
-  "fetched_at": "2026-10-02 06:00:34+0800",
+  "fetched_at": "2026-10-03 06:00:34+0800",
   "sha256": "997ee00277856727f6f015128e1f710174959a822894e92ea637c957abca5fc3",
   "url": "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/cernet.txt"
  },
  "data/isp/chinamobile.txt": {
   "branch": "master",
   "bytes": 23873,
-  "fetched_at": "2026-10-02 06:00:26+0800",
+  "fetched_at": "2026-10-03 06:00:26+0800",
   "sha256": "cd8b03169e52f6249dc22abecbeb3622cb3e0e0b2bd85a377a41f3bd2a2fdad6",
   "url": "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinamobile.txt"
  },
  "data/isp/chinatelecom.txt": {
   "branch": "master",
   "bytes": 47428,
-  "fetched_at": "2026-10-02 06:00:22+0800",
+  "fetched_at": "2026-10-03 06:00:22+0800",
   "sha256": "ad4defbf1d5c11dd4858e3ae4a0c7faaf1e3ce2ed64fb2014a955aed29bb32fa",
   "url": "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinatelecom.txt"
  },
  "data/isp/chinaunicom.txt": {
   "branch": "master",
   "bytes": 29402,
-  "fetched_at": "2026-10-02 06:00:30+0800",
+  "fetched_at": "2026-10-03 06:00:30+0800",
   "sha256": "94036e30cb7e625c05d9d9f592884ed17d138f2a21992c06122436ec34ddb757",
   "url": "https://raw.githubusercontent.com/metowolf/iplist/master/data/isp/chinaunicom.txt"
  }
