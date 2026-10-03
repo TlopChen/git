@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29033 rules, generated 2026-10-03 06:01:21
+# proxy-domain OxiDNS domain_set, 29036 rules, generated 2026-10-04 06:01:22
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -5935,6 +5935,7 @@ domain:classymomsex.com
 domain:clau.de
 domain:claude.ai
 domain:claude.com
+domain:claude.dev
 domain:claudemcpclient.com
 domain:claudemcpcontent.com
 domain:claudeusercontent.com
@@ -27112,6 +27113,7 @@ domain:wikibooks.org
 domain:wikidata.org
 domain:wikidot.com
 domain:wikifeet.com
+domain:wikifunctions.org
 domain:wikihow.com
 domain:wikileaks-forum.com
 domain:wikileaks.ch
@@ -27135,6 +27137,7 @@ domain:wikiquote.org
 domain:wikis.tw
 domain:wikisexguide.com
 domain:wikisource.org
+domain:wikispecies.org
 domain:wikiunblocked.org
 domain:wikiversity.org
 domain:wikivoyage.org

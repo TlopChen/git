@@ -1,4 +1,4 @@
-#proxy-domain — 手工 246 条 + 上游 28787 条, 2026-10-03 06:01:21 由 gen_rules.py 生成
+#proxy-domain — 手工 246 条 + 上游 28790 条, 2026-10-04 06:01:22 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -6163,6 +6163,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clas
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clau.de comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=claude.ai comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=claude.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=claude.dev comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=claudemcpclient.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=claudemcpcontent.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=claudeusercontent.com comment="ros-rules-auto"
@@ -27121,6 +27122,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wiki
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikidata.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikidot.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikifeet.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikifunctions.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikihow.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikileaks-forum.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikileaks.ch comment="ros-rules-auto"
@@ -27144,6 +27146,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wiki
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikis.tw comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikisexguide.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikisource.org comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikispecies.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikiunblocked.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikiversity.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=wikivoyage.org comment="ros-rules-auto"

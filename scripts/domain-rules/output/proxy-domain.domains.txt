@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29022, 2026-10-03 06:01:21
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29025, 2026-10-04 06:01:22
 000webhost.com
 01.org
 02weqj32.com
@@ -5935,6 +5935,7 @@ classymomsex.com
 clau.de
 claude.ai
 claude.com
+claude.dev
 claudemcpclient.com
 claudemcpcontent.com
 claudeusercontent.com
@@ -27112,6 +27113,7 @@ wikibooks.org
 wikidata.org
 wikidot.com
 wikifeet.com
+wikifunctions.org
 wikihow.com
 wikileaks-forum.com
 wikileaks.ch
@@ -27135,6 +27137,7 @@ wikiquote.org
 wikis.tw
 wikisexguide.com
 wikisource.org
+wikispecies.org
 wikiunblocked.org
 wikiversity.org
 wikivoyage.org
