@@ -1,48 +1,48 @@
 {
-  "cn_effective_prefixes": 6295,
-  "cn_union_prefixes": 6295,
-  "direct_addresses": 352668034,
-  "direct_addresses_outside_ct_cm": 200541274,
+  "cn_effective_prefixes": 6281,
+  "cn_union_prefixes": 6281,
+  "direct_addresses": 352663426,
+  "direct_addresses_outside_ct_cm": 200536666,
   "direct_asns": {
     "53850": {
-      "aggregated_ipv4_prefixes": 24,
+      "aggregated_ipv4_prefixes": 21,
       "asn": 53850,
-      "fetched_at": 1791065731,
-      "observed_ipv4_prefixes": 91,
+      "fetched_at": 1791152144,
+      "observed_ipv4_prefixes": 88,
       "observed_ipv6_prefixes": 5,
-      "sha256": "bbc553caf4d731f3e830ab9e1bee4b04871082c0ce1e7420c758139459a270bd",
-      "snapshot_time": "2026-10-03T16:00:00",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1790979330&min_peers_seeing=1"
+      "sha256": "c06fd073492b81282f0dc855ddf0dbf4f3561aed05a3bf4358b1a97728c75b02",
+      "snapshot_time": "2026-10-04T16:00:00",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1791065730&min_peers_seeing=1"
     }
   },
-  "direct_nocm_prefixes": 7646,
-  "direct_noct_prefixes": 6909,
-  "direct_prefixes": 6326,
+  "direct_nocm_prefixes": 7628,
+  "direct_noct_prefixes": 6891,
+  "direct_prefixes": 6308,
   "domain_hosts": 11,
   "domain_hosts_with_addresses": 11,
   "excluded_prefixes": 22,
   "existing_ct_cm_unique_prefixes": 4573,
-  "extra_outside_cn_prefixes": 31,
+  "extra_outside_cn_prefixes": 27,
   "ipv4_only": true,
   "list": "DIRECT_IP",
   "sources": {
     "gaoyifan-cn": {
-      "addresses": 343989504,
-      "prefixes": 6209,
-      "sha256": "177c666b94dea7cfa7e5497a4b210680c220aee9ca865b22f58fadb0bda89660",
+      "addresses": 343989248,
+      "prefixes": 6208,
+      "sha256": "b1a8bbdc47f3278a0459f2b04ef14e0ee45c1bceecf0ce63b9774557ce90f3ea",
       "unique_addresses": 3369406
     },
     "metowolf-cn": {
       "addresses": 348848748,
       "prefixes": 5565,
       "sha256": "3273bb924714149179b8b5945ee0ea6b599e460c1b56102619d41fed6fc6d516",
-      "unique_addresses": 8051826
+      "unique_addresses": 8052082
     },
     "misaka-cn": {
-      "addresses": 282394624,
-      "prefixes": 3898,
-      "sha256": "e83904e48e6b6d6bb8399ea038aadd88c2b16dca45c4b6020040ed068f26104f",
-      "unique_addresses": 254464
+      "addresses": 282390784,
+      "prefixes": 3884,
+      "sha256": "a2da227e4fee92d748a15864edc420b4e2acbdd09427b83c9e8775af037667de",
+      "unique_addresses": 250624
     }
   },
   "warnings": []
