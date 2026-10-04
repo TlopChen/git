@@ -2,7 +2,7 @@
  "rule/Clash/Proxy/Proxy_Domain.txt": {
   "branch": "master",
   "bytes": 96790,
-  "fetched_at": "2026-10-04 06:00:57+0800",
+  "fetched_at": "2026-10-05 06:00:49+0800",
   "sha256": "474f2c50e553d71c33d2431f1261729c1eab757eff4e29219a7a3c66c345ad0a",
   "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Proxy/Proxy_Domain.txt"
  }
