@@ -2,7 +2,7 @@
  "rule/Surge/Claude/Claude.list": {
   "branch": "master",
   "bytes": 244,
-  "fetched_at": "2026-10-05 06:00:57+0800",
+  "fetched_at": "2026-10-06 06:00:58+0800",
   "sha256": "870e7e25d798e7f00338507f773b0eea4dfd15e25e9df0a27d5ae421ae1ab378",
   "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Claude/Claude.list"
  }

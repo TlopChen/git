@@ -2,7 +2,7 @@
  "rule/Clash/China/China_Classical.yaml": {
   "branch": "master",
   "bytes": 114558,
-  "fetched_at": "2026-10-05 06:01:23+0800",
+  "fetched_at": "2026-10-06 06:01:28+0800",
   "sha256": "cb64153decc75931336fa836a5f898295c13ca51992c745e292a2c7b8d36c0fd",
   "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml"
  }

@@ -1,4 +1,4 @@
-#proxy-domain — 手工 246 条 + 上游 28790 条, 2026-10-05 06:01:10 由 gen_rules.py 生成
+#proxy-domain — 手工 246 条 + 上游 28791 条, 2026-10-06 06:01:15 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -11474,6 +11474,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=goog
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=googlepagecreator.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=googlephotos.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=googleplay.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=googleplaycensorship.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=googleplus.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=googlescholar.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=googlesource.com comment="ros-rules-auto"

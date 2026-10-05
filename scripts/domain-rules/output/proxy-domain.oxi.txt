@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29036 rules, generated 2026-10-05 06:01:10
+# proxy-domain OxiDNS domain_set, 29037 rules, generated 2026-10-06 06:01:15
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -11389,6 +11389,7 @@ domain:googleoptimize.com
 domain:googlepagecreator.com
 domain:googlephotos.com
 domain:googleplay.com
+domain:googleplaycensorship.com
 domain:googleplus.com
 domain:googlescholar.com
 domain:googlesource.com
