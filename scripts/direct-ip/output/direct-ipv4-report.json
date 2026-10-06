@@ -1,36 +1,36 @@
 {
-  "cn_effective_prefixes": 6295,
-  "cn_union_prefixes": 6295,
-  "direct_addresses": 352667770,
-  "direct_addresses_outside_ct_cm": 200541010,
+  "cn_effective_prefixes": 6294,
+  "cn_union_prefixes": 6294,
+  "direct_addresses": 352666756,
+  "direct_addresses_outside_ct_cm": 200539996,
   "direct_asns": {
     "53850": {
       "aggregated_ipv4_prefixes": 23,
       "asn": 53850,
-      "fetched_at": 1791238534,
+      "fetched_at": 1791324932,
       "observed_ipv4_prefixes": 90,
       "observed_ipv6_prefixes": 5,
-      "sha256": "dbe05fb5203c29c5de38885b03dffa8efe8315e602bde13a9f2427b0596ed41c",
-      "snapshot_time": "2026-10-05T16:00:00",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1791152127&min_peers_seeing=1"
+      "sha256": "ce6cbca68111170d749e9c99a372fe1ba08fbb67dd66d02508d8862f483d99e7",
+      "snapshot_time": "2026-10-06T16:00:00",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1791238531&min_peers_seeing=1"
     }
   },
-  "direct_nocm_prefixes": 7642,
-  "direct_noct_prefixes": 6905,
-  "direct_prefixes": 6322,
+  "direct_nocm_prefixes": 7651,
+  "direct_noct_prefixes": 6914,
+  "direct_prefixes": 6331,
   "domain_hosts": 11,
   "domain_hosts_with_addresses": 11,
   "excluded_prefixes": 22,
   "existing_ct_cm_unique_prefixes": 4573,
-  "extra_outside_cn_prefixes": 27,
+  "extra_outside_cn_prefixes": 37,
   "ipv4_only": true,
   "list": "DIRECT_IP",
   "sources": {
     "gaoyifan-cn": {
-      "addresses": 343989504,
-      "prefixes": 6209,
-      "sha256": "177c666b94dea7cfa7e5497a4b210680c220aee9ca865b22f58fadb0bda89660",
-      "unique_addresses": 3369406
+      "addresses": 343988480,
+      "prefixes": 6208,
+      "sha256": "16af6ce1313456b3b0da60e88ed8791fc11e132fd15941abfa094ad093679bb5",
+      "unique_addresses": 3368382
     },
     "metowolf-cn": {
       "addresses": 348848748,
@@ -41,7 +41,7 @@
     "misaka-cn": {
       "addresses": 282394624,
       "prefixes": 3898,
-      "sha256": "902fddd2be526d19ebb3121c10175e4fabdcbe4d04c90f564ef8d0bc910750f9",
+      "sha256": "06ab5e294bd96fac9df6c7d6e4b6815f0eee265e3d8220239aa82bdbd2195aad",
       "unique_addresses": 254464
     }
   },
