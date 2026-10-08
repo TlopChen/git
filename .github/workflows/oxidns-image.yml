@@ -1,0 +1,76 @@
+# 放在 TlopChen/git 的 .github/workflows/oxidns-image.yml
+# 作用：在 GitHub Actions（干净外网 + 自带 docker）把 OxiDNS 镜像拉下来、打成 docker-archive tar，
+#       推到专用分支 oxidns-images；广州节点只负责把该分支里的 tar 发到 HTTP 目录，ROS 再按需拉取。
+# 为什么不在广州本地 docker pull：广州对 Docker Hub 的解析被投毒/被墙
+# （实测 auth.docker.io 超时、registry-1.docker.io 解析到 Facebook IPv6 段），拿不到镜像。
+name: oxidns-image
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "OxiDNS 版本 tag（如 v1.6.1）"
+        required: true
+        default: "v1.6.1"
+      branch:
+        description: "发布 tar 的分支"
+        required: true
+        default: "oxidns-images"
+  # 需要自动跟进时再打开：
+  # schedule:
+  #   - cron: "0 20 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取并保存镜像
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+          docker pull --platform linux/amd64 "docker.io/svenshi/oxidns:${TAG}"
+          docker save -o "oxidns-${TAG}-linux-amd64.tar" "docker.io/svenshi/oxidns:${TAG}"
+          sha256sum "oxidns-${TAG}-linux-amd64.tar" > "oxidns-${TAG}-linux-amd64.tar.sha256"
+          ls -l oxidns-*
+
+      - name: 发布到镜像分支
+        env:
+          TAG: ${{ inputs.tag }}
+          BRANCH: ${{ inputs.branch }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git clone --depth 1 --branch "${BRANCH}" "${URL}" pub 2>/dev/null; then
+            echo "branch exists"
+          else
+            git clone --depth 1 "${URL}" pub
+            ( cd pub && git checkout --orphan "${BRANCH}" && git rm -rf --quiet . )
+          fi
+          cd pub
+          mkdir -p oxidns
+          cp "../oxidns-${TAG}-linux-amd64.tar" "../oxidns-${TAG}-linux-amd64.tar.sha256" oxidns/
+          ls -1t oxidns/oxidns-v*-linux-amd64.tar 2>/dev/null | tail -n +4 | while read -r old; do
+            rm -f "${old}" "${old}.sha256"
+          done
+          TAG="${TAG}" python3 - <<'PY' > oxidns/manifest.json
+          import hashlib, json, os, pathlib
+          tag = os.environ["TAG"]
+          files = sorted(p.name for p in pathlib.Path("oxidns").glob("oxidns-v*-linux-amd64.tar"))
+          latest = f"oxidns-{tag}-linux-amd64.tar"
+          data = open("oxidns/" + latest, "rb").read()
+          print(json.dumps({
+              "latest": {"tag": tag, "file": latest, "bytes": len(data),
+                         "sha256": hashlib.sha256(data).hexdigest()},
+              "available": files,
+          }, indent=2))
+          PY
+          git add -A oxidns
+          git commit -m "oxidns image ${TAG}" || echo "no change"
+          git push origin "HEAD:${BRANCH}"
