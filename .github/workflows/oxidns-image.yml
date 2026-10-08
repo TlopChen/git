@@ -1,6 +1,7 @@
 # OxiDNS 镜像 CI：GitHub Actions 拉镜像 → docker save → 推到 oxidns-images 分支
 # 触发：① Actions 页面手动 Run workflow（填 OxiDNS tag）；
 #       ② 本地 git push 一个形如 oxidns-image-v1.6.1 的 tag（无需任何令牌，tag 名即版本号）。
+# 不启用 schedule / 新版本自动检测：升级一律人工触发（用户口径 2026-10-08）。
 # 广州节点只负责把该分支里的 tar 发到 HTTP 目录（scripts/_infra/oxidns-image-sync.sh），ROS 再按需拉取。
 # 为什么不在广州本地 docker pull：广州对 Docker Hub 的解析被投毒/被墙（实测 auth.docker.io 超时、
 # registry-1.docker.io 解析到 Facebook IPv6 段）。

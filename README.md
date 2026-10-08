@@ -40,7 +40,7 @@ ROS 侧不定时轮询、不做哈希校验。
 ## OxiDNS 镜像管线（oxidns-image）
 
 - **打包放 GitHub Actions，广州只做分发**：广州对 Docker Hub 的解析被投毒/被墙（`auth.docker.io` 超时、`registry-1.docker.io` 解析到 Facebook IPv6 段），拉不动镜像；Actions runner 自带 docker + 干净外网。
-- **触发**：① Actions 页面 Run workflow（填 OxiDNS tag）；② 本地 `git push` 一个形如 `oxidns-image-v1.6.1` 的 tag（无需任何令牌，tag 名即版本号）。
+- **触发（一律人工）**：① Actions 页面 Run workflow（填 OxiDNS tag）；② 本地 `git push` 一个形如 `oxidns-image-v1.6.1` 的 tag（无需任何令牌，tag 名即版本号）。**不设 schedule、不做新版本自动检测**（用户口径 2026-10-08：升级要人点头）。
 - **产物**：workflow 用 `docker save` 生成 docker-archive tar + sha256，推到 `oxidns-images` 分支（`oxidns/manifest.json` + 最近 3 个版本）。
 - **分发**：广州 06:20 的 `scripts/_infra/oxidns-image-sync.sh` 用专用浅克隆 `/srv/oxidns-images` 拉该分支 → 校验 sha256/size → 原子发布到 HTTP 根（`oxidns-image.json` + tar）；不碰 `/root/git`，避免和日更管线抢 .git 锁。
 - **消费**：ROS 上按需 `/system script run oxidns-upgrade`（幂等：manifest 的 file 与当前容器的 `file=` 相同则什么都不做）；有新版才下载 tar → `set file=` → `repull` → 重启 → 验证解析。容器运行配置常驻挂载目录（`cmd` 指向 `/etc/oxidns/rules/config.yaml`），所以 `repull` 不会覆盖配置。
