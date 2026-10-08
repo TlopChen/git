@@ -1,0 +1,11 @@
+{
+  "latest": {
+    "tag": "v1.6.1",
+    "file": "oxidns-v1.6.1-linux-amd64.tar",
+    "bytes": 12006912,
+    "sha256": "6d52adbf03dd975e92b72591279550e2b88e95675572dcc3c491946206b170f6"
+  },
+  "available": [
+    "oxidns-v1.6.1-linux-amd64.tar"
+  ]
+}
