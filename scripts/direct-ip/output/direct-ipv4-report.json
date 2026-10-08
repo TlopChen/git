@@ -1,49 +1,51 @@
 {
-  "cn_effective_prefixes": 6286,
-  "cn_union_prefixes": 6286,
-  "direct_addresses": 352669056,
-  "direct_addresses_outside_ct_cm": 200542296,
+  "cn_effective_prefixes": 6638,
+  "cn_union_prefixes": 6638,
+  "direct_addresses": 358268294,
+  "direct_addresses_outside_ct_cm": 206141534,
   "direct_asns": {
     "53850": {
       "aggregated_ipv4_prefixes": 23,
       "asn": 53850,
-      "fetched_at": 1791411335,
+      "fetched_at": 1791497733,
       "observed_ipv4_prefixes": 90,
       "observed_ipv6_prefixes": 5,
-      "sha256": "ba5d79d53e2e9920adf9a2d1cdc5edb9fcc9b8ece3eb1de87e6841858495496b",
-      "snapshot_time": "2026-10-07T16:00:00",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1791324930&min_peers_seeing=1"
+      "sha256": "b2dfcda1ba613b1ef2d40dc20019d2b0acb7c078411ddab6c6343c33db036f10",
+      "snapshot_time": "2026-10-08T16:00:00",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1791411332&min_peers_seeing=1"
     }
   },
-  "direct_nocm_prefixes": 7638,
-  "direct_noct_prefixes": 6909,
-  "direct_prefixes": 6318,
+  "direct_nocm_prefixes": 7995,
+  "direct_noct_prefixes": 7266,
+  "direct_prefixes": 6675,
   "domain_hosts": 11,
   "domain_hosts_with_addresses": 11,
   "excluded_prefixes": 22,
   "existing_ct_cm_unique_prefixes": 4573,
-  "extra_outside_cn_prefixes": 32,
+  "extra_outside_cn_prefixes": 37,
   "ipv4_only": true,
   "list": "DIRECT_IP",
   "sources": {
     "gaoyifan-cn": {
-      "addresses": 344099328,
-      "prefixes": 6163,
-      "sha256": "f4244e69695d2d42e973e104d661bf73cd98ac656b65e36ffdd740a8c0e0c855",
-      "unique_addresses": 3371198
+      "addresses": 349714948,
+      "prefixes": 6530,
+      "sha256": "12e1122597583f3818092421b9426b464d6af350b6a36cc11f0f3e85e4abdd01",
+      "unique_addresses": 8970432
     },
     "metowolf-cn": {
       "addresses": 348848748,
       "prefixes": 5565,
       "sha256": "3273bb924714149179b8b5945ee0ea6b599e460c1b56102619d41fed6fc6d516",
-      "unique_addresses": 7944306
+      "unique_addresses": 7927920
     },
     "misaka-cn": {
       "addresses": 282394112,
       "prefixes": 3897,
-      "sha256": "c9d2053abaa9239df6e3d44331f5007bef089baa2aa2c36e0c165ffa43bf3fbc",
+      "sha256": "1bff183412baf403fd9dacc827726bb0648edbf97aecd7115f93b5a2fdc1518d",
       "unique_addresses": 253952
     }
   },
-  "warnings": []
+  "warnings": [
+    "DNS csgo.com.cn: partial"
+  ]
 }
