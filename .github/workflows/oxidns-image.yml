@@ -1,8 +1,9 @@
-# 放在 TlopChen/git 的 .github/workflows/oxidns-image.yml
-# 作用：在 GitHub Actions（干净外网 + 自带 docker）把 OxiDNS 镜像拉下来、打成 docker-archive tar，
-#       推到专用分支 oxidns-images；广州节点只负责把该分支里的 tar 发到 HTTP 目录，ROS 再按需拉取。
-# 为什么不在广州本地 docker pull：广州对 Docker Hub 的解析被投毒/被墙
-# （实测 auth.docker.io 超时、registry-1.docker.io 解析到 Facebook IPv6 段），拿不到镜像。
+# OxiDNS 镜像 CI：GitHub Actions 拉镜像 → docker save → 推到 oxidns-images 分支
+# 触发：① Actions 页面手动 Run workflow（填 OxiDNS tag）；
+#       ② 本地 git push 一个形如 oxidns-image-v1.6.1 的 tag（无需任何令牌，tag 名即版本号）。
+# 广州节点只负责把该分支里的 tar 发到 HTTP 目录（scripts/_infra/oxidns-image-sync.sh），ROS 再按需拉取。
+# 为什么不在广州本地 docker pull：广州对 Docker Hub 的解析被投毒/被墙（实测 auth.docker.io 超时、
+# registry-1.docker.io 解析到 Facebook IPv6 段）。
 name: oxidns-image
 
 on:
@@ -16,9 +17,9 @@ on:
         description: "发布 tar 的分支"
         required: true
         default: "oxidns-images"
-  # 需要自动跟进时再打开：
-  # schedule:
-  #   - cron: "0 20 * * 0"
+  push:
+    tags:
+      - "oxidns-image-*"
 
 permissions:
   contents: write
@@ -27,9 +28,24 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
+      - name: 解析版本与目标分支
+        id: v
+        run: |
+          set -euo pipefail
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
+            TAG="${{ inputs.tag }}"
+            BRANCH="${{ inputs.branch }}"
+          else
+            TAG="${GITHUB_REF_NAME#oxidns-image-}"
+            BRANCH="oxidns-images"
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "将构建 oxidns:$TAG → 分支 $BRANCH"
+
       - name: 拉取并保存镜像
         env:
-          TAG: ${{ inputs.tag }}
+          TAG: ${{ steps.v.outputs.tag }}
         run: |
           set -euo pipefail
           docker pull --platform linux/amd64 "docker.io/svenshi/oxidns:${TAG}"
@@ -39,8 +55,8 @@ jobs:
 
       - name: 发布到镜像分支
         env:
-          TAG: ${{ inputs.tag }}
-          BRANCH: ${{ inputs.branch }}
+          TAG: ${{ steps.v.outputs.tag }}
+          BRANCH: ${{ steps.v.outputs.branch }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
@@ -48,7 +64,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           if git clone --depth 1 --branch "${BRANCH}" "${URL}" pub 2>/dev/null; then
-            echo "branch exists"
+            echo "分支已存在"
           else
             git clone --depth 1 "${URL}" pub
             ( cd pub && git checkout --orphan "${BRANCH}" && git rm -rf --quiet . )
@@ -72,5 +88,5 @@ jobs:
           }, indent=2))
           PY
           git add -A oxidns
-          git commit -m "oxidns image ${TAG}" || echo "no change"
+          git commit -m "oxidns image ${TAG}" || echo "无变化"
           git push origin "HEAD:${BRANCH}"
