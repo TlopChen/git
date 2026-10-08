@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29050, 2026-10-08 06:01:18
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29054, 2026-10-09 06:01:18
 000webhost.com
 01.org
 02weqj32.com
@@ -16342,6 +16342,7 @@ mefound.com
 mega.co.nz
 mega.io
 mega.nz
+megaad.nz
 megacamz.com
 megaeth.com
 megafilmporno.com
@@ -16352,12 +16353,14 @@ megalodon.jp
 megamarket.ru
 megamarket.tech
 megamon.co.kr
+megapay.nz
 megaphone.fm
 megapornfreehd.com
 megaporno.com.br
 megapornpics.com
 megaproxy.com
 megarotic.com
+megas4.com
 megasrv.de
 megatitsminka.com
 megaupload.com
@@ -24907,6 +24910,7 @@ trans500.com
 transangels.com
 transarmuito.com
 transcamslive.com
+transfer.it
 transferwise.com
 translatetheweb.com
 translatewiki.net

@@ -1,4 +1,4 @@
-#proxy-domain — 手工 246 条 + 上游 28815 条, 2026-10-08 06:01:18 由 gen_rules.py 生成
+#proxy-domain — 手工 246 条 + 上游 28819 条, 2026-10-09 06:01:18 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -16402,6 +16402,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mefo
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mega.co.nz comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mega.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mega.nz comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megaad.nz comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megacamz.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megaeth.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megafilmporno.com comment="ros-rules-auto"
@@ -16412,12 +16413,14 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mega
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megamarket.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megamarket.tech comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megamon.co.kr comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megapay.nz comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megaphone.fm comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megapornfreehd.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megaporno.com.br comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megapornpics.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megaproxy.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megarotic.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megas4.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megasrv.de comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megatitsminka.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=megaupload.com comment="ros-rules-auto"
@@ -24923,6 +24926,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tran
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=transangels.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=transarmuito.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=transcamslive.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=transfer.it comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=transferwise.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=translatetheweb.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=translatewiki.net comment="ros-rules-auto"
