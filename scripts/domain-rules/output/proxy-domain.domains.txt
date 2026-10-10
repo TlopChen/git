@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29054, 2026-10-10 06:01:19
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29139, 2026-10-11 06:01:13
 000webhost.com
 01.org
 02weqj32.com
@@ -239,7 +239,6 @@
 20thcenturystudios.com.br
 20thcenturystudios.jp
 20yearsoffea.com
-21-school.ru
 21andy.com
 21centuryaccess.com
 21heise360dh.cc
@@ -761,7 +760,6 @@ acast.com
 accbusiness.com
 acces-vod.com
 accessfacebookfromschool.com
-accesspoint.uz
 accim.org
 accomable.com
 account-paypal.info
@@ -1094,7 +1092,6 @@ afewmomentswith.com
 affect3dstore.com
 affinity.studio
 affirmtrust.com
-afisha.ru
 afkv28.com
 aflamporn.com
 aflamsex.net
@@ -1122,6 +1119,7 @@ agrd.eu
 agrd.io
 agri-bank.com
 agro.hk
+agroros.ru
 agu.org
 agzy1.com
 ah-me.com
@@ -1142,6 +1140,7 @@ ahtops.com
 ahtranny.com
 ahvideosexe.com
 ahxxx.club
+ai-bank.ru
 ai-kan.net
 ai-sdk.dev
 ai-wen.net
@@ -1390,9 +1389,11 @@ akastream.net
 akatns.net
 akatsukiworks.com
 akbars.ru
+akcept.ru
 akiba-online.com
 akiba-souken.com
 akiba-web.com
+akibank.ru
 akile.io
 akinator.com
 akita-bank.co.jp
@@ -1407,6 +1408,7 @@ alanhou.com
 alarab.qa
 alasbarricadas.org
 albagals.com
+albank.ru
 albastudio.co
 albeats.com
 alchemysynth.com
@@ -1992,6 +1994,7 @@ apisof.net
 apk-dl.com
 apk.support
 apk.tw
+apkbank.ru
 apkcombo.com
 apkdler.com
 apkmirror.com
@@ -2421,6 +2424,7 @@ area51.to
 areca-backup.org
 arena.ai
 arena.taipei
+aresbank.ru
 arethusa.su
 arewereadyyet.com
 areyoucreditwise.com
@@ -2799,6 +2803,7 @@ autodeskworkshop.net
 autodraw.com
 autoesporte.com
 autoesporte.com.br
+autofinancebank.ru
 autokreditbank.ru
 automaton-media.com
 automobile.fr
@@ -3097,6 +3102,7 @@ banan.tv
 banana-vpn.com
 bananacall.ru
 banatfun.com
+bancaintesa.ru
 band.us
 bandag.cc
 bandag.com
@@ -3120,14 +3126,20 @@ bangyoulater.com
 bangyourwife.com
 bank-arzamas.ru
 bank-credit-suisse-moscow.ru
+bank-hlynov.ru
 bank-maskan.ir
 bank131.com
+bank131.ru
 bankermak.ru
 bankline.ru
 bankmellat.ir
 bankmobilevibe.com
+bankofkazan.ru
+bankperm.ru
 banksepah.ir
+bankstavr.ru
 banksy.tokyo
+bankvl.ru
 banned.video
 bannedbook.net
 bannedbook.org
@@ -3585,6 +3597,7 @@ berlincompanions.com
 berlinerbericht.de
 berlintwitterwall.com
 berm.co.nz
+beru.ru
 best-practice.se
 best-sex-games.com
 best2pay.net
@@ -4452,6 +4465,7 @@ bmwarchiv.de
 bmwartjourney.com
 bmwasia.com
 bmwauslieferungszentrum.com
+bmwbank.ru
 bmwbikes.com
 bmwbkk.de
 bmwccrc.ca
@@ -4559,6 +4573,7 @@ boboporn.net
 bobovip.cc
 bobs-tube.com
 bobvoyeur.com
+boc.ru
 bocici.buzz
 bod.asia
 bodgirls.com
@@ -4602,6 +4617,7 @@ bookfi.net
 booking-tec.ru
 booking.com
 bookmark.xxx
+bookmate.ru
 bookmybridgestonetyre.com
 bookonsky.net
 books.com.tw
@@ -5033,6 +5049,7 @@ bynet.co.il
 bypasscensorship.org
 byrut.org
 byspotify.com
+bystrobank.ru
 bystys.tech
 bytedapm.com
 bytegecko-i18n.com
@@ -5495,6 +5512,7 @@ centraluniversity.ru
 centralvalidation.com
 centrino.com
 centrino.net
+centrinvest.ru
 centurys.net
 ceosummit.ru
 cepacol.ca
@@ -5637,6 +5655,8 @@ cheerwholesale.us
 chef.io
 chegg.com
 cheggcdn.com
+chelindbank.ru
+chelinvest.ru
 chemequations.com
 chemnetbase.com
 chengjuanseo.com
@@ -5821,11 +5841,13 @@ cian.ru
 cian.site
 ciangroup.ru
 ciattackers.com
+cibank.ru
 cici.com
 ciciai.com
 ciciaicdn.com
 ciciq.net
 cienen.com
+cifra-bank.ru
 cilk.com
 cilk.net
 cindymovies.com
@@ -5890,7 +5912,6 @@ citrixandautodesk.com
 city-hentai.com
 city365.ca
 city9x.com
-citydrive.ru
 cityheaven.net
 citylab.com
 cityoflove.com
@@ -5981,7 +6002,6 @@ clitgames.com
 cloakpoint.com
 clojure.org
 clonoth.com
-cloud.ru
 cloudapp.net
 cloudappsecurity.com
 cloudburstresearch.com
@@ -6049,7 +6069,6 @@ cloudmagic.com
 cloudn.me
 cloudproxy.app
 cloudrobotics.com
-cloudru.cn
 cloudvolumes.com
 cloudyzgirl.com
 cloupia.com
@@ -6074,6 +6093,7 @@ cmi.org.tw
 cmmedia.com.tw
 cmoinc.org
 cmpaas.com
+cmrbank.ru
 cms-twdigitalassets.com
 cms.gov
 cmu.edu
@@ -6143,6 +6163,7 @@ co.vi
 co.za
 co.zm
 co.zw
+coalmetbank.ru
 coat.co.jp
 cobatt.com
 cobinhood.com
@@ -6519,7 +6540,9 @@ creatwhatsnext.com
 crececonebay.com
 credit-zenit.ru
 creditcardsbay.com
+crediteurope.ru
 creditkarma.com
+creditural.ru
 crewai.com
 cricketcountry.com
 crisp.chat
@@ -6830,6 +6853,7 @@ data-tscbank.ru
 data-vocabulary.org
 data.com
 data18.com
+databank.ru
 datacloudmy.com
 dataframeworks.com
 datalabour.com
@@ -6870,6 +6894,7 @@ dbgjd.com
 dbmoscow.ru
 dbo-dengi.online
 dc-msedge.net
+dcapital.ru
 dcard.cc
 dcard.io
 dcard.link
@@ -6956,6 +6981,7 @@ delcamusa.com
 delets.online
 delicious.com
 delicious.com.au
+delivery-club.ru
 dell
 dell.ac
 dell.am
@@ -7139,6 +7165,7 @@ derpibooru.org
 dert.online
 dert.site
 dert.tech
+derzhava.ru
 desc.se
 descargasgay.com
 desertbmw.com
@@ -7978,6 +8005,7 @@ dushi.ca
 dutrai.com
 duyaoss.com
 duyaossr.com
+dvbank.ru
 dvdpac.com
 dvdstudiopro.biz
 dvdstudiopro.com
@@ -8072,8 +8100,6 @@ eamythic.com
 eamythic.net
 eanordic.com
 eaplay.com
-eaptechka.online
-eapteka.ru
 earlytibet.com
 earngeek.com
 earphonescheapest.com
@@ -8329,6 +8355,7 @@ ecscad.com
 ecspublisher.com
 ecstart.com
 ecuatorianas.best
+edadeal.ru
 edbi.ir
 edcity.hk
 edengay.net
@@ -8362,6 +8389,7 @@ eebay.com
 eenike.com
 eesti.ee
 eevpn.com
+efbank.ru
 efcc.org.hk
 eff.org
 effers.com
@@ -8445,6 +8473,7 @@ emaga.com
 emagic.de
 email-once.com
 emanna.com
+emb.ru
 embark-studios.com
 embark.games
 embase.com
@@ -8497,6 +8526,8 @@ enemarotica.com
 enemas4fun.com
 enemasexfetish.com
 enematube.com
+energobank.ru
+energotransbank.com
 energystarbuildings.com
 enewstree.com
 enf-cmnf.com
@@ -8832,6 +8863,7 @@ evolver.com
 evolver3d.com
 evolverpro.com
 evozi.com
+evrofinance.ru
 evropaelire.org
 evschool.net
 ewisdom.us.kg
@@ -8850,6 +8882,7 @@ exgfvideos.xxx
 exgirlfriendmarket.com
 exhentai.org
 eximbank.com.tw
+eximbank.ru
 exiporn.com
 exmo.com
 exmormon.org
@@ -8870,6 +8903,7 @@ exploitedcollegegirls.com
 exploitedteensasia.com
 exploreintel.com
 explorespanking.com
+expobank.ru
 expofutures.com
 exporntoons.net
 exposedlatinas.com
@@ -9631,6 +9665,7 @@ finishkilpailu.fi
 finishwin.be
 finler.net
 finlitsummit.org
+finstarbank.ru
 fiord.ru
 fiotolia.com
 fire-emblem-heroes.com
@@ -9799,6 +9834,7 @@ fonts.net
 fontshop.com
 fontsinuse.com
 fontsource.org
+foodfox.ru
 foofle.com
 foolsmountain.com
 fooooo.com
@@ -9808,6 +9844,7 @@ footseen.com
 footstockings.com
 footwear-cadcam.com
 footwiball.com
+forabank.ru
 forbes.com
 forbesimg.com
 forbiddenasian.com
@@ -10602,6 +10639,7 @@ gazounabi.com
 gazprombank.com
 gazprombank.investments
 gazprombank.ru
+gaztransbank.ru
 gb.ru
 gbank.com.mm
 gbiz
@@ -10628,6 +10666,7 @@ gdzf.org
 gears5.com
 gearspop.com
 gearstactics.com
+gebank.ru
 geceguby.ru
 geek-art.net
 geek-squad-support.com
@@ -10663,6 +10702,7 @@ gelbooru.me
 gemfire.net
 gemfury.com
 gemini.com
+genbank.ru
 gencraft.com
 gendai.net
 generated.photos
@@ -10746,7 +10786,6 @@ getsentry.com
 getsession.org
 getsexgames.com
 getsocialscope.com
-getsynapse.io
 getsync.com
 gettr.com
 gettrials.com
@@ -10834,13 +10873,11 @@ gib-global.com
 gib.sg
 gibdev.net
 gibtds.ru
-gid.ru
 giffgaff.com
 giffgaff.design
 gifnuki.com
 gifree.com
 giga-web.jp
-giga.chat
 gigabyte.com
 gigacircle.com
 giganews.com
@@ -10914,7 +10951,6 @@ gitstar.com
 gitstar.net
 gittigidiyor.net
 gittigidiyorsikayet.com
-gitverse.ru
 givemebuzzsaw.com
 gizlen.net
 gizmoxxx.com
@@ -11718,6 +11754,7 @@ half.tv
 halfcanada.com
 halfjapan.com
 halktv.com.tr
+halvacard.ru
 hami-mod.buzz
 hamsterfucktube.com
 hamsterporn.tv
@@ -12347,6 +12384,7 @@ home-made-porn-movies.com
 home-made-videos.com
 home-sex-tapes.com
 home-song.com
+home.bank
 home.saxo
 homealonemilfs.com
 homebox.com
@@ -12966,6 +13004,7 @@ ibytedtos.com
 ibyteimg.com
 icams.com
 icashpassport.com.mx
+icbcmoscow.ru
 iccf.com
 icdf.org.tw
 icedrive.net
@@ -13067,7 +13106,6 @@ icqvideo.com
 icu-project.org
 icuminside.com
 id.au
-id.ru
 idaiwan.com
 idarkdoll.com
 idcflare.com
@@ -13411,6 +13449,7 @@ imtagram.com
 imtintl.com
 imtoken.fans
 imzog.com
+in-bank.ru
 in-disguise.com
 in.com
 in.th
@@ -13488,6 +13527,7 @@ ingads.com
 ingka.com
 ingka.dev
 ingkacentres.com
+ingobank.ru
 ingress.com
 inherd.mom
 inherit.live
@@ -13836,6 +13876,7 @@ inventorseries.com
 inventorship.com.au
 investing.com
 investorschronicle.co.uk
+investpay.ru
 invidio.us
 invity.io
 inxian.com
@@ -14050,6 +14091,7 @@ islamtoday.net
 ismaelan.com
 ismalltits.com
 ismprofessional.net
+isnbank.ru
 isnssdk.com
 isohunt.com
 isomorphiclabs.com
@@ -14083,6 +14125,7 @@ itaeromanga.com
 italiabeatsbydrdre.com
 italiatibet.org
 itasoftware.com
+itb.ru
 itcanwait.com
 itcfonts.com
 itch.io
@@ -14497,21 +14540,6 @@ jiuse821.com
 jiuse822.com
 jiuse823.com
 jivara.global
-jivo.chat
-jivo.ru
-jivochat.co.in
-jivochat.co.za
-jivochat.com
-jivochat.com.br
-jivochat.com.co
-jivochat.com.pe
-jivochat.com.tr
-jivochat.de
-jivochat.es
-jivochat.ng
-jivochat.ru
-jivosite.com
-jivosite.ru
 jiyou520.com
 jiyu-kobo.co.jp
 jizzboom.com
@@ -14713,6 +14741,7 @@ jwpsrv.com
 jwt.ms
 jyxf.net
 jzydh.com
+k-bnk.ru
 k-doujin.net
 k8s.io
 k9vidz.com
@@ -14765,6 +14794,7 @@ kama-nk.ru
 kamababa.com
 kamisama-day.jp
 kamisama-maeda-lab.com
+kamkombank.ru
 kampalaexclusiveescorts.com
 kanald.com.tr
 kanav.info
@@ -14841,6 +14871,7 @@ kawase.com
 kayako.com
 kaydara.com
 kba-tx.org
+kbb.ru
 kbzbank.com
 kbzpay.com
 kc3000.shop
@@ -15063,8 +15094,9 @@ korea.net
 koreanpornmovie.com
 korenan2.com
 korewaeroi.com
-korona.com
+koronapay.com
 koshelek.app
+koshelev-bank.ru
 kostenlosepornoclips.com
 kotl.in
 kotlinconf.com
@@ -15083,6 +15115,7 @@ kraftonde.com
 kraken.com
 kraken.onl
 krakenjs.com
+kremlinbank.ru
 krhentai.com
 kristenbjorn.com
 krosspictures.com
@@ -15125,13 +15158,13 @@ kumo.com
 kun.im
 kun66.xyz
 kundun1069.com
-kuper.ru
 kurashsultan.com
 kuromis.com
 kurtmunger.com
 kusocity.com
 kusugurizanmai.com
 kutjeporno.com
+kuzbank.ru
 kwcg.ca
 kwongwah.com.my
 kxsw.life
@@ -15178,6 +15211,7 @@ languagetool.org
 lanik.us
 lanmdh.net
 lanniser-ylo.shop
+lanta.ru
 lantern.io
 lanternal.com
 lantosfoundation.org
@@ -15578,6 +15612,7 @@ localizestatus.com
 localpresshk.com
 localxlist.org
 lockestek.com
+lockobank.ru
 log.rw
 logbot.net
 logi.com
@@ -16002,6 +16037,8 @@ mariobroswii.com
 mariokart7.com
 mariokart8.com
 mariosupersluggers.com
+maritimebank.com
+market.ru
 marketexecutive.net
 marketing-cloud.com
 marketing-nirvana.com
@@ -16235,6 +16272,7 @@ mcadforums.com
 mcaf.ee
 mcafee.com
 mcb.com.mm
+mcbank.ru
 mcd-holdings.co.jp
 mcd.com
 mcdelivery.co.id
@@ -16350,8 +16388,6 @@ megafon.com
 megafon.ru
 megafonpro.ru
 megalodon.jp
-megamarket.ru
-megamarket.tech
 megamon.co.kr
 megapay.nz
 megaphone.fm
@@ -16435,6 +16471,7 @@ metacpan.org
 metacritic.com
 metacubex.one
 metafilter.com
+metallinvestbank.ru
 metalpha.finance
 metamask.io
 metamind.io
@@ -16445,6 +16482,7 @@ metartnetwork.com
 metcams.com
 meteorshowersonline.com
 meteum.ai
+metib.ru
 metro.co.uk
 metro.taipei
 metrohk.com.hk
@@ -17085,6 +17123,7 @@ modoo.at
 modperl.pl
 modrinth.com
 modular.im
+modulbank.ru
 moedigi.com
 moeero-library.com
 moeerolibrary.com
@@ -17094,6 +17133,7 @@ moeimg.net
 moeli-desu.com
 moepedia.net
 moeshare.cc
+moex.com
 moez-m.com
 mofaxiehui.com
 mofos.com
@@ -17148,6 +17188,7 @@ monaitv.me
 monar.ch
 monbeats2013.com
 mondex.org
+moneta.ru
 money-link.com.tw
 moneydj.com
 moneyhome.biz
@@ -17432,6 +17473,7 @@ msocdn.com
 msocsp.com
 msoopent.com
 mspairlift.com
+mspbank.ru
 msropendata.com
 mstdn.social
 msturing.org
@@ -17840,6 +17882,7 @@ natgeokidsbooks.co.uk
 natgeomaps.com
 national-lottery.co.uk
 nationalawakening.org
+nationalclearingcentre.ru
 nationalgeographic.com
 nationalgeographicpartners.com
 nationalinterest.org
@@ -18227,6 +18270,7 @@ nichost.ru
 nickscipio.com
 nicky.xxx
 nico
+nico-bank.ru
 nico.ms
 nicochannel.jp
 nicodic.jp
@@ -18456,6 +18500,7 @@ nintendowii.com
 ninth.biz
 niosii.com
 niosii.net
+nipbank.ru
 nirsoft.net
 nishinipponbank.co.jp
 nist.gov
@@ -18483,6 +18528,7 @@ njavtv.com
 njpw.co.jp
 njpw1972.com
 njuice.com
+nkcbank.ru
 nke6.com
 nlfreevpn.com
 nlm.io
@@ -18537,6 +18583,7 @@ nordvpn.com
 noroutetohost.net
 norsk.mobi
 norton.com
+norvikbank.ru
 nos.nl
 note.com
 notegpt.io
@@ -18556,9 +18603,11 @@ novelai.net
 novelasia.com
 noveltrove.com
 novids.com
+novikom.ru
 novinhabucetuda.com
 novinhagostosa10.com
 novinhasdozapzap.com
+novobank.ru
 novojoy.com
 novostrong.com
 now-ashare.com
@@ -18588,6 +18637,7 @@ nrc.ca
 nrdh99.buzz
 nrk.no
 nrooms-dh.sbs
+ns-bank.ru
 ns.ci
 ns01.biz
 ns01.info
@@ -18598,10 +18648,12 @@ ns02.us
 ns1.name
 ns2.name
 ns3.name
+nsd.ru
 nsfw.xxx
 nsfw247.to
 nsfwmemes.com
 nsimg.net
+nskbl.ru
 nsloon.com
 nspk.ru
 nssurge.com
@@ -18932,6 +18984,7 @@ ok.xxx
 okaapps.com
 okayfreedom.com
 okazudouga.tokyo
+okbank.ru
 okcdn.ru
 okcoin.com
 okex.com
@@ -19195,6 +19248,7 @@ oraclefoundation.org
 oracleimg.com
 oracleinfinity.io
 oranum.com
+orbank.ru
 orbitera.com
 orchidbbs.com
 orcon.net.nz
@@ -19259,7 +19313,6 @@ otaku18a.info
 otaku55.xyz
 otbm.com
 otcbtc.com
-otello.ru
 otnd.org
 otokonokoland.com
 otpbank.ru
@@ -19503,7 +19556,6 @@ pawoo.net
 paxful.com
 paxlicense.org
 paydiant.com
-payecom.ru
 payget.pro
 paygonline.com
 payhulu.com
@@ -19813,6 +19865,7 @@ persiankitty.com
 person.com
 personaltrainermath.com
 personeelsland.com
+pervbank.ru
 pervclips.com
 perverse.sex
 perverttube.com
@@ -19896,6 +19949,7 @@ pieceofplastic.com
 pifpafarabia.com
 pigav.com
 pikabu.monster
+pikhtabank.ru
 pikpak.io
 pikpak.me
 pikpakdrive.com
@@ -20039,7 +20093,6 @@ plantsvszombies2.com
 plasma-mobile.org
 plasticlabs.com
 plastics-cadcam.com
-platiecom.ru
 platinumlinks.org
 platov.co
 play-analytics.com
@@ -20137,6 +20190,7 @@ pogobeta.com
 poi.icu
 poi.moe
 poi6.net
+poidem.ru
 poihub.com
 points-media.com
 pointtown.com
@@ -20675,6 +20729,8 @@ printersetupsupport.com
 printfriendly.com
 printspots.com
 printspots.net
+priobye.ru
+priovtb.com
 prism-break.org
 prismic.io
 prismlauncher.org
@@ -20790,7 +20846,7 @@ pshvpn.com
 psiphon.ca
 psiphon3.com
 psiphontoday.com
-pskb.ru
+pskb.com
 pstatic.net
 pstorage.space
 psyccareers.com
@@ -21101,7 +21157,6 @@ rael.org
 raggedbanner.com
 raidcall.com.tw
 raidtalk.com.tw
-raiffeisen-media.ru
 raiffeisen.ru
 rainbowplan.org
 raindrop.io
@@ -21214,6 +21269,7 @@ rcinet.ca
 rcl07.xyz
 rclon.com
 rd.com
+rdb.ru
 rdrom.ru
 rds-yes.buzz
 rdtcdn.com
@@ -21426,11 +21482,11 @@ resella.jp
 resellablue.com
 resilio.com
 resistchina.org
+resocreditbank.ru
 resonabank.co.jp
 resoubanana.buzz
 resoubang.buzz
 respawnbyrazer.com
-restnproducts.ru
 restofworld.org
 restream-media.net
 restream.ru
@@ -21524,6 +21580,7 @@ rm2029.com
 rmbl.ws
 rmjdw.com
 rmjdw132.info
+rncb.ru
 rncoluminis.ru
 ro-blox.com
 ro89.com
@@ -21602,6 +21659,7 @@ rosbank-credit.com
 rosbank-dom.ru
 rosbank-leasing.ru
 rosbank.ru
+rosdorbank.ru
 rosechina.net
 rosemarydoll.com
 roshy.tv
@@ -21634,6 +21692,7 @@ rrs1.xyz
 rrtis.com
 rs1024.com
 rs2022.com
+rsb.ru
 rsc.org
 rsdlmonitor.com
 rsf-chinese.org
@@ -21763,6 +21822,7 @@ rustore.team
 rustore.tv
 rustup.rs
 rusvpn.com
+rutaxi.ru
 ruten.com.tw
 rutor.info
 rutracker.cc
@@ -21858,7 +21918,6 @@ samair.ru
 sambaporno.com
 sambhota.org
 samebags.com
-samokat.ru
 samsung
 samsungapps.com
 samsungcloud.com
@@ -21958,36 +22017,17 @@ sb.sb
 sb24.com
 sbank.ir
 sber-bank.by
-sber.pro
 sber.ru
-sberauto.com
-sberbank-insurance.ru
-sberbank-tele.com
 sberbank.com
 sberbank.ru
-sberbankaktivno.ru
-sberbankins.ru
-sbercloud.ru
-sbercloud.tech
-sberdevices.ru
-sberdisk.ru
-sberfactoring.ru
-sberhealth.ru
-sberindex.ru
-sberleasing.ru
-sberlogistics.ru
-sbermegamarket.ru
-sbermobile.ru
-sberpb.ru
 sberspasibo.ru
-sbertech.ru
-sbertroika.ru
 sbgkstv.shop
 sbibankllc.ru
 sbishinseibank.co.jp
 sbitravelcard.com
 sbme.me
 sbnation.com
+sbpvtb.ru
 sbrf.ru
 sbs.com.au
 sbux.com.my
@@ -22018,6 +22058,7 @@ scatshop.com
 scatsite.com
 scatvids.club
 scatville.com
+scb.ru
 scdn.co
 scene7.com
 scenesource.me
@@ -22081,6 +22122,7 @@ scriptspot.com
 scrolller.com
 sculpoly.com
 sdcountybmw.com
+sdm.ru
 sdnice.one
 sdnitube.buzz
 seagroup.com
@@ -22227,6 +22269,7 @@ sevenload.com
 severeporn.com
 severreal.org
 sevgikurtulmaz.com
+sevnb.ru
 sex-11.com
 sex-amateur-clips.com
 sex-av.com
@@ -22483,6 +22526,8 @@ shattered.io
 shazam.com
 shdd.ink
 shedevrum.ai
+shedevrum.com
+shedevrum.ru
 sheet.new
 sheets.new
 sheflix.com
@@ -22647,6 +22692,7 @@ shymysex.com
 shywifeswap.com
 siam.org
 sibreal.org
+sibsoc.ru
 siddharthasintent.org
 sidelinesnews.com
 sidelinessportseatery.com
@@ -22848,6 +22894,7 @@ slavbank.ru
 slavicstar.com
 slayed.com
 slaytizle.com
+slbank.ru
 slc.tl
 sldolls.com
 sleazydream.com
@@ -22907,6 +22954,7 @@ smashed.xxx
 smbc.co.jp
 smbcr-bank.ru
 smbctb.co.jp
+smbfin.ru
 smchbooks.com
 smedevelopmentbank.com.mm
 smh.com.au
@@ -22941,11 +22989,13 @@ snapstore.io
 snaptu.com
 snapvolumes.com
 snapwebcams.com
+snbank.ru
 sndcdn.com
 sneaker666.com
 sneakerpage.net
 sneakerskick.com
 sneakme.net
+sngb.ru
 snjulebu.com
 snk-corp.co.jp
 snk-corp.info
@@ -22976,6 +23026,7 @@ socialkam.com
 socialmediagirls.com
 socialwhale.com
 sociolotron.com
+socium-bank.ru
 socks-proxy.net
 sockscap64.com
 sockslist.net
@@ -23022,6 +23073,7 @@ solana.com
 solarcity.com
 solid.ru
 solidaritetibet.org
+solidbank.ru
 solidfiles.com
 solidifi.app
 solidstate.com
@@ -23220,6 +23272,7 @@ spasibosb.ru
 spasibosberbank.ru
 spatial.io
 spb.com
+spbexchange.ru
 spcc-sp.com
 speakerdeck.com
 spearhead.kr
@@ -23301,6 +23354,7 @@ sputnikglobe.com
 sputnikimages.com
 sputnikmediabank.com
 sputniknews.com
+spvb.ru
 spyjinx.com
 spyrothedragon.com
 sqlite.org
@@ -23780,6 +23834,7 @@ sverigebeatsbydrdre.com
 svipshipin.store
 svoboda.org
 svobodnaevropa.bg
+svoi.ru
 svp-team.com
 svpply.com
 svscomics.asia
@@ -23868,6 +23923,7 @@ synology.com
 synology.me
 synologydownload.com
 synologyupdate.com
+syntx.ai
 syosetu.com
 sysinternals.com
 sysresccd.org
@@ -24261,6 +24317,7 @@ thanksloyalty.com
 thawte.com
 thawte.de
 thawte.fr
+thbank.ru
 thdh.cc
 the-area.com
 the-japan-news.com
@@ -24395,6 +24452,7 @@ theporntoplist.com
 theporny.com
 theportalwiki.com
 theprint.in
+thequestion.ru
 thereallove.kr
 therock.net.nz
 thesafeporn.com
@@ -24658,6 +24716,7 @@ time.nl
 timefxapp.com
 timeinc.net
 timelinestoryteller.com
+timerbank.ru
 timesmembership.com
 timesnownews.com
 timestalks.com
@@ -24883,6 +24942,7 @@ toy-cadcam.com
 toy-people.com
 toycadcam.com
 toyobank.co.jp
+toyota-bank.ru
 toypark.in
 toythieves.com
 toytractorshow.com
@@ -24917,6 +24977,7 @@ translatewiki.net
 translatewiki.org
 transparency.org
 transpornsites.com
+transstroybank.ru
 travel-tec.ru
 travelcontroller.com
 travelex.be
@@ -25033,6 +25094,7 @@ tryrating.com
 tryst.link
 ts.la
 ts.net
+tsbnk.ru
 tsctv.net
 tsemtulku.com
 tsescortsdirectory.com
@@ -25395,6 +25457,7 @@ ublock.org
 ubncloud.com
 ubnt.com
 ubnw.net
+ubrr.ru
 ubs.com
 ubuntu-touch.io
 ubuntu.com
@@ -25497,6 +25560,7 @@ ulyssesapp.com
 uma.media
 umagazine.com.hk
 umass.edu
+umbank.ru
 umbrella.com
 umd.edu
 umich.edu
@@ -25528,6 +25592,8 @@ unfiltered.news
 unholyknight.com
 uni.cc
 unicode.org
+unicredit.ru
+unicreditbank.ru
 unidraw.io
 unification.net
 unification.org.tw
@@ -25535,6 +25601,7 @@ uninhibitedcomix.com
 unirule.cloud
 unisat.io
 uniswap.org
+united.ru
 unitedsocialpress.com
 unity.com
 unity3d.com
@@ -25601,6 +25668,8 @@ upwork.com
 ur7s.com
 ura-akiba.jp
 uraban.me
+uralfd.ru
+uralprombank.ru
 uralsib.ru
 urasma.com
 urbandictionary.com
@@ -25806,6 +25875,7 @@ vava8.com
 vbcdn.com
 vbcdn.net
 vbejeyv.shop
+vbrr.ru
 vbstatic.co
 vcanedge.com
 vce.com
@@ -25815,9 +25885,9 @@ vcloudair.net
 vct.news
 vday.io
 vdoav.com
+veb.ru
 vecchiescopate.casa
 vector.im
-vedomosti.ru
 veed.io
 veet.at
 veet.be
@@ -25877,6 +25947,7 @@ venbbs.com
 venchina.com
 vendu.com
 venetianmacao.com
+venets-bank.ru
 venezporn.com
 venmo-touch.com
 venmo.com
@@ -25961,7 +26032,9 @@ veryladyboy.com
 veryshortintroductions.com
 vevo.com
 vewas.net
+vezet.ru
 vfabric.net
+vfbank.ru
 vfsco.at
 vfsco.be
 vfsco.bg
@@ -26347,6 +26420,7 @@ vkvideo.ru
 vkworkspace.kz
 vl4x.net
 vlb100.ru
+vlbb.ru
 vllcs.org
 vmailru.net
 vmglobal.net
@@ -26711,7 +26785,9 @@ vsezoo.com
 vsphere.com
 vsphere.net
 vtb-direct.com
+vtb.com
 vtb.ru
+vtbbo.ru
 vtbglobalperspectives.com
 vtrahe.page
 vtsociety.org
@@ -27743,6 +27819,7 @@ xn--80arpq.xn--p1ai
 xn--80asgb.xn--p1ai
 xn--8uq428d76d.tokyo
 xn--90ab.com
+xn--90ab2c.xn--p1ai
 xn--90absjljw3g.xn--p1ai
 xn--90aifd0az.shop
 xn--90aifd0azb.xn--p1acf
@@ -27760,7 +27837,6 @@ xn--cg4bki
 xn--czq75pvv1aj5c.org
 xn--d1abkf4ap.fun
 xn--d1acpjx3f.xn--p1ai
-xn--d1aqf.xn--p1ai
 xn--d4ty0ojsqzfd.com
 xn--e1adjldbbpv.xn--90ais
 xn--e1aigb.xn--p1ai
@@ -28322,6 +28398,7 @@ yamoon.club
 yande.re
 yandex
 yandex-bank.net
+yandex-team.com
 yandex-team.ru
 yandex.aero
 yandex.asia
@@ -28346,22 +28423,29 @@ yandex.kg
 yandex.kz
 yandex.lt
 yandex.lv
+yandex.market
 yandex.md
 yandex.mobi
 yandex.net
+yandex.net.ru
 yandex.org
 yandex.pl
+yandex.pro
 yandex.ru
 yandex.st
 yandex.sx
+yandex.taxi
 yandex.tj
 yandex.tm
 yandex.tr
+yandex.travel
 yandex.ua
 yandex.uz
 yandexadexchange.net
 yandexcloud.net
 yandexcom.net
+yandexdataschool.com
+yandexdataschool.ru
 yandexgo.com
 yandexlyceum.ru
 yandexwebcache.net
@@ -28407,6 +28491,7 @@ yazhouse8.com
 yccdn.ru
 yclients.com
 ycombinator.com
+ydb.tech
 ydgal.com
 ydn.com.tw
 ydy.com
@@ -28484,6 +28569,8 @@ yomiuri-systec.co.jp
 yomiuri.co.jp
 yong.hu
 yoobusiness.ru
+yookassa.ru
+yoomoney.ru
 yopo.work
 yopornshop.com
 yorkbbs.ca
@@ -29030,8 +29117,6 @@ zuo.la
 zuobiao.me
 zuola.com
 zvereff.com
-zvuk-b2b.com
-zvuk.com
 zweiporn.com
 zwtvusa.com
 zynamics.com
