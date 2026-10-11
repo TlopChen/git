@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29150 rules, generated 2026-10-11 06:01:14
+# proxy-domain OxiDNS domain_set, 29158 rules, generated 2026-10-11 23:36:11
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -1929,7 +1929,10 @@ domain:antenna.co.kr
 domain:anthemgame.com
 domain:anthemthegame.com
 domain:anthonycalzadilla.com
+domain:anthropic-com.ghost.io
+domain:anthropic.auth0.com
 domain:anthropic.com
+domain:anthropic.com.cdn.cloudflare.net
 domain:anti1984.com
 domain:antichristendom.com
 domain:antiphishing.nl
@@ -5449,6 +5452,7 @@ domain:cdn-terapeak.com
 domain:cdn-tinkoff.ru
 domain:cdn-vk.net
 domain:cdn-vk.ru
+domain:cdn.anthropic.com
 domain:cdn20.com
 domain:cdn77.com
 domain:cdn77.org
@@ -6390,6 +6394,7 @@ domain:conscrypt.com
 domain:conscrypt.org
 domain:consentmanager.net
 domain:consentpro.com
+domain:console.anthropic.com
 domain:constitutionalism.solutions
 domain:constructware.com
 domain:consul.io
@@ -16310,6 +16315,7 @@ domain:mcdonaldsparties.co.nz
 domain:mceindex.com
 domain:mcfog.com
 domain:mcisco.com
+domain:mcp.anthropic.com
 domain:mcpeaceofmind.com
 domain:mcreasite.com
 domain:mcrouter.net
@@ -22240,6 +22246,7 @@ domain:serialssolutions.com
 domain:serifservices.com
 domain:serlucap.lol
 domain:serlutv258.xyz
+domain:servd-anthropic-website.b-cdn.net
 domain:servehttp.com
 domain:servercontrolpanel.de
 domain:servercore.com
@@ -27417,6 +27424,7 @@ domain:wordpress.org
 domain:wordpress.tv
 domain:work2icu.org
 domain:workatruna.com
+domain:workbench.anthropic.com
 domain:workerdemo.org.hk
 domain:workerempowerment.org
 domain:workers.dev

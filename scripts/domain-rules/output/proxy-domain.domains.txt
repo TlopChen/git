@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29139, 2026-10-11 06:01:13
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29147, 2026-10-11 23:36:11
 000webhost.com
 01.org
 02weqj32.com
@@ -1929,7 +1929,10 @@ antenna.co.kr
 anthemgame.com
 anthemthegame.com
 anthonycalzadilla.com
+anthropic-com.ghost.io
+anthropic.auth0.com
 anthropic.com
+anthropic.com.cdn.cloudflare.net
 anti1984.com
 antichristendom.com
 antiphishing.nl
@@ -5449,6 +5452,7 @@ cdn-terapeak.com
 cdn-tinkoff.ru
 cdn-vk.net
 cdn-vk.ru
+cdn.anthropic.com
 cdn20.com
 cdn77.com
 cdn77.org
@@ -6390,6 +6394,7 @@ conscrypt.com
 conscrypt.org
 consentmanager.net
 consentpro.com
+console.anthropic.com
 constitutionalism.solutions
 constructware.com
 consul.io
@@ -16310,6 +16315,7 @@ mcdonaldsparties.co.nz
 mceindex.com
 mcfog.com
 mcisco.com
+mcp.anthropic.com
 mcpeaceofmind.com
 mcreasite.com
 mcrouter.net
@@ -22240,6 +22246,7 @@ serialssolutions.com
 serifservices.com
 serlucap.lol
 serlutv258.xyz
+servd-anthropic-website.b-cdn.net
 servehttp.com
 servercontrolpanel.de
 servercore.com
@@ -27417,6 +27424,7 @@ wordpress.org
 wordpress.tv
 work2icu.org
 workatruna.com
+workbench.anthropic.com
 workerdemo.org.hk
 workerempowerment.org
 workers.dev
