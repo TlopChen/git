@@ -1,4 +1,4 @@
-# proxy-domain exact-domains (fully qualified host) 11, 2026-10-12 06:01:11
+# proxy-domain exact-domains (fully qualified host) 11, 2026-10-13 06:01:11
 ai.google.dev
 alkalimakersuite-pa.clients6.google.com
 browser-intake-datadoghq.com
