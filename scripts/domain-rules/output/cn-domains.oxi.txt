@@ -1,4 +1,4 @@
-# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 113841 rules, 2026-10-13 06:01:28
+# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 113843 rules, 2026-10-14 06:01:30
 domain:0.zone
 domain:00.net
 domain:000.link
@@ -1961,7 +1961,6 @@ domain:1688lucky.com
 domain:1688s.com
 domain:1688tsw.com
 domain:1688zhuce.com
-domain:168ad.cc
 domain:168auto.com
 domain:168chaogu.com
 domain:168dc.com
@@ -4714,6 +4713,7 @@ domain:4399doc.com
 domain:4399er.com
 domain:4399hdhh.com
 domain:4399hhh.com
+domain:4399houtai.com
 domain:4399i.net
 domain:4399inc.com
 domain:4399j.com
@@ -5711,6 +5711,7 @@ domain:51zheduoduo.com
 domain:51zhi.com
 domain:51zhishang.com
 domain:51zhizhao.com
+domain:51zjb.com
 domain:51zjedu.com
 domain:51zjxm.com
 domain:51zmt.net
@@ -8615,7 +8616,6 @@ domain:8win.net
 domain:8wq.com
 domain:8wss.com
 domain:8x.fit
-domain:8x14khzwmi.com
 domain:8x5vviy4r2.com
 domain:8x6x.com
 domain:8xs.org
@@ -28268,7 +28268,6 @@ domain:db2b0d032aefa755.com
 domain:db5f9bf125415ac9.com
 domain:db6bfe859b7825fc.com
 domain:db6f227cfb009078.com
-domain:db8b41ie5.com
 domain:db9w.com
 domain:db9x.com
 domain:dba95a0a82447ac3.com
@@ -30680,6 +30679,7 @@ domain:dozview.com
 domain:dp.tech
 domain:dp168.com
 domain:dp2u.com
+domain:dpafmp641.vip
 domain:dpanel.cc
 domain:dpangzi.com
 domain:dpcafc.com
@@ -33658,7 +33658,6 @@ domain:eworksglobal.com
 domain:eworldship.com
 domain:ewpeinfo.com
 domain:ewqcxz.com
-domain:ewrrpuquc1.com
 domain:ewsaas.com
 domain:ewsdxc.com
 domain:ewstudy.com
@@ -36136,6 +36135,7 @@ domain:frp-six.com
 domain:frp-ski.com
 domain:frp-sun.com
 domain:frp-tag.com
+domain:frp-web.com
 domain:frpapp.com
 domain:frrcw.com
 domain:frt.ltd
@@ -37070,7 +37070,9 @@ domain:gamenow.club
 domain:gameol.com
 domain:gamepingce.com
 domain:gamepp.com
+domain:gamer520.fan
 domain:gamer520.net
+domain:gamer520.wiki
 domain:gamerboom.com
 domain:gameres.com
 domain:gamerhome.com
@@ -40519,7 +40521,6 @@ domain:guanhaiwei.com
 domain:guanhaobio.com
 domain:guanhejx.com
 domain:guanhou.com
-domain:guanhoulz.com
 domain:guanhuaju.com
 domain:guanjiajf.com
 domain:guankou.net
@@ -47288,6 +47289,7 @@ domain:hongfasi.net
 domain:hongfengye.com
 domain:hongfuloi.com
 domain:hongganshebei.net
+domain:hongguoduanju.com
 domain:hongguogame.com
 domain:hongguoyouxi.com
 domain:honghaibengye.com
@@ -49538,6 +49540,7 @@ domain:hxkfh.com
 domain:hxkgjt.com
 domain:hxkj.cc
 domain:hxkj.vip
+domain:hxkjtop.com
 domain:hxkq.net
 domain:hxkq.org
 domain:hxkqyxzz.net
@@ -50306,6 +50309,7 @@ domain:hzzxyy.com
 domain:hzzzpt.com
 domain:i-27.name
 domain:i-520.net
+domain:i-amtr.com
 domain:i-bei.com
 domain:i-bestmind.com
 domain:i-bigdatas.net
@@ -51604,7 +51608,6 @@ domain:ilongre.com
 domain:ilovechao.com
 domain:ilovefishc.com
 domain:iloveopened.com
-domain:iloveyouxi.com
 domain:ilovezuan.com
 domain:ilovezz.com
 domain:ilsungf.com
@@ -55915,6 +55918,7 @@ domain:jmnk300.com
 domain:jmonline.org
 domain:jmp-cn.com
 domain:jmp.gd
+domain:jmqux.com
 domain:jmqy.com
 domain:jmqyjt.com
 domain:jmrb.com
@@ -59205,6 +59209,7 @@ domain:kldshkj.com
 domain:klhpw.com
 domain:klhuyan.com
 domain:klicen.com
+domain:klinecharts.com
 domain:kling-ai.com
 domain:klingai.com
 domain:klingxai.com
@@ -63867,6 +63872,7 @@ domain:luneng.com
 domain:lungai.com
 domain:lunkuokeji.com
 domain:lunlunapp.com
+domain:lunprin.com
 domain:lunwengo.net
 domain:lunwenlib.com
 domain:lunwentong.com
@@ -69911,7 +69917,6 @@ domain:nintaus.com
 domain:ninthpalace360.com
 domain:ninthpalace520.com
 domain:nio.com
-domain:nio08310lt.com
 domain:nioapis.com
 domain:niohome.com
 domain:niozhr.com
@@ -71301,7 +71306,6 @@ domain:nucleisys.com
 domain:nuctech.com
 domain:nuedcchina.com
 domain:nufans.net
-domain:nug08011lu.com
 domain:nuget.org
 domain:nuhcpf.com
 domain:nuhighbio.com
@@ -74946,7 +74950,6 @@ domain:pxcoex.com
 domain:pxdier.net
 domain:pxemba.com
 domain:pxene.com
-domain:pxhuiben.com
 domain:pxhvc.com
 domain:pxlmxx.com
 domain:pxrczpw.com
@@ -78715,6 +78718,7 @@ domain:rlair.net
 domain:rljydt.com
 domain:rlkj.com
 domain:rlkj.net
+domain:rlkrmx.com
 domain:rlmeijia.com
 domain:rlnk.net
 domain:rlreader.com
@@ -85097,7 +85101,6 @@ domain:sodao.com
 domain:sodasoccer.com
 domain:sodc8.com
 domain:sodexo-cn.com
-domain:sodhef.com
 domain:sodino.com
 domain:sodion.net
 domain:sodocloud.com
@@ -94068,7 +94071,6 @@ domain:vazymemedical.com
 domain:vbango.com
 domain:vbaoxian-cib.com
 domain:vbbobo.com
-domain:vbc08100op.com
 domain:vbidc.com
 domain:vbio-pharma.com
 domain:vbiquge.com
@@ -94272,6 +94274,7 @@ domain:vfuiov.sbs
 domain:vfund.org
 domain:vfvdf.com
 domain:vfx123.com
+domain:vfxfu.com
 domain:vg.com
 domain:vg173.com
 domain:vg89qeas3xagd.com
@@ -110663,7 +110666,6 @@ domain:zhongluyuntong.com
 domain:zhongmaohr.com
 domain:zhongmei.com
 domain:zhongmeigk.com
-domain:zhongmeigk.hk
 domain:zhongmian.com
 domain:zhongminenergy.com
 domain:zhongmingjiaoyu.net
