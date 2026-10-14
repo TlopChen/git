@@ -2,7 +2,7 @@
  "accelerated-domains.china.conf": {
   "branch": "master",
   "bytes": 4029455,
-  "fetched_at": "2026-10-14 06:01:18+0800",
+  "fetched_at": "2026-10-15 06:01:15+0800",
   "sha256": "3cefab03714344276c95aec7d25980d31f7b9d084b4c4032dd2367ebeb54e0f3",
   "url": "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf"
  }
