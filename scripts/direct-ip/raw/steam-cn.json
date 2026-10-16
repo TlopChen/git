@@ -1,10 +1,10 @@
 {
-  "commit": "caf3e94126fa7832340e8502e7f155b9be42d89b",
-  "commit_time": 1791604155,
-  "fetched_at": 1792102529,
+  "commit": "1ef5fc1adb68f051a45bdaa2492c8ff0b5737278",
+  "commit_time": 1792118440,
+  "fetched_at": 1792188929,
   "path": "data/steam",
   "ref": "master",
   "repo": "v2ray/domain-list-community",
   "sha256": "4ce9aaf395d54abd93196c188efed96d5649adcddb636ed8727ca7e665524810",
-  "url": "https://github.com/v2ray/domain-list-community/blob/caf3e94126fa7832340e8502e7f155b9be42d89b/data/steam"
+  "url": "https://github.com/v2ray/domain-list-community/blob/1ef5fc1adb68f051a45bdaa2492c8ff0b5737278/data/steam"
 }
