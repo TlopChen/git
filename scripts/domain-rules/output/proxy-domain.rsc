@@ -1,4 +1,4 @@
-#proxy-domain — 手工 263 条 + 上游 28895 条, 2026-10-15 06:01:11 由 gen_rules.py 生成
+#proxy-domain — 手工 263 条 + 上游 28899 条, 2026-10-17 06:01:17 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -22100,6 +22100,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scat
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scatville.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scb.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scdn.co comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scea.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scene7.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scenesource.me comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=scharferporno.com comment="ros-rules-auto"
@@ -23172,6 +23173,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sony
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sony.com.pa comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sony.com.pe comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sony.com.ph comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sony.com.py comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sony.com.sg comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sony.com.sv comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sony.com.tr comment="ros-rules-auto"
@@ -23215,8 +23217,10 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sony
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonydna.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonyentertainmentnetwork.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonyglobalsolutions.jp comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonyinteractive.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonykigyo.jp comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonylatvija.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonymusic.com.hk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonynetwork.co.jp comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonypcl.jp comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sonypictures.com comment="ros-rules-auto"

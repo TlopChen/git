@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29158 rules, generated 2026-10-15 06:01:11
+# proxy-domain OxiDNS domain_set, 29162 rules, generated 2026-10-17 06:01:17
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -22066,6 +22066,7 @@ domain:scatvids.club
 domain:scatville.com
 domain:scb.ru
 domain:scdn.co
+domain:scea.com
 domain:scene7.com
 domain:scenesource.me
 domain:scharferporno.com
@@ -23142,6 +23143,7 @@ domain:sony.com.ni
 domain:sony.com.pa
 domain:sony.com.pe
 domain:sony.com.ph
+domain:sony.com.py
 domain:sony.com.sg
 domain:sony.com.sv
 domain:sony.com.tr
@@ -23185,8 +23187,10 @@ domain:sonydesign.com
 domain:sonydna.com
 domain:sonyentertainmentnetwork.com
 domain:sonyglobalsolutions.jp
+domain:sonyinteractive.com
 domain:sonykigyo.jp
 domain:sonylatvija.com
+domain:sonymusic.com.hk
 domain:sonynetwork.co.jp
 domain:sonypcl.jp
 domain:sonypictures.com
