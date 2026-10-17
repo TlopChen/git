@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29162 rules, generated 2026-10-17 06:01:17
+# proxy-domain OxiDNS domain_set, 29163 rules, generated 2026-10-18 06:01:21
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -555,6 +555,7 @@ domain:7mmtv.tv
 domain:7tb.cc
 domain:7tv.app
 domain:7tv.io
+domain:7x24hrs.com
 domain:8-d.com
 domain:8008206616.com
 domain:8111y.top
