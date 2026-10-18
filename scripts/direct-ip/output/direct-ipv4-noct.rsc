@@ -1,7 +1,7 @@
 # IPv4 direct IP set; see scripts/direct-ip/README.md for source attribution.
 # Does not configure routes/BGP. Import must be serialized.
 {
-:local generation "direct-ip-auto:d2f83fdfc961045b";
+:local generation "direct-ip-auto:1c85ef3bb69de596";
 :local prefixes {
 "1.1.8.0/24";
 "1.2.2.0/24";
@@ -563,13 +563,9 @@
 "43.103.0.0/16";
 "43.104.0.0/14";
 "43.108.0.0/16";
-"43.109.70.190/31";
-"43.109.70.192/30";
-"43.109.70.196/31";
+"43.109.70.195";
 "43.109.161.39";
-"43.109.161.40/30";
-"43.109.161.44/31";
-"43.109.161.46";
+"43.109.171.102";
 "43.110.0.0/15";
 "43.112.0.0/15";
 "43.114.0.0/16";
@@ -5105,6 +5101,11 @@
 "154.8.128.0/17";
 "154.72.47.0/24";
 "154.89.32.0/20";
+"155.102.4.11";
+"155.102.4.141";
+"155.102.175.140/30";
+"155.102.175.144/30";
+"155.102.181.136";
 "155.117.161.0/24";
 "155.126.176.0/23";
 "156.107.160.0/23";
@@ -5271,6 +5272,9 @@
 "163.142.0.0/16";
 "163.177.0.0/16";
 "163.179.0.0/16";
+"163.181.35.184";
+"163.181.77.217";
+"163.181.228.165";
 "163.204.0.0/16";
 "163.223.28.0/23";
 "163.223.32.0/23";
@@ -7291,5 +7295,5 @@
 };
 # This line is reached only after every desired entry was processed.
 /ip firewall address-list remove [find where list="DIRECT_IP_NOCT" and dynamic=no and comment~"^direct-ip-auto:" and comment!=$generation];
-:log info "DIRECT_IP synced: 7268 IPv4 prefixes";
+:log info "DIRECT_IP synced: 7272 IPv4 prefixes";
 }
