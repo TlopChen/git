@@ -1,4 +1,4 @@
-#proxy-domain — 手工 263 条 + 上游 28900 条, 2026-10-18 06:01:21 由 gen_rules.py 生成
+#proxy-domain — 手工 263 条 + 上游 28906 条, 2026-10-19 06:01:16 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -6794,6 +6794,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=curs
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cursor.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cursor.sh comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cursorapi.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cursorvm.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=curve.fi comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=curvefish.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=curvybbwwives.com comment="ros-rules-auto"
@@ -19221,6 +19222,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=op79
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=opac-project.eu comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=open.com.hk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=openai.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=openai.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=openallweb.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=openamt.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=openapiplatform.com comment="ros-rules-auto"
@@ -22114,6 +22116,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schw
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schwab.com.hk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schwab.com.sg comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schwabassetmanagement.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schwabcdn.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=schwabplan.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sci-hub.ee comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sci-hub.se comment="ros-rules-auto"
@@ -24754,6 +24757,8 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=time
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=timestalks.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=timeweb.cloud comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=timeweb.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=timeweb.tech comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=timewebcloud.kz comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=timi1.me comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=timo0.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=timsah.com comment="ros-rules-auto"
@@ -25452,6 +25457,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=type
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=typekit.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=typenetwork.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=typepad.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=typesafe.ai comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=typeset.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=typesquare.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=typography.com comment="ros-rules-auto"

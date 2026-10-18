@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29163 rules, generated 2026-10-18 06:01:21
+# proxy-domain OxiDNS domain_set, 29169 rules, generated 2026-10-19 06:01:16
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -6672,6 +6672,7 @@ domain:cursor-cdn.com
 domain:cursor.com
 domain:cursor.sh
 domain:cursorapi.com
+domain:cursorvm.com
 domain:curve.fi
 domain:curvefish.com
 domain:curvybbwwives.com
@@ -19173,6 +19174,7 @@ domain:op7979.com
 domain:opac-project.eu
 domain:open.com.hk
 domain:openai.com
+domain:openai.org
 domain:openallweb.com
 domain:openamt.com
 domain:openapiplatform.com
@@ -22080,6 +22082,7 @@ domain:schwab.com
 domain:schwab.com.hk
 domain:schwab.com.sg
 domain:schwabassetmanagement.com
+domain:schwabcdn.com
 domain:schwabplan.com
 domain:sci-hub.ee
 domain:sci-hub.se
@@ -24734,6 +24737,8 @@ domain:timesnownews.com
 domain:timestalks.com
 domain:timeweb.cloud
 domain:timeweb.com
+domain:timeweb.tech
+domain:timewebcloud.kz
 domain:timi1.me
 domain:timo0.com
 domain:timsah.com
@@ -25437,6 +25442,7 @@ domain:typekit.com
 domain:typekit.net
 domain:typenetwork.com
 domain:typepad.com
+domain:typesafe.ai
 domain:typeset.io
 domain:typesquare.com
 domain:typography.com
