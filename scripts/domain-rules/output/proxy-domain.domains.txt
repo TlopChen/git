@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29158, 2026-10-19 06:01:16
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29168, 2026-10-20 06:01:13
 000webhost.com
 01.org
 02weqj32.com
@@ -2547,7 +2547,6 @@ asminternational.org
 asmr.gay
 asmrbuluo.com
 asn-online.org
-asobostudio.com
 asp-cc.com
 asp.net
 aspbjournals.org
@@ -3562,8 +3561,15 @@ beforeigners.com
 befuck.com
 befuck.net
 begellhouse.com
+beget.app
+beget.cloud
 beget.com
+beget.de
+beget.hosting
+beget.pro
 beget.ru
+beget.tech
+begetcdn.cloud
 begin-trade.com
 behance.net
 behindkink.com
@@ -3602,6 +3608,7 @@ berlinerbericht.de
 berlintwitterwall.com
 berm.co.nz
 beru.ru
+beserver.ru
 best-practice.se
 best-sex-games.com
 best2pay.net
@@ -3718,6 +3725,7 @@ bfads.net
 bffshd.com
 bfnn.org
 bfsh.hk
+bget.ru
 bgicdn.com
 bgm.tv
 bgme.me
@@ -9769,7 +9777,6 @@ flickr.com
 flickr.net
 flickrhivemind.net
 flickriver.com
-flightsimulator.com
 fling.com
 flipboard.com
 flipfap.com
@@ -20931,6 +20938,7 @@ putinho.net
 putlocker.com
 putty.org
 puuko.com
+pv-cdn.net
 pvp.net
 pvp.tv
 pvt.sexy
@@ -23364,6 +23372,7 @@ sprinklesapp.com
 sprite.org
 sproutcore.com
 sproxy.info
+sprut.io
 sptvbroadcast.com
 sputnikglobe.com
 sputnikimages.com
@@ -27840,6 +27849,7 @@ xn--8uq428d76d.tokyo
 xn--90ab.com
 xn--90ab2c.xn--p1ai
 xn--90absjljw3g.xn--p1ai
+xn--90aefb9d.xn--p1ai
 xn--90aifd0az.shop
 xn--90aifd0azb.xn--p1acf
 xn--90wwvt03e.com
