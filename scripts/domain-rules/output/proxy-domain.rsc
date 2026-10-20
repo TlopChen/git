@@ -1,4 +1,4 @@
-#proxy-domain — 手工 263 条 + 上游 28916 条, 2026-10-20 06:01:13 由 gen_rules.py 生成
+#proxy-domain — 手工 263 条 + 上游 28919 条, 2026-10-21 06:01:17 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -15990,6 +15990,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mage
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=magic-net.info comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=magicalmirai.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=magicmovies.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=magnific.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mahabodhi.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mahajantech.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mahjongsoul.com comment="ros-rules-auto"
@@ -17556,6 +17557,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mt.l
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mt0011.site comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mtao.fun comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mthruf.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mts-link.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mts-ws.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mts.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mtsbank.ru comment="ros-rules-auto"
@@ -20665,6 +20667,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=post
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=postimg.cc comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=postimg.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=postini.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=postman.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=posty.kr comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=postyourgirls.ws comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=potato.im comment="ros-rules-auto"
