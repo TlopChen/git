@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29183 rules, generated 2026-10-22 03:09:09
+# proxy-domain OxiDNS domain_set, 29185 rules, generated 2026-10-22 06:01:14
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -2871,8 +2871,10 @@ domain:avinetworks.com
 domain:avinin.com
 domain:avira.com
 domain:avistaz.to
+domain:avito.com
 domain:avito.ru
 domain:avito.st
+domain:avito.tech
 domain:avizoon.site
 domain:avizoone.com
 domain:avjb.com
