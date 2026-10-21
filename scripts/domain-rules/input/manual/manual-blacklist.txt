@@ -266,3 +266,4 @@ anthropic.com.cdn.cloudflare.net
 #手工
 fanza.jp
 cas7.moe
+nexonstatic.com
