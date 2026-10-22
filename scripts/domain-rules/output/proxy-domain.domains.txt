@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29174, 2026-10-22 06:01:13
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29195, 2026-10-23 06:01:17
 000webhost.com
 01.org
 02weqj32.com
@@ -1923,6 +1923,7 @@ anonymouse.org
 anpopo.com
 ansarbank.com
 answering-islam.org
+ant.dev
 antarvasnaclips.com
 antarvasnax.com
 antd.org
@@ -1934,12 +1935,14 @@ anthropic-com.ghost.io
 anthropic.auth0.com
 anthropic.com
 anthropic.com.cdn.cloudflare.net
+anthropic.team
 anti1984.com
 antichristendom.com
 antiphishing.nl
 antiphishing.ru
 antiwave.net
 antpool.com
+antspace.dev
 anudetube.com
 anuneko.com
 anxiangxing.com
@@ -5595,6 +5598,7 @@ charmescorts.com
 charticulator.com
 chat.com
 chatango.com
+chatbotclaude.com
 chatgpt.com
 chatgpt.site
 chatgptvideo.xyz
@@ -5973,10 +5977,16 @@ classicnike.com
 classymomsex.com
 clau.de
 claude.ai
+claude.app
 claude.com
 claude.dev
+claude.new
+claude.site
+claudeacademy.com
 claudemcpclient.com
 claudemcpcontent.com
+claudepages.dev
+claudestudio.com
 claudeusercontent.com
 clawhub.ai
 clb.org.hk
@@ -9810,6 +9820,17 @@ fluidfxapp.com
 fluidpreview.com
 flutter.dev
 flutterapp.com
+fluxer.app
+fluxer.com
+fluxer.dev
+fluxer.gg
+fluxer.gift
+fluxer.media
+fluxer.tools
+fluxerapp.com
+fluxerstatic.com
+fluxerstatus.com
+fluxerusercontent.com
 fly.dev
 fly.io
 flyflv.com
