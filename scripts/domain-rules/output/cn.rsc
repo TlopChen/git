@@ -1,4 +1,4 @@
-#cn — 6624 条, 2026-10-23 06:00:18 由 gen_rules.py 生成
+#cn — 6625 条, 2026-10-24 06:00:18 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn.rsc" mode=http
 #         /import file-name=cn.rsc
 /ip firewall address-list
@@ -943,6 +943,7 @@ add list=CN address=45.117.20.0/22
 add list=CN address=45.117.68.0/22
 add list=CN address=45.117.124.0/22
 add list=CN address=45.117.252.0/22
+add list=CN address=45.119.42.0/23
 add list=CN address=45.119.60.0/22
 add list=CN address=45.119.64.0/21
 add list=CN address=45.119.72.0/22
@@ -2316,7 +2317,6 @@ add list=CN address=103.89.172.0/22
 add list=CN address=103.89.184.0/21
 add list=CN address=103.89.192.0/19
 add list=CN address=103.89.224.0/21
-add list=CN address=103.90.51.0/24
 add list=CN address=103.90.52.0/22
 add list=CN address=103.90.56.0/23
 add list=CN address=103.90.92.0/22
@@ -4204,7 +4204,6 @@ add list=CN address=124.68.0.0/17
 add list=CN address=124.68.128.0/18
 add list=CN address=124.68.192.0/19
 add list=CN address=124.68.224.0/20
-add list=CN address=124.68.244.0/22
 add list=CN address=124.68.248.0/21
 add list=CN address=124.69.0.0/16
 add list=CN address=124.70.0.0/15
@@ -4666,11 +4665,13 @@ add list=CN address=168.159.152.0/22
 add list=CN address=168.159.156.0/23
 add list=CN address=168.159.158.0/24
 add list=CN address=168.160.0.0/16
+add list=CN address=170.33.15.0/24
 add list=CN address=170.33.20.0/22
 add list=CN address=170.33.24.0/24
 add list=CN address=170.33.29.0/24
 add list=CN address=170.33.30.0/23
 add list=CN address=170.33.32.0/22
+add list=CN address=170.33.41.0/24
 add list=CN address=170.33.64.0/23
 add list=CN address=170.33.66.0/24
 add list=CN address=170.33.68.0/23
@@ -4685,7 +4686,7 @@ add list=CN address=170.33.129.0/24
 add list=CN address=170.33.130.0/23
 add list=CN address=170.33.136.0/23
 add list=CN address=170.33.138.0/24
-add list=CN address=170.33.169.0/24
+add list=CN address=170.33.168.0/23
 add list=CN address=170.33.192.0/23
 add list=CN address=170.179.0.0/16
 add list=CN address=171.8.0.0/13

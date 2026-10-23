@@ -1,4 +1,4 @@
-# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 112664 rules, 2026-10-23 06:01:34
+# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 112690 rules, 2026-10-24 06:01:42
 domain:0.zone
 domain:00.net
 domain:000.link
@@ -112,6 +112,7 @@ domain:00fkh408382.xin
 domain:00hh.com
 domain:00ic.com
 domain:00it.net
+domain:00kxs.com
 domain:00lfoo16454.xin
 domain:00o5nm18258.xin
 domain:00shu.com
@@ -10046,6 +10047,7 @@ domain:adups.com
 domain:aduspot.com
 domain:adutou.com
 domain:adutp.com
+domain:advance.ai
 domain:advanced-microsemi.com
 domain:advanced-pneumatics.com
 domain:advertcn.com
@@ -13071,6 +13073,7 @@ domain:audiowell.net
 domain:audiowellzq.com
 domain:audioxj.com
 domain:auditcn.com
+domain:auditoryworks.co
 domain:audlabs.com
 domain:audtools.com
 domain:aufewb.com
@@ -15456,6 +15459,7 @@ domain:bhdxfsyy.com
 domain:bhecard.com
 domain:bheyy.com
 domain:bhfc.net
+domain:bhgcdn.com
 domain:bhghy.com
 domain:bhgjjy.com
 domain:bhgmarketplace.com
@@ -17377,6 +17381,7 @@ domain:bqgxsw.com
 domain:bqgz88.com
 domain:bqlcev.com
 domain:bqpoint.com
+domain:bqpwlw.com
 domain:bqq8.com
 domain:bqqpx.com
 domain:bqsnn.com
@@ -22714,6 +22719,7 @@ domain:citgc.com
 domain:citiais.com
 domain:citic-wealth.com
 domain:citic.com
+domain:citicbank.citic
 domain:citicbank.com
 domain:citicbankuser.com
 domain:citiccapital.com
@@ -25857,6 +25863,7 @@ domain:crmip.com
 domain:crmyy.com
 domain:crnews.net
 domain:crntt.com
+domain:croakfang.fun
 domain:crodigy.com
 domain:crodigynat.com
 domain:croot.com
@@ -28141,6 +28148,7 @@ domain:dedesos.com
 domain:dedezhuji.com
 domain:deebio.com
 domain:deeceal.com
+domain:deeepseek.net
 domain:deehon.com
 domain:deemos.com
 domain:deep56.com
@@ -28962,6 +28970,7 @@ domain:digitalcnzz.com
 domain:digitalcq.com
 domain:digitaling.com
 domain:digitaljx.com
+domain:digitalmall.uk
 domain:digitalmanu.com
 domain:digitalvolvo.com
 domain:digitalwuhan.com
@@ -42756,6 +42765,7 @@ domain:gzxhcbfx.com
 domain:gzxhce.com
 domain:gzxhhs.net
 domain:gzxianc.com
+domain:gzxiancheng.com
 domain:gzxiaoban.com
 domain:gzxict.com
 domain:gzxijiu.com
@@ -46085,6 +46095,7 @@ domain:hmfxw.com
 domain:hmgbtv.com
 domain:hmgj.com
 domain:hmgreat.com
+domain:hmhpay.com
 domain:hminvestment.com
 domain:hmj666.com
 domain:hmjc.org
@@ -55041,6 +55052,7 @@ domain:jkhapp.com
 domain:jkhcfz.com
 domain:jkhds872.com
 domain:jkhealth.vip
+domain:jkik635.com
 domain:jkimg.net
 domain:jkjiekuan.com
 domain:jkjzt.com
@@ -55705,7 +55717,6 @@ domain:jrmianban.com
 domain:jrnba.cc
 domain:jrntv.com
 domain:jrpengze.com
-domain:jrq39d1r8.com
 domain:jrqzw.net
 domain:jrs-live-football.com
 domain:jrs-live-score.com
@@ -57918,6 +57929,7 @@ domain:kege.com
 domain:kehaohao.com
 domain:kehou.com
 domain:kehu51.com
+domain:kehua.com
 domain:kehuan-upward.com
 domain:kehuda.com
 domain:kehuduan.com
@@ -58214,6 +58226,7 @@ domain:kiinii.com
 domain:kiiyi.com
 domain:kijifept.com
 domain:kikiwon.com
+domain:kiko-play-niptan.one
 domain:kikoplay.fun
 domain:kikusuitape.com
 domain:kikuu.com
@@ -61290,6 +61303,7 @@ domain:liebaovip.com
 domain:liebiao.com
 domain:liebigwatch.com
 domain:liebo.com
+domain:liechacha.com
 domain:liechan.com
 domain:lieguo.com
 domain:lieguozhi.com
@@ -63029,6 +63043,7 @@ domain:luchengxi.com
 domain:luchentech.com
 domain:luchenwater.com
 domain:luchuang.com
+domain:luciabid.com
 domain:luciaz.me
 domain:lucifer.ren
 domain:lucifr.com
@@ -64956,6 +64971,7 @@ domain:medicalimagecloud.com
 domain:medicalqc.com
 domain:medicexam.net
 domain:mediecogroup.com
+domain:mediext.com
 domain:medifinit.com
 domain:medilinkthera.com
 domain:medinoah.com
@@ -66935,6 +66951,7 @@ domain:morninginn.com
 domain:morningwhistle.com
 domain:morong-elec.com
 domain:morstar.net
+domain:mos0039.com
 domain:moschat.com
 domain:moseacg.com
 domain:moseeker.com
@@ -71214,6 +71231,7 @@ domain:oneplus6666.com
 domain:oneplusbbs.com
 domain:oneplusmobile.com
 domain:onescorpion.com
+domain:onesec.net
 domain:oneself.icu
 domain:oneshao.com
 domain:onesight.com
@@ -75082,6 +75100,7 @@ domain:qilinyiqi88.com
 domain:qilitech.ltd
 domain:qiliuxs.com
 domain:qilong.com
+domain:qilongnianzsq.com
 domain:qilongtan.com
 domain:qilongyoule.com
 domain:qilu-pharma.com
@@ -76763,6 +76782,7 @@ domain:qykh2009.com
 domain:qykjedu.com
 domain:qymdb.com
 domain:qymgc.com
+domain:qypaizhuo.com
 domain:qyrb.com
 domain:qyrcrs.com
 domain:qyrx.cc
@@ -80230,6 +80250,7 @@ domain:secure2.alphassl.com
 domain:secureqin.net
 domain:securitycn.net
 domain:securityeb.com
+domain:securityhg.com
 domain:securityinsight.com
 domain:secutimes.com
 domain:secwk.com
@@ -86479,6 +86500,7 @@ domain:sysush.com
 domain:syswgw.com
 domain:sysx.tech
 domain:sysxhz.com
+domain:sysy.fun
 domain:sysydz.net
 domain:sysysjnk.com
 domain:syt1000.com
@@ -87221,6 +87243,8 @@ domain:sztxsz.com
 domain:szty56.com
 domain:sztz.org
 domain:sztzzs.com
+domain:szu.app
+domain:szu.moe
 domain:szuavia.org
 domain:szudad.com
 domain:szunionlab.com
@@ -90233,6 +90257,7 @@ domain:tongtool.com
 domain:tongtut.com
 domain:tongwang.net
 domain:tongwei.com
+domain:tongwenads.com
 domain:tongwo.net
 domain:tongxi.net
 domain:tongxiang.net
@@ -92376,6 +92401,8 @@ domain:unihertz.com
 domain:unilaw.net
 domain:unilumin.com
 domain:unimasdata.com
+domain:unimcom.com
+domain:uniminnovation.com
 domain:unimtx.com
 domain:uninf.com
 domain:uning.com
@@ -102048,7 +102075,6 @@ domain:xupupifu.com
 domain:xuqijt.com
 domain:xuqyfw.com
 domain:xuruowei.com
-domain:xushenghb.com
 domain:xushunda.com
 domain:xusplastic.com
 domain:xusss.com
@@ -103155,6 +103181,7 @@ domain:ycamlyy.com
 domain:ycangels.com
 domain:ycaqr.com
 domain:ycb.com
+domain:ycbeyond.com
 domain:ycbian.com
 domain:ycbiz.net
 domain:ycbright.com
@@ -106186,6 +106213,7 @@ domain:yuanma.net
 domain:yuanmadian.com
 domain:yuanmait.com
 domain:yuanmajiaoyiw.com
+domain:yuanmancang.com
 domain:yuanmatao.com
 domain:yuano.cc
 domain:yuanpanguoji.com
@@ -106946,8 +106974,6 @@ domain:yuqinpin.com
 domain:yuqncloud.com
 domain:yuquanhosp.com
 domain:yuque.com
-domain:yur09130og.com
-domain:yur09140og.com
 domain:yuren.org
 domain:yurongoptical.com
 domain:yurun.com
