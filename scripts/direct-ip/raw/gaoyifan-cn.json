@@ -1,10 +1,10 @@
 {
-  "commit": "d8512a760a32b3adadddd619831dcd4cc1e48df7",
-  "commit_time": 1792742510,
-  "fetched_at": 1792793713,
+  "commit": "14ac65e3c3bedf75f5c87d383f6d05c87c0fd911",
+  "commit_time": 1792827619,
+  "fetched_at": 1792880112,
   "path": "china.txt",
   "ref": "ip-lists",
   "repo": "gaoyifan/china-operator-ip",
-  "sha256": "5d9b433d89ba7c452c79a18b7f9e49c09544cb27ed7cddfd17a3c3397f274756",
-  "url": "https://github.com/gaoyifan/china-operator-ip/blob/d8512a760a32b3adadddd619831dcd4cc1e48df7/china.txt"
+  "sha256": "96381ba2ec8ebad93634365f6f1ca74bdb80af1307640ee59deb9b2deed598bc",
+  "url": "https://github.com/gaoyifan/china-operator-ip/blob/14ac65e3c3bedf75f5c87d383f6d05c87c0fd911/china.txt"
 }
