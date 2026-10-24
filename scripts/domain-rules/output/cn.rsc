@@ -1,4 +1,4 @@
-#cn — 6625 条, 2026-10-24 06:00:18 由 gen_rules.py 生成
+#cn — 6622 条, 2026-10-25 06:00:17 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn.rsc" mode=http
 #         /import file-name=cn.rsc
 /ip firewall address-list
@@ -508,16 +508,13 @@ add list=CN address=43.90.0.0/16
 add list=CN address=43.92.0.0/15
 add list=CN address=43.94.0.0/18
 add list=CN address=43.96.0.0/23
-add list=CN address=43.96.2.130/32
 add list=CN address=43.96.3.0/24
 add list=CN address=43.96.4.0/22
 add list=CN address=43.96.8.0/22
-add list=CN address=43.96.16.130/32
 add list=CN address=43.96.18.0/24
 add list=CN address=43.96.20.0/22
 add list=CN address=43.96.24.0/22
 add list=CN address=43.96.32.0/22
-add list=CN address=43.96.36.130/32
 add list=CN address=43.96.40.0/24
 add list=CN address=43.96.42.0/24
 add list=CN address=43.96.44.0/23
@@ -528,7 +525,6 @@ add list=CN address=43.96.60.0/24
 add list=CN address=43.96.62.0/23
 add list=CN address=43.96.64.0/21
 add list=CN address=43.96.72.0/22
-add list=CN address=43.96.77.131/32
 add list=CN address=43.96.78.0/24
 add list=CN address=43.96.80.0/23
 add list=CN address=43.96.85.0/24
@@ -2891,6 +2887,7 @@ add list=CN address=103.186.162.0/24
 add list=CN address=103.186.228.0/23
 add list=CN address=103.189.92.0/23
 add list=CN address=103.189.152.0/22
+add list=CN address=103.189.197.0/24
 add list=CN address=103.190.20.0/23
 add list=CN address=103.190.71.0/24
 add list=CN address=103.190.104.0/23

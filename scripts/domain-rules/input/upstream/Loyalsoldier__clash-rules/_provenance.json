@@ -1,29 +1,29 @@
 {
  "cncidr.txt": {
   "branch": "release",
-  "bytes": 219376,
-  "fetched_at": "2026-10-24 06:00:14+0800",
-  "sha256": "b7b603728c2e4334500e62e90e9a785d456234e56f87d9dd065f43d6c70bdaac",
+  "bytes": 219337,
+  "fetched_at": "2026-10-25 06:00:13+0800",
+  "sha256": "ce5122e6bb0e0a3a0738b34d6aebfdf6b521ad22b689b46149ae19249bfca0b3",
   "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
  },
  "gfw.txt": {
   "branch": "release",
-  "bytes": 94987,
-  "fetched_at": "2026-10-24 06:00:48+0800",
-  "sha256": "5dd8fbe9d9a9337ba6e4428709429dc2f857b9ed182b4a5bbc86c394bf9f8e48",
+  "bytes": 95034,
+  "fetched_at": "2026-10-25 06:00:52+0800",
+  "sha256": "b6a55a1d8672d8c263c45eec7aac0d30164f3107266786053f677e68724f11c6",
   "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
  },
  "proxy.txt": {
   "branch": "release",
-  "bytes": 622472,
-  "fetched_at": "2026-10-24 06:01:16+0800",
-  "sha256": "9a4f578a3a703d1bae49e702a1f3ede65a56ee76507ab84abf497c34132443b0",
+  "bytes": 622491,
+  "fetched_at": "2026-10-25 06:01:21+0800",
+  "sha256": "e3bf962e6baf6e9c98fe1d4db61720cd3aa42fa4afe47ece99c90c8cd7440cce",
   "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
  },
  "telegramcidr.txt": {
   "branch": "release",
   "bytes": 274,
-  "fetched_at": "2026-10-24 06:00:38+0800",
+  "fetched_at": "2026-10-25 06:00:38+0800",
   "sha256": "328fca88c675763111c7f7585ec504e5c21ab9afb7a8ce6df33b7ac01b8a3ee0",
   "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
  }

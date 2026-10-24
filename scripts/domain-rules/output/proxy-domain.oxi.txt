@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29231 rules, generated 2026-10-24 06:01:17
+# proxy-domain OxiDNS domain_set, 29232 rules, generated 2026-10-25 06:01:21
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -14710,6 +14710,7 @@ domain:jsdelivr.com
 domain:jsdelivr.net
 domain:jshell.net
 domain:jshint.com
+domain:jspm.io
 domain:jstor.org
 domain:jstv51.com
 domain:jstv52.com
