@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29241 rules, generated 2026-10-27 06:01:10
+# proxy-domain OxiDNS domain_set, 29226 rules, generated 2026-10-28 06:01:14
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -849,6 +849,7 @@ domain:addthis.com
 domain:addthiscdn.com
 domain:addthisedge.com
 domain:addtoany.com
+domain:addtodropbox.com
 domain:addyoutube.com
 domain:adelaidebbs.com
 domain:adelaidenow.com.au
@@ -1608,7 +1609,6 @@ domain:alpherafs.com.my
 domain:alpherafs.ie
 domain:alpherafs.in
 domain:alpherafs.my
-domain:alpinedc.ch
 domain:alpinelinux.org
 domain:alt.com
 domain:altera.co.jp
@@ -2402,7 +2402,6 @@ domain:arabysexy.com
 domain:arabysexy.mobi
 domain:aragon.network
 domain:aranzadi.es
-domain:arauc.br
 domain:arcadewank.com
 domain:arcgis.com
 domain:arcgisonline.com
@@ -3600,7 +3599,6 @@ domain:bellesa.co
 domain:bellingcat.com
 domain:bellotube.com
 domain:bellsouth.net
-domain:belwue.net
 domain:bemywife.cc
 domain:benaughty.fun
 domain:benefitsforeveryworld.com
@@ -5316,7 +5314,6 @@ domain:cari.com.my
 domain:caribbeancom.com
 domain:caribbeancompr.com
 domain:carmotorshow.com
-domain:carnet.hr
 domain:carousell.com.hk
 domain:carrd.co
 domain:carrot-mail.io
@@ -6880,6 +6877,7 @@ domain:darwinsource.com
 domain:darwinsource.org
 domain:darwinsourcecode.com
 domain:dasaob.online
+domain:dash.ai
 domain:dashlane.com
 domain:dashly.app
 domain:dashly.help
@@ -7673,6 +7671,7 @@ domain:docs.com
 domain:docs.new
 domain:docs.rs
 domain:docs.rw
+domain:docsend.com
 domain:doctor-videos.com
 domain:doctorvoice.org
 domain:documentforce.com
@@ -7883,12 +7882,15 @@ domain:dropbox.tech
 domain:dropboxapi.com
 domain:dropboxbusiness.com
 domain:dropboxcaptcha.com
+domain:dropboxexperiment.com
 domain:dropboxforum.com
 domain:dropboxforums.com
 domain:dropboxinsiders.com
+domain:dropboxlegal.com
 domain:dropboxmail.com
 domain:dropboxpartners.com
 domain:dropboxstatic.com
+domain:dropboxteam.com
 domain:dropboxusercontent.com
 domain:droplr.com
 domain:drpc.org
@@ -8642,7 +8644,6 @@ domain:envycrm.com
 domain:envyday.ru
 domain:eotarchive.org
 domain:epac.to
-domain:epic.network
 domain:epicbrowser.com
 domain:epicevents.gg
 domain:epicgames.dev
@@ -10143,7 +10144,6 @@ domain:francecasquebeatssolde.com
 domain:francemail.com
 domain:frank2019.me
 domain:franklc.com
-domain:fratec.net
 domain:frcasquesbeats.com
 domain:freakshare.com
 domain:free-3d-porn.com
@@ -10255,7 +10255,6 @@ domain:freepornpreview.net
 domain:freepornq.com
 domain:freepornvideos.life
 domain:freeproxylists.net
-domain:freerangecloud.com
 domain:freerk.com
 domain:freesexalbum.com
 domain:freesexgames.games
@@ -11133,7 +11132,6 @@ domain:go.jp
 domain:go141.com
 domain:go2av.com
 domain:go5.dev
-domain:go6.si
 domain:goagent.biz
 domain:goagentplus.com
 domain:gobeatsye.com
@@ -12021,9 +12019,11 @@ domain:heix.pp.ru
 domain:helixstudios.net
 domain:helloandroid.com
 domain:helloavgirls.com
+domain:hellofax.com
 domain:hellokittybeats.com
 domain:hellomoto.com
 domain:helloqueer.com
+domain:hellosign.com
 domain:hellosmartbook.com
 domain:helloss.pw
 domain:hellotxt.com
@@ -14239,7 +14239,6 @@ domain:itunesstore.co
 domain:itunesu.com
 domain:itunesu.net
 domain:itweet.net
-domain:iu13.net
 domain:iu45.com
 domain:iuhrdf.org
 domain:iuksky.com
@@ -15464,6 +15463,7 @@ domain:libraryinformationtechnology.com
 domain:librarylovefest.com
 domain:libraryofthumbs.com
 domain:libredd.it
+domain:librewolf.dev
 domain:librewolf.net
 domain:libsolutions.app
 domain:libsolutions.domains
@@ -15564,7 +15564,6 @@ domain:lionhearts.co.kr
 domain:lionsroar.com
 domain:lipuman.com
 domain:liquiditytp.com
-domain:liquidtelecom.net
 domain:liquidvpn.com
 domain:lisiku.com
 domain:lisiku1.com
@@ -18649,7 +18648,6 @@ domain:nordstromimage.com
 domain:nordstrommedia.com
 domain:nordstromrack.com
 domain:nordvpn.com
-domain:noroutetohost.net
 domain:norsk.mobi
 domain:norton.com
 domain:norvikbank.ru
@@ -21713,7 +21711,6 @@ domain:rockstargames.com
 domain:rockstarnorth.com
 domain:rockylinux.org
 domain:rocmgov.org
-domain:roedu.net
 domain:rojo.com
 domain:roku.com
 domain:rokutime.com
@@ -22900,7 +22897,6 @@ domain:sites.new
 domain:situero.com
 domain:six-degrees.io
 domain:six9dy.pw
-domain:sixte.st
 domain:sixth.biz
 domain:sjcollect.com
 domain:sjhsp1.buzz
@@ -24360,13 +24356,6 @@ domain:tesla.services
 domain:teslaenergy.services
 domain:teslamotors.com
 domain:teslazta.net
-domain:test-ipv6.cl
-domain:test-ipv6.com
-domain:test-ipv6.cz
-domain:test-ipv6.hu
-domain:test-ipv6.is
-domain:test-ipv6.se
-domain:testipv6.de
 domain:testonfox.com
 domain:tetrika-school.ru
 domain:tettediferro.it
@@ -25210,7 +25199,6 @@ domain:tt-rss.org
 domain:tt1069.com
 domain:ttcdn-us.com
 domain:tteshop.com
-domain:ttk.ru
 domain:ttl.com.tw
 domain:ttlivecdn.com
 domain:ttoverseaus.net
@@ -25658,7 +25646,6 @@ domain:umagazine.com.hk
 domain:umass.edu
 domain:umbank.ru
 domain:umbrella.com
-domain:umd.edu
 domain:umich.edu
 domain:umschool.net
 domain:umsoplaneta.com
@@ -25850,7 +25837,6 @@ domain:uverse.com
 domain:uvwxyz.xyz
 domain:uwants.com
 domain:uwants.net
-domain:uwaterloo.ca
 domain:uweb.ru
 domain:uwpcommunitytoolkit.com
 domain:uxthemes.com
@@ -26837,7 +26823,6 @@ domain:vpro.net
 domain:vps.hosting
 domain:vpser.net
 domain:vpsxb.net
-domain:vr.org
 domain:vraiesagesse.net
 domain:vrbgay.com
 domain:vrcams.io
