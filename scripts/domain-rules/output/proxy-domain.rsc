@@ -1,4 +1,4 @@
-#proxy-domain — 手工 264 条 + 上游 28962 条, 2026-10-28 06:01:13 由 gen_rules.py 生成
+#proxy-domain — 手工 264 条 + 上游 28969 条, 2026-10-29 06:01:14 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -2721,6 +2721,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=arte
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=artel.watch comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=arteldoc.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=arteldoc.tv comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=artificialanalysis.ai comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=artixlinux.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=artnudegalleries.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=artoferotica.info comment="ros-rules-auto"
@@ -6251,6 +6252,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clic
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clickme.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clien.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=climate-server.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cline.bot comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clinica-tibet.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clinical-videos.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clinicalkey.com comment="ros-rules-auto"
@@ -6501,6 +6503,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=comi
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=comm-verse.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=commandandconquer.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=commandarms.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=commandcode.ai comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=comments.app comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=commentshk.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=commerceos.com comment="ros-rules-auto"
@@ -6558,6 +6561,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cont
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=containersonaws.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=contechacademy.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=contentful.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=context7.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=convio.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=conviva.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=convrgencegame.com comment="ros-rules-auto"
@@ -16590,6 +16594,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=mess
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=messytube.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=met-nude.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=meta.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=metaaiusercontent.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=metaaivm.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=metabora.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=metabrainz.org comment="ros-rules-auto"
@@ -18714,6 +18719,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=noti
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=notion.so comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=notionusercontent.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=nottinghampost.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=nousresearch.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=novafile.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=novelai.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=novelasia.com comment="ros-rules-auto"
@@ -24610,6 +24616,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=thin
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=thinkgeek.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=thinkingtaiwan.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=thinkofliving.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=thinkorswim.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=thinkquarterly.co.uk comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=thinkquarterly.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=thinkwithgoogle.com comment="ros-rules-auto"

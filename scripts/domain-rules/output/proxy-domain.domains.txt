@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29215, 2026-10-28 06:01:13
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29222, 2026-10-29 06:01:14
 000webhost.com
 01.org
 02weqj32.com
@@ -2465,6 +2465,7 @@ arte.tv
 artel.watch
 arteldoc.com
 arteldoc.tv
+artificialanalysis.ai
 artixlinux.org
 artnudegalleries.com
 artoferotica.info
@@ -6016,6 +6017,7 @@ clickedu.co.uk
 clickme.net
 clien.net
 climate-server.com
+cline.bot
 clinica-tibet.ru
 clinical-videos.com
 clinicalkey.com
@@ -6374,6 +6376,7 @@ comixzilla.com
 comm-verse.com
 commandandconquer.com
 commandarms.com
+commandcode.ai
 comments.app
 commentshk.com
 commerceos.com
@@ -6433,6 +6436,7 @@ containersonaws.com
 contechacademy.com
 contentful.com
 contest.com
+context7.com
 convio.net
 conviva.com
 convrgencegame.com
@@ -16526,6 +16530,7 @@ messytube.com
 met-nude.com
 meta.ai
 meta.com
+metaaiusercontent.com
 metaaivm.com
 metabora.io
 metabrainz.org
@@ -18665,6 +18670,7 @@ notion.site
 notion.so
 notionusercontent.com
 nottinghampost.com
+nousresearch.com
 novafile.com
 novelai.net
 novelasia.com
@@ -24586,6 +24592,7 @@ thinkdifferent.us
 thinkgeek.com
 thinkingtaiwan.com
 thinkofliving.com
+thinkorswim.com
 thinkquarterly.co.uk
 thinkquarterly.com
 thinkwithgoogle.com
