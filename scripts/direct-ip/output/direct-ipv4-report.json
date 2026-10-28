@@ -1,36 +1,36 @@
 {
-  "cn_effective_prefixes": 6644,
-  "cn_union_prefixes": 6644,
-  "direct_addresses": 358249349,
-  "direct_addresses_outside_ct_cm": 206122589,
+  "cn_effective_prefixes": 6639,
+  "cn_union_prefixes": 6639,
+  "direct_addresses": 358250123,
+  "direct_addresses_outside_ct_cm": 206123363,
   "direct_asns": {
     "53850": {
-      "aggregated_ipv4_prefixes": 24,
+      "aggregated_ipv4_prefixes": 23,
       "asn": 53850,
-      "fetched_at": 1793052931,
-      "observed_ipv4_prefixes": 91,
+      "fetched_at": 1793225739,
+      "observed_ipv4_prefixes": 90,
       "observed_ipv6_prefixes": 5,
-      "sha256": "6a94440c72cc1e1563935d9f9895e9018ee5c89d0b17cd0f5b89de2a04ffd55a",
-      "snapshot_time": "2026-10-26T08:00:00",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1792966531&min_peers_seeing=1"
+      "sha256": "a7c39445df59fe8583f696634f309284a78ee7e2eeb28fdec35ac2d3cf4dfbab",
+      "snapshot_time": "2026-10-28T16:00:00",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1793139334&min_peers_seeing=1"
     }
   },
-  "direct_nocm_prefixes": 8001,
-  "direct_noct_prefixes": 7273,
-  "direct_prefixes": 6681,
+  "direct_nocm_prefixes": 8004,
+  "direct_noct_prefixes": 7276,
+  "direct_prefixes": 6684,
   "domain_hosts": 11,
   "domain_hosts_with_addresses": 11,
   "excluded_prefixes": 22,
   "existing_ct_cm_unique_prefixes": 4573,
-  "extra_outside_cn_prefixes": 37,
+  "extra_outside_cn_prefixes": 45,
   "ipv4_only": true,
   "list": "DIRECT_IP",
   "sources": {
     "gaoyifan-cn": {
       "addresses": 349666308,
-      "prefixes": 6523,
-      "sha256": "1e546619d03ce5873374248e336c005f8ac6e98263b91d022fc0c36cfa54435b",
-      "unique_addresses": 8945600
+      "prefixes": 6516,
+      "sha256": "51759a0e2c86bc6530d0572eeefbee145cb4cdea646da8a310d818b41e455b56",
+      "unique_addresses": 8945856
     },
     "metowolf-cn": {
       "addresses": 348849772,
@@ -39,13 +39,11 @@
       "unique_addresses": 7951984
     },
     "misaka-cn": {
-      "addresses": 282383616,
-      "prefixes": 3883,
-      "sha256": "1afe296707f42decee8be9721b92fc306ba3eea181f1a2fc2a1c6439e64bb49f",
-      "unique_addresses": 257792
+      "addresses": 282384384,
+      "prefixes": 3886,
+      "sha256": "32ceae38e4ca69ca1c1ccb1d9a90447b5883af61acbaa312a66d7adce8376173",
+      "unique_addresses": 258560
     }
   },
-  "warnings": [
-    "AS53850: TimeoutError: The read operation timed out"
-  ]
+  "warnings": []
 }
