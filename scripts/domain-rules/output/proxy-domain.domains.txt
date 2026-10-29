@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29222, 2026-10-29 06:01:14
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29223, 2026-10-30 06:01:31
 000webhost.com
 01.org
 02weqj32.com
@@ -14251,6 +14251,7 @@ iutunes.com
 ivacy.com
 iverycd.com
 ivi.ru
+ivi.tv
 ivicdn.tv
 ivintageporn.com
 ivonblog.com

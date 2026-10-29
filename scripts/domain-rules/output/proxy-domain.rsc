@@ -1,4 +1,4 @@
-#proxy-domain — 手工 264 条 + 上游 28969 条, 2026-10-29 06:01:14 由 gen_rules.py 生成
+#proxy-domain — 手工 264 条 + 上游 28970 条, 2026-10-30 06:01:31 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -14326,6 +14326,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=iutu
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ivacy.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=iverycd.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ivi.ru comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ivi.tv comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ivicdn.tv comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ivintageporn.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ivonblog.com comment="ros-rules-auto"

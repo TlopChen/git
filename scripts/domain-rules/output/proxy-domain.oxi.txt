@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29233 rules, generated 2026-10-29 06:01:14
+# proxy-domain OxiDNS domain_set, 29234 rules, generated 2026-10-30 06:01:31
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -14251,6 +14251,7 @@ domain:iutunes.com
 domain:ivacy.com
 domain:iverycd.com
 domain:ivi.ru
+domain:ivi.tv
 domain:ivicdn.tv
 domain:ivintageporn.com
 domain:ivonblog.com
