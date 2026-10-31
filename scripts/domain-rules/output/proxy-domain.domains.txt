@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29223, 2026-10-31 06:01:14
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29231, 2026-11-01 06:01:30
 000webhost.com
 01.org
 02weqj32.com
@@ -131,6 +131,7 @@
 18comic-god.xyz
 18comic.cc
 18comic.company
+18comic.ink
 18comic.org
 18comic.vip
 18commic.com
@@ -3887,6 +3888,7 @@ bingapistatistics.com
 bingoporno.com
 bingparachute.com
 bingsandbox.com
+bingstatic.com
 bingvisualsearch.com
 bingworld.com
 bingx.com
@@ -4873,6 +4875,7 @@ bsappapi.com
 bscdnweb.com
 bsi.ir
 bsky.app
+bsky.chat
 bsky.network
 bsky.social
 bspb.ru
@@ -10996,6 +10999,7 @@ githubapp.com
 githubassets.com
 githubcopilot.com
 githubhackathon.com
+githubhelp.com
 githubnext.com
 githubpreview.dev
 githubstatus.com
@@ -17524,6 +17528,7 @@ msftconnecttest.com
 msfteducation.ca
 msftncsi.com
 msftnet.org
+msftstatic.com
 msgamesresearch.com
 msgamestudios.com
 msguancha.com
@@ -24784,9 +24789,12 @@ tiktokglobalshopv.com
 tiktokminis.us
 tiktokmusic.app
 tiktokrow-cdn.com
+tiktokshop.com
+tiktokstaticb.com
 tiktokv.com
 tiktokv.eu
 tiktokv.us
+tiktokvapp.com
 tiktokw.eu
 tiktokw.us
 tilda.cc

@@ -1,4 +1,4 @@
-#proxy-domain — 手工 264 条 + 上游 28970 条, 2026-10-31 06:01:14 由 gen_rules.py 生成
+#proxy-domain — 手工 264 条 + 上游 28978 条, 2026-11-01 06:01:30 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -400,6 +400,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=18co
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=18comic-god.xyz comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=18comic.cc comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=18comic.company comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=18comic.ink comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=18comic.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=18comic.vip comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=18commic.com comment="ros-rules-auto"
@@ -4142,6 +4143,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bing
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bingoporno.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bingparachute.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bingsandbox.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bingstatic.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bingvisualsearch.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bingworld.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bingx.com comment="ros-rules-auto"
@@ -5128,6 +5130,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bsap
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bscdnweb.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bsi.ir comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bsky.app comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bsky.chat comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bsky.network comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bsky.social comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bspb.ru comment="ros-rules-auto"
@@ -11087,6 +11090,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gith
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=githubassets.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=githubcopilot.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=githubhackathon.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=githubhelp.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=githubnext.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=githubpreview.dev comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=githubstatus.com comment="ros-rules-auto"
@@ -17580,6 +17584,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=msft
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=msfteducation.ca comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=msftncsi.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=msftnet.org comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=msftstatic.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=msgamesresearch.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=msgamestudios.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=msguancha.com comment="ros-rules-auto"
@@ -24804,9 +24809,12 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tikt
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokglobalshopv.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokminis.us comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokrow-cdn.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokshop.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokstaticb.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokv.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokv.eu comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokv.us comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokvapp.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokw.eu comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tiktokw.us comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=tilda.cc comment="ros-rules-auto"
