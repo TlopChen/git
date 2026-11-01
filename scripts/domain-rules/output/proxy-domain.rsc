@@ -1,4 +1,4 @@
-#proxy-domain — 手工 264 条 + 上游 28978 条, 2026-11-01 06:01:30 由 gen_rules.py 生成
+#proxy-domain — 手工 264 条 + 上游 28980 条, 2026-11-02 06:01:29 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -25025,6 +25025,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=toro
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=torproject.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=torrentgalaxy.to comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=torrentkitty.tv comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=torrentleech.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=torrentmac.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=torrentprivacy.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=torrentproject.se comment="ros-rules-auto"
@@ -28929,6 +28930,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=yout
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=youtubekids.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=youtubemobilesupport.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=youversion.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=youversionapi.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=youwin.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=youwuss.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=youx.xxx comment="ros-rules-auto"

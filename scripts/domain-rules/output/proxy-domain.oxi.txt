@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29242 rules, generated 2026-11-01 06:01:30
+# proxy-domain OxiDNS domain_set, 29244 rules, generated 2026-11-02 06:01:29
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -25006,6 +25006,7 @@ domain:toroporno.com
 domain:torproject.org
 domain:torrentgalaxy.to
 domain:torrentkitty.tv
+domain:torrentleech.org
 domain:torrentmac.net
 domain:torrentprivacy.com
 domain:torrentproject.se
@@ -28923,6 +28924,7 @@ domain:youtubego.in
 domain:youtubekids.com
 domain:youtubemobilesupport.com
 domain:youversion.com
+domain:youversionapi.com
 domain:youwin.com
 domain:youwuss.com
 domain:youx.xxx
