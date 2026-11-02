@@ -1,4 +1,4 @@
-#proxy-domain — 手工 264 条 + 上游 28980 条, 2026-11-02 06:01:29 由 gen_rules.py 生成
+#proxy-domain — 手工 264 条 + 上游 28989 条, 2026-11-03 06:01:17 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -4438,6 +4438,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bmi.
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bmia.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bmj.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bml.info comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bmonkeys.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bmw comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bmw-abudhabi.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bmw-adventskalender.com comment="ros-rules-auto"
@@ -4866,6 +4867,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=boj.
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bokep.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bokepseks.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bokepvidz.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=boldgrid.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bolehvpn.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bollywoodlife.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=boltdns.net comment="ros-rules-auto"
@@ -6323,6 +6325,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=clou
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloudproxy.app comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloudrobotics.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloudvolumes.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloudwp.dev comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloudyzgirl.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloupia.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cloupia.net comment="ros-rules-auto"
@@ -23704,6 +23707,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=stea
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=steamladder.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=steamofporn.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=steamos.cloud comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=steampeek.hu comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=steampowered.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=steamserver.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=steamunlocked.net comment="ros-rules-auto"
@@ -26620,6 +26624,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=voda
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vodafone.de comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vodafone.it comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vodafone.nl comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vodafoneziggo.nl comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=voicettank.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vokevr.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vol.moe comment="ros-rules-auto"
@@ -27114,7 +27119,9 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webe
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webex.de comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webex.es comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webex.fr comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webflow-ext.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webflow.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webflow.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webfreer.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webgata.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webgirlsonline.net comment="ros-rules-auto"
@@ -27144,6 +27151,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webr
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webs-tv.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=websdr.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=webshare.io comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=website-files.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=website.new comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=websitepulse.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=websnapr.com comment="ros-rules-auto"
@@ -29109,6 +29117,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=zi.m
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=zi5.me comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=zibacity.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ziddu.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ziggo.nl comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ziglang.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=zigzag.kr comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=zillionk.com comment="ros-rules-auto"
