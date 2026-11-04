@@ -1,4 +1,4 @@
-#proxy-domain — 手工 264 条 + 上游 28989 条, 2026-11-04 06:01:20 由 gen_rules.py 生成
+#proxy-domain — 手工 264 条 + 上游 28991 条, 2026-11-05 06:01:26 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -3830,6 +3830,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bege
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=beget.cloud comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=beget.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=beget.de comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=beget.email comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=beget.hosting comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=beget.pro comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=beget.ru comment="ros-rules-auto"
@@ -4074,6 +4075,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bild
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bili2.cc comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bili888.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bili999.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bilibili.tv comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=bilinovel.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=biliplus.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=biliworld.com comment="ros-rules-auto"
