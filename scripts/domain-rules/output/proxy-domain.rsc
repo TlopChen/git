@@ -1,4 +1,4 @@
-#proxy-domain — 手工 264 条 + 上游 28991 条, 2026-11-05 06:01:26 由 gen_rules.py 生成
+#proxy-domain — 手工 264 条 + 上游 28996 条, 2026-11-06 06:01:16 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -15590,6 +15590,9 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=lila
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=lilhumpers.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=liliav.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=lilith-soft.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=limbuscompany.global comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=limbuscompanyapi.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=limbuscompanycdn.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=limedia.tw comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=limelight.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=limer.tw comment="ros-rules-auto"
@@ -20901,6 +20904,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=proj
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=projectcircuitbreaker.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=projecteuclid.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=projectjav.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=projectmoon.studio comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=projectmurphy.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=projectpoint.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=projectpoint.net comment="ros-rules-auto"
@@ -22965,6 +22969,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=skil
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=skillshare.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=skimtube.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=skinstrip.net comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=skinswap.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=skk.moe comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=skokka.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sksarab.top comment="ros-rules-auto"

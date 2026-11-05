@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29244, 2026-11-05 06:01:26
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29249, 2026-11-06 06:01:16
 000webhost.com
 01.org
 02weqj32.com
@@ -15521,6 +15521,9 @@ lilaoshibushinilaoshi.com
 lilhumpers.com
 liliav.com
 lilith-soft.com
+limbuscompany.global
+limbuscompanyapi.com
+limbuscompanycdn.org
 limedia.tw
 limelight.com
 limer.tw
@@ -20866,6 +20869,7 @@ projectbaseline.com
 projectcircuitbreaker.com
 projecteuclid.org
 projectjav.com
+projectmoon.studio
 projectmurphy.net
 projectpoint.com
 projectpoint.net
@@ -22934,6 +22938,7 @@ skills.sh
 skillshare.com
 skimtube.com
 skinstrip.net
+skinswap.com
 skk.moe
 skokka.com
 sksarab.top
