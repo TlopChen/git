@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29251, 2026-11-06 20:36:11
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29251, 2026-11-06 21:04:12
 000webhost.com
 01.org
 02weqj32.com
@@ -1870,6 +1870,7 @@ angola.org
 angruo.com
 angulardart.org
 angularjs.org
+ani.girigirilove.com
 anibooru.com
 anidom.com
 anigema.jp
@@ -10960,7 +10961,6 @@ ginmoe.com
 ginzasonypark.jp
 gipscorp.com
 giratina.com
-girigirilove.com
 girl-secret.com
 girl7942.com
 girlbanker.com
