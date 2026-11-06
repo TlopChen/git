@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29261 rules, generated 2026-11-06 20:21:23
+# proxy-domain OxiDNS domain_set, 29262 rules, generated 2026-11-06 20:36:11
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -10960,6 +10960,7 @@ domain:ginmoe.com
 domain:ginzasonypark.jp
 domain:gipscorp.com
 domain:giratina.com
+domain:girigirilove.com
 domain:girl-secret.com
 domain:girl7942.com
 domain:girlbanker.com

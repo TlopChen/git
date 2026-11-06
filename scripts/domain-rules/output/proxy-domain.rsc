@@ -1,4 +1,4 @@
-#proxy-domain — 手工 265 条 + 上游 28996 条, 2026-11-06 20:21:23 由 gen_rules.py 生成
+#proxy-domain — 手工 266 条 + 上游 28996 条, 2026-11-06 20:36:11 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -182,6 +182,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fire
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=galpic.xyz comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gemini.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ggbases.com comment="ros-rules-manual"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=girigirilove.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=h-ero-game.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=hacg.mov comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=hanime1.com comment="ros-rules-manual"
