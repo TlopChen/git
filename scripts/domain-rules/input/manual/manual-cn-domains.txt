@@ -38,5 +38,3 @@ domain:gitlab.com
 domain:npmjs.com
 domain:pypi.org
 domain:schwab.com.cn
-domain:girigirilove.com
-domain:girilove.com
