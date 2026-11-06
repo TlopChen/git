@@ -244,6 +244,7 @@ meta.ai
 llama.com
 gemini.com
 copilot.microsoft.com
+onedrive.live.com
 production.cloudflare.docker.com
 anthropic.com
 clau.de

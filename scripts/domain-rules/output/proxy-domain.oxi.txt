@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29260 rules, generated 2026-11-06 06:01:17
+# proxy-domain OxiDNS domain_set, 29261 rules, generated 2026-11-06 20:21:11
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -19160,6 +19160,7 @@ domain:onedrive.co
 domain:onedrive.co.uk
 domain:onedrive.com
 domain:onedrive.eu
+domain:onedrive.live.com
 domain:onedrive.net
 domain:onedrive.org
 domain:onedumb.com
