@@ -1,4 +1,4 @@
-#proxy-domain — 手工 266 条 + 上游 28996 条, 2026-11-06 21:04:12 由 gen_rules.py 生成
+#proxy-domain — 手工 265 条 + 上游 28996 条, 2026-11-06 21:06:10 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -12,7 +12,6 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=akab
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=akamaized.net comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=akatsukiworks.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=alicesoft.com comment="ros-rules-manual"
-add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ani.girigirilove.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=anthropic-com.ghost.io comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=anthropic.auth0.com comment="ros-rules-manual"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=anthropic.com comment="ros-rules-manual"

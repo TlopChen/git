@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29262 rules, generated 2026-11-06 21:04:12
+# proxy-domain OxiDNS domain_set, 29261 rules, generated 2026-11-06 21:06:10
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -1870,7 +1870,6 @@ domain:angola.org
 domain:angruo.com
 domain:angulardart.org
 domain:angularjs.org
-domain:ani.girigirilove.com
 domain:anibooru.com
 domain:anidom.com
 domain:anigema.jp
