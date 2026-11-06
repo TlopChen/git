@@ -268,4 +268,3 @@ anthropic.com.cdn.cloudflare.net
 fanza.jp
 cas7.moe
 nexonstatic.com
-ani.girigirilove.com
