@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29250, 2026-11-07 06:01:21
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29250, 2026-11-08 06:01:10
 000webhost.com
 01.org
 02weqj32.com
