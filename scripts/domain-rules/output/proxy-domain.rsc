@@ -1,4 +1,4 @@
-#proxy-domain — 手工 265 条 + 上游 28996 条, 2026-11-08 06:01:10 由 gen_rules.py 生成
+#proxy-domain — 手工 265 条 + 上游 28998 条, 2026-11-09 06:01:17 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -7030,6 +7030,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=data
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=data18.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=databank.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=datacloudmy.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=datadoghq.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dataframeworks.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=datalabour.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=dataliberation.org comment="ros-rules-auto"
@@ -11745,6 +11746,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=greg
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gridaware.app comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grindr.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grok.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grokbot.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grokipedia.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grooby.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=groq.com comment="ros-rules-auto"

@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29261 rules, generated 2026-11-08 06:01:10
+# proxy-domain OxiDNS domain_set, 29263 rules, generated 2026-11-09 06:01:17
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -6906,6 +6906,7 @@ domain:data.com
 domain:data18.com
 domain:databank.ru
 domain:datacloudmy.com
+domain:datadoghq.com
 domain:dataframeworks.com
 domain:datalabour.com
 domain:dataliberation.org
@@ -11653,6 +11654,7 @@ domain:greginhollywood.com
 domain:gridaware.app
 domain:grindr.com
 domain:grok.com
+domain:grokbot.com
 domain:grokipedia.com
 domain:grooby.com
 domain:groq.com
