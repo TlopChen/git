@@ -1,10 +1,10 @@
 {
-  "commit": "62004a22f63d4a09731adf9fc051b5a4b972a1c3",
-  "commit_time": 1794088803,
-  "fetched_at": 1794089717,
+  "commit": "f747d1ac45b5bb1163544b580f6e77147987e96d",
+  "commit_time": 1794175203,
+  "fetched_at": 1794176117,
   "path": "chnroutes.txt",
   "ref": "master",
   "repo": "misakaio/chnroutes2",
-  "sha256": "59a154dc07b6610ea012d834aafd1554b251b80f7e04aff7ae99ecac6c7e4172",
-  "url": "https://github.com/misakaio/chnroutes2/blob/62004a22f63d4a09731adf9fc051b5a4b972a1c3/chnroutes.txt"
+  "sha256": "871188b2ddcb0fffab60fb0b15921138247288f807557ae2a9a6bdc2bdf21c43",
+  "url": "https://github.com/misakaio/chnroutes2/blob/f747d1ac45b5bb1163544b580f6e77147987e96d/chnroutes.txt"
 }
