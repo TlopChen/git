@@ -1,8 +1,8 @@
 {
-  "cn_effective_prefixes": 6298,
-  "cn_union_prefixes": 6298,
-  "direct_addresses": 352665231,
-  "direct_addresses_outside_ct_cm": 200538471,
+  "cn_effective_prefixes": 6297,
+  "cn_union_prefixes": 6297,
+  "direct_addresses": 352661129,
+  "direct_addresses_outside_ct_cm": 200534369,
   "direct_asns": {
     "53850": {
       "aggregated_ipv4_prefixes": 23,
@@ -15,14 +15,14 @@
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1794089730&min_peers_seeing=1"
     }
   },
-  "direct_nocm_prefixes": 7664,
-  "direct_noct_prefixes": 6936,
-  "direct_prefixes": 6344,
+  "direct_nocm_prefixes": 7657,
+  "direct_noct_prefixes": 6929,
+  "direct_prefixes": 6337,
   "domain_hosts": 11,
   "domain_hosts_with_addresses": 11,
   "excluded_prefixes": 22,
   "existing_ct_cm_unique_prefixes": 4573,
-  "extra_outside_cn_prefixes": 46,
+  "extra_outside_cn_prefixes": 40,
   "ipv4_only": true,
   "list": "DIRECT_IP",
   "sources": {
@@ -39,11 +39,13 @@
       "unique_addresses": 7737202
     },
     "misaka-cn": {
-      "addresses": 282571008,
-      "prefixes": 3884,
-      "sha256": "871188b2ddcb0fffab60fb0b15921138247288f807557ae2a9a6bdc2bdf21c43",
-      "unique_addresses": 258560
+      "addresses": 282566656,
+      "prefixes": 3882,
+      "sha256": "10cf919eb3ad5d0f85bafcab7e632a20eed069409912ead8f8b54bea833dadc5",
+      "unique_addresses": 254464
     }
   },
-  "warnings": []
+  "warnings": [
+    "AS53850: TimeoutError: The read operation timed out"
+  ]
 }
