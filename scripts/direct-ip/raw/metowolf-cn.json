@@ -1,10 +1,10 @@
 {
-  "commit": "6f8005e303b7d9ec2f11a4e14956b4421279e364",
-  "commit_time": 1794171296,
-  "fetched_at": 1794348925,
+  "commit": "fa646baaa19b95a15fd72e4d81c1feb9fc854642",
+  "commit_time": 1794391518,
+  "fetched_at": 1794435325,
   "path": "data/special/china.txt",
   "ref": "master",
   "repo": "metowolf/iplist",
   "sha256": "0763e1bf94e4f6103462bffe1419e5f8473744cd1820c725a4afb26f57410147",
-  "url": "https://github.com/metowolf/iplist/blob/6f8005e303b7d9ec2f11a4e14956b4421279e364/data/special/china.txt"
+  "url": "https://github.com/metowolf/iplist/blob/fa646baaa19b95a15fd72e4d81c1feb9fc854642/data/special/china.txt"
 }
