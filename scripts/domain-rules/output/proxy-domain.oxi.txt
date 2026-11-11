@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29263 rules, generated 2026-11-11 06:01:11
+# proxy-domain OxiDNS domain_set, 29264 rules, generated 2026-11-11 19:39:11
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -11843,6 +11843,7 @@ domain:hanime.xyz
 domain:hanime1.com
 domain:hanime1.me
 domain:hanimeone.me
+domain:hanimeplus.com
 domain:hanminzu.org
 domain:hanr-bao.mom
 domain:hanunyi.com
