@@ -1,4 +1,4 @@
-#proxy-domain — 手工 266 条 + 上游 28998 条, 2026-11-11 19:39:11 由 gen_rules.py 生成
+#proxy-domain — 手工 266 条 + 上游 29002 条, 2026-11-12 06:01:17 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -11680,6 +11680,8 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grab
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grabpussy.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gradconnection.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gradeuptube.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grafana.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grafana.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=grafolio.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=graias.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=graiasmovies.com comment="ros-rules-auto"
@@ -21186,6 +21188,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=quan
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=quatrowireless.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=quatrum.com.br comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=quay.io comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=questionablequesting.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=questvisual.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=quicinc.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=quickbook.com.br comment="ros-rules-auto"
@@ -23384,6 +23387,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=soyj
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=soylent.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=soylentnews.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=sp.cool comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=spacebattles.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=spaceexplored.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=spaceforce.mil comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=spacely.com.au comment="ros-rules-auto"
