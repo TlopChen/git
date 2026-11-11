@@ -5,6 +5,9 @@
 # 广州节点只负责把该分支里的 tar 发到 HTTP 目录（scripts/_infra/oxidns-image-sync.sh），ROS 再按需拉取。
 # 为什么不在广州本地 docker pull：广州对 Docker Hub 的解析被投毒/被墙（实测 auth.docker.io 超时、
 # registry-1.docker.io 解析到 Facebook IPv6 段）。
+# 2026-11-11：新增"扁平化 index.json"步骤——新版 runner 的 containerd 镜像存储让 docker save 产出的
+# index.json 指向"镜像索引"（嵌套 index）而非"镜像 manifest"，RouterOS 7.25.1 容器导入会报
+# "no config found in manifest"；扁平化后导入/repull 正常（v1.7.0 实测）。
 name: oxidns-image
 
 on:
@@ -29,6 +32,9 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
       - name: 解析版本与目标分支
         id: v
         run: |
@@ -51,6 +57,14 @@ jobs:
           set -euo pipefail
           docker pull --platform linux/amd64 "docker.io/svenshi/oxidns:${TAG}"
           docker save -o "oxidns-${TAG}-linux-amd64.tar" "docker.io/svenshi/oxidns:${TAG}"
+          ls -l oxidns-*
+
+      - name: 扁平化 index.json（RouterOS 兼容）
+        env:
+          TAG: ${{ steps.v.outputs.tag }}
+        run: |
+          set -euo pipefail
+          python3 scripts/_infra/oxidns-tar-flatten.py "oxidns-${TAG}-linux-amd64.tar"
           sha256sum "oxidns-${TAG}-linux-amd64.tar" > "oxidns-${TAG}-linux-amd64.tar.sha256"
           ls -l oxidns-*
 
