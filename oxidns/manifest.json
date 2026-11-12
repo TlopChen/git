@@ -1,12 +1,13 @@
 {
   "latest": {
-    "tag": "v1.7.0",
-    "file": "oxidns-v1.7.0-linux-amd64.tar",
+    "tag": "v1.7.1",
+    "file": "oxidns-v1.7.1-linux-amd64.tar",
     "bytes": 7598080,
-    "sha256": "7dba2b8c17c3c70ba6760005ed9add685f205bd143787b4e8bba1fea8a835864"
+    "sha256": "768eb8c966270b66035d27e684318d9dd38e7338b8f20bbd4d1d32634042034e"
   },
   "available": [
     "oxidns-v1.6.1-linux-amd64.tar",
-    "oxidns-v1.7.0-linux-amd64.tar"
+    "oxidns-v1.7.0-linux-amd64.tar",
+    "oxidns-v1.7.1-linux-amd64.tar"
   ]
 }
