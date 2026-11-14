@@ -1,4 +1,4 @@
-# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 112807 rules, 2026-11-14 06:01:29
+# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 112805 rules, 2026-11-15 06:01:47
 domain:0.zone
 domain:00.net
 domain:000.link
@@ -9902,6 +9902,7 @@ domain:adpchina.com
 domain:adpfm513.com
 domain:adplusx.com
 domain:adpsh.com
+domain:adqiyu.com
 domain:adqtt.net
 domain:adquan.com
 domain:adrkwai.com
@@ -39139,7 +39140,6 @@ domain:goofish.pro
 domain:google-hub.com
 domain:googlebbs.net
 domain:googlenav.com
-domain:googleplus.party
 domain:googleppy.com
 domain:googlevoice.org
 domain:googleyixia.com
@@ -67108,7 +67108,6 @@ domain:mrjiang.com
 domain:mrjjxw.com
 domain:mrlian.club
 domain:mrlika.com
-domain:mrlxc51byo.com
 domain:mrmfsc.ltd
 domain:mro365.com
 domain:mro9.com
@@ -82130,7 +82129,6 @@ domain:shonfer.com
 domain:shootmedia.net
 domain:shop-isv.com
 domain:shop.globalsign.com
-domain:shop265.com
 domain:shop2cn.com
 domain:shopbackdrop.com
 domain:shopchaoren.com

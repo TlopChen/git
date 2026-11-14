@@ -1,4 +1,4 @@
-#proxy-domain — 手工 266 条 + 上游 29002 条, 2026-11-14 06:01:10 由 gen_rules.py 生成
+#proxy-domain — 手工 266 条 + 上游 29003 条, 2026-11-15 06:01:25 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -717,6 +717,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=51li
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=51luoben.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=51luoli.info comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=51mh.app comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=51papaya.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=51pincha.cc comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=51tuqiang.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=520aa.tv comment="ros-rules-auto"

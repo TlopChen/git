@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29268 rules, generated 2026-11-14 06:01:10
+# proxy-domain OxiDNS domain_set, 29269 rules, generated 2026-11-15 06:01:25
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -446,6 +446,7 @@ domain:51lieqi.com
 domain:51luoben.com
 domain:51luoli.info
 domain:51mh.app
+domain:51papaya.com
 domain:51pincha.cc
 domain:51tuqiang.com
 domain:520aa.tv
