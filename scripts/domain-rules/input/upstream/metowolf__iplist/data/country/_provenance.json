@@ -1,9 +1,9 @@
 {
  "data/country/CN.txt": {
   "branch": "master",
-  "bytes": 87540,
-  "fetched_at": "2026-11-15 06:00:19+0800",
-  "sha256": "2fa8fb4d5cca534c544572cb62d67a578f04fe506681fa68667bf787543679f1",
+  "bytes": 87557,
+  "fetched_at": "2026-11-16 06:00:15+0800",
+  "sha256": "f5fc255f1cef3be468d09b0a4685538395e3e876ebd27b8939dbe010975bbd98",
   "url": "https://raw.githubusercontent.com/metowolf/iplist/master/data/country/CN.txt"
  }
 }
