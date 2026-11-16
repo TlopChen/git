@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29269 rules, generated 2026-11-16 06:01:07
+# proxy-domain OxiDNS domain_set, 29271 rules, generated 2026-11-17 06:01:12
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -6985,6 +6985,7 @@ domain:dealtree.org
 domain:deasians.com
 domain:debank.com
 domain:debian.org
+domain:debot.ai
 domain:debug.com
 domain:debugproject.com
 domain:decentr.net
@@ -21551,6 +21552,7 @@ domain:releaseinternational.org
 domain:religionnews.com
 domain:religioustolerance.org
 domain:remirepo.net
+domain:remna.dev
 domain:remna.st
 domain:rencapbank.ru
 domain:renchead.com

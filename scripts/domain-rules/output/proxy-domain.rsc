@@ -1,4 +1,4 @@
-#proxy-domain — 手工 266 条 + 上游 29003 条, 2026-11-16 06:01:07 由 gen_rules.py 生成
+#proxy-domain — 手工 266 条 + 上游 29005 条, 2026-11-17 06:01:12 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -7109,6 +7109,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=deal
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=deasians.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=debank.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=debian.org comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=debot.ai comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=debug.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=debugproject.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=decentr.net comment="ros-rules-auto"
@@ -21585,6 +21586,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rele
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=religionnews.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=religioustolerance.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=remirepo.net comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=remna.dev comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=remna.st comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=rencapbank.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=renchead.com comment="ros-rules-auto"
