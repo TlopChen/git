@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29271 rules, generated 2026-11-17 06:01:12
+# proxy-domain OxiDNS domain_set, 29273 rules, generated 2026-11-18 06:01:14
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -6756,6 +6756,7 @@ domain:cybertrust.co.jp
 domain:cybertrust.ne.jp
 domain:cyberx.com
 domain:cygames.co.jp
+domain:cygames.com
 domain:cygames.jp
 domain:cygwin.com
 domain:cylink.pro
@@ -28605,6 +28606,7 @@ domain:yaya.cyou
 domain:yayabay.com
 domain:yayadizhi.xyz
 domain:yazhouse8.com
+domain:yb-payment.ru
 domain:yccdn.ru
 domain:yclients.com
 domain:ycombinator.com

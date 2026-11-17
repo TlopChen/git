@@ -1,4 +1,4 @@
-#proxy-domain — 手工 266 条 + 上游 29005 条, 2026-11-17 06:01:12 由 gen_rules.py 生成
+#proxy-domain — 手工 266 条 + 上游 29007 条, 2026-11-18 06:01:14 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -6881,6 +6881,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cybe
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cybertrust.ne.jp comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cyberx.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cygames.co.jp comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cygames.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cygames.jp comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cygwin.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cylink.pro comment="ros-rules-auto"
@@ -28612,6 +28613,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=yaya
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=yayabay.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=yayadizhi.xyz comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=yazhouse8.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=yb-payment.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=yccdn.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=yclients.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=ycombinator.com comment="ros-rules-auto"
