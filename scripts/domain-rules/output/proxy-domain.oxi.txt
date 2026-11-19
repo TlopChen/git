@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29273 rules, generated 2026-11-19 06:01:07
+# proxy-domain OxiDNS domain_set, 29273 rules, generated 2026-11-20 06:01:15
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -8503,6 +8503,7 @@ domain:elephanttube.com
 domain:elephanttubenew.com
 domain:elevenlabs.com
 domain:elevenlabs.io
+domain:elevenlabsusercontent.com
 domain:elgaronline.com
 domain:elgoog.im
 domain:elifesciences.org
@@ -28567,7 +28568,6 @@ domain:yandexdataschool.ru
 domain:yandexgo.com
 domain:yandexlyceum.ru
 domain:yandexwebcache.net
-domain:yandexwebcache.org
 domain:yanghengjun.com
 domain:yangjianli.com
 domain:yango-b2b.com
