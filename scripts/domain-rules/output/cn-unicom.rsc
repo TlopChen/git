@@ -1,4 +1,4 @@
-#cn-unicom — 1907 条, 2026-11-20 06:00:29 由 gen_rules.py 生成
+#cn-unicom — 1908 条, 2026-11-21 06:00:31 由 gen_rules.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn-unicom.rsc" mode=http
 #         /import file-name=cn-unicom.rsc
 /ip firewall address-list
@@ -834,6 +834,7 @@ add list=CU address=116.149.212.0/23
 add list=CU address=116.149.214.0/24
 add list=CU address=116.153.0.0/16
 add list=CU address=116.154.0.0/15
+add list=CU address=116.157.0.0/16
 add list=CU address=116.162.38.0/23
 add list=CU address=116.162.40.0/21
 add list=CU address=116.162.48.0/20
