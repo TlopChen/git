@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29162 rules, generated 2026-11-22 06:01:21
+# proxy-domain OxiDNS domain_set, 29184 rules, generated 2026-11-23 06:01:15
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -4742,6 +4742,7 @@ domain:bravoporn.com
 domain:bravoteens.com
 domain:bravotube.net
 domain:bravotube.tv
+domain:bravotv.com
 domain:brawlstars.com
 domain:brawlstarsgame.com
 domain:brazilpartneruniversity.com
@@ -6118,6 +6119,7 @@ domain:cn6.eu
 domain:cna.com.tw
 domain:cnabc.com
 domain:cnbc.com
+domain:cnbccouncils.com
 domain:cnbcfm.com
 domain:cnbeta.com
 domain:cnbeta.com.tw
@@ -9846,6 +9848,7 @@ domain:fnlondon.com
 domain:fnmt.es
 domain:foampositeshoes.com
 domain:fochk.org
+domain:focusfeatures.com
 domain:focustaiwan.tw
 domain:focusvpn.com
 domain:fofg-europe.net
@@ -11857,6 +11860,7 @@ domain:hayabusa.io
 domain:hayabusa.media
 domain:hayday.com
 domain:haydaygame.com
+domain:hayu.com
 domain:hayya.ae
 domain:hbabit.com
 domain:hbfile.net
@@ -12358,6 +12362,7 @@ domain:hkporn.net
 domain:hkptu.org
 domain:hkreadingcity.net
 domain:hkreporter.com
+domain:hkt
 domain:hkt-enterprise.com
 domain:hkt-eye.com
 domain:hkt.com
@@ -13367,6 +13372,7 @@ domain:ilife.gr
 domain:ilife.wang
 domain:illawarramercury.com.au
 domain:illgames.jp
+domain:illumination.com
 domain:illusion111.com
 domain:illusionas.com
 domain:illusionchn.com
@@ -17488,7 +17494,6 @@ domain:msidentity.com
 domain:msinnovationchallenge.com
 domain:msn.com.tw
 domain:msn.net
-domain:msnbc.com
 domain:msnewskids.com
 domain:msnewskids.net
 domain:msnewskids.org
@@ -17954,8 +17959,11 @@ domain:nbcnews.com
 domain:nbcolympics.com
 domain:nbcsports.com
 domain:nbcudigitaladops.com
+domain:nbcumv.com
 domain:nbcuni.com
+domain:nbcunicareers.com
 domain:nbcuniversal.com
+domain:nbcuniversalprivacy.com
 domain:nbdh15.buzz
 domain:nbtvpn.com
 domain:nbys.tv
@@ -19746,6 +19754,7 @@ domain:pbxes.org
 domain:pc.com
 domain:pca.st
 domain:pcanywhere.net
+domain:pccw
 domain:pccw.com
 domain:pccwglobal.com
 domain:pccwsolutions.com
@@ -21488,6 +21497,7 @@ domain:rentry.co
 domain:renyurenquan.org
 domain:renzhe.cloud
 domain:repe21.com
+domain:replit.com
 domain:repo.new
 domain:report-megafon.ru
 domain:repotama.com
@@ -24244,6 +24254,7 @@ domain:telegramdownload.com
 domain:telegraph.co.uk
 domain:telekom.com
 domain:telekom.de
+domain:telemundo.com
 domain:telerik.com
 domain:telesco.pe
 domain:telesec.de
@@ -24937,6 +24948,7 @@ domain:torrentproject.se
 domain:torrenty.org
 domain:torrentz.eu
 domain:torrindex.net
+domain:tortoisegit.org
 domain:tortoisesvn.net
 domain:torvpn.com
 domain:tospo-keiba.jp
@@ -25531,6 +25543,7 @@ domain:udndata.com
 domain:udnfunlife.com
 domain:udomain.hk
 domain:udtrucksmeena.com
+domain:udxfpp.com
 domain:ueberamazon.de
 domain:ufe.cz
 domain:uflash.tv
@@ -25627,11 +25640,18 @@ domain:united.ru
 domain:unitedsocialpress.com
 domain:unity.com
 domain:unity3d.com
+domain:universalbeijingresort.com
+domain:universalhorrorunleashed.com
+domain:universalkidsresort.com
 domain:universalorlando.com
+domain:universalpictures.co.uk
 domain:universalpictures.com
+domain:universalpicturesathome.com
 domain:universalpicturesinternational.com
+domain:universalproductsexperiences.com
 domain:universalscalablefirmware.org
 domain:universalstudioshollywood.com
+domain:universalukproject.co.uk
 domain:universitypressscholarship.com
 domain:unix100.com
 domain:unknownspace.org
@@ -25666,6 +25686,7 @@ domain:upenn.edu
 domain:upfrontcfd.com
 domain:upfrontfea.com
 domain:upghsbc.com
+domain:uphe.com
 domain:upholdjustice.org
 domain:upjav.cc
 domain:uplay-istrip.com
@@ -25729,6 +25750,7 @@ domain:usersdrive.com
 domain:usertrust.com
 domain:usfk.mil
 domain:usgs.gov
+domain:usj.co.jp
 domain:usma.edu
 domain:usmc.mil
 domain:usocctn.com
