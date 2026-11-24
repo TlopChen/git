@@ -1,4 +1,4 @@
-#proxy-domain — 手工 266 条 + 上游 28918 条, 2026-11-24 06:01:19 由 gen_rules.py 生成
+#proxy-domain — 手工 266 条 + 上游 28919 条, 2026-11-25 06:01:13 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -10826,6 +10826,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gelb
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gelbooru.me comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gemfire.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gemfury.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gemma.ai comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=genbank.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gencraft.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=gendai.net comment="ros-rules-auto"

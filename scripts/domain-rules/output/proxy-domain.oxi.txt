@@ -1,4 +1,4 @@
-# proxy-domain OxiDNS domain_set, 29184 rules, generated 2026-11-24 06:01:19
+# proxy-domain OxiDNS domain_set, 29185 rules, generated 2026-11-25 06:01:13
 domain:000webhost.com
 domain:01.org
 domain:02weqj32.com
@@ -10732,6 +10732,7 @@ domain:gelbooru.me
 domain:gemfire.net
 domain:gemfury.com
 domain:gemini.com
+domain:gemma.ai
 domain:genbank.ru
 domain:gencraft.com
 domain:gendai.net

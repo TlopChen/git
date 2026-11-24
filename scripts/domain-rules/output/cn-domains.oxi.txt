@@ -1,4 +1,4 @@
-# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 112805 rules, 2026-11-24 06:01:36
+# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 112805 rules, 2026-11-25 06:01:28
 domain:0.zone
 domain:00.net
 domain:000.link
