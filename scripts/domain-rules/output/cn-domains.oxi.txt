@@ -1,4 +1,4 @@
-# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 112805 rules, 2026-11-25 06:01:28
+# cn-domains OxiDNS domain_set from 4 sources (dnsmasq-china-list + ChinaMax + China + ChinaDomain), 112807 rules, 2026-11-25 23:48:11
 domain:0.zone
 domain:00.net
 domain:000.link
@@ -38325,6 +38325,8 @@ domain:giordano.com
 domain:giorgiomorandihotels.com
 domain:giraff3.com
 domain:girdear.net
+domain:girigirilove.com
+domain:girigirilove.net
 domain:girl13.com
 domain:girls-frontline.com
 domain:girlsfighters.com
