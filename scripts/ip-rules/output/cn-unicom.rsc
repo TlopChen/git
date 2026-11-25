@@ -1,4 +1,4 @@
-#cn-unicom — 1907 条, 2026-11-26 01:38:11 由 ip-rules/gen_direct.py 生成
+#cn-unicom — 1907 条, 2026-11-26 06:15:51 由 ip-rules/gen_direct.py 生成
 # ROS 拉取: /tool fetch url="http://192.168.40.1:18080/ros/cn-unicom.rsc" mode=http
 #         /import file-name=cn-unicom.rsc
 /ip firewall address-list
