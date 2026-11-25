@@ -7,12 +7,12 @@
     "53850": {
       "aggregated_ipv4_prefixes": 23,
       "asn": 53850,
-      "fetched_at": 1795624904,
+      "fetched_at": 1795628186,
       "observed_ipv4_prefixes": 92,
       "observed_ipv6_prefixes": 5,
-      "sha256": "38031c795e5754c7cd38b9c455f9cf06fd840542b4992f708d78723ece64ebd1",
+      "sha256": "627236cfd66b811f418687b12cf987f473709d41c326c00901d34498472f17fd",
       "snapshot_time": "2026-11-25T08:00:00",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1795538501&min_peers_seeing=1"
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1795541780&min_peers_seeing=1"
     }
   },
   "direct_nocm_prefixes": 7657,
@@ -48,9 +48,9 @@
       "unique_addresses": 7752306
     },
     "misaka-cn": {
-      "addresses": 282342912,
+      "addresses": 282341888,
       "prefixes": 3884,
-      "sha256": "da9e2f97a1081f684c62253996a16dee8d1a647c644329013691ed77ca2d9ee4",
+      "sha256": "b562b3f2c72719aeb9c12742011792a2e20d1eb66b84a5140c66d33ce8a2c89b",
       "unique_addresses": 269276
     }
   },
@@ -60,12 +60,12 @@
       "asns": {
         "51894": {
           "asn": 51894,
-          "fetched_at": 1795624901,
+          "fetched_at": 1795628180,
           "observed_ipv4_prefixes": 2,
           "observed_ipv6_prefixes": 1,
-          "sha256": "d5f90ec4ffc640fa93302c3e4fc0cfcb98664841e120fd8b242357a704f63200",
+          "sha256": "f3fd178e62f717de2e5e243bfff3d7eb46320d4927a2e17de8008c3c7b458bb1",
           "snapshot_time": "2026-11-25T08:00:00",
-          "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS51894&starttime=1795538495&min_peers_seeing=1"
+          "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS51894&starttime=1795541774&min_peers_seeing=1"
         }
       },
       "ipv6_prefixes_not_imported": 1,
