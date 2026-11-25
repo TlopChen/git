@@ -77,17 +77,49 @@ class DirectTests(unittest.TestCase):
         raw = '\n'.join(f'full:h{i}.example.com @cn' for i in range(5)).encode()
         with tempfile.TemporaryDirectory() as d:
             base=Path(d)
-            g.atomic(base/'raw/steam-cn.txt',raw)
+            g.atomic(base/'input/upstream/steam-cn.txt',raw)
             meta={'sha256':g.digest(raw),'fetched_at':int(time.time())}
-            g.atomic(base/'raw/steam-cn.json',g.json_text(meta))
+            g.atomic(base/'input/upstream/steam-cn.json',g.json_text(meta))
             with patch.object(g, 'git', side_effect=RuntimeError('network down')):
                 data, _, warning = g.fetch_source(spec,base,base/'cache',True)
                 self.assertEqual(data,raw)
                 self.assertIn('network down', warning)
             meta['fetched_at']=0
-            g.atomic(base/'raw/steam-cn.json',g.json_text(meta))
+            g.atomic(base/'input/upstream/steam-cn.json',g.json_text(meta))
             with self.assertRaises(RuntimeError):
                 g.fetch_source(spec,base,base/'cache',False)
+
+    def test_input_layout_normalized_paths(self):
+        with tempfile.TemporaryDirectory() as d:
+            base=Path(d)
+            (base/'input/manual').mkdir(parents=True)
+            (base/'input/upstream').mkdir(parents=True)
+            manual, upstream = g.input_layout(base)
+            self.assertEqual(manual, base/'input/manual')
+            self.assertEqual(upstream, base/'input/upstream')
+
+    def test_input_layout_rejects_legacy_flat_files(self):
+        with tempfile.TemporaryDirectory() as d:
+            base=Path(d)
+            (base/'include-ipv4.txt').write_text('8.8.8.0/24\n')
+            with self.assertRaises(RuntimeError):
+                g.input_layout(base)
+        with tempfile.TemporaryDirectory() as d:
+            base=Path(d)
+            (base/'raw').mkdir()
+            with self.assertRaises(RuntimeError):
+                g.input_layout(base)
+
+    def test_assemble_precedence_upstream_manual_then_exclusion(self):
+        # 权威顺序：上游源 ∪ 手工层，最后减排除层；排除命中要能报出来
+        upstream=g.parse_cidrs('8.8.8.0/24')
+        manual=g.parse_cidrs('9.9.9.0/24\n80.80.80.0/24')
+        excluded=g.parse_cidrs('9.9.9.128/25')
+        direct, conflicts = g.assemble(upstream, manual, excluded)
+        self.assertEqual(g.cidr_text(direct), '8.8.8.0/24\n9.9.9.0/25\n80.80.80.0/24\n')
+        self.assertEqual(g.cidr_text(conflicts), '9.9.9.128/25\n')
+        # 排除不会把上游源/手工层之外的地址带进来
+        self.assertFalse(any(n.overlaps(ip.ip_network('9.9.9.128/25')) for n in direct))
 
     def test_publish_rejects_collision_and_keeps_current(self):
         with tempfile.TemporaryDirectory() as d:

@@ -28,7 +28,7 @@ manual-watch.sh  ── 命中 ──▶  manual-refresh.sh rules|direct-ip
   与本地（比对被监视文件的 sha256 与上次成功处理后的基线）。
 - **被监视文件**：
   `scripts/domain-rules/input/manual/{manual-blacklist,exclude-blacklist,manual-cn-domains}.txt`
-  与 `scripts/direct-ip/{include-ipv4,exclude-ipv4}.txt`、`scripts/direct-ip/direct-domains.json`。
+  与 `scripts/direct-ip/input/manual/{include-ipv4,exclude-ipv4}.txt`、`scripts/direct-ip/input/manual/direct-domains.json`。
 - **静默设计**：无变化时不写日志、不产生输出；失败后有 600 秒冷却，避免每分钟刷日志。
 - **锁**：探测阶段短暂持 `/tmp/ros-rules.lock`，实际生成交给 `manual-refresh.sh`（它自己再取锁），
   与 06:00 日更、06:15 direct-ip 互斥。

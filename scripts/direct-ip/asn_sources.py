@@ -38,8 +38,9 @@ def parse_snapshot(body, asn):
 def load_asn(asn, base, refresh):
     from gen_direct import atomic, digest, json_text
     asn = int(asn)
-    raw = base / 'raw' / f'as{asn}-response.json'
-    meta_file = base / 'raw' / f'as{asn}-meta.json'
+    snap_dir = base / 'input' / 'upstream'
+    raw = snap_dir / f'as{asn}-response.json'
+    meta_file = snap_dir / f'as{asn}-meta.json'
     warning = None
     if refresh:
         try:

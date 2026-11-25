@@ -17,9 +17,9 @@ COOLDOWN=600          # 同一模式失败后，多少秒内不重试（避免�
 RULES_FILES=( "$R/domain-rules/input/manual/manual-blacklist.txt"
               "$R/domain-rules/input/manual/exclude-blacklist.txt"
               "$R/domain-rules/input/manual/manual-cn-domains.txt" )
-DI_FILES=( "$R/direct-ip/include-ipv4.txt"
-           "$R/direct-ip/exclude-ipv4.txt"
-           "$R/direct-ip/direct-domains.json" )
+DI_FILES=( "$R/direct-ip/input/manual/include-ipv4.txt"
+           "$R/direct-ip/input/manual/exclude-ipv4.txt"
+           "$R/direct-ip/input/manual/direct-domains.json" )
 
 DRY=0
 [ "${1:-}" = "--dry-run" ] && DRY=1

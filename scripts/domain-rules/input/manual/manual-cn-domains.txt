@@ -38,3 +38,7 @@ domain:gitlab.com
 domain:npmjs.com
 domain:pypi.org
 domain:schwab.com.cn
+# 2026-11-26 GiriGiri 动漫站（用户授权按速方云方式处理）：前端/接口在池 A，视频/弹幕/图片在池 B，
+# 无大陆节点；判 CN 后由国内 DNS 返回运营商线路视图，并停止 ros_blacklist 注入（直连依赖 direct-ip 表）。
+domain:girigirilove.com
+domain:girigirilove.net

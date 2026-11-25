@@ -27,7 +27,7 @@ esac
 /usr/bin/python3 /root/git/scripts/direct-ip/gen_direct.py "${args[@]}" \
   --publish-root /var/lib/direct-ip --static-dir /srv/github-mirror/static/ros
 
-git add -- scripts/direct-ip/raw scripts/direct-ip/output
+git add -- scripts/direct-ip/input/upstream scripts/direct-ip/output
 if ! git diff --cached --quiet; then
     git commit -m "更新直连 IPv4 地址表 $(date '+%F %H:%M')" --quiet
 fi

@@ -19,7 +19,7 @@ ROS / AR / OxiDNS 只是产物的消费端，不在这里定义。
 | 管线 | 源输入（未处理） | 处理脚本 | 产物（处理后） | 消费端 |
 |---|---|---|---|---|
 | domain-rules | `scripts/domain-rules/input/` | `gen_rules.py` `gen_cn.py` `gen_oxi.py` `fetch_bin.py` | `scripts/domain-rules/output/` | RouterOS、OxiDNS |
-| direct-ip | `scripts/direct-ip/raw/` + 模块根手工表 | `gen_direct.py` `asn_sources.py` | `scripts/direct-ip/output/` | RouterOS |
+| direct-ip | `scripts/direct-ip/input/` | `gen_direct.py` `asn_sources.py` | `scripts/direct-ip/output/` | RouterOS |
 | oxidns-image | 上游 `svenshi/oxidns` 镜像 | `.github/workflows/oxidns-image.yml` + `scripts/_infra/oxidns-image-sync.sh` | `/ros/oxidns-image.json` + `/ros/oxidns-v*.tar` | RouterOS（`/system script run oxidns-upgrade`） |
 
 每个模块的详细契约见各自目录下的 `README.md`。

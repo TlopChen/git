@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
-"""IPv4 direct-route artifacts. Fetch -> raw snapshots -> validate -> publish.
+"""IPv4 direct-route artifacts. Fetch -> upstream snapshots -> validate -> publish.
+
+目录规范化（与 scripts/domain-rules 的「脚本 / input / output」分层一致）：
+  sources.json     上游清单单一入口（脚本在根）
+  input/manual/    手工输入：include-ipv4.txt / exclude-ipv4.txt / direct-domains.json
+  input/upstream/  上游原始快照（本地留档；抓取失败时按校验结果回退，历史可追溯）
+  output/          生成产物（含报告与 ROS rsc）
+  service-evidence/ 单项服务的实测证据
+
+权威顺序（assembled in this order）：
+  ① 上游源（权威底表：CN 三源并集）
+  ② 手工层（include-ipv4.txt + sources.json 的 direct_asns + direct-domains.json 解析结果）
+  ③ 排除层（exclude-ipv4.txt + 现有 blacklist 静态条目，强制代理优先）
+  ④ 派生兜底表（NOCM/NOCT：对最终集合做运营商地址差集，仅用于单条家宽线路）
 
 No RouterOS login/import or routing changes. Standard library + git + dig.
 """
@@ -21,6 +34,11 @@ NONPUBLIC = [ip.ip_network(x) for x in (
     '169.254.0.0/16', '172.16.0.0/12', '192.0.0.0/24', '192.0.2.0/24',
     '192.168.0.0/16', '198.18.0.0/15', '198.51.100.0/24', '203.0.113.0/24',
     '224.0.0.0/3')]
+
+INPUT_DIR = Path('input')
+MANUAL_SUBDIR = INPUT_DIR / 'manual'
+UPSTREAM_SUBDIR = INPUT_DIR / 'upstream'
+LEGACY_FLAT = ('include-ipv4.txt', 'exclude-ipv4.txt', 'direct-domains.json')
 
 
 def canonical(n):
@@ -96,6 +114,32 @@ def json_text(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + '\n'
 
 
+def input_layout(base):
+    """规范化目录：手工输入 input/manual，上游快照 input/upstream。
+
+    发现旧扁平布局（根目录直接放 txt/json 或 raw/）时明确报错，
+    避免迁移不完整时静默读到空输入、发布空表。
+    """
+    base = Path(base)
+    for name in LEGACY_FLAT:
+        if (base / name).exists():
+            raise RuntimeError(f'旧扁平布局文件仍在: {name}; 应为 input/manual/{name}')
+    if (base / 'raw').is_dir():
+        raise RuntimeError('旧 raw/ 目录仍在; 应为 input/upstream/')
+    return base / MANUAL_SUBDIR, base / UPSTREAM_SUBDIR
+
+
+def assemble(upstream, manual, excluded):
+    """权威顺序：上游源 与 手工层取并集，再由排除层做地址差集。
+
+    返回 (direct, conflicts)；conflicts 是上游/手工里被排除层命中的那部分，
+    用于报告"手写条目被强制代理/排除表吃掉"，避免静默失效。
+    """
+    merged = list(ip.collapse_addresses(list(upstream) + list(manual)))
+    direct = minus(merged, excluded)
+    return direct, minus(merged, direct)
+
+
 def git(repo, *args):
     env = dict(os.environ, GIT_TERMINAL_PROMPT='0',
                GIT_SSH_COMMAND='ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15')
@@ -142,8 +186,9 @@ def source_validate(spec, data):
 
 def fetch_source(spec, base, cache, refresh):
     sid = spec['id']
-    raw_path = base / 'raw' / f'{sid}.txt'
-    meta_path = base / 'raw' / f'{sid}.json'
+    raw_dir = base / UPSTREAM_SUBDIR
+    raw_path = raw_dir / f'{sid}.txt'
+    meta_path = raw_dir / f'{sid}.json'
     previous = json.loads(meta_path.read_text()) if meta_path.exists() else None
     old_data = raw_path.read_bytes() if raw_path.exists() else None
     error = None
@@ -295,6 +340,7 @@ def main():
     args = ap.parse_args()
     base, cache = args.base, args.cache
     cfg = json.loads((base / 'sources.json').read_text())
+    manual_dir, upstream_dir = input_layout(base)
     cache.mkdir(parents=True, exist_ok=True)
     sources, raw, source_meta, warnings, all_cn, domain_rules = {}, {}, {}, [], [], []
     for spec in cfg['sources']:
@@ -309,7 +355,7 @@ def main():
             all_cn.extend(parsed)
         else:
             domain_rules.extend(parsed)
-    manual_rules = json.loads((base / 'direct-domains.json').read_text())
+    manual_rules = json.loads((manual_dir / 'direct-domains.json').read_text())
     for rule in manual_rules:
         if not re.fullmatch(r'[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?', rule['domain']) or '.' not in rule['domain']:
             raise ValueError('manual domains must be exact lowercase DNS host names')
@@ -329,26 +375,30 @@ def main():
                 new_state[host] = state
             if record['status'] != 'resolved':
                 warnings.append(f'DNS {host}: {record["status"]}')
-    cn = list(ip.collapse_addresses(all_cn))
-    manual = parse_cidrs((base / 'include-ipv4.txt').read_text())
+    # ① 上游源：权威底表（CN 三源并集）
+    upstream = list(ip.collapse_addresses(all_cn))
+    # ② 手工层：手工 CIDR + 整 ASN 例外 + 精确主机解析（/32）
+    manual_ipv4 = parse_cidrs((manual_dir / 'include-ipv4.txt').read_text())
     from asn_sources import load_asn
-    asn_report, asn_outputs = {}, {}
+    asn_report, asn_outputs, asn_nets = {}, {}, []
     for asn in cfg.get('direct_asns', []):
         v4, v6, meta, warning = load_asn(asn, base, not args.dns_only)
-        manual.extend(v4)
+        asn_nets.extend(v4)
         asn_report[str(asn)] = dict(meta, aggregated_ipv4_prefixes=len(list(ip.collapse_addresses(v4))))
         asn_outputs[f'direct-as{asn}-ipv4.txt'] = cidr_text(v4)
         if warning:
             warnings.append(warning)
-    excluded = parse_cidrs((base / 'exclude-ipv4.txt').read_text())
+    # ③ 排除层：手工排除 + 现有 blacklist 静态条目（强制代理语义优先）
+    excluded = parse_cidrs((manual_dir / 'exclude-ipv4.txt').read_text())
     protected = parse_ros(cfg['proxy_exclude_file'])
     if len(protected) < 10:
         raise ValueError('existing proxy blacklist unexpectedly short')
     excluded = list(ip.collapse_addresses(excluded + protected))
     dns_nets = [canonical(v) for r in resolved for v in r['addresses']]
-    all_direct = minus(cn + manual + dns_nets, excluded)
-    extra = minus(manual + dns_nets, cn + excluded)
-    effective_cn = minus(cn, excluded)
+    manual = list(ip.collapse_addresses(manual_ipv4 + asn_nets + dns_nets))
+    all_direct, manual_conflicts = assemble(upstream, manual, excluded)
+    extra = minus(manual, upstream + excluded)
+    effective_cn = minus(upstream, excluded)
     size = sum(n.num_addresses for n in all_direct)
     if not 1000 <= len(all_direct) <= 30000 or not 100_000_000 <= size <= 650_000_000:
         raise ValueError('combined direct output outside expected bounds')
@@ -367,7 +417,16 @@ def main():
         record['excluded_addresses'] = [v for v in record['addresses']
                                         if not minus([canonical(v)], excluded)]
     report = {'ipv4_only': True, 'list': cfg['ros_list'],
-              'cn_union_prefixes': len(cn), 'cn_effective_prefixes': len(effective_cn),
+              'precedence': ['upstream-sources', 'manual-include+direct-domains',
+                             'exclude-ipv4+blacklist', 'operator-variants(NOCM/NOCT)'],
+              'upstream_prefixes': len(upstream),
+              'manual_ipv4_prefixes': len(manual_ipv4),
+              'manual_ipv4_addresses': sum(n.num_addresses for n in manual_ipv4),
+              'manual_asn_prefixes': len(list(ip.collapse_addresses(asn_nets))),
+              'manual_domain_prefixes': len(dns_nets),
+              'manual_conflicts_prefixes': len(manual_conflicts),
+              'manual_conflicts': [str(n) for n in manual_conflicts][:200],
+              'cn_union_prefixes': len(upstream), 'cn_effective_prefixes': len(effective_cn),
               'direct_prefixes': len(all_direct), 'direct_addresses': size,
               'extra_outside_cn_prefixes': len(extra), 'excluded_prefixes': len(excluded),
               'direct_nocm_prefixes': len(variants[nocm_name]),
@@ -386,6 +445,7 @@ def main():
                'direct-cn-ipv4.txt': cidr_text(effective_cn),
                'direct-extra-ipv4.txt': cidr_text(extra),
                'direct-excluded-ipv4.txt': cidr_text(excluded),
+               'direct-manual-ipv4.txt': cidr_text(manual),
                'direct-ipv4.rsc': render_ros(all_direct, cfg['ros_list']),
                'direct-ipv4-nocm.rsc': render_ros(variants[nocm_name], nocm_name),
                'direct-ipv4-noct.rsc': render_ros(variants[noct_name], noct_name),
@@ -394,8 +454,8 @@ def main():
     outputs.update(asn_outputs)
     # All validation is complete before changing the last-good artifacts.
     for sid, data in raw.items():
-        atomic(base / 'raw' / f'{sid}.txt', data)
-        atomic(base / 'raw' / f'{sid}.json', json_text(source_meta[sid]))
+        atomic(upstream_dir / f'{sid}.txt', data)
+        atomic(upstream_dir / f'{sid}.json', json_text(source_meta[sid]))
     for name, body in outputs.items():
         atomic(base / 'output' / name, body)
     atomic(dns_cache, json_text(new_state))
