@@ -1,4 +1,4 @@
-#proxy-domain — 手工 266 条 + 上游 28919 条, 2026-11-26 00:41:53 由 gen_rules.py 生成
+#proxy-domain — 手工 266 条 + 上游 28924 条, 2026-11-26 00:43:55 由 gen_rules.py 生成
 # 后缀域为注册域裸域名，零正则；子域由 match-subdomain=yes 覆盖
 # 精确域(DOMAIN,x)为完全限定 FQDN，match-subdomain=no，仅匹配单个主机名
 # 本脚本整表重建 blacklist，手工域名见 input/manual/manual-blacklist.txt（comment=ros-rules-manual）
@@ -5339,6 +5339,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cabl
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cachefly.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cachefly.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cachinese.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cachix.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cacnw.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cactusvpn.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=cad-mep.com comment="ros-rules-auto"
@@ -9506,10 +9507,12 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fast
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastlane.ci comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastlane.tools comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastly-edge.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastly-insights.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastly-terrarium.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastly.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastly.io comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastly.net comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastlydns.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastlylabs.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastlylb.net comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=fastmail.com comment="ros-rules-auto"
@@ -17737,6 +17740,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=myds
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=myeasytv.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=myebay.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=myeclipseide.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=myecnu.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=myenvy.ru comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=myfappening.org comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=myfavoritearcade.com comment="ros-rules-auto"
@@ -26414,6 +26418,7 @@ add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=viva
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vivaldi.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vivatube.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vivaxnxx.com comment="ros-rules-auto"
+add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vivox.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vivthomas.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vixen.com comment="ros-rules-auto"
 add address-list=blacklist forward-to=DNS match-subdomain=yes type=FWD name=vixengroup.com comment="ros-rules-auto"

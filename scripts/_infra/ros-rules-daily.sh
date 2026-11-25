@@ -8,7 +8,7 @@ R="$REPO/scripts/domain-rules"
 echo "=== $(date '+%F %T') 开始 ==="
 
 cd "$REPO" || exit 1
-if git pull --rebase --autostash --quiet; then
+if git pull --rebase --autostash --quiet origin main; then
     echo "已拉取远端: $(git log --oneline -1)"
 else
     echo "[warn] git pull 失败，本次用本地版本；此时 push 会因远端领先而失败，不会盖掉网页改动"
