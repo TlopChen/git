@@ -17,9 +17,8 @@ COOLDOWN=600          # 同一模式失败后，多少秒内不重试（避免�
 RULES_FILES=( "$R/domain-rules/input/manual/manual-blacklist.txt"
               "$R/domain-rules/input/manual/exclude-blacklist.txt"
               "$R/domain-rules/input/manual/manual-cn-domains.txt" )
-DI_FILES=( "$R/direct-ip/input/ip/include-ipv4.txt"
-           "$R/direct-ip/input/ip/exclude-ipv4.txt"
-           "$R/direct-ip/input/domain/direct-domains.json" )
+IP_FILES=( "$R/ip-rules/input/manual/include-ipv4.txt"
+           "$R/ip-rules/input/manual/exclude-ipv4.txt" )
 
 DRY=0
 [ "${1:-}" = "--dry-run" ] && DRY=1
@@ -47,36 +46,36 @@ cd "$REPO" || exit 1
 
 if [ "$INIT" = 1 ]; then
     state_put rules "$(hash_set "${RULES_FILES[@]}")"
-    state_put direct-ip "$(hash_set "${DI_FILES[@]}")"
+    state_put ip-rules "$(hash_set "${IP_FILES[@]}")"
     echo "已写入基线 $STATE:"; cat "$STATE"
     exit 0
 fi
 
 modes=""
 
-# ---------- ① 远端变化（短暂持主锁，避免与日更/direct-ip 的 pull 抢）----------
+# ---------- ① 远端变化（短暂持主锁，避免与日更/ip-rules 的 pull 抢）----------
 exec 9>/tmp/ros-rules.lock
 if flock -n -w 5 9; then
     if GIT_TERMINAL_PROMPT=0 timeout 45 git fetch -q origin main 2>>"$LOG"; then
         behind=$(git rev-list --count HEAD..origin/main 2>/dev/null || echo 0)
         if [ "${behind:-0}" -gt 0 ]; then
-            up=$(git diff --name-only HEAD origin/main -- "${RULES_FILES[@]}" "${DI_FILES[@]}" 2>/dev/null || true)
+            up=$(git diff --name-only HEAD origin/main -- "${RULES_FILES[@]}" "${IP_FILES[@]}" 2>/dev/null || true)
             grep -q 'domain-rules/input/manual/' <<<"$up" && modes="$modes rules"
-            grep -q '^scripts/direct-ip/'        <<<"$up" && modes="$modes direct-ip"
+            grep -q '^scripts/ip-rules/'        <<<"$up" && modes="$modes ip-rules"
         fi
     else
         log_throttled fetch "[warn] git fetch 失败，本轮只做本地检测"
     fi
     flock -u 9
 else
-    [ "$DRY" = 1 ] && echo "主锁被占（日更/direct-ip 正在跑），本轮跳过"
+    [ "$DRY" = 1 ] && echo "主锁被占（日更/ip-rules 正在跑），本轮跳过"
     exit 0
 fi
 exec 9>&-
 
 # ---------- ② 本地变化 ----------
 [ "$(hash_set "${RULES_FILES[@]}")" != "$(state_get rules)" ]     && modes="$modes rules"
-[ "$(hash_set "${DI_FILES[@]}")"    != "$(state_get direct-ip)" ] && modes="$modes direct-ip"
+[ "$(hash_set "${IP_FILES[@]}")"    != "$(state_get ip-rules)" ] && modes="$modes ip-rules"
 
 modes=$(printf '%s\n' $modes | awk '!x[$0]++' | tr '\n' ' ')
 modes=${modes% }
@@ -101,7 +100,7 @@ for m in $modes; do
         if [ "$m" = rules ]; then
             state_put rules "$(hash_set "${RULES_FILES[@]}")"
         else
-            state_put direct-ip "$(hash_set "${DI_FILES[@]}")"
+            state_put ip-rules "$(hash_set "${IP_FILES[@]}")"
         fi
         state_put "fail-$m" ""
     else

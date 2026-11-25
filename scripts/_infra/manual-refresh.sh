@@ -1,12 +1,12 @@
 #!/bin/bash
 # 手工部分快速刷新：不拉上游，只用已验证快照重生成手工相关产物。
-# Usage: manual-refresh rules | direct-ip
+# Usage: manual-refresh rules | ip-rules
 set -euo pipefail
 MODE="${1:-rules}"
 case "$MODE" in
-  direct-ip) exec /usr/local/bin/direct-ip-update dns ;;
+  ip-rules) exec /usr/local/bin/ip-rules-update offline ;;
   rules) ;;
-  *) echo "Usage: manual-refresh rules|direct-ip" >&2; exit 2 ;;
+  *) echo "Usage: manual-refresh rules|ip-rules" >&2; exit 2 ;;
 esac
 
 REPO=/root/git

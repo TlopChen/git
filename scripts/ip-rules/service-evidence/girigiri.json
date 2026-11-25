@@ -1,0 +1,120 @@
+{
+  "checked_at": "2026-11-26T00:5x+09:00",
+  "service": "GiriGiri 动漫站",
+  "entry_domain": "ani.girigirilove.com",
+  "observation": {
+    "play_page": "https://ani.girigirilove.com/play/26844?sourceIndex=0&episodeIndex=0",
+    "browser_network_hosts": [
+      "ani.girigirilove.com",
+      "m3u8.girigirilove.com",
+      "ana.girigirilove.com",
+      "danmu.girigirilove.com",
+      "jpg.girigirilove.com",
+      "jpg.girigirilove.net"
+    ],
+    "video_url_example": "https://ana.girigirilove.com/zijian/oldanime/2025/1030/JackofAllTradesPartyofNone/01.mp4",
+    "video_size_bytes": 176421532,
+    "cdp_remote_ips_observed": [
+      "91.149.239.136",
+      "173.224.219.126",
+      "173.224.219.166",
+      "107.174.52.126",
+      "192.210.193.148",
+      "192.210.193.231",
+      "104.21.25.87"
+    ],
+    "via_japan_traceroute": "192.168.1.2 -> 192.168.20.2/30.2 -> 14.137.229.1(GoMami) -> NTT -> LA"
+  },
+  "network_info": {
+    "pool_a": {
+      "cname": "g2014c9.cdn.girigirilove.com",
+      "hosts": [
+        "ani",
+        "m3u8",
+        "bg",
+        "bgm",
+        "player"
+      ],
+      "fixed_ips": [
+        "166.1.190.204",
+        "173.224.219.126",
+        "173.224.219.166",
+        "207.174.28.3",
+        "23.170.40.170",
+        "91.149.239.136",
+        "108.181.7.69"
+      ],
+      "note": "静态 7 IP，全球视图一致，无 GeoDNS"
+    },
+    "pool_b": {
+      "cname": "gcacac7.cdn.girigirilove.net",
+      "hosts": [
+        "ana",
+        "danmu",
+        "jpg",
+        "jpg.girigirilove.net"
+      ],
+      "note": "按运营商 GeoDNS，并集 24 IP（洛杉矶 19 + 莫斯科 5），无大陆节点",
+      "prefixes": [
+        "166.1.18.0/24",
+        "166.1.190.0/24",
+        "173.224.219.0/24",
+        "207.174.28.0/24",
+        "23.170.40.0/24",
+        "108.181.7.0/24",
+        "91.149.239.0/24",
+        "38.135.52.0/24",
+        "45.8.158.0/24",
+        "45.89.228.0/24",
+        "45.130.146.0/24",
+        "46.17.45.0/24",
+        "46.29.166.0/24",
+        "192.210.193.0/24",
+        "107.174.52.0/24"
+      ]
+    },
+    "origin_asns": [
+      40676,
+      26383,
+      16554,
+      400509,
+      36352,
+      49392,
+      51659
+    ],
+    "resolver_views": {
+      "alidns_223_5_5_5": "移动线视图（池 B 9 个）",
+      "dns_119_29_29_29": "电信线视图（池 B 10 个）",
+      "cloudflare_google": "海外线视图（池 B 10 个：ColoCrossing + Psychz）",
+      "local_oxi_through_jp": "海外线视图（与 CF/Google 一致）"
+    }
+  },
+  "region_policy": {
+    "blocked_regions": [
+      "US",
+      "JP",
+      "EU"
+    ],
+    "check_host": "https://cloudflare.com/cdn-cgi/trace",
+    "observed": "无扩展的 headless 浏览器从日本出口加载播放页会 302 到 https://502.girigirilove.com/（标题「暫不支持該地區訪問」）；用户浏览器有扩展屏蔽该探测才可正常打开"
+  },
+  "throughput_probe_2026_11_25": {
+    "note": "同一集 8/16MB Range；广州=腾讯云 CN 出口参照，JP=GoMami 本机，家宽=经隧道",
+    "jp_node_mbps_range": "2.0-11 MB/s（部分 IP 0.2-0.6）",
+    "home_via_tunnel": "0.15-0.81 MB/s",
+    "cn_guangzhou_direct": "0.08-2.3 MB/s（同 IP 一分钟内波动大；视频码率约 1 Mbps，≥0.3 MB/s 即够）"
+  },
+  "decision": {
+    "include_manual_cidrs": 15,
+    "cn_domain_list": [
+      "domain:girigirilove.com",
+      "domain:girigirilove.net"
+    ],
+    "reason": "用户 2026-11-26 授权按速方云方式处理：holder /24 覆盖；域名同时判 CN，停止 OxiDNS 注入 blacklist /32。纯 IP 管线不再做域名解析跟随（2026-11-26 改造）。",
+    "scope_caveat": "/24 会把同段邻居地址也纳入直连（廉价 VPS 段，影响小）；如需最小面可改 /32 列表。",
+    "blacklist_cleanup": "OxiDNS 旧动态 /32 需在 ROS 删除或等 24h TTL；否则 /32 优先仍走隧道。",
+    "rollback": "从 input/manual/include-ipv4.txt 删除对应 /24 → manual-refresh ip-rules；域名从 domain-rules/input/manual/manual-cn-domains.txt 删除 → manual-refresh rules。",
+    "include_domain_hosts_in_domain_rules": 6
+  },
+  "privacy": "不留存账号、Cookie、播放 URL 参数或本机其他信息；仅保留公开 DNS/TLS 观测与速率采样。"
+}

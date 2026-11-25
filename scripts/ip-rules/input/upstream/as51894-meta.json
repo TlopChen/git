@@ -1,0 +1,9 @@
+{
+  "asn": 51894,
+  "fetched_at": 1795624901,
+  "observed_ipv4_prefixes": 2,
+  "observed_ipv6_prefixes": 1,
+  "sha256": "d5f90ec4ffc640fa93302c3e4fc0cfcb98664841e120fd8b242357a704f63200",
+  "snapshot_time": "2026-11-25T08:00:00",
+  "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS51894&starttime=1795538495&min_peers_seeing=1"
+}

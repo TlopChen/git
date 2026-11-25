@@ -1,0 +1,48 @@
+[
+  {
+    "service": "速方云",
+    "entry_domain": "srv52.suu-fun.com",
+    "status": "whole-asn-enabled",
+    "note": "用户明确要求整个AS53850；每日更新其IPv4公告集合。该ASN包含其他托管业务，非仅速方云。",
+    "observed_ip": "192.154.108.234",
+    "port": 50000,
+    "origin_asn": 53850,
+    "observed_prefix": "192.154.104.0/21",
+    "include_scope": "all-observed-ipv4-origin-prefixes"
+  },
+  {
+    "service": "GiriGiri 动漫站",
+    "entry_domain": "ani.girigirilove.com",
+    "status": "manual-cidr-added",
+    "note": "用户授权按速方云方式处理：15 个 holder /24 手工覆盖；站点按运营商 GeoDNS 分池，纯 IP 管线不解析域名（2026-11-26 改造），换段时手工补 /24。域名同时进 domain-rules 的 CN 域名表，使 OxiDNS 判国内、停止 blacklist 注入。",
+    "observed_ip": "107.174.52.126",
+    "port": 443,
+    "origin_asns": [
+      40676,
+      26383,
+      16554,
+      400509,
+      36352,
+      49392,
+      51659
+    ],
+    "observed_prefixes": [
+      "166.1.18.0/24",
+      "166.1.190.0/24",
+      "173.224.219.0/24",
+      "207.174.28.0/24",
+      "23.170.40.0/24",
+      "108.181.7.0/24",
+      "91.149.239.0/24",
+      "38.135.52.0/24",
+      "45.8.158.0/24",
+      "45.89.228.0/24",
+      "45.130.146.0/24",
+      "46.17.45.0/24",
+      "46.29.166.0/24",
+      "192.210.193.0/24",
+      "107.174.52.0/24"
+    ],
+    "include_scope": "holder /24 cover (manual include-ipv4.txt)"
+  }
+]

@@ -83,5 +83,6 @@ ROS  ros-rules-sync ──▶ 地址表 /import ＋ OxiDNS 三份本地文件
                        07:00 reload（本地，不联网）或 manual-refresh 重启容器立即生效
 ```
 
-- 生成方：广州 06:00 日更 / 06:15 direct-ip / 手工清单变更触发（manual-watch）。
+- 生成方：广州 06:00 域名日更 / 06:15 ip-rules 地址表日更 / 手工清单变更触发（manual-watch）。
+- 地址表由 `scripts/ip-rules` 生成（2026-11-26 起；此前在 domain-rules），文件名与 HTTP 路径不变，本目录脚本无需改。
 - 触发方：ROS 上按需 `/system script run manual-refresh`；**不在这里做**定时轮询、哈希校验。

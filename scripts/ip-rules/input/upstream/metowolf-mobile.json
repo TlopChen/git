@@ -1,0 +1,10 @@
+{
+  "commit": "e98684a37ed47f375451e12ccc419bf09d9701f6",
+  "commit_time": 1795619524,
+  "fetched_at": 1795624874,
+  "path": "data/isp/chinamobile.txt",
+  "ref": "master",
+  "repo": "metowolf/iplist",
+  "sha256": "cd8b03169e52f6249dc22abecbeb3622cb3e0e0b2bd85a377a41f3bd2a2fdad6",
+  "url": "https://github.com/metowolf/iplist/blob/e98684a37ed47f375451e12ccc419bf09d9701f6/data/isp/chinamobile.txt"
+}

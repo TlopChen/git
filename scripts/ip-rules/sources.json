@@ -1,0 +1,199 @@
+{
+  "ros_list": "DIRECT_IP",
+  "sources": {
+    "gaoyifan-cn": {
+      "kind": "cidr",
+      "repo": "gaoyifan/china-operator-ip",
+      "ref": "ip-lists",
+      "path": "china.txt",
+      "min_prefixes": 1000,
+      "max_prefixes": 30000,
+      "min_addresses": 100000000,
+      "max_addresses": 650000000,
+      "max_age_days": 14
+    },
+    "misaka-cn": {
+      "kind": "cidr",
+      "repo": "misakaio/chnroutes2",
+      "ref": "master",
+      "path": "chnroutes.txt",
+      "min_prefixes": 1000,
+      "max_prefixes": 30000,
+      "min_addresses": 100000000,
+      "max_addresses": 650000000,
+      "max_age_days": 14
+    },
+    "metowolf-cn": {
+      "kind": "cidr",
+      "repo": "metowolf/iplist",
+      "ref": "master",
+      "path": "data/special/china.txt",
+      "min_prefixes": 1000,
+      "max_prefixes": 30000,
+      "min_addresses": 100000000,
+      "max_addresses": 650000000,
+      "max_age_days": 14
+    },
+    "loyalsoldier-cn": {
+      "kind": "list",
+      "repo": "Loyalsoldier/clash-rules",
+      "ref": "release",
+      "path": "cncidr.txt",
+      "min_prefixes": 1000,
+      "max_prefixes": 40000
+    },
+    "metowolf-country-cn": {
+      "kind": "list",
+      "repo": "metowolf/iplist",
+      "ref": "master",
+      "path": "data/country/CN.txt",
+      "min_prefixes": 1000,
+      "max_prefixes": 40000
+    },
+    "metowolf-telecom": {
+      "kind": "list",
+      "repo": "metowolf/iplist",
+      "ref": "master",
+      "path": "data/isp/chinatelecom.txt",
+      "min_prefixes": 500,
+      "max_prefixes": 20000
+    },
+    "metowolf-mobile": {
+      "kind": "list",
+      "repo": "metowolf/iplist",
+      "ref": "master",
+      "path": "data/isp/chinamobile.txt",
+      "min_prefixes": 300,
+      "max_prefixes": 20000
+    },
+    "metowolf-unicom": {
+      "kind": "list",
+      "repo": "metowolf/iplist",
+      "ref": "master",
+      "path": "data/isp/chinaunicom.txt",
+      "min_prefixes": 300,
+      "max_prefixes": 20000
+    },
+    "metowolf-cernet": {
+      "kind": "list",
+      "repo": "metowolf/iplist",
+      "ref": "master",
+      "path": "data/isp/cernet.txt",
+      "min_prefixes": 50,
+      "max_prefixes": 20000
+    },
+    "loyalsoldier-telegram": {
+      "kind": "list",
+      "repo": "Loyalsoldier/clash-rules",
+      "ref": "release",
+      "path": "telegramcidr.txt",
+      "min_prefixes": 5,
+      "max_prefixes": 500
+    },
+    "blackmatrix7-twitter": {
+      "kind": "list",
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Surge/Twitter/Twitter.list",
+      "min_prefixes": 3,
+      "max_prefixes": 500
+    }
+  },
+  "direct_sources": [
+    "gaoyifan-cn",
+    "misaka-cn",
+    "metowolf-cn"
+  ],
+  "direct_asns": [
+    53850
+  ],
+  "tables": {
+    "cn": {
+      "ros_list": "CN",
+      "legacy_lists": [
+        "ROS_CN"
+      ],
+      "sources": [
+        "loyalsoldier-cn",
+        "metowolf-country-cn"
+      ],
+      "min_prefixes": 1000,
+      "max_prefixes": 40000
+    },
+    "cn-telecom": {
+      "ros_list": "CT",
+      "legacy_lists": [
+        "ROS_CN_TELECOM"
+      ],
+      "sources": [
+        "metowolf-telecom"
+      ],
+      "min_prefixes": 500,
+      "max_prefixes": 20000
+    },
+    "cn-mobile": {
+      "ros_list": "CM",
+      "legacy_lists": [
+        "ROS_CN_MOBILE"
+      ],
+      "sources": [
+        "metowolf-mobile"
+      ],
+      "min_prefixes": 300,
+      "max_prefixes": 20000
+    },
+    "cn-unicom": {
+      "ros_list": "CU",
+      "legacy_lists": [
+        "ROS_CN_UNICOM"
+      ],
+      "sources": [
+        "metowolf-unicom"
+      ],
+      "min_prefixes": 300,
+      "max_prefixes": 20000
+    },
+    "cn-cernet": {
+      "ros_list": "CC",
+      "legacy_lists": [
+        "ROS_CN_CERNET"
+      ],
+      "sources": [
+        "metowolf-cernet"
+      ],
+      "min_prefixes": 50,
+      "max_prefixes": 20000
+    },
+    "blacklist": {
+      "ros_list": "blacklist",
+      "remove_mode": "static",
+      "marker": "ros-rules-auto",
+      "legacy_lists": [
+        "ROS_BLACKLIST"
+      ],
+      "sources": [
+        "loyalsoldier-telegram",
+        "blackmatrix7-twitter"
+      ],
+      "asns": [
+        51894
+      ],
+      "extra_cidrs": [
+        "5.28.192.0/18",
+        "109.239.140.0/24",
+        "8.8.8.8",
+        "8.8.4.4",
+        "1.1.1.1",
+        "1.0.0.1"
+      ],
+      "min_prefixes": 5,
+      "max_prefixes": 5000
+    }
+  },
+  "exclude": {
+    "manual": "input/manual/exclude-ipv4.txt",
+    "tables": [
+      "blacklist"
+    ]
+  }
+}

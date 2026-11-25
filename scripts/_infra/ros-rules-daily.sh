@@ -1,5 +1,6 @@
 #!/bin/bash
-# ROS 规则日更：拉仓库 → 用仓库里的脚本生成 → 发布到内网 mirror → 留档并推送。
+# 域名规则日更（06:00）：拉仓库 → 生成域名规则 → 发布到内网 mirror → 留档并推送。
+# IPv4 地址表由 06:15 的 /etc/cron.d/ip-rules 生成，不在本脚本内。
 # 代码权威 = 本仓库 /root/git；手工数据权威 = scripts/domain-rules/input/manual/。
 set -u
 REPO=/root/git
@@ -30,7 +31,7 @@ git add -A
 if git diff --cached --quiet; then
     echo "上游无变化，不提交"
 else
-    if git commit -m "规则日更 $(date +%F)" --quiet && git push origin main; then
+    if git commit -m "域名规则日更 $(date +%F)" --quiet && git push origin main; then
         echo "已提交并推送: $(git log --oneline -1)"
     else
         echo "推送失败（可能网络抖动），下次运行会重试提交"

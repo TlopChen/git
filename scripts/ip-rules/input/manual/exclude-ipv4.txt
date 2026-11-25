@@ -1,0 +1,2 @@
+# 手工排除的 IPv4/CIDR，一行一条，优先于所有上游源和手工添加。
+# 另有 blacklist 表地址（Telegram/Twitter/AS51894/公共 DNS 等）自动参与排除，保留强制代理语义。

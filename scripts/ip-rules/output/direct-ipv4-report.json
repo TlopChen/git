@@ -1,0 +1,158 @@
+{
+  "cn_effective_prefixes": 6299,
+  "cn_union_prefixes": 6299,
+  "direct_addresses": 352665458,
+  "direct_addresses_outside_ct_cm": 200540234,
+  "direct_asns": {
+    "53850": {
+      "aggregated_ipv4_prefixes": 23,
+      "asn": 53850,
+      "fetched_at": 1795624904,
+      "observed_ipv4_prefixes": 92,
+      "observed_ipv6_prefixes": 5,
+      "sha256": "38031c795e5754c7cd38b9c455f9cf06fd840542b4992f708d78723ece64ebd1",
+      "snapshot_time": "2026-11-25T08:00:00",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1795538501&min_peers_seeing=1"
+    }
+  },
+  "direct_nocm_prefixes": 7657,
+  "direct_noct_prefixes": 6931,
+  "direct_prefixes": 6337,
+  "excluded_prefixes": 22,
+  "existing_ct_cm_unique_prefixes": 4573,
+  "extra_outside_cn_prefixes": 38,
+  "ipv4_only": true,
+  "list": "DIRECT_IP",
+  "manual_asn_prefixes": 23,
+  "manual_conflicts": [],
+  "manual_conflicts_prefixes": 0,
+  "manual_ipv4_addresses": 3840,
+  "manual_ipv4_prefixes": 15,
+  "precedence": [
+    "upstream-sources",
+    "manual-include+direct-asns",
+    "exclude-ipv4+blacklist-table",
+    "operator-variants(NOCM/NOCT)"
+  ],
+  "sources": {
+    "gaoyifan-cn": {
+      "addresses": 344317949,
+      "prefixes": 6242,
+      "sha256": "9122af3c640fdb2a179b29e6ba5df1505bee4ad9c011ec70566be3faa672a91f",
+      "unique_addresses": 3338430
+    },
+    "metowolf-cn": {
+      "addresses": 348857964,
+      "prefixes": 5570,
+      "sha256": "b862eb06ac783d58ad25fc328996efab9c000d7365fce73de1981e8b9f01fb14",
+      "unique_addresses": 7752306
+    },
+    "misaka-cn": {
+      "addresses": 282342912,
+      "prefixes": 3884,
+      "sha256": "da9e2f97a1081f684c62253996a16dee8d1a647c644329013691ed77ca2d9ee4",
+      "unique_addresses": 269276
+    }
+  },
+  "tables": {
+    "blacklist": {
+      "addresses": 53764,
+      "asns": {
+        "51894": {
+          "asn": 51894,
+          "fetched_at": 1795624901,
+          "observed_ipv4_prefixes": 2,
+          "observed_ipv6_prefixes": 1,
+          "sha256": "d5f90ec4ffc640fa93302c3e4fc0cfcb98664841e120fd8b242357a704f63200",
+          "snapshot_time": "2026-11-25T08:00:00",
+          "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS51894&starttime=1795538495&min_peers_seeing=1"
+        }
+      },
+      "ipv6_prefixes_not_imported": 1,
+      "legacy_lists": [
+        "ROS_BLACKLIST"
+      ],
+      "output": "blacklist.rsc",
+      "prefixes": 22,
+      "ros_list": "blacklist",
+      "sources": [
+        "loyalsoldier-telegram",
+        "blackmatrix7-twitter"
+      ]
+    },
+    "cn": {
+      "addresses": 352133746,
+      "asns": {},
+      "ipv6_prefixes_not_imported": 0,
+      "legacy_lists": [
+        "ROS_CN"
+      ],
+      "output": "cn.rsc",
+      "prefixes": 6277,
+      "ros_list": "CN",
+      "sources": [
+        "loyalsoldier-cn",
+        "metowolf-country-cn"
+      ]
+    },
+    "cn-cernet": {
+      "addresses": 10573312,
+      "asns": {},
+      "ipv6_prefixes_not_imported": 0,
+      "legacy_lists": [
+        "ROS_CN_CERNET"
+      ],
+      "output": "cn-cernet.rsc",
+      "prefixes": 396,
+      "ros_list": "CC",
+      "sources": [
+        "metowolf-cernet"
+      ]
+    },
+    "cn-mobile": {
+      "addresses": 37234712,
+      "asns": {},
+      "ipv6_prefixes_not_imported": 0,
+      "legacy_lists": [
+        "ROS_CN_MOBILE"
+      ],
+      "output": "cn-mobile.rsc",
+      "prefixes": 1493,
+      "ros_list": "CM",
+      "sources": [
+        "metowolf-mobile"
+      ]
+    },
+    "cn-telecom": {
+      "addresses": 119458064,
+      "asns": {},
+      "ipv6_prefixes_not_imported": 0,
+      "legacy_lists": [
+        "ROS_CN_TELECOM"
+      ],
+      "output": "cn-telecom.rsc",
+      "prefixes": 3080,
+      "ros_list": "CT",
+      "sources": [
+        "metowolf-telecom"
+      ]
+    },
+    "cn-unicom": {
+      "addresses": 62360162,
+      "asns": {},
+      "ipv6_prefixes_not_imported": 0,
+      "legacy_lists": [
+        "ROS_CN_UNICOM"
+      ],
+      "output": "cn-unicom.rsc",
+      "prefixes": 1907,
+      "ros_list": "CU",
+      "sources": [
+        "metowolf-unicom"
+      ]
+    }
+  },
+  "upstream_addresses": 352597874,
+  "upstream_prefixes": 6299,
+  "warnings": []
+}

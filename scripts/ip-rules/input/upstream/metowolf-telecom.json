@@ -1,0 +1,10 @@
+{
+  "commit": "e98684a37ed47f375451e12ccc419bf09d9701f6",
+  "commit_time": 1795619524,
+  "fetched_at": 1795624869,
+  "path": "data/isp/chinatelecom.txt",
+  "ref": "master",
+  "repo": "metowolf/iplist",
+  "sha256": "ad4defbf1d5c11dd4858e3ae4a0c7faaf1e3ce2ed64fb2014a955aed29bb32fa",
+  "url": "https://github.com/metowolf/iplist/blob/e98684a37ed47f375451e12ccc419bf09d9701f6/data/isp/chinatelecom.txt"
+}

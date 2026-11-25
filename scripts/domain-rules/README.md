@@ -1,6 +1,8 @@
-# domain-rules —— 域名 + CIDR 规则管线
+# domain-rules —— 域名规则管线
 
-上游开源规则源 → 处理脚本 → RouterOS / OxiDNS 可直接消费的产物。
+上游开源域名规则源 → 处理脚本 → RouterOS / OxiDNS 可直接消费的产物。
+
+本管线**只处理域名**。IPv4 地址表（CN/运营商/blacklist）自 2026-11-26 起在 `scripts/ip-rules` 生成，两条管线各自 IN/OUT、互不读取产物。
 
 ```text
 input/upstream/   上游原始快照（未处理，带 _provenance.json 出处）
@@ -19,7 +21,7 @@ python3 gen_rules.py --only proxy-domain # 只重建一张表
 python3 gen_oxi.py                       # proxy-domain → OxiDNS domain_set
 python3 gen_cn.py                        # 国内域名表（GEN_CN_OFFLINE=1 可离线）
 python3 fetch_bin.py                     # geosite.dat 等二进制（直接发 HTTP 目录）
-```
+````
 
 ## 来源清单：sources.json
 
@@ -49,8 +51,6 @@ python3 fetch_bin.py                     # geosite.dat 等二进制（直接发 
 | `cn-domains.oxi.txt` | OxiDNS `domain_set` | 国内域名表（「非国内即走远端」的反转判据） |
 | `proxy-domain.domains.txt` / `.exact.txt` | 通用中间产物 | 裸后缀域 / 精确 FQDN，一行一个 |
 | `proxy-domain.rsc` | RouterOS | `/ip dns static type=FWD`，带 match-subdomain 语义与 blacklist 打标 |
-| `cn.rsc` / `cn-telecom.rsc` / `cn-mobile.rsc` / `cn-unicom.rsc` / `cn-cernet.rsc` | RouterOS | 国内网段（合并后）与各运营商 |
-| `blacklist.rsc` | RouterOS | 硬编码 IP 类服务兜底（Telegram / Twitter + 公共 DNS 等手工段） |
 | `geosite.dat` | OxiDNS | 二进制，只发 HTTP，不进 Git |
 
 RouterOS 取用：`http://192.168.40.1:18080/ros/<文件>`（内网隧道；公网请用仓库 raw 链接）。
@@ -65,11 +65,6 @@ RouterOS 取用：`http://192.168.40.1:18080/ros/<文件>`（内网隧道；公�
 - **排除名单**命中项及其子域整体剔除；手工层与自动层合并去重。
 - 有条数下限保护：上游拉取异常时**拒绝生成**，不产出空表覆盖。
 
-## 为什么还要 IP 段
-
-Telegram 这类客户端把 DC IP 硬编码，DNS 解析失败时直接回退硬编码 IP，绕过 DNS 重定向，
-因此必须用地址表兜底。增删这类段：改 `sources.json` 的 `blacklist.sources` / `extra_cidrs`。
-
 ## 手工维护
 
 | 需求 | 改哪个 |
@@ -80,3 +75,15 @@ Telegram 这类客户端把 DC IP 硬编码，DNS 解析失败时直接回退硬
 | 增删/更换上游源 | `sources.json` |
 
 改完等 06:00 日更，或跑 `manual-refresh rules` 立即重生成手工部分（不拉上游）。
+
+## 与 ip-rules 的分工（2026-11-26 起）
+
+| 管线 | 管什么 | 目录 |
+|---|---|---|
+| `domain-rules` | 域名（OxiDNS domain_set、RouterOS FWD 域名表） | `scripts/domain-rules/` |
+| `ip-rules` | IPv4 地址表（直连表、CN/运营商表、blacklist 表） | `scripts/ip-rules/` |
+
+- 原 `sources.json` 的 `cn`、`cn-telecom`、`cn-mobile`、`cn-unicom`、`cn-cernet`、`blacklist` 六张 CIDR 表（以及 `metowolf/iplist` 相关源）已迁到 `ip-rules`；本目录的 `output/` 不再有 `cn*.rsc` / `blacklist.rsc`。
+- 相关程序逻辑（`parse_cidrs`、RIPE ASN 查询、CIDR 表 `.rsc` 渲染）一并迁走，本管线不再联网查询 ASN。
+- 产物文件名/HTTP 路径不变，ROS 与 OxiDNS 消费端无需改。
+- 两管线互不读取对方 `output/`：域名规则不依赖 IP 表，IP 表也不读 `blacklist.rsc` 文件（改用本次生成的 blacklist 地址集合）。

@@ -1,0 +1,10 @@
+{
+  "commit": "e98684a37ed47f375451e12ccc419bf09d9701f6",
+  "commit_time": 1795619524,
+  "fetched_at": 1795624865,
+  "path": "data/country/CN.txt",
+  "ref": "master",
+  "repo": "metowolf/iplist",
+  "sha256": "41ae42fe02065242fdc9c81afd0a7bc41fd3634002941560bc255d499a1918ab",
+  "url": "https://github.com/metowolf/iplist/blob/e98684a37ed47f375451e12ccc419bf09d9701f6/data/country/CN.txt"
+}
