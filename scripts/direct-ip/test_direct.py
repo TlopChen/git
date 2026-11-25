@@ -92,10 +92,11 @@ class DirectTests(unittest.TestCase):
     def test_input_layout_normalized_paths(self):
         with tempfile.TemporaryDirectory() as d:
             base=Path(d)
-            (base/'input/manual').mkdir(parents=True)
-            (base/'input/upstream').mkdir(parents=True)
-            manual, upstream = g.input_layout(base)
-            self.assertEqual(manual, base/'input/manual')
+            for sub in ('input/ip','input/domain','input/upstream'):
+                (base/sub).mkdir(parents=True)
+            ip_dir, domain_dir, upstream = g.input_layout(base)
+            self.assertEqual(ip_dir, base/'input/ip')
+            self.assertEqual(domain_dir, base/'input/domain')
             self.assertEqual(upstream, base/'input/upstream')
 
     def test_input_layout_rejects_legacy_flat_files(self):
@@ -109,6 +110,19 @@ class DirectTests(unittest.TestCase):
             (base/'raw').mkdir()
             with self.assertRaises(RuntimeError):
                 g.input_layout(base)
+        with tempfile.TemporaryDirectory() as d:
+            base=Path(d)
+            (base/'input/manual').mkdir(parents=True)
+            with self.assertRaises(RuntimeError):
+                g.input_layout(base)
+
+    def test_output_split_by_kind(self):
+        base = Path('/repo')
+        self.assertEqual(g.output_path(base, 'direct-ipv4.rsc'), base/'output/ip/direct-ipv4.rsc')
+        self.assertEqual(g.output_path(base, 'direct-as53850-ipv4.txt'), base/'output/ip/direct-as53850-ipv4.txt')
+        self.assertEqual(g.output_path(base, 'direct-domains-resolved.json'), base/'output/domain/direct-domains-resolved.json')
+        with self.assertRaises(KeyError):
+            g.output_path(base, 'unknown.bin')
 
     def test_assemble_precedence_upstream_manual_then_exclusion(self):
         # 权威顺序：上游源 ∪ 手工层，最后减排除层；排除命中要能报出来

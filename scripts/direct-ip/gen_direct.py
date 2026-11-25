@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """IPv4 direct-route artifacts. Fetch -> upstream snapshots -> validate -> publish.
 
-目录规范化（与 scripts/domain-rules 的「脚本 / input / output」分层一致）：
-  sources.json     上游清单单一入口（脚本在根）
-  input/manual/    手工输入：include-ipv4.txt / exclude-ipv4.txt / direct-domains.json
-  input/upstream/  上游原始快照（本地留档；抓取失败时按校验结果回退，历史可追溯）
-  output/          生成产物（含报告与 ROS rsc）
-  service-evidence/ 单项服务的实测证据
+目录按「IP / 域名 / 上游快照 / 产物」分开（与 domain-rules 的脚本 / input / output 分层一致）：
+  sources.json       上游清单单一入口（脚本在根）
+  input/ip/          手工 IP 表：include-ipv4.txt（直连）/ exclude-ipv4.txt（排除）
+  input/domain/      手工域名表：direct-domains.json（精确主机 → 国内 DNS 解析 /32）
+  input/upstream/    上游原始快照（本地留档；抓取失败时按校验结果回退，历史可追溯）
+  output/ip/         IP 类产物（direct-ipv4*.txt/.rsc、ASN 专表、报告）
+  output/domain/     域名类产物（direct-domains-resolved.json）
+  service-evidence/  单项服务的实测证据与 pending-services.json
 
 权威顺序（assembled in this order）：
   ① 上游源（权威底表：CN 三源并集）
@@ -36,8 +38,17 @@ NONPUBLIC = [ip.ip_network(x) for x in (
     '224.0.0.0/3')]
 
 INPUT_DIR = Path('input')
-MANUAL_SUBDIR = INPUT_DIR / 'manual'
+IP_SUBDIR = INPUT_DIR / 'ip'
+DOMAIN_SUBDIR = INPUT_DIR / 'domain'
 UPSTREAM_SUBDIR = INPUT_DIR / 'upstream'
+OUTPUT_DIR = Path('output')
+# 产物按类别落盘；发布到内网 mirror 时仍用扁平文件名（ROS/OxiDNS 路径不变）。
+OUTPUT_LAYOUT = {
+    'direct-ipv4.txt': 'ip', 'direct-cn-ipv4.txt': 'ip', 'direct-manual-ipv4.txt': 'ip',
+    'direct-extra-ipv4.txt': 'ip', 'direct-excluded-ipv4.txt': 'ip',
+    'direct-ipv4.rsc': 'ip', 'direct-ipv4-nocm.rsc': 'ip', 'direct-ipv4-noct.rsc': 'ip',
+    'direct-ipv4-report.json': 'ip', 'direct-domains-resolved.json': 'domain',
+}
 LEGACY_FLAT = ('include-ipv4.txt', 'exclude-ipv4.txt', 'direct-domains.json')
 
 
@@ -115,18 +126,31 @@ def json_text(value):
 
 
 def input_layout(base):
-    """规范化目录：手工输入 input/manual，上游快照 input/upstream。
+    """规范化目录：IP 表 input/ip，域名表 input/domain，上游快照 input/upstream。
 
-    发现旧扁平布局（根目录直接放 txt/json 或 raw/）时明确报错，
+    发现旧扁平布局（根目录直接放 txt/json、raw/ 或旧的 input/manual/）时明确报错，
     避免迁移不完整时静默读到空输入、发布空表。
     """
     base = Path(base)
     for name in LEGACY_FLAT:
         if (base / name).exists():
-            raise RuntimeError(f'旧扁平布局文件仍在: {name}; 应为 input/manual/{name}')
+            raise RuntimeError(f'旧扁平布局文件仍在: {name}; 应为 input/ip/{name} 或 input/domain/{name}')
     if (base / 'raw').is_dir():
         raise RuntimeError('旧 raw/ 目录仍在; 应为 input/upstream/')
-    return base / MANUAL_SUBDIR, base / UPSTREAM_SUBDIR
+    if (base / 'input' / 'manual').is_dir():
+        raise RuntimeError('旧 input/manual/ 仍在; 应为 input/ip/ 与 input/domain/')
+    return base / IP_SUBDIR, base / DOMAIN_SUBDIR, base / UPSTREAM_SUBDIR
+
+
+def output_path(base, name):
+    """产物路径：按 IP / 域名 分目录；发布到内网 mirror 时仍用扁平文件名。"""
+    category = OUTPUT_LAYOUT.get(name)
+    if category is None:
+        if name.startswith('direct-as') and name.endswith('-ipv4.txt'):
+            category = 'ip'
+        else:
+            raise KeyError(f'未登记的产物类别: {name}')
+    return Path(base) / OUTPUT_DIR / category / name
 
 
 def assemble(upstream, manual, excluded):
@@ -340,7 +364,7 @@ def main():
     args = ap.parse_args()
     base, cache = args.base, args.cache
     cfg = json.loads((base / 'sources.json').read_text())
-    manual_dir, upstream_dir = input_layout(base)
+    ip_dir, domain_dir, upstream_dir = input_layout(base)
     cache.mkdir(parents=True, exist_ok=True)
     sources, raw, source_meta, warnings, all_cn, domain_rules = {}, {}, {}, [], [], []
     for spec in cfg['sources']:
@@ -355,7 +379,7 @@ def main():
             all_cn.extend(parsed)
         else:
             domain_rules.extend(parsed)
-    manual_rules = json.loads((manual_dir / 'direct-domains.json').read_text())
+    manual_rules = json.loads((domain_dir / 'direct-domains.json').read_text())
     for rule in manual_rules:
         if not re.fullmatch(r'[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?', rule['domain']) or '.' not in rule['domain']:
             raise ValueError('manual domains must be exact lowercase DNS host names')
@@ -378,7 +402,7 @@ def main():
     # ① 上游源：权威底表（CN 三源并集）
     upstream = list(ip.collapse_addresses(all_cn))
     # ② 手工层：手工 CIDR + 整 ASN 例外 + 精确主机解析（/32）
-    manual_ipv4 = parse_cidrs((manual_dir / 'include-ipv4.txt').read_text())
+    manual_ipv4 = parse_cidrs((ip_dir / 'include-ipv4.txt').read_text())
     from asn_sources import load_asn
     asn_report, asn_outputs, asn_nets = {}, {}, []
     for asn in cfg.get('direct_asns', []):
@@ -389,7 +413,7 @@ def main():
         if warning:
             warnings.append(warning)
     # ③ 排除层：手工排除 + 现有 blacklist 静态条目（强制代理语义优先）
-    excluded = parse_cidrs((manual_dir / 'exclude-ipv4.txt').read_text())
+    excluded = parse_cidrs((ip_dir / 'exclude-ipv4.txt').read_text())
     protected = parse_ros(cfg['proxy_exclude_file'])
     if len(protected) < 10:
         raise ValueError('existing proxy blacklist unexpectedly short')
@@ -402,7 +426,7 @@ def main():
     size = sum(n.num_addresses for n in all_direct)
     if not 1000 <= len(all_direct) <= 30000 or not 100_000_000 <= size <= 650_000_000:
         raise ValueError('combined direct output outside expected bounds')
-    old_path = base / 'output' / 'direct-ipv4.txt'
+    old_path = output_path(base, 'direct-ipv4.txt')
     if old_path.exists():
         old = parse_cidrs(old_path.read_text())
         old_size = sum(n.num_addresses for n in old)
@@ -457,7 +481,7 @@ def main():
         atomic(upstream_dir / f'{sid}.txt', data)
         atomic(upstream_dir / f'{sid}.json', json_text(source_meta[sid]))
     for name, body in outputs.items():
-        atomic(base / 'output' / name, body)
+        atomic(output_path(base, name), body)
     atomic(dns_cache, json_text(new_state))
     if args.publish_root:
         publish(outputs, args.publish_root, args.static_dir)

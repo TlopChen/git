@@ -4,29 +4,33 @@
 
 此目录的脚本、配置、手工表均以 `/root/git/scripts/direct-ip`（本仓库）为权威。旧 `/srv/github-mirror/gen_rules.py` 不生成或覆盖本目录产物。本管线不会登录或修改 AR/ROS，不自动接入现有 blacklist-sync。
 
-## 目录结构（脚本 / input / output 分层）
+## 目录结构（按 IP / 域名 分开）
 
-与 `scripts/domain-rules` 保持同一约定：脚本和上游清单在仓库根，手工输入在 `input/manual`，上游原始快照在 `input/upstream`，产物在 `output`。
+与 `scripts/domain-rules` 保持同一约定：脚本和上游清单在仓库根，手工输入在 `input/`，上游快照在 `input/upstream`，产物在 `output/`。手工输入和产物都按 **IP / 域名** 两类分开。
 
 ```text
 scripts/direct-ip/
   gen_direct.py          生成器（标准库 + git + dig）
   asn_sources.py         RIPE RIS 整 ASN 快照
-  update.sh              定时/手工运行入口（git 提交 raw/output）
+  update.sh              定时/手工运行入口（git 提交 input/upstream 与 output）
   sources.json           上游清单单一入口（CN 三源 + direct_asns + resolvers）
   input/
-    manual/              手写输入，入库；改动后由 manual-watch 触发重生成
+    ip/                  手写 IP 表
       include-ipv4.txt     手工直连 CIDR
       exclude-ipv4.txt     手工排除 CIDR（优先于所有来源和手工添加）
+    domain/              手写域名表
       direct-domains.json  精确主机例外（国内 DNS 解析为 /32）
-      pending-services.json 待采集/已处理服务的跟踪状态
-    upstream/            上游原始快照（本地留档，抓取失败按年龄+哈希回退）
+    upstream/            上游原始快照（非手写；抓取失败按年龄+哈希回退）
       <source>.txt/.json   gaoyifan/metowolf/misaka/steam 快照 + 来源 commit/sha256
       as53850-*.json       RIPE RIS 原始响应与元数据
-  output/                生成产物（含报告）
-  service-evidence/      单个服务的实测证据（如 sufun.json、girigiri.json）
+  output/
+    ip/                  IP 类产物（direct-ipv4*.txt/.rsc、ASN 专表、报告）
+    domain/              域名类产物（direct-domains-resolved.json）
+  service-evidence/      单个服务的实测证据（sufun.json、girigiri.json）与 pending-services.json
   licenses/              上游许可
 ```
+
+内网 mirror 仍按**扁平文件名**发布（`/ros/direct-ipv4.rsc` 等路径不变），目录分类只影响仓库内的存放位置。
 
 为什么快照和产物都入库：上游 GitHub/RIPE 抓取失败时，管线按 `input/upstream` 里的快照回退（72 小时内且校验通过）继续生成；即使某次推送/抓取全挂，`output/` 的历史版本仍在 Git 与 `/var/lib/direct-ip/releases` 里，能顶住一次故障。
 
@@ -56,9 +60,9 @@ scripts/direct-ip/
 
 维护要点：
 
-- `include-ipv4.txt`：纯 IPv4/CIDR，一行一条，可以有 `#` 注释；回滚就是删对应行。
-- `exclude-ipv4.txt`：从最终集合做地址差集，支持从大网段排除单个 `/32`。
-- `direct-domains.json`：精确主机名及原因，双国内 DNS（223.5.5.5、119.29.29.29）查询 A 记录取并集，只生成 `/32`；只解析列出的主机本身，不枚举子域。当前收录 GiriGiri 的 6 个主机（见文末）。
+- `input/ip/include-ipv4.txt`：纯 IPv4/CIDR，一行一条，可以有 `#` 注释；回滚就是删对应行。
+- `input/ip/exclude-ipv4.txt`：从最终集合做地址差集，支持从大网段排除单个 `/32`。
+- `input/domain/direct-domains.json`：精确主机名及原因，双国内 DNS（223.5.5.5、119.29.29.29）查询 A 记录取并集，只生成 `/32`；只解析列出的主机本身，不枚举子域。当前收录 GiriGiri 的 6 个主机（见文末）。
 - 现有 `blacklist.rsc` 的静态 IPv4 强制代理地址自动加入排除集合；排除高于 CN、DNS 例外和手工添加。冲突会列在解析报告的 `excluded_addresses` 与总报告的 `manual_conflicts`。
 - Steam 源仅取 `@cn`；`full` 和后缀语义保存在域名报告中。不对全球 `steamcontent.com`、Steam 社区做全域放行。上游 `@cn` 里已废弃的主机用 `sources.json` 的 `exclude_hosts` 剔除（当前 6 个网宿/品云旧域：csgo.wmsj.cn、dota2.wmsj.cn、st.dl.pinyuncloud.com、steampowered.com.8686c.com、steamstatic.com.8686c.com、wmsjsteam.com），避免每日解析告警。
 - 速方云：`sources.json` 的 `direct_asns: [53850]` 按天跟随 RIPE RIS 公告，包含该 ASN 全部可观测 IPv4 起源前缀，不局限于速方云业务（用户明确指定的例外）。
@@ -69,16 +73,17 @@ DNS 例外随每日 full 刷新一次（2026-09-27 起不再做每 10 分钟检�
 
 | 输出 | 内容 |
 |---|---|
-| `output/direct-ipv4.txt` | 完整可用直连集合，纯 CIDR 无注释 |
-| `output/direct-cn-ipv4.txt` | 国内三源并集减去排除 |
-| `output/direct-manual-ipv4.txt` | 手工层（include + direct_asns + direct-domains 解析）减去排除 |
-| `output/direct-extra-ipv4.txt` | 手工/域名中超出国内集合的部分 |
-| `output/direct-excluded-ipv4.txt` | 本次排除集合 |
-| `output/direct-ipv4.rsc` | `/ip firewall address-list`，表名 **DIRECT_IP** |
-| `output/direct-ipv4-nocm.rsc` | 同上，表名 **DIRECT_IP_NOCM**：`DIRECT_IP` 减 `cn-mobile.rsc`（CM）地址，电信线路专用 |
-| `output/direct-ipv4-noct.rsc` | 同上，表名 **DIRECT_IP_NOCT**：`DIRECT_IP` 减 `cn-telecom.rsc`（CT）地址，移动线路专用 |
-| `output/direct-domains-resolved.json` | 精确主机、原始匹配语义、各 DNS 返回、失败/缓存状态、排除冲突 |
-| `output/direct-ipv4-report.json` | 规模、各层贡献（`precedence`/`manual_*`）、源贡献、与 CT/CM 的覆盖差异、警告 |
+| `output/ip/direct-ipv4.txt` | 完整可用直连集合，纯 CIDR 无注释 |
+| `output/ip/direct-cn-ipv4.txt` | 国内三源并集减去排除 |
+| `output/ip/direct-manual-ipv4.txt` | 手工层（include + direct_asns + direct-domains 解析）减去排除 |
+| `output/ip/direct-extra-ipv4.txt` | 手工/域名中超出国内集合的部分 |
+| `output/ip/direct-excluded-ipv4.txt` | 本次排除集合 |
+| `output/ip/direct-ipv4.rsc` | `/ip firewall address-list`，表名 **DIRECT_IP** |
+| `output/ip/direct-ipv4-nocm.rsc` | 同上，表名 **DIRECT_IP_NOCM**：`DIRECT_IP` 减 `cn-mobile.rsc`（CM）地址，电信线路专用 |
+| `output/ip/direct-ipv4-noct.rsc` | 同上，表名 **DIRECT_IP_NOCT**：`DIRECT_IP` 减 `cn-telecom.rsc`（CT）地址，移动线路专用 |
+| `output/ip/direct-as<asn>-ipv4.txt` | 整 ASN 例外专表（如 `direct-as53850-ipv4.txt`） |
+| `output/ip/direct-ipv4-report.json` | 规模、各层贡献（`precedence`/`manual_*`）、源贡献、与 CT/CM 的覆盖差异、警告 |
+| `output/domain/direct-domains-resolved.json` | 精确主机、原始匹配语义、各 DNS 返回、失败/缓存状态、排除冲突 |
 
 例如内网下载地址：`http://192.168.40.1:18080/ros/direct-ipv4.txt`、`http://192.168.40.1:18080/ros/direct-ipv4.rsc`、`http://192.168.40.1:18080/ros/direct-ipv4-nocm.rsc`、`http://192.168.40.1:18080/ros/direct-ipv4-noct.rsc`。本管线不执行 ROS 导入。按运营商拆分的派生表（NOCM/NOCT）每日随 `direct-ipv4.rsc` 重算，差集依据是分发目录里当日最新的 `cn-telecom.rsc`/`cn-mobile.rsc`。文件是地址表而不是 `/ip route` 静态路由，选路由 BGP 自环注入 + AR 侧策略决定。
 
@@ -130,8 +135,8 @@ CIDR 源单源至少 1000 条、整体至少 1000 条，校验公网地址、默
 
 处理（速方云式：holder 网段覆盖 + 精确主机跟随）：
 
-1. `input/manual/include-ipv4.txt` 收录 15 条 holder `/24`（见该文件末段注释），覆盖 24 个已观测节点并容忍换机器/IP 漂移；这是"公告段覆盖"，与速方云先前的 `/21` 同性质。副作用是同 `/24` 邻居地址也会直连（廉价 VPS 段，影响可忽略）；要最小面可改回逐个 `/32`。
-2. `input/manual/direct-domains.json` 收录 6 个精确主机，每日用国内 DNS 解析结果补 `/32`，跟随 CDN 新增 IP。
+1. `input/ip/include-ipv4.txt` 收录 15 条 holder `/24`（见该文件末段注释），覆盖 24 个已观测节点并容忍换机器/IP 漂移；这是"公告段覆盖"，与速方云先前的 `/21` 同性质。副作用是同 `/24` 邻居地址也会直连（廉价 VPS 段，影响可忽略）；要最小面可改回逐个 `/32`。
+2. `input/domain/direct-domains.json` 收录 6 个精确主机，每日用国内 DNS 解析结果补 `/32`，跟随 CDN 新增 IP。
 3. `scripts/domain-rules/input/manual/manual-cn-domains.txt` 收录 `domain:girigirilove.com`、`domain:girigirilove.net`，让 OxiDNS 判国内、停止 `ros_blacklist` 注入；否则 OxiDNS 动态注入的 `/32` 会压过本表继续走隧道。
 4. 生效后需在 ROS 删除这些 IP 的历史动态 `/32`（comment 前缀 `oxi`），或等 `fixed_ttl` 24 小时自然过期。
 
