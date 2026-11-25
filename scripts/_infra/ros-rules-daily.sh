@@ -21,7 +21,7 @@ if ! /usr/bin/python3 "$R/gen_rules.py"; then
 fi
 /usr/bin/python3 "$R/gen_oxi.py"   || echo "[warn] gen_oxi failed"
 /usr/bin/python3 "$R/gen_cn.py"    || echo "[warn] gen_cn failed"
-/usr/bin/python3 "$R/fetch_bin.py" || echo "[warn] fetch_bin failed"
+timeout 180 /usr/bin/python3 "$R/fetch_bin.py" || echo "[warn] fetch_bin timeout/failed, kept previous binaries"
 
 # 发布到内网 HTTP 目录（ROS 从这里按 /ros/<文件> 取用）
 "$REPO/scripts/_infra/publish.sh"

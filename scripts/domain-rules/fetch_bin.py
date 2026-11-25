@@ -19,7 +19,7 @@ for spec in CFG.get("binaries", []):
     dst = os.path.join(DEST, name)
     try:
         req = urllib.request.Request(spec["url"], headers={"User-Agent": "curl/8"})
-        with urllib.request.urlopen(req, timeout=300) as r:
+        with urllib.request.urlopen(req, timeout=120) as r:
             data = r.read()
         if len(data) < int(spec.get("min_bytes", 100000)):
             raise ValueError("suspiciously small: %d bytes" % len(data))
