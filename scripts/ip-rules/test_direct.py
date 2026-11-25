@@ -165,6 +165,9 @@ class DirectTests(unittest.TestCase):
         rsc = g.render_ros(g.parse_cidrs('8.8.8.8/32\n9.9.9.0/24'))
         self.assertLess(rsc.index('address-list add'), rsc.index('address-list remove'))
         self.assertIn('comment~"^(ip-rules|direct-ip)-auto:"', rsc)
+        self.assertIn(':local prefixes {', rsc)
+        self.assertNotIn(':local prefixes [', rsc)
+        self.assertIn('};', rsc)
         self.assertIn('"8.8.8.8";', rsc)
         self.assertNotIn('list="blacklist"', rsc)
 

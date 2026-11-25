@@ -275,7 +275,7 @@ def render_ros(nets, name='DIRECT_IP'):
     generation = 'ip-rules-auto:' + digest(raw.encode())[:16]
     rows = ['# IPv4 direct IP set; see scripts/ip-rules/README.md for source attribution.',
             '# Does not configure routes/BGP. Import must be serialized.', '{',
-            f':local generation "{generation}";', ':local prefixes [']
+            f':local generation "{generation}";', ':local prefixes {']
     # RouterOS stores /32 address-list entries in host representation.
     rows += [f'"{n.network_address if n.prefixlen == 32 else n}";' for n in nets]
     rows += ['};', ':local wanted [:toarray ""];', ':local existing [:toarray ""];',

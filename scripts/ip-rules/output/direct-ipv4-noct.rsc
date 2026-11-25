@@ -2,7 +2,7 @@
 # Does not configure routes/BGP. Import must be serialized.
 {
 :local generation "ip-rules-auto:75c0fa0b59abd588";
-:local prefixes [
+:local prefixes {
 "1.1.8.0/24";
 "1.2.2.0/24";
 "1.2.4.0/24";
