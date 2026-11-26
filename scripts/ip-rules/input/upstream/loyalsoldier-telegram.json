@@ -1,10 +1,10 @@
 {
-  "commit": "ad86e940f9047e2296c2f14074c33768de6715e9",
-  "commit_time": 1795559729,
-  "fetched_at": 1795644947,
+  "commit": "75d94e503de8caa3701abd2af99aef5293d4e604",
+  "commit_time": 1795646091,
+  "fetched_at": 1795731355,
   "path": "telegramcidr.txt",
   "ref": "release",
   "repo": "Loyalsoldier/clash-rules",
   "sha256": "328fca88c675763111c7f7585ec504e5c21ab9afb7a8ce6df33b7ac01b8a3ee0",
-  "url": "https://github.com/Loyalsoldier/clash-rules/blob/ad86e940f9047e2296c2f14074c33768de6715e9/telegramcidr.txt"
+  "url": "https://github.com/Loyalsoldier/clash-rules/blob/75d94e503de8caa3701abd2af99aef5293d4e604/telegramcidr.txt"
 }

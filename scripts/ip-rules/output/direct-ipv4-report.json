@@ -1,23 +1,23 @@
 {
-  "cn_effective_prefixes": 6299,
-  "cn_union_prefixes": 6299,
-  "direct_addresses": 352665458,
-  "direct_addresses_outside_ct_cm": 200540234,
+  "cn_effective_prefixes": 6300,
+  "cn_union_prefixes": 6300,
+  "direct_addresses": 352666482,
+  "direct_addresses_outside_ct_cm": 200541258,
   "direct_asns": {
     "53850": {
       "aggregated_ipv4_prefixes": 23,
       "asn": 53850,
-      "fetched_at": 1795644963,
+      "fetched_at": 1795731372,
       "observed_ipv4_prefixes": 92,
       "observed_ipv6_prefixes": 5,
-      "sha256": "7454f61fa628376d8eacb71063812789ecc1092c4bdf94ece96013f10ef53532",
-      "snapshot_time": "2026-11-25T16:00:00",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1795558553&min_peers_seeing=1"
+      "sha256": "2747f81cfca6e90d8e1e1d06b715677a528d15b20a543e4f399866bf3b59e677",
+      "snapshot_time": "2026-11-26T16:00:00",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53850&starttime=1795644968&min_peers_seeing=1"
     }
   },
-  "direct_nocm_prefixes": 7657,
-  "direct_noct_prefixes": 6931,
-  "direct_prefixes": 6337,
+  "direct_nocm_prefixes": 7658,
+  "direct_noct_prefixes": 6932,
+  "direct_prefixes": 6338,
   "excluded_prefixes": 22,
   "existing_ct_cm_unique_prefixes": 4573,
   "extra_outside_cn_prefixes": 38,
@@ -36,22 +36,22 @@
   ],
   "sources": {
     "gaoyifan-cn": {
-      "addresses": 344317949,
-      "prefixes": 6242,
-      "sha256": "9122af3c640fdb2a179b29e6ba5df1505bee4ad9c011ec70566be3faa672a91f",
-      "unique_addresses": 3338430
+      "addresses": 344316669,
+      "prefixes": 6235,
+      "sha256": "b557d2afddfb8419d5949d92110f461ff53f217c297c5173a0d1394a8287f462",
+      "unique_addresses": 3338942
     },
     "metowolf-cn": {
       "addresses": 348857964,
       "prefixes": 5570,
       "sha256": "b862eb06ac783d58ad25fc328996efab9c000d7365fce73de1981e8b9f01fb14",
-      "unique_addresses": 7760498
+      "unique_addresses": 7762546
     },
     "misaka-cn": {
-      "addresses": 282332672,
+      "addresses": 282333696,
       "prefixes": 3882,
-      "sha256": "8efc1be6b03c92a96cfc4bc3c65b090315343ac439aec1e67cd5f5f8257455da",
-      "unique_addresses": 269276
+      "sha256": "9279c267d7cd6f35002ae0b73d74a089a2ca5a39e249b13fab8517bd3cfc25eb",
+      "unique_addresses": 269568
     }
   },
   "tables": {
@@ -60,12 +60,12 @@
       "asns": {
         "51894": {
           "asn": 51894,
-          "fetched_at": 1795644953,
+          "fetched_at": 1795731368,
           "observed_ipv4_prefixes": 2,
           "observed_ipv6_prefixes": 1,
-          "sha256": "5d554cc459d2419b10ff7640123b5488b78945738d6fe84a6efba4d286dd09b9",
-          "snapshot_time": "2026-11-25T16:00:00",
-          "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS51894&starttime=1795558551&min_peers_seeing=1"
+          "sha256": "1fbd2ed1907a3d84d904c6a43036658c7173010af1dfb55802249fc54a80cdbe",
+          "snapshot_time": "2026-11-26T16:00:00",
+          "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS51894&starttime=1795644959&min_peers_seeing=1"
         }
       },
       "ipv6_prefixes_not_imported": 1,
@@ -152,7 +152,7 @@
       ]
     }
   },
-  "upstream_addresses": 352597874,
-  "upstream_prefixes": 6299,
+  "upstream_addresses": 352598898,
+  "upstream_prefixes": 6300,
   "warnings": []
 }
