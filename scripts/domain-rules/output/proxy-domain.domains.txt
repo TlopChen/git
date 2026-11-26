@@ -1,4 +1,4 @@
-# proxy-domain suffix-domains (bare domain, covers subdomains) 29179, 2026-11-26 06:00:05
+# proxy-domain suffix-domains (bare domain, covers subdomains) 29190, 2026-11-27 06:00:37
 000webhost.com
 01.org
 02weqj32.com
@@ -16417,12 +16417,14 @@ megaad.nz
 megacamz.com
 megaeth.com
 megafilmporno.com
+megafon.cloud
 megafon.com
 megafon.ru
 megafonpro.ru
 megalodon.jp
 megamon.co.kr
 megapay.nz
+megapbx.ru
 megaphone.fm
 megapornfreehd.com
 megaporno.com.br
@@ -16431,6 +16433,7 @@ megaproxy.com
 megarotic.com
 megas4.com
 megasrv.de
+megatech-it.ru
 megatitsminka.com
 megaupload.com
 megavideo.com
@@ -16542,6 +16545,7 @@ mgo-images.com
 mgo.com
 mgoon.com
 mgstage.com
+mgts.ru
 mh4u.org
 mhcb.ru
 mhcbr.ru
@@ -17131,6 +17135,7 @@ mobile.de
 mobile01.com
 mobilefacebook.com
 mobileicq.com
+mobileid.ru
 mobileinternational.com
 mobilemarketo.com
 mobileme.dk
@@ -17556,6 +17561,7 @@ mulheresafoder.com
 mullvad.net
 mult34.com
 multicurrencycashpassport.com
+multifon.ru
 multiply.com
 multiplydiversity.com
 multiproxy.org
@@ -18909,6 +18915,7 @@ o365weve.com
 o3o.ca
 o3t.ru
 o3team.ru
+o7.com
 oaistatic.com
 oaistatsig.com
 oaiusercontent.com
@@ -19139,6 +19146,7 @@ onion.city
 onion.ly
 onionshare.org
 onkakao.net
+onlime.ru
 online-deals.net
 online-instagram.com
 onlineapplestore.com
@@ -21702,6 +21710,7 @@ rosemarydoll.com
 roshy.tv
 rossiyasegodnya.com
 rostaxi.org
+rostelecom-rb.ru
 rostelecom.ru
 rotten.com
 rou.video
@@ -23309,6 +23318,7 @@ spatial.io
 spb.com
 spbexchange.ru
 spcc-sp.com
+spd-mgts.ru
 speakerdeck.com
 spearhead.kr
 spectraltube.com
@@ -27884,6 +27894,7 @@ xn--czq75pvv1aj5c.org
 xn--d1abkf4ap.fun
 xn--d1acpjx3f.xn--p1ai
 xn--d4ty0ojsqzfd.com
+xn--e1aapchhekkk.xn--p1ai
 xn--e1adjldbbpv.xn--90ais
 xn--e1aigb.xn--p1ai
 xn--fiq80y.hk
