@@ -1,10 +1,10 @@
 {
-  "commit": "75d94e503de8caa3701abd2af99aef5293d4e604",
-  "commit_time": 1795646091,
-  "fetched_at": 1795731332,
+  "commit": "12554b18317457aa28eb49c6a80c1a3875aaa6ba",
+  "commit_time": 1795732509,
+  "fetched_at": 1795817732,
   "path": "cncidr.txt",
   "ref": "release",
   "repo": "Loyalsoldier/clash-rules",
-  "sha256": "d05824d2037919e572ca7c6cec81e2568181795f4197c19cc6199b2a51a0fc97",
-  "url": "https://github.com/Loyalsoldier/clash-rules/blob/75d94e503de8caa3701abd2af99aef5293d4e604/cncidr.txt"
+  "sha256": "faa8d11d2e83bcc779899b07251f024b141acdf628b2dba72f6f50cac4a0364a",
+  "url": "https://github.com/Loyalsoldier/clash-rules/blob/12554b18317457aa28eb49c6a80c1a3875aaa6ba/cncidr.txt"
 }

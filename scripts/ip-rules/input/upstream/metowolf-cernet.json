@@ -1,10 +1,10 @@
 {
-  "commit": "e98684a37ed47f375451e12ccc419bf09d9701f6",
-  "commit_time": 1795619524,
-  "fetched_at": 1795731351,
+  "commit": "d01321cb742db8650c13a7580b1721e48411744b",
+  "commit_time": 1795742435,
+  "fetched_at": 1795817750,
   "path": "data/isp/cernet.txt",
   "ref": "master",
   "repo": "metowolf/iplist",
   "sha256": "997ee00277856727f6f015128e1f710174959a822894e92ea637c957abca5fc3",
-  "url": "https://github.com/metowolf/iplist/blob/e98684a37ed47f375451e12ccc419bf09d9701f6/data/isp/cernet.txt"
+  "url": "https://github.com/metowolf/iplist/blob/d01321cb742db8650c13a7580b1721e48411744b/data/isp/cernet.txt"
 }

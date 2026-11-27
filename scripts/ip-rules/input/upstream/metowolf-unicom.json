@@ -1,10 +1,10 @@
 {
-  "commit": "e98684a37ed47f375451e12ccc419bf09d9701f6",
-  "commit_time": 1795619524,
-  "fetched_at": 1795731347,
+  "commit": "d01321cb742db8650c13a7580b1721e48411744b",
+  "commit_time": 1795742435,
+  "fetched_at": 1795817747,
   "path": "data/isp/chinaunicom.txt",
   "ref": "master",
   "repo": "metowolf/iplist",
   "sha256": "18854bfaa99ee02657a74ea319d0e5d15fbdb0643bf68f8b0d3890119f50dfcb",
-  "url": "https://github.com/metowolf/iplist/blob/e98684a37ed47f375451e12ccc419bf09d9701f6/data/isp/chinaunicom.txt"
+  "url": "https://github.com/metowolf/iplist/blob/d01321cb742db8650c13a7580b1721e48411744b/data/isp/chinaunicom.txt"
 }
