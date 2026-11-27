@@ -42,3 +42,4 @@ domain:schwab.com.cn
 # 无大陆节点；判 CN 后由国内 DNS 返回运营商线路视图，并停止 ros_blacklist 注入（直连依赖 direct-ip 表）。
 domain:girigirilove.com
 domain:girigirilove.net
+domain:linuxdo.org
